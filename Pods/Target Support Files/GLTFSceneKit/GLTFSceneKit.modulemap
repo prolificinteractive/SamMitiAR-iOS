@@ -1,0 +1,6 @@
+framework module GLTFSceneKit {
+  umbrella header "GLTFSceneKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

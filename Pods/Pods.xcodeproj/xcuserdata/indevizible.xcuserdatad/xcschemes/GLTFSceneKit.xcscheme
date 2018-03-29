@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ADFCBC4D0017261730ADE2C1AF024313"
-               BlueprintName = "Pods-SamMitiAR"
+               BlueprintIdentifier = "635D117D90401E8CF512E88988B1E8D8"
+               BlueprintName = "GLTFSceneKit"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-SamMitiAR.framework">
+               BuildableName = "GLTFSceneKit.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

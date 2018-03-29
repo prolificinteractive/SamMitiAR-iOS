@@ -7,576 +7,366 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0059C50E92DD656710B3770825F6E10D /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7A1589733767E1D8566E10F9B3EBED /* ColorSet.swift */; };
-		00FD8D8BE3C8EE421A7A8BE4B7A5CF7C /* TextStyle+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8872CE0A3619FDE756E1557567F07D /* TextStyle+JSON.swift */; };
-		03B52AEEB524A25FB4792F612704A837 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE941EC60B23CB336BA2F71F43D8432E /* TextStyle.swift */; };
-		0966AB550E630952ABCFDC6B00645E7C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD1DDE725DBD630AD26E28FD363807B /* Tag.swift */; };
-		0DDB177503D0A700698BD7F2818B12C8 /* ElementParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2E6F3E7F31FD23196D05C1997137CD /* ElementParser.swift */; };
-		14A4E2EE2AB57E20EEB91AE710FCCEA6 /* SwiftyJSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58659929A7B7AE7C843933F13714B55D /* SwiftyJSONHelper.swift */; };
-		17B6434DA93919B10008A615A82306DA /* MarkdownElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6F9AE10D195E81EDE22863F0B44E3 /* MarkdownElement.swift */; };
-		183BE44F103F850084C8216E7F9777F7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78E0B55A6AE97E9D5C4CD13CE679603 /* SwiftyJSON.framework */; };
-		1AB4B5D71850CCCCAE7B87EC536D3076 /* AnimationDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7852A8B3C9BA73620A9B868433FFF3 /* AnimationDuration.swift */; };
-		1D42B2615DD77B8679604013F10819EC /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 117A5B6E8E877C48C0A7EA40665A3961 /* SwiftyJSON-dummy.m */; };
-		1DEFA0E21D3FC13117DC2AD07403C0F6 /* MarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8633B02304D84F888C51810FAA420E1 /* MarkdownParser.swift */; };
-		1F833F2738761F89E36C92BDFFF934F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702389FDDA05DE8354A0741B483ED7BA /* Foundation.framework */; };
-		2050CD7FCC434D8A7CAD47176539BF63 /* AlphaValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9C1D8978C4F3B4A936E3D32996C0C /* AlphaValue.swift */; };
-		2083C1238F704FC656F18ACBA30DB525 /* Marker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E675E3AC16D0A0EB37AE5F83BADC69C /* Marker.framework */; };
-		20A02DD0B2B1C3C65B16B2B77C9182B5 /* Pods-SamMitiAR-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0EF8D07B2A4F9C0F8DEA7136A4904C2 /* Pods-SamMitiAR-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21DF2FA94C7B8FB39E9BCC6084B79816 /* ShadowTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D24CF296E025E173B7E956D394CAE /* ShadowTheme.swift */; };
-		225277E2CF7C3A668A451FD7602117ED /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D8CB89920DB9952BDD44E21ABB103 /* Token.swift */; };
-		22A7ED271BBA31C27BDAB110DDA29645 /* BorderWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A45F5F22DE3D16598F56CF9FDC9B03 /* BorderWidth.swift */; };
-		233CA5481CB1996103736C9BCDB0B8B5 /* TextTransform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5ECED0B1484EE3D86D065092DC3540 /* TextTransform+Extensions.swift */; };
-		2AA53688DEFBC7D872BA1B30B2E1E22A /* Kumi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5660E74495CB3625B2858EB79653E92 /* Kumi.swift */; };
-		2B2E7B75C5B35718B56EA6B0FBE6E669 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175B2038205F853FFDE14556FCCB018 /* Element.swift */; };
-		2CB2127EFD21FCE5633A3C11C8A1EDA4 /* LineBreakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11B62B244134381E3AA96C18F59430 /* LineBreakMode.swift */; };
-		2D7BD02147DA447BA417922CA5C1752D /* AnimationTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3326EF39D9F3563D11FDE70203B774 /* AnimationTheme.swift */; };
-		2E371029B76616B7FB5B3B4377723C95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702389FDDA05DE8354A0741B483ED7BA /* Foundation.framework */; };
-		31A32C1AE73A36ED6490799440C2CABA /* Utility+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61124CB96E7D105B0E8FC509A77A777 /* Utility+JSON.swift */; };
-		3330388AB56F342695096969753392F5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCEFEC9F74618E0F307D0A3128B3BD /* UIViewExtension.swift */; };
-		34406C6708FD79D9E862803AF90D0058 /* TokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9A8FB126BE190B38801FE51B4C6F1 /* TokenParser.swift */; };
-		37906885690DCE912907A23CAD06FCA1 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B10C64705CA62F3E5DD772F9B0FF0 /* CALayerExtension.swift */; };
-		398C442B2961FC6BFE46649D9B3C29C7 /* Kumi-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B659C3B91C0841114137D0C3C45BBE /* Kumi-dummy.m */; };
-		3A25F552943AAF801D7271CE90E3096F /* UIViewAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32F2768E2437CA6A1D5762C068633AF /* UIViewAnimationStyle.swift */; };
-		3A6E9FFE88627A04DA77C0147E340FEB /* CABasicAnimationStyle+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DE2534CBB07AC1CD998BA770AFA67C /* CABasicAnimationStyle+JSON.swift */; };
-		3B6D607C9E0B5BAE131461ADA4513F4A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220886DA7BCAD4E52D3370DFC08BFB4F /* Color.swift */; };
-		3CC176FA5BBD176DA8D6BCC38CBAE10C /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC907CCEB9C48D214888A9C0F36A80D0 /* UITextFieldExtension.swift */; };
-		3E2280F6FEB7B3962FA57483D2202CC5 /* LayerStyleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC482468ABC9387EC8D1C288B4BDCF1 /* LayerStyleSet.swift */; };
-		3F03D0A255F24453C4D7172C205620B6 /* TextTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889CD42FE44979B1E073EBC75668F84 /* TextTransform.swift */; };
-		403F4A0A02F15331A70240597A40B8E7 /* CABasicAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E29BC241CEDBF7B7B1682362C2B91 /* CABasicAnimationStyle.swift */; };
-		432B9135C8C77D156F18169502626F27 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C13183DFD29EE74F589FBEA6DECC8C9 /* JSONHelper.swift */; };
-		45451C7D31A2C8F85AD695FB5EEEEC9B /* Marker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A674C30352BD3F188BF9F406E93D247F /* Marker-dummy.m */; };
-		57975B399C142DB77E4B9B45A88402EE /* ShadowStyle+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B2845AAF1B6DA9F274E22DFCE05D0 /* ShadowStyle+JSON.swift */; };
-		5B00E50B22950B6A0ADF77452A6E0086 /* Pods-SamMitiAR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB42C59F0E8D123A3393FDB2D24F1AF5 /* Pods-SamMitiAR-dummy.m */; };
-		5B1AC83425A2CF44482E507DE393EB9B /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B9F2A1B6FD2E75FCC4829699D7AB9 /* UIButtonExtension.swift */; };
-		5C9895C85F5ACFCBD725FA1285013DDD /* CATransform3D+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D2F6C7A7A14B44A3FF1EE5A4970EA2 /* CATransform3D+JSON.swift */; };
-		5DAE98CA055A960468DAB8F253DE71FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702389FDDA05DE8354A0741B483ED7BA /* Foundation.framework */; };
-		6022DAC7ED736CC819C4E8EB9D012A32 /* LayerStyleSet+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575693D0221277AA67267BF1053B1EA5 /* LayerStyleSet+JSON.swift */; };
-		60D51CEFC19B363D890E207B5AB63FED /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C75085F37B9F44690DFC35C813084 /* UIColor+Extensions.swift */; };
-		665A3074584982C9C0C5CC4B80AD84CC /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E898D3B3911CC6133B4D00045E7B1684 /* Symbol.swift */; };
-		73AF11007A06B6676C041F06ED2DDEF4 /* FontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E14499571BEAF62EBF60D5F203AEA5 /* FontTheme.swift */; };
-		7C0706E14A53D4475684F9D524183A22 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955118126C6F49CFCBB1AD9B85FE0C2 /* UILabelExtension.swift */; };
-		816598EA1A62ADC101217A27E6F299C1 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055548E8D036247A4F14AF9A73CDB9FC /* String+Extensions.swift */; };
-		81DD846B2FB93235A8B96CEC2A190ADB /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EEE3BD555003CC41AF0C3002B1D247 /* Rule.swift */; };
-		828BC186CB21C5D39088AB9911E54B7E /* Kumi-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50922D37F8095CEBA63BB1572CDE0B90 /* Kumi-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87988A357BCDCEA399A19B8DF35A2FE3 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54CDE52B8D52ED35C298A55080D68A /* TextAttributes.swift */; };
-		8B7D3D7B2EEF9E98540081474BDD051F /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535DE8EA9A2614D731D5F4A6B5124D5A /* NSAttributedString+Extensions.swift */; };
-		8D0D0ECF98740F20AC8A82C73DFD2950 /* Marker.h in Headers */ = {isa = PBXBuildFile; fileRef = FA1213760B6BADDF42EB8CD76B80A0B2 /* Marker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E4B9D93C54CCD029C3508AE3B363B14 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083A7029C959BAF7EBDF633BA8BAEBD /* CornerRadius.swift */; };
-		98752EFD94D688B71A0759F5E88CE38B /* TagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9CA8925D722FC462D0C0D3CAC42EB1 /* TagParser.swift */; };
-		99A714539D66288F8C60899EA0E66E96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED988B85AD7F9F040335CCC87415B9E /* SwiftyJSON.swift */; };
-		A8EC245B0B433C12653F20812EA636F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702389FDDA05DE8354A0741B483ED7BA /* Foundation.framework */; };
-		B415CBC13BF53E8055416F398CA4EA88 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E63156A17012D13FC4A59A0D88335 /* ColorTheme.swift */; };
-		BA085447F2381D7A920A18EBB12A9A77 /* LayerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA23F88774AAAAACA2BE18B168E1CA64 /* LayerTheme.swift */; };
-		C100648114C2968DB395A535DD95902A /* ColorSet+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E1434EB651D7C590B068D45654B610 /* ColorSet+JSON.swift */; };
-		C17E8C4F16E3DE06B20F3BC06EB2A0DD /* UIViewAnimationStyle+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49750E91C2D592048400F84C08007DCD /* UIViewAnimationStyle+JSON.swift */; };
-		C8162E285E0E719C067CE2108EC2CC56 /* Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4608D2D7AA7713BB2EC35381EF6C726E /* Markup.swift */; };
-		C865EE454779A8E0B50BA60D74E8EBE5 /* LayerStyle+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB006C5EDD8FA674E4693A86785EE /* LayerStyle+JSON.swift */; };
-		CCE4B43393B40ED0AE4A032AB0C7A8F4 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F34D31318FEE1AE84F8B1DE9C4F864CC /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D023EE8647B70B4142C48C6712764A05 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09B45B00B39F2C090417E3E37EA6E5 /* Marker.swift */; };
-		D22858133EAF75CA9F7A293B3B5A428F /* TextStyleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8B24BCC3FA7E60F9EC4C9FC205380 /* TextStyleSet.swift */; };
-		D48A78DDE2425EC36E6FD40B3DC3FE87 /* ShadowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A73264D9FF918F1ED1EA5FA34DF35 /* ShadowStyle.swift */; };
-		DEB956DD249913ED4F7D7C5FB691EA13 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A43C3EE7CF3743CA0EC62C907FB119 /* Font.swift */; };
-		E5576437B4190A58D36710D177F3C3F7 /* UIColor+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD85B53C5DF67F062A75419AA234B9 /* UIColor+JSON.swift */; };
-		EB05C3F95137BCCBC55E50D5E0E92FA6 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB118FA9181D91F00798723025FEBC2 /* UITextViewExtension.swift */; };
-		F797B3E7B2AD2322DE780158CD129DF3 /* TextStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10120D6C570BB04B0F76F23796AE3D2B /* TextStyle+Extensions.swift */; };
-		F807F46A39D51F82B666BA932F74BB5A /* CGSize+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB1FC9331D015560987B0DE42E2E82 /* CGSize+JSON.swift */; };
-		FAF0DA19A84372347892314DA3F251C1 /* LayerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BD04A96C8CC66E865FECE3D70BD645 /* LayerStyle.swift */; };
-		FC9355B8A58D4D1B357EA2A48617ED24 /* Marker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 389F90B218452DF7AF0126B819CA944C /* Marker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDBF30E69E757E34ACF81CD1ECB02434 /* CAMediaTimingFunction+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716128625DD037B059DE434B10DF6248 /* CAMediaTimingFunction+JSON.swift */; };
+		010FD9B692B73A9F1F7D80929B7A53FA /* GLTFShaderModifierSurface_alphaModeBlend.shader in Resources */ = {isa = PBXBuildFile; fileRef = 275C8D962F61F2E2A84313E56E1842B2 /* GLTFShaderModifierSurface_alphaModeBlend.shader */; };
+		05966862DF6A95888693AE3CD194A68E /* GLTFScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15569661A84245AE4695611FF33B7C /* GLTFScene.swift */; };
+		05BFF6332345F46D39505652AC8AEB72 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader in Resources */ = {isa = PBXBuildFile; fileRef = BDC7756123F61F5DBA922041C3CF5F14 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader */; };
+		0D5C0398DEDAD7D18336116A576D50B5 /* Pods-SamMitiAR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD468E76D05EF043E54353B13D3A66E9 /* Pods-SamMitiAR-dummy.m */; };
+		1B175FB12BC4DF407DD4436CA84F8346 /* GLTFMaterialOcclusionTextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E88ED3AB8893F018EC3D02CB6BA4E /* GLTFMaterialOcclusionTextureInfo.swift */; };
+		1ECA049998070EF8B831FF8BD77FB16B /* GLTFMeshPrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA68BE1E6F6E7E7561B76F0E1C37F32 /* GLTFMeshPrimitive.swift */; };
+		1F1071A1A7F0F918FB266E8FA7D9A245 /* GLTFAnimationChannelTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596C67F3C0F8BE9D2C5E52C5DB4E0D7 /* GLTFAnimationChannelTarget.swift */; };
+		27A6E38CD42914DCE419C2C97B8E4368 /* GLTFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40465E448E6311391369F80E1529805 /* GLTFExtension.swift */; };
+		2A40184B5C7BAAE7C172D31ED567B07F /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB116C9E1CBBC177E1F573B05C5889E1 /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */; };
+		2AE34732902EC277FEAB91045262A553 /* GLTFShaderModifierSurface.shader in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B65F2FD8DBFE58E05F90563B19B2D /* GLTFShaderModifierSurface.shader */; };
+		319B80A15BB916223BDEDE15B3CE4256 /* GLTFSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C8B1A0DBA56529CF0BC1F829D72044 /* GLTFSkin.swift */; };
+		40EA4069438257A2E4411CC8C4644E6E /* GLTFShaderModifierFragment_alphaCutoff.shader in Resources */ = {isa = PBXBuildFile; fileRef = A7322179BD497146228FB5F2D34F607A /* GLTFShaderModifierFragment_alphaCutoff.shader */; };
+		4411880F29F4A6E7122F86E1AD7571D4 /* GLTFFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16673ACF6DE87F6BBB3E81A328C781D4 /* GLTFFunctions.swift */; };
+		4642C9D77C36CC0B64E653177A9B7CBE /* GLTFCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78872E9812FE4909EB4057E9BF87B87 /* GLTFCamera.swift */; };
+		473E513C1D3E8ABF78441551E654D2AF /* GLTFAccessorSparseIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34458D43B276FE98BD85A9574FDEA75F /* GLTFAccessorSparseIndices.swift */; };
+		4785994ECC0CB6B404F8851F0FE168F2 /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFCB58ACA6F10872FC924A5732AE9C /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift */; };
+		4A2C2B9EF78774964E67592C62A611AA /* GLTFMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D08FCB26A8A9EAA77146FAE9EB3F69 /* GLTFMaterial.swift */; };
+		4A883D45C94C6B1AB68D05F0CC57126D /* GLTFGlTFChildOfRootProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23140607FF1931189D59964BA30D210B /* GLTFGlTFChildOfRootProperty.swift */; };
+		4EAD038C8868DFF475B2A4F5D65331C0 /* GLTFGlTFid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A3E25437D92964173C77B24F65DE6 /* GLTFGlTFid.swift */; };
+		51234C2B4F9E307953683748622234D6 /* GLTFMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24D490E9875602635FC21CB04A720C4 /* GLTFMesh.swift */; };
+		51AAB50FB93A61780F7D52496628D450 /* GLTFSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC16A8E57D4F7349D3DB8B921562731 /* GLTFSampler.swift */; };
+		5288F34C61917065D8D60776A136C218 /* GLTFMaterialNormalTextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEFF3CA4B7FCBCC7BF8C0E064AD9001 /* GLTFMaterialNormalTextureInfo.swift */; };
+		52D6CE57C71DEB6216F2C63C73F2FB19 /* GLTFAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC502C547BF261F2F39AB0845E008BA /* GLTFAccessor.swift */; };
+		599119EDB64575D2189C47A82DB8F449 /* GLTFGlTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437477FF969A80EC97D6BF9F42ECCF1B /* GLTFGlTF.swift */; };
+		61FA6E4BA667260A61F439CD0EBB13BE /* GLTFTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC3B2FA55CB4993DA94BEB062016ED /* GLTFTexture.swift */; };
+		645F67FC1A103F92427623DEAE93A310 /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B189974DE791C0A05DCB9A44CE73E8F /* ExtensionList.swift */; };
+		6722D82660757ABD74D391A3462500A2 /* GLTFBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01364737A5DB53C96A4E44093ABA9104 /* GLTFBuffer.swift */; };
+		6E71401C282DA1D3ED727B6F1AD38164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		720A2C0F9AAAAC18F082E581BE93BB74 /* GLTFAnimationSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5673969AF5553FFB8A46019F25B23 /* GLTFAnimationSampler.swift */; };
+		76CE13E05900D83407B9B81765B667A5 /* GLTFAnimationChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314192C5805F3ED4FF5558494288D63 /* GLTFAnimationChannel.swift */; };
+		77C26806921D48D48CA4FA3DCFF3E41D /* GLTFAccessorSparseValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4548B79795B00A6E111375A7E5C5D38 /* GLTFAccessorSparseValues.swift */; };
+		7D91BB52FC68A9DDFC2557EA77E17BA1 /* GLTFAccessorSparse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E10BC89423529909C03066B532488 /* GLTFAccessorSparse.swift */; };
+		813E5958F3A8DDED76E14B47B33AE4C3 /* GLTFSceneSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F93C7FA67E4088602D0A3E8BCFCB95 /* GLTFSceneSource.swift */; };
+		863456D097D006F4D1BBFF6472AD510B /* GLTFGlTFProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C93BF26FC374624AA1A5C9137AB4F6 /* GLTFGlTFProperty.swift */; };
+		87792A45ABCBCC0FE60DC1988C48EBA8 /* GLTFMaterialPbrMetallicRoughness.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9862C829A9122FD39464A0679952BD1 /* GLTFMaterialPbrMetallicRoughness.swift */; };
+		902AF4EB21040838B09708BD69208FA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		918D0346BDDE130C79199CC20248A7CB /* GLTFBufferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73635726685BA4840756D3F96083AA05 /* GLTFBufferView.swift */; };
+		93721E969950008B625B28DD9CA2504A /* GLTFCameraOrthographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0101FA2F9FF2C216C68ECEF1ABF4FCEF /* GLTFCameraOrthographic.swift */; };
+		9C0E60F21CA510B3C8F90D987A35DFCF /* GLTFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BC7E5962C050C38D1417973A81A2D /* GLTFImage.swift */; };
+		9FC9E4FF9905559EAF35A3BE0532BBE0 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader in Resources */ = {isa = PBXBuildFile; fileRef = 172C7C886E4C852569F60E73202CD3C1 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader */; };
+		A62FE2E3FC5A258F80E6ECA44222BB2E /* GLTFCameraPerspective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACB4190C930DF61C6E6105C10D81DB /* GLTFCameraPerspective.swift */; };
+		A8F5E298B10603FE0203F907CF94012F /* GLTFErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189BAB57926D8CC0C28A6E471306AA7 /* GLTFErrors.swift */; };
+		AC606EF0A0817A77F38F1314E15E0E2E /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader in Resources */ = {isa = PBXBuildFile; fileRef = C6B6B8BF3FFC0A29C549C9342CD2ED72 /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader */; };
+		B07F9C313C52302BE6DC1375B9AEE1C0 /* GLTFUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036B0DD03C3DE8073D19C12CD96278D /* GLTFUnarchiver.swift */; };
+		B16AB34DF3EA4D456C32172362F748B3 /* GLTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291CFE89B472FC9CA20A3E4AC1DA9880 /* GLTFAnimation.swift */; };
+		BEBD60918F6DED98E49FF400E9B2FE33 /* GLTFAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AEE7626B08A608BCC07C1051542D9 /* GLTFAsset.swift */; };
+		C4910B2ED6A7D2464AE95553D986A041 /* GLTFSceneKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E6E54DBD57DBDE824F3928F90CD925 /* GLTFSceneKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFB5C122056B27C33B7002F18C4B0B66 /* GLTFNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D163ABF21E27504CB91AD02BD88BAE5 /* GLTFNode.swift */; };
+		DE3CEDAFF1EF58BFFF360C422850FF81 /* GLTFTextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03AB4EA887B0A23420642A98D281BA /* GLTFTextureInfo.swift */; };
+		E479C77AD3C8806641F95C98887C9FA0 /* GLTFSceneKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 468291169A82E20AC727DCBA25AE7044 /* GLTFSceneKit-dummy.m */; };
+		E653F439AAFB8A0E5105D4E9EF5E110C /* GLTFTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4983A4405C564029A5D137D5BF8436 /* GLTFTypes.swift */; };
+		FA09937C8BAD374D395FE83DF8D8839D /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader in Resources */ = {isa = PBXBuildFile; fileRef = 5F170CA95ABC20A46E7058EE02EBE17E /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader */; };
+		FC2205056E1BDDFEE401B1152978379E /* GLTFExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19BC06AE6603D412B1371B6C545FC2 /* GLTFExtras.swift */; };
+		FFA654A6C64352A41BB87617E0535624 /* Pods-SamMitiAR-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E664713219C44E49FEAF29A303044F8 /* Pods-SamMitiAR-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1169A1BEBD3C8288462FB0E073D90ED8 /* PBXContainerItemProxy */ = {
+		90A41F2D1EAFA92E551722CA4D1FB58F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B6A77AF0775DF04A819C35ECD72880BB;
-			remoteInfo = SwiftyJSON;
-		};
-		2E254EBB4D456F60386416053B16B19C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 035BFD527E4F60CD4CB22AFB357D63F3;
-			remoteInfo = Kumi;
-		};
-		4DE1905EED4FDE9A38A8C2BED691EA4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 87FDCE64CE28EB0990BE1FE056C8512E;
-			remoteInfo = Marker;
-		};
-		7D4D10BACC88F12782741E415D874A5C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 87FDCE64CE28EB0990BE1FE056C8512E;
-			remoteInfo = Marker;
-		};
-		AB4C719156119DCB705A6A6B4E1A26FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B6A77AF0775DF04A819C35ECD72880BB;
-			remoteInfo = SwiftyJSON;
+			remoteGlobalIDString = 635D117D90401E8CF512E88988B1E8D8;
+			remoteInfo = GLTFSceneKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		055548E8D036247A4F14AF9A73CDB9FC /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Marker/Marker/Parser/String+Extensions.swift"; sourceTree = "<group>"; };
-		065B9F2A1B6FD2E75FCC4829699D7AB9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = Marker/Marker/Utility/Extensions/Button/UIButtonExtension.swift; sourceTree = "<group>"; };
-		077B10C64705CA62F3E5DD772F9B0FF0 /* CALayerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CALayerExtension.swift; path = Kumi/Core/Utility/CALayerExtension.swift; sourceTree = "<group>"; };
-		0E7A1589733767E1D8566E10F9B3EBED /* ColorSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorSet.swift; path = Kumi/Core/Color/ColorSet.swift; sourceTree = "<group>"; };
-		10120D6C570BB04B0F76F23796AE3D2B /* TextStyle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TextStyle+Extensions.swift"; path = "Marker/Marker/TextStyle+Extensions.swift"; sourceTree = "<group>"; };
-		1083A7029C959BAF7EBDF633BA8BAEBD /* CornerRadius.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CornerRadius.swift; path = Kumi/Core/Utility/CornerRadius.swift; sourceTree = "<group>"; };
-		117A5B6E8E877C48C0A7EA40665A3961 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		13F73EB104BEF4BEECC70E47DA632EC8 /* Kumi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kumi.modulemap; sourceTree = "<group>"; };
-		1AEB1FC9331D015560987B0DE42E2E82 /* CGSize+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGSize+JSON.swift"; path = "Kumi/Core/Utility/CGSize+JSON.swift"; sourceTree = "<group>"; };
-		1B8872CE0A3619FDE756E1557567F07D /* TextStyle+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TextStyle+JSON.swift"; path = "Kumi/Core/Utility/TextStyle+JSON.swift"; sourceTree = "<group>"; };
-		1D2D24CF296E025E173B7E956D394CAE /* ShadowTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowTheme.swift; path = Kumi/Core/Shadow/ShadowTheme.swift; sourceTree = "<group>"; };
-		1D6E63156A17012D13FC4A59A0D88335 /* ColorTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorTheme.swift; path = Kumi/Core/Color/ColorTheme.swift; sourceTree = "<group>"; };
-		1EB6F9AE10D195E81EDE22863F0B44E3 /* MarkdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownElement.swift; path = Marker/Marker/Parser/MarkdownElement.swift; sourceTree = "<group>"; };
-		220886DA7BCAD4E52D3370DFC08BFB4F /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Marker/Marker/Utility/Extensions/Color/Color.swift; sourceTree = "<group>"; };
-		24B9C1D8978C4F3B4A936E3D32996C0C /* AlphaValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlphaValue.swift; path = Kumi/Core/Utility/AlphaValue.swift; sourceTree = "<group>"; };
-		274F3DDC359985E11A4773896AAA3917 /* Marker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Marker-prefix.pch"; sourceTree = "<group>"; };
-		2B09B45B00B39F2C090417E3E37EA6E5 /* Marker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Marker.swift; path = Marker/Marker/Marker.swift; sourceTree = "<group>"; };
-		2C3EB006C5EDD8FA674E4693A86785EE /* LayerStyle+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LayerStyle+JSON.swift"; path = "Kumi/Core/Layer/LayerStyle+JSON.swift"; sourceTree = "<group>"; };
-		2EC482468ABC9387EC8D1C288B4BDCF1 /* LayerStyleSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerStyleSet.swift; path = Kumi/Core/Layer/LayerStyleSet.swift; sourceTree = "<group>"; };
-		2F9CA8925D722FC462D0C0D3CAC42EB1 /* TagParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagParser.swift; path = Marker/Marker/Parser/TagParser.swift; sourceTree = "<group>"; };
-		389F90B218452DF7AF0126B819CA944C /* Marker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Marker-umbrella.h"; sourceTree = "<group>"; };
-		4175B2038205F853FFDE14556FCCB018 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Marker/Marker/Parser/Element.swift; sourceTree = "<group>"; };
-		4608D2D7AA7713BB2EC35381EF6C726E /* Markup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Markup.swift; path = Marker/Marker/Markup.swift; sourceTree = "<group>"; };
-		4889CD42FE44979B1E073EBC75668F84 /* TextTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextTransform.swift; path = Marker/Marker/TextTransform.swift; sourceTree = "<group>"; };
-		49750E91C2D592048400F84C08007DCD /* UIViewAnimationStyle+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewAnimationStyle+JSON.swift"; path = "Kumi/Core/Animation/UIViewAnimationStyle+JSON.swift"; sourceTree = "<group>"; };
-		4E675E3AC16D0A0EB37AE5F83BADC69C /* Marker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Marker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F6A73264D9FF918F1ED1EA5FA34DF35 /* ShadowStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowStyle.swift; path = Kumi/Core/Shadow/ShadowStyle.swift; sourceTree = "<group>"; };
-		50922D37F8095CEBA63BB1572CDE0B90 /* Kumi-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kumi-umbrella.h"; sourceTree = "<group>"; };
-		535DE8EA9A2614D731D5F4A6B5124D5A /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extensions.swift"; path = "Marker/Marker/NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
-		53A43C3EE7CF3743CA0EC62C907FB119 /* Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Font.swift; path = Marker/Marker/Utility/Extensions/Font/Font.swift; sourceTree = "<group>"; };
-		54A45F5F22DE3D16598F56CF9FDC9B03 /* BorderWidth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BorderWidth.swift; path = Kumi/Core/Utility/BorderWidth.swift; sourceTree = "<group>"; };
-		569E29BC241CEDBF7B7B1682362C2B91 /* CABasicAnimationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CABasicAnimationStyle.swift; path = Kumi/Core/Animation/CABasicAnimationStyle.swift; sourceTree = "<group>"; };
-		575693D0221277AA67267BF1053B1EA5 /* LayerStyleSet+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LayerStyleSet+JSON.swift"; path = "Kumi/Core/Layer/LayerStyleSet+JSON.swift"; sourceTree = "<group>"; };
-		58659929A7B7AE7C843933F13714B55D /* SwiftyJSONHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSONHelper.swift; path = Kumi/Core/Utility/SwiftyJSONHelper.swift; sourceTree = "<group>"; };
-		5B1D8CB89920DB9952BDD44E21ABB103 /* Token.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Marker/Marker/Parser/Token.swift; sourceTree = "<group>"; };
-		5E6F5E666F7730D18BD4D1BBC0079194 /* Marker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Marker.framework; path = Marker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		685F9331D910B7E06BF93DBE32D2981E /* Pods-SamMitiAR-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SamMitiAR-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6C13183DFD29EE74F589FBEA6DECC8C9 /* JSONHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = Kumi/Core/Utility/JSONHelper.swift; sourceTree = "<group>"; };
-		6E2A584E3E731975CE162DAEE74CBA27 /* Marker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Marker.xcconfig; sourceTree = "<group>"; };
-		6E7852A8B3C9BA73620A9B868433FFF3 /* AnimationDuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationDuration.swift; path = Kumi/Core/Utility/AnimationDuration.swift; sourceTree = "<group>"; };
-		702389FDDA05DE8354A0741B483ED7BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		716128625DD037B059DE434B10DF6248 /* CAMediaTimingFunction+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+JSON.swift"; path = "Kumi/Core/Utility/CAMediaTimingFunction+JSON.swift"; sourceTree = "<group>"; };
-		74BD04A96C8CC66E865FECE3D70BD645 /* LayerStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerStyle.swift; path = Kumi/Core/Layer/LayerStyle.swift; sourceTree = "<group>"; };
-		753816293F473D409E0645FF04BCE3EC /* Pods-SamMitiAR-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SamMitiAR-resources.sh"; sourceTree = "<group>"; };
-		78EEE3BD555003CC41AF0C3002B1D247 /* Rule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rule.swift; path = Marker/Marker/Parser/Rule.swift; sourceTree = "<group>"; };
-		7955118126C6F49CFCBB1AD9B85FE0C2 /* UILabelExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Marker/Marker/Utility/Extensions/Label/UILabelExtension.swift; sourceTree = "<group>"; };
-		7C54CDE52B8D52ED35C298A55080D68A /* TextAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAttributes.swift; path = Marker/Marker/TextAttributes.swift; sourceTree = "<group>"; };
-		7CBF8958BBB582334F3E729E26CEDA39 /* Kumi-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kumi-prefix.pch"; sourceTree = "<group>"; };
-		813596AA361BA45B965A386299655B44 /* Pods-SamMitiAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMitiAR.release.xcconfig"; sourceTree = "<group>"; };
-		85DCEFEC9F74618E0F307D0A3128B3BD /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Kumi/Core/Utility/UIViewExtension.swift; sourceTree = "<group>"; };
-		8AF4A6E7CD9A7D503A5DE95503891EDC /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D9C88049CAC9FAE37FDEFB69965668B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F36747222565037704C683EF9DF2709 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		91DE2534CBB07AC1CD998BA770AFA67C /* CABasicAnimationStyle+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CABasicAnimationStyle+JSON.swift"; path = "Kumi/Core/Animation/CABasicAnimationStyle+JSON.swift"; sourceTree = "<group>"; };
+		00C5673969AF5553FFB8A46019F25B23 /* GLTFAnimationSampler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimationSampler.swift; path = Source/Common/schema/GLTFAnimationSampler.swift; sourceTree = "<group>"; };
+		0101FA2F9FF2C216C68ECEF1ABF4FCEF /* GLTFCameraOrthographic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFCameraOrthographic.swift; path = Source/Common/schema/GLTFCameraOrthographic.swift; sourceTree = "<group>"; };
+		01364737A5DB53C96A4E44093ABA9104 /* GLTFBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFBuffer.swift; path = Source/Common/schema/GLTFBuffer.swift; sourceTree = "<group>"; };
+		09C8B1A0DBA56529CF0BC1F829D72044 /* GLTFSkin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFSkin.swift; path = Source/Common/schema/GLTFSkin.swift; sourceTree = "<group>"; };
+		0A03AB4EA887B0A23420642A98D281BA /* GLTFTextureInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFTextureInfo.swift; path = Source/Common/schema/GLTFTextureInfo.swift; sourceTree = "<group>"; };
+		14A870D05E9C75D4C87EC0B55C9547A8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16673ACF6DE87F6BBB3E81A328C781D4 /* GLTFFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFFunctions.swift; path = Source/Common/GLTFFunctions.swift; sourceTree = "<group>"; };
+		172C7C886E4C852569F60E73202CD3C1 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader; sourceTree = "<group>"; };
+		1B15569661A84245AE4695611FF33B7C /* GLTFScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFScene.swift; path = Source/Common/schema/GLTFScene.swift; sourceTree = "<group>"; };
+		23140607FF1931189D59964BA30D210B /* GLTFGlTFChildOfRootProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTFChildOfRootProperty.swift; path = Source/Common/schema/GLTFGlTFChildOfRootProperty.swift; sourceTree = "<group>"; };
+		23ACB4190C930DF61C6E6105C10D81DB /* GLTFCameraPerspective.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFCameraPerspective.swift; path = Source/Common/schema/GLTFCameraPerspective.swift; sourceTree = "<group>"; };
+		24F93C7FA67E4088602D0A3E8BCFCB95 /* GLTFSceneSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFSceneSource.swift; path = Source/Common/GLTFSceneSource.swift; sourceTree = "<group>"; };
+		275C8D962F61F2E2A84313E56E1842B2 /* GLTFShaderModifierSurface_alphaModeBlend.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_alphaModeBlend.shader; path = Source/Common/GLTFShaderModifierSurface_alphaModeBlend.shader; sourceTree = "<group>"; };
+		291CFE89B472FC9CA20A3E4AC1DA9880 /* GLTFAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimation.swift; path = Source/Common/schema/GLTFAnimation.swift; sourceTree = "<group>"; };
+		2A7F489AA17EE8819644AB03298F1EE0 /* Pods-SamMitiAR-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SamMitiAR-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2A9218812026F08F009FC87E7090EB50 /* Pods-SamMitiAR-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SamMitiAR-acknowledgements.plist"; sourceTree = "<group>"; };
+		2DEFF3CA4B7FCBCC7BF8C0E064AD9001 /* GLTFMaterialNormalTextureInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterialNormalTextureInfo.swift; path = Source/Common/schema/GLTFMaterialNormalTextureInfo.swift; sourceTree = "<group>"; };
+		34458D43B276FE98BD85A9574FDEA75F /* GLTFAccessorSparseIndices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessorSparseIndices.swift; path = Source/Common/schema/GLTFAccessorSparseIndices.swift; sourceTree = "<group>"; };
+		384A3E25437D92964173C77B24F65DE6 /* GLTFGlTFid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTFid.swift; path = Source/Common/schema/GLTFGlTFid.swift; sourceTree = "<group>"; };
+		3B8AEE7626B08A608BCC07C1051542D9 /* GLTFAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAsset.swift; path = Source/Common/schema/GLTFAsset.swift; sourceTree = "<group>"; };
+		3B9BE196CDE27EE997C6A566805EB4E8 /* GLTFSceneKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GLTFSceneKit.modulemap; sourceTree = "<group>"; };
+		3F4B65F2FD8DBFE58E05F90563B19B2D /* GLTFShaderModifierSurface.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface.shader; path = Source/Common/GLTFShaderModifierSurface.shader; sourceTree = "<group>"; };
+		437477FF969A80EC97D6BF9F42ECCF1B /* GLTFGlTF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTF.swift; path = Source/Common/schema/GLTFGlTF.swift; sourceTree = "<group>"; };
+		468291169A82E20AC727DCBA25AE7044 /* GLTFSceneKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GLTFSceneKit-dummy.m"; sourceTree = "<group>"; };
+		4A19BC06AE6603D412B1371B6C545FC2 /* GLTFExtras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFExtras.swift; path = Source/Common/schema/GLTFExtras.swift; sourceTree = "<group>"; };
+		4C89521063F61C587B678ED42C9AA231 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GLTFSceneKit.framework; path = GLTFSceneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E664713219C44E49FEAF29A303044F8 /* Pods-SamMitiAR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SamMitiAR-umbrella.h"; sourceTree = "<group>"; };
+		4FA68BE1E6F6E7E7561B76F0E1C37F32 /* GLTFMeshPrimitive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMeshPrimitive.swift; path = Source/Common/schema/GLTFMeshPrimitive.swift; sourceTree = "<group>"; };
+		50E6E54DBD57DBDE824F3928F90CD925 /* GLTFSceneKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLTFSceneKit-umbrella.h"; sourceTree = "<group>"; };
+		5B189974DE791C0A05DCB9A44CE73E8F /* ExtensionList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionList.swift; path = Source/Common/schema/extensions/ExtensionList.swift; sourceTree = "<group>"; };
+		5F170CA95ABC20A46E7058EE02EBE17E /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GLTFSceneKit.xcconfig; sourceTree = "<group>"; };
+		6C5E10BC89423529909C03066B532488 /* GLTFAccessorSparse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessorSparse.swift; path = Source/Common/schema/GLTFAccessorSparse.swift; sourceTree = "<group>"; };
+		6DEC3B2FA55CB4993DA94BEB062016ED /* GLTFTexture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFTexture.swift; path = Source/Common/schema/GLTFTexture.swift; sourceTree = "<group>"; };
+		7036E3F0FDB5B4CE7702DD0DA17EB8AC /* Pods-SamMitiAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMitiAR.debug.xcconfig"; sourceTree = "<group>"; };
+		73635726685BA4840756D3F96083AA05 /* GLTFBufferView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFBufferView.swift; path = Source/Common/schema/GLTFBufferView.swift; sourceTree = "<group>"; };
+		74D60FDBCEF84E5A9C04CB758284A808 /* Pods_SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SamMitiAR.framework; path = "Pods-SamMitiAR.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B63C52A7511617AF64AA1A6F60FFA5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ACF50DE06057D938C60F5AB76966B09 /* GLTFSceneKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLTFSceneKit-prefix.pch"; sourceTree = "<group>"; };
+		8D163ABF21E27504CB91AD02BD88BAE5 /* GLTFNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFNode.swift; path = Source/Common/schema/GLTFNode.swift; sourceTree = "<group>"; };
+		9036B0DD03C3DE8073D19C12CD96278D /* GLTFUnarchiver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFUnarchiver.swift; path = Source/Common/GLTFUnarchiver.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9923FDB125CB7F7331202C443BAAECF9 /* Pods-SamMitiAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMitiAR.debug.xcconfig"; sourceTree = "<group>"; };
-		9DB118FA9181D91F00798723025FEBC2 /* UITextViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextViewExtension.swift; path = Marker/Marker/Utility/Extensions/TextView/UITextViewExtension.swift; sourceTree = "<group>"; };
-		9E2E6F3E7F31FD23196D05C1997137CD /* ElementParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementParser.swift; path = Marker/Marker/Parser/ElementParser.swift; sourceTree = "<group>"; };
-		A2E1434EB651D7C590B068D45654B610 /* ColorSet+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ColorSet+JSON.swift"; path = "Kumi/Core/Color/ColorSet+JSON.swift"; sourceTree = "<group>"; };
-		A674C30352BD3F188BF9F406E93D247F /* Marker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Marker-dummy.m"; sourceTree = "<group>"; };
-		A84B2845AAF1B6DA9F274E22DFCE05D0 /* ShadowStyle+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ShadowStyle+JSON.swift"; path = "Kumi/Core/Shadow/ShadowStyle+JSON.swift"; sourceTree = "<group>"; };
-		AB42C59F0E8D123A3393FDB2D24F1AF5 /* Pods-SamMitiAR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SamMitiAR-dummy.m"; sourceTree = "<group>"; };
-		ABD1DDE725DBD630AD26E28FD363807B /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = Marker/Marker/Parser/Tag.swift; sourceTree = "<group>"; };
-		AC5ECED0B1484EE3D86D065092DC3540 /* TextTransform+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TextTransform+Extensions.swift"; path = "Marker/Marker/TextTransform+Extensions.swift"; sourceTree = "<group>"; };
-		AC907CCEB9C48D214888A9C0F36A80D0 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextFieldExtension.swift; path = Marker/Marker/Utility/Extensions/TextField/UITextFieldExtension.swift; sourceTree = "<group>"; };
-		AE6C1821A2A98E76E6861B02D89A55A4 /* Kumi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kumi.framework; path = Kumi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA23F88774AAAAACA2BE18B168E1CA64 /* LayerTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTheme.swift; path = Kumi/Core/Layer/LayerTheme.swift; sourceTree = "<group>"; };
-		BB564BC41AC3E99843D502D58E143EF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1F7CB2DDCFCD56D9B4D7318497EA3FE /* Pods_SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SamMitiAR.framework; path = "Pods-SamMitiAR.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C32F2768E2437CA6A1D5762C068633AF /* UIViewAnimationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewAnimationStyle.swift; path = Kumi/Core/Animation/UIViewAnimationStyle.swift; sourceTree = "<group>"; };
-		C60DF3D85B9063B253A6CC4F21306583 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C61124CB96E7D105B0E8FC509A77A777 /* Utility+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Utility+JSON.swift"; path = "Kumi/Core/Utility/Utility+JSON.swift"; sourceTree = "<group>"; };
-		C78E0B55A6AE97E9D5C4CD13CE679603 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB9C75085F37B9F44690DFC35C813084 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Kumi/Core/Utility/UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		CF0C71530000A88174AF220DAADDF527 /* Pods-SamMitiAR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SamMitiAR.modulemap"; sourceTree = "<group>"; };
-		CF3326EF39D9F3563D11FDE70203B774 /* AnimationTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTheme.swift; path = Kumi/Core/Animation/AnimationTheme.swift; sourceTree = "<group>"; };
-		D5B659C3B91C0841114137D0C3C45BBE /* Kumi-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kumi-dummy.m"; sourceTree = "<group>"; };
-		D6D6AFC57F3DA90672D380315F330430 /* Pods-SamMitiAR-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SamMitiAR-acknowledgements.plist"; sourceTree = "<group>"; };
-		DE941EC60B23CB336BA2F71F43D8432E /* TextStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextStyle.swift; path = Marker/Marker/TextStyle.swift; sourceTree = "<group>"; };
-		DEB5BB5A5C82EB2B43D913133A1FF4D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DED988B85AD7F9F040335CCC87415B9E /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		E0EF8D07B2A4F9C0F8DEA7136A4904C2 /* Pods-SamMitiAR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SamMitiAR-umbrella.h"; sourceTree = "<group>"; };
-		E2CD85B53C5DF67F062A75419AA234B9 /* UIColor+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+JSON.swift"; path = "Kumi/Core/Utility/UIColor+JSON.swift"; sourceTree = "<group>"; };
-		E2E14499571BEAF62EBF60D5F203AEA5 /* FontTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontTheme.swift; path = Kumi/Core/Font/FontTheme.swift; sourceTree = "<group>"; };
-		E3D2F6C7A7A14B44A3FF1EE5A4970EA2 /* CATransform3D+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CATransform3D+JSON.swift"; path = "Kumi/Core/Utility/CATransform3D+JSON.swift"; sourceTree = "<group>"; };
-		E596EE165F6E2BB6DCDC4895F1D6D4C5 /* Marker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Marker.modulemap; sourceTree = "<group>"; };
-		E7D0CDE77F28F59CF5C9C9702A06814D /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
-		E7D60D5CFC04024B4E3BD5153761F359 /* Kumi.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kumi.xcconfig; sourceTree = "<group>"; };
-		E898D3B3911CC6133B4D00045E7B1684 /* Symbol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Symbol.swift; path = Marker/Marker/Parser/Symbol.swift; sourceTree = "<group>"; };
-		E9F9A8FB126BE190B38801FE51B4C6F1 /* TokenParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TokenParser.swift; path = Marker/Marker/Parser/TokenParser.swift; sourceTree = "<group>"; };
-		EBB8B24BCC3FA7E60F9EC4C9FC205380 /* TextStyleSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextStyleSet.swift; path = Kumi/Core/Font/TextStyleSet.swift; sourceTree = "<group>"; };
-		F34D31318FEE1AE84F8B1DE9C4F864CC /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		F5660E74495CB3625B2858EB79653E92 /* Kumi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kumi.swift; path = Kumi/Core/Kumi.swift; sourceTree = "<group>"; };
-		F8633B02304D84F888C51810FAA420E1 /* MarkdownParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownParser.swift; path = Marker/Marker/Parser/MarkdownParser.swift; sourceTree = "<group>"; };
-		FA1213760B6BADDF42EB8CD76B80A0B2 /* Marker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Marker.h; path = Marker/Marker/Marker.h; sourceTree = "<group>"; };
-		FD11B62B244134381E3AA96C18F59430 /* LineBreakMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineBreakMode.swift; path = Marker/Marker/Utility/Extensions/LineBreakMode/LineBreakMode.swift; sourceTree = "<group>"; };
-		FD4502D1774750F801AC690BBFD14DD3 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		9849D944ABFE9C3EA3F7F7465E592B40 /* Pods-SamMitiAR-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SamMitiAR-resources.sh"; sourceTree = "<group>"; };
+		A189BAB57926D8CC0C28A6E471306AA7 /* GLTFErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFErrors.swift; path = Source/Common/GLTFErrors.swift; sourceTree = "<group>"; };
+		A40465E448E6311391369F80E1529805 /* GLTFExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFExtension.swift; path = Source/Common/schema/GLTFExtension.swift; sourceTree = "<group>"; };
+		A6D4622E1450F4ECF3EECC7CA2F3A120 /* Pods-SamMitiAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMitiAR.release.xcconfig"; sourceTree = "<group>"; };
+		A7322179BD497146228FB5F2D34F607A /* GLTFShaderModifierFragment_alphaCutoff.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierFragment_alphaCutoff.shader; path = Source/Common/GLTFShaderModifierFragment_alphaCutoff.shader; sourceTree = "<group>"; };
+		AB116C9E1CBBC177E1F573B05C5889E1 /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift; sourceTree = "<group>"; };
+		AB4BC7E5962C050C38D1417973A81A2D /* GLTFImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFImage.swift; path = Source/Common/schema/GLTFImage.swift; sourceTree = "<group>"; };
+		B6AFCB58ACA6F10872FC924A5732AE9C /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift; path = Source/Common/schema/extensions/KHR_materials_common/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift; sourceTree = "<group>"; };
+		BA4983A4405C564029A5D137D5BF8436 /* GLTFTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFTypes.swift; path = Source/Common/GLTFTypes.swift; sourceTree = "<group>"; };
+		BD468E76D05EF043E54353B13D3A66E9 /* Pods-SamMitiAR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SamMitiAR-dummy.m"; sourceTree = "<group>"; };
+		BDC7756123F61F5DBA922041C3CF5F14 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_pbrSpecularGlossiness.shader; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFShaderModifierSurface_pbrSpecularGlossiness.shader; sourceTree = "<group>"; };
+		C6B6B8BF3FFC0A29C549C9342CD2ED72 /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_doubleSidedWorkaround.shader; path = Source/Common/GLTFShaderModifierSurface_doubleSidedWorkaround.shader; sourceTree = "<group>"; };
+		C9862C829A9122FD39464A0679952BD1 /* GLTFMaterialPbrMetallicRoughness.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterialPbrMetallicRoughness.swift; path = Source/Common/schema/GLTFMaterialPbrMetallicRoughness.swift; sourceTree = "<group>"; };
+		CBC16A8E57D4F7349D3DB8B921562731 /* GLTFSampler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFSampler.swift; path = Source/Common/schema/GLTFSampler.swift; sourceTree = "<group>"; };
+		D02E88ED3AB8893F018EC3D02CB6BA4E /* GLTFMaterialOcclusionTextureInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterialOcclusionTextureInfo.swift; path = Source/Common/schema/GLTFMaterialOcclusionTextureInfo.swift; sourceTree = "<group>"; };
+		D24D490E9875602635FC21CB04A720C4 /* GLTFMesh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMesh.swift; path = Source/Common/schema/GLTFMesh.swift; sourceTree = "<group>"; };
+		D51A743EE50DB96F4C0456C2C2B352D6 /* Pods-SamMitiAR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SamMitiAR.modulemap"; sourceTree = "<group>"; };
+		E314192C5805F3ED4FF5558494288D63 /* GLTFAnimationChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimationChannel.swift; path = Source/Common/schema/GLTFAnimationChannel.swift; sourceTree = "<group>"; };
+		E4548B79795B00A6E111375A7E5C5D38 /* GLTFAccessorSparseValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessorSparseValues.swift; path = Source/Common/schema/GLTFAccessorSparseValues.swift; sourceTree = "<group>"; };
+		F596C67F3C0F8BE9D2C5E52C5DB4E0D7 /* GLTFAnimationChannelTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimationChannelTarget.swift; path = Source/Common/schema/GLTFAnimationChannelTarget.swift; sourceTree = "<group>"; };
+		F6D08FCB26A8A9EAA77146FAE9EB3F69 /* GLTFMaterial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterial.swift; path = Source/Common/schema/GLTFMaterial.swift; sourceTree = "<group>"; };
+		F78872E9812FE4909EB4057E9BF87B87 /* GLTFCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFCamera.swift; path = Source/Common/schema/GLTFCamera.swift; sourceTree = "<group>"; };
+		F8C93BF26FC374624AA1A5C9137AB4F6 /* GLTFGlTFProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTFProperty.swift; path = Source/Common/schema/GLTFGlTFProperty.swift; sourceTree = "<group>"; };
+		FBC502C547BF261F2F39AB0845E008BA /* GLTFAccessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessor.swift; path = Source/Common/schema/GLTFAccessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3EA4C35E3F82BC4E003A35FB6FB86713 /* Frameworks */ = {
+		763953BA2BD524B814A0C0E1E8EF29F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F833F2738761F89E36C92BDFFF934F1 /* Foundation.framework in Frameworks */,
+				902AF4EB21040838B09708BD69208FA5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DAF1F07BABB24C2D95654D4370BB0A6 /* Frameworks */ = {
+		7A782AD2DCFFC212E7AC55580372ABA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E371029B76616B7FB5B3B4377723C95 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A353A3142BDF98A49A9354034D11FF13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8EC245B0B433C12653F20812EA636F9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F44391AAB54EF658CD3D4019F7B73F8F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DAE98CA055A960468DAB8F253DE71FB /* Foundation.framework in Frameworks */,
-				2083C1238F704FC656F18ACBA30DB525 /* Marker.framework in Frameworks */,
-				183BE44F103F850084C8216E7F9777F7 /* SwiftyJSON.framework in Frameworks */,
+				6E71401C282DA1D3ED727B6F1AD38164 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E80A148FF81B44893D44B0CD4308E6C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8FAA40F09E150033E0E57336E68F04CF /* Kumi */,
-				C9C9BB8AFB8C25B453C9A10574474DBE /* Marker */,
-				DF2D312282DE3B739F42D65CEE1D88A5 /* SwiftyJSON */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		0EA0B696AE9F1807720291725F516213 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E77B4271A14041256F8ECD1EF688069C /* Pods-SamMitiAR */,
+				B3D91C9F3F90CEB9133CF4EB3E2EDD83 /* Pods-SamMitiAR */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		5D0CE7BC796B80267C58A37529FD187B /* Support Files */ = {
+		5E913E371759DEFB53990E813AFAB810 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BB564BC41AC3E99843D502D58E143EF4 /* Info.plist */,
-				FD4502D1774750F801AC690BBFD14DD3 /* SwiftyJSON.modulemap */,
-				E7D0CDE77F28F59CF5C9C9702A06814D /* SwiftyJSON.xcconfig */,
-				117A5B6E8E877C48C0A7EA40665A3961 /* SwiftyJSON-dummy.m */,
-				8F36747222565037704C683EF9DF2709 /* SwiftyJSON-prefix.pch */,
-				F34D31318FEE1AE84F8B1DE9C4F864CC /* SwiftyJSON-umbrella.h */,
+				3B9BE196CDE27EE997C6A566805EB4E8 /* GLTFSceneKit.modulemap */,
+				671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */,
+				468291169A82E20AC727DCBA25AE7044 /* GLTFSceneKit-dummy.m */,
+				8ACF50DE06057D938C60F5AB76966B09 /* GLTFSceneKit-prefix.pch */,
+				50E6E54DBD57DBDE824F3928F90CD925 /* GLTFSceneKit-umbrella.h */,
+				76B63C52A7511617AF64AA1A6F60FFA5 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
+			path = "../Target Support Files/GLTFSceneKit";
 			sourceTree = "<group>";
 		};
-		7224C1FD16B8831EB798A6558F0D879E /* Products */ = {
+		7B2DAAB3954E8490F675D4EEAAE97E4E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C1821A2A98E76E6861B02D89A55A4 /* Kumi.framework */,
-				5E6F5E666F7730D18BD4D1BBC0079194 /* Marker.framework */,
-				C1F7CB2DDCFCD56D9B4D7318497EA3FE /* Pods_SamMitiAR.framework */,
-				8AF4A6E7CD9A7D503A5DE95503891EDC /* SwiftyJSON.framework */,
+				A7322179BD497146228FB5F2D34F607A /* GLTFShaderModifierFragment_alphaCutoff.shader */,
+				3F4B65F2FD8DBFE58E05F90563B19B2D /* GLTFShaderModifierSurface.shader */,
+				275C8D962F61F2E2A84313E56E1842B2 /* GLTFShaderModifierSurface_alphaModeBlend.shader */,
+				C6B6B8BF3FFC0A29C549C9342CD2ED72 /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader */,
+				BDC7756123F61F5DBA922041C3CF5F14 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader */,
+				5F170CA95ABC20A46E7058EE02EBE17E /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader */,
+				172C7C886E4C852569F60E73202CD3C1 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		74A0591AEF08156A61FB34D32CF16C77 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				702389FDDA05DE8354A0741B483ED7BA /* Foundation.framework */,
-			);
-			name = iOS;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				CDB399121C4BAAF78EA020A80B88EA45 /* Frameworks */,
-				0E80A148FF81B44893D44B0CD4308E6C /* Pods */,
-				7224C1FD16B8831EB798A6558F0D879E /* Products */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C51ADE00FF7DCAEEC38DF8A6123D0F1A /* Pods */,
+				9EDA4540C78223FFA468F16BE4EC1ABD /* Products */,
 				0EA0B696AE9F1807720291725F516213 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8FAA40F09E150033E0E57336E68F04CF /* Kumi */ = {
+		9EDA4540C78223FFA468F16BE4EC1ABD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24B9C1D8978C4F3B4A936E3D32996C0C /* AlphaValue.swift */,
-				6E7852A8B3C9BA73620A9B868433FFF3 /* AnimationDuration.swift */,
-				CF3326EF39D9F3563D11FDE70203B774 /* AnimationTheme.swift */,
-				54A45F5F22DE3D16598F56CF9FDC9B03 /* BorderWidth.swift */,
-				569E29BC241CEDBF7B7B1682362C2B91 /* CABasicAnimationStyle.swift */,
-				91DE2534CBB07AC1CD998BA770AFA67C /* CABasicAnimationStyle+JSON.swift */,
-				077B10C64705CA62F3E5DD772F9B0FF0 /* CALayerExtension.swift */,
-				716128625DD037B059DE434B10DF6248 /* CAMediaTimingFunction+JSON.swift */,
-				E3D2F6C7A7A14B44A3FF1EE5A4970EA2 /* CATransform3D+JSON.swift */,
-				1AEB1FC9331D015560987B0DE42E2E82 /* CGSize+JSON.swift */,
-				0E7A1589733767E1D8566E10F9B3EBED /* ColorSet.swift */,
-				A2E1434EB651D7C590B068D45654B610 /* ColorSet+JSON.swift */,
-				1D6E63156A17012D13FC4A59A0D88335 /* ColorTheme.swift */,
-				1083A7029C959BAF7EBDF633BA8BAEBD /* CornerRadius.swift */,
-				E2E14499571BEAF62EBF60D5F203AEA5 /* FontTheme.swift */,
-				6C13183DFD29EE74F589FBEA6DECC8C9 /* JSONHelper.swift */,
-				F5660E74495CB3625B2858EB79653E92 /* Kumi.swift */,
-				74BD04A96C8CC66E865FECE3D70BD645 /* LayerStyle.swift */,
-				2C3EB006C5EDD8FA674E4693A86785EE /* LayerStyle+JSON.swift */,
-				2EC482468ABC9387EC8D1C288B4BDCF1 /* LayerStyleSet.swift */,
-				575693D0221277AA67267BF1053B1EA5 /* LayerStyleSet+JSON.swift */,
-				BA23F88774AAAAACA2BE18B168E1CA64 /* LayerTheme.swift */,
-				4F6A73264D9FF918F1ED1EA5FA34DF35 /* ShadowStyle.swift */,
-				A84B2845AAF1B6DA9F274E22DFCE05D0 /* ShadowStyle+JSON.swift */,
-				1D2D24CF296E025E173B7E956D394CAE /* ShadowTheme.swift */,
-				58659929A7B7AE7C843933F13714B55D /* SwiftyJSONHelper.swift */,
-				1B8872CE0A3619FDE756E1557567F07D /* TextStyle+JSON.swift */,
-				EBB8B24BCC3FA7E60F9EC4C9FC205380 /* TextStyleSet.swift */,
-				CB9C75085F37B9F44690DFC35C813084 /* UIColor+Extensions.swift */,
-				E2CD85B53C5DF67F062A75419AA234B9 /* UIColor+JSON.swift */,
-				C32F2768E2437CA6A1D5762C068633AF /* UIViewAnimationStyle.swift */,
-				49750E91C2D592048400F84C08007DCD /* UIViewAnimationStyle+JSON.swift */,
-				85DCEFEC9F74618E0F307D0A3128B3BD /* UIViewExtension.swift */,
-				C61124CB96E7D105B0E8FC509A77A777 /* Utility+JSON.swift */,
-				E6DB2B45B696D5ED93DC3E3DCB0E71D1 /* Support Files */,
+				4C89521063F61C587B678ED42C9AA231 /* GLTFSceneKit.framework */,
+				74D60FDBCEF84E5A9C04CB758284A808 /* Pods_SamMitiAR.framework */,
 			);
-			name = Kumi;
-			path = Kumi;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		C03B348B8F97838488B7BD5771F12C30 /* Support Files */ = {
+		B3D91C9F3F90CEB9133CF4EB3E2EDD83 /* Pods-SamMitiAR */ = {
 			isa = PBXGroup;
 			children = (
-				DEB5BB5A5C82EB2B43D913133A1FF4D2 /* Info.plist */,
-				E596EE165F6E2BB6DCDC4895F1D6D4C5 /* Marker.modulemap */,
-				6E2A584E3E731975CE162DAEE74CBA27 /* Marker.xcconfig */,
-				A674C30352BD3F188BF9F406E93D247F /* Marker-dummy.m */,
-				274F3DDC359985E11A4773896AAA3917 /* Marker-prefix.pch */,
-				389F90B218452DF7AF0126B819CA944C /* Marker-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Marker";
-			sourceTree = "<group>";
-		};
-		C9C9BB8AFB8C25B453C9A10574474DBE /* Marker */ = {
-			isa = PBXGroup;
-			children = (
-				220886DA7BCAD4E52D3370DFC08BFB4F /* Color.swift */,
-				4175B2038205F853FFDE14556FCCB018 /* Element.swift */,
-				9E2E6F3E7F31FD23196D05C1997137CD /* ElementParser.swift */,
-				53A43C3EE7CF3743CA0EC62C907FB119 /* Font.swift */,
-				FD11B62B244134381E3AA96C18F59430 /* LineBreakMode.swift */,
-				1EB6F9AE10D195E81EDE22863F0B44E3 /* MarkdownElement.swift */,
-				F8633B02304D84F888C51810FAA420E1 /* MarkdownParser.swift */,
-				FA1213760B6BADDF42EB8CD76B80A0B2 /* Marker.h */,
-				2B09B45B00B39F2C090417E3E37EA6E5 /* Marker.swift */,
-				4608D2D7AA7713BB2EC35381EF6C726E /* Markup.swift */,
-				535DE8EA9A2614D731D5F4A6B5124D5A /* NSAttributedString+Extensions.swift */,
-				78EEE3BD555003CC41AF0C3002B1D247 /* Rule.swift */,
-				055548E8D036247A4F14AF9A73CDB9FC /* String+Extensions.swift */,
-				E898D3B3911CC6133B4D00045E7B1684 /* Symbol.swift */,
-				ABD1DDE725DBD630AD26E28FD363807B /* Tag.swift */,
-				2F9CA8925D722FC462D0C0D3CAC42EB1 /* TagParser.swift */,
-				7C54CDE52B8D52ED35C298A55080D68A /* TextAttributes.swift */,
-				DE941EC60B23CB336BA2F71F43D8432E /* TextStyle.swift */,
-				10120D6C570BB04B0F76F23796AE3D2B /* TextStyle+Extensions.swift */,
-				4889CD42FE44979B1E073EBC75668F84 /* TextTransform.swift */,
-				AC5ECED0B1484EE3D86D065092DC3540 /* TextTransform+Extensions.swift */,
-				5B1D8CB89920DB9952BDD44E21ABB103 /* Token.swift */,
-				E9F9A8FB126BE190B38801FE51B4C6F1 /* TokenParser.swift */,
-				065B9F2A1B6FD2E75FCC4829699D7AB9 /* UIButtonExtension.swift */,
-				7955118126C6F49CFCBB1AD9B85FE0C2 /* UILabelExtension.swift */,
-				AC907CCEB9C48D214888A9C0F36A80D0 /* UITextFieldExtension.swift */,
-				9DB118FA9181D91F00798723025FEBC2 /* UITextViewExtension.swift */,
-				C03B348B8F97838488B7BD5771F12C30 /* Support Files */,
-			);
-			name = Marker;
-			path = Marker;
-			sourceTree = "<group>";
-		};
-		CDB399121C4BAAF78EA020A80B88EA45 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4E675E3AC16D0A0EB37AE5F83BADC69C /* Marker.framework */,
-				C78E0B55A6AE97E9D5C4CD13CE679603 /* SwiftyJSON.framework */,
-				74A0591AEF08156A61FB34D32CF16C77 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DF2D312282DE3B739F42D65CEE1D88A5 /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				DED988B85AD7F9F040335CCC87415B9E /* SwiftyJSON.swift */,
-				5D0CE7BC796B80267C58A37529FD187B /* Support Files */,
-			);
-			name = SwiftyJSON;
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		E6DB2B45B696D5ED93DC3E3DCB0E71D1 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C60DF3D85B9063B253A6CC4F21306583 /* Info.plist */,
-				13F73EB104BEF4BEECC70E47DA632EC8 /* Kumi.modulemap */,
-				E7D60D5CFC04024B4E3BD5153761F359 /* Kumi.xcconfig */,
-				D5B659C3B91C0841114137D0C3C45BBE /* Kumi-dummy.m */,
-				7CBF8958BBB582334F3E729E26CEDA39 /* Kumi-prefix.pch */,
-				50922D37F8095CEBA63BB1572CDE0B90 /* Kumi-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Kumi";
-			sourceTree = "<group>";
-		};
-		E77B4271A14041256F8ECD1EF688069C /* Pods-SamMitiAR */ = {
-			isa = PBXGroup;
-			children = (
-				8D9C88049CAC9FAE37FDEFB69965668B /* Info.plist */,
-				CF0C71530000A88174AF220DAADDF527 /* Pods-SamMitiAR.modulemap */,
-				685F9331D910B7E06BF93DBE32D2981E /* Pods-SamMitiAR-acknowledgements.markdown */,
-				D6D6AFC57F3DA90672D380315F330430 /* Pods-SamMitiAR-acknowledgements.plist */,
-				AB42C59F0E8D123A3393FDB2D24F1AF5 /* Pods-SamMitiAR-dummy.m */,
-				753816293F473D409E0645FF04BCE3EC /* Pods-SamMitiAR-resources.sh */,
-				E0EF8D07B2A4F9C0F8DEA7136A4904C2 /* Pods-SamMitiAR-umbrella.h */,
-				9923FDB125CB7F7331202C443BAAECF9 /* Pods-SamMitiAR.debug.xcconfig */,
-				813596AA361BA45B965A386299655B44 /* Pods-SamMitiAR.release.xcconfig */,
+				14A870D05E9C75D4C87EC0B55C9547A8 /* Info.plist */,
+				D51A743EE50DB96F4C0456C2C2B352D6 /* Pods-SamMitiAR.modulemap */,
+				2A7F489AA17EE8819644AB03298F1EE0 /* Pods-SamMitiAR-acknowledgements.markdown */,
+				2A9218812026F08F009FC87E7090EB50 /* Pods-SamMitiAR-acknowledgements.plist */,
+				BD468E76D05EF043E54353B13D3A66E9 /* Pods-SamMitiAR-dummy.m */,
+				9849D944ABFE9C3EA3F7F7465E592B40 /* Pods-SamMitiAR-resources.sh */,
+				4E664713219C44E49FEAF29A303044F8 /* Pods-SamMitiAR-umbrella.h */,
+				7036E3F0FDB5B4CE7702DD0DA17EB8AC /* Pods-SamMitiAR.debug.xcconfig */,
+				A6D4622E1450F4ECF3EECC7CA2F3A120 /* Pods-SamMitiAR.release.xcconfig */,
 			);
 			name = "Pods-SamMitiAR";
 			path = "Target Support Files/Pods-SamMitiAR";
 			sourceTree = "<group>";
 		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C51ADE00FF7DCAEEC38DF8A6123D0F1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E424025E2822F94419DB11952B99DA88 /* GLTFSceneKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E424025E2822F94419DB11952B99DA88 /* GLTFSceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				5B189974DE791C0A05DCB9A44CE73E8F /* ExtensionList.swift */,
+				FBC502C547BF261F2F39AB0845E008BA /* GLTFAccessor.swift */,
+				6C5E10BC89423529909C03066B532488 /* GLTFAccessorSparse.swift */,
+				34458D43B276FE98BD85A9574FDEA75F /* GLTFAccessorSparseIndices.swift */,
+				E4548B79795B00A6E111375A7E5C5D38 /* GLTFAccessorSparseValues.swift */,
+				291CFE89B472FC9CA20A3E4AC1DA9880 /* GLTFAnimation.swift */,
+				E314192C5805F3ED4FF5558494288D63 /* GLTFAnimationChannel.swift */,
+				F596C67F3C0F8BE9D2C5E52C5DB4E0D7 /* GLTFAnimationChannelTarget.swift */,
+				00C5673969AF5553FFB8A46019F25B23 /* GLTFAnimationSampler.swift */,
+				3B8AEE7626B08A608BCC07C1051542D9 /* GLTFAsset.swift */,
+				01364737A5DB53C96A4E44093ABA9104 /* GLTFBuffer.swift */,
+				73635726685BA4840756D3F96083AA05 /* GLTFBufferView.swift */,
+				F78872E9812FE4909EB4057E9BF87B87 /* GLTFCamera.swift */,
+				0101FA2F9FF2C216C68ECEF1ABF4FCEF /* GLTFCameraOrthographic.swift */,
+				23ACB4190C930DF61C6E6105C10D81DB /* GLTFCameraPerspective.swift */,
+				A189BAB57926D8CC0C28A6E471306AA7 /* GLTFErrors.swift */,
+				A40465E448E6311391369F80E1529805 /* GLTFExtension.swift */,
+				4A19BC06AE6603D412B1371B6C545FC2 /* GLTFExtras.swift */,
+				16673ACF6DE87F6BBB3E81A328C781D4 /* GLTFFunctions.swift */,
+				437477FF969A80EC97D6BF9F42ECCF1B /* GLTFGlTF.swift */,
+				23140607FF1931189D59964BA30D210B /* GLTFGlTFChildOfRootProperty.swift */,
+				384A3E25437D92964173C77B24F65DE6 /* GLTFGlTFid.swift */,
+				F8C93BF26FC374624AA1A5C9137AB4F6 /* GLTFGlTFProperty.swift */,
+				AB4BC7E5962C050C38D1417973A81A2D /* GLTFImage.swift */,
+				B6AFCB58ACA6F10872FC924A5732AE9C /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift */,
+				AB116C9E1CBBC177E1F573B05C5889E1 /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */,
+				F6D08FCB26A8A9EAA77146FAE9EB3F69 /* GLTFMaterial.swift */,
+				2DEFF3CA4B7FCBCC7BF8C0E064AD9001 /* GLTFMaterialNormalTextureInfo.swift */,
+				D02E88ED3AB8893F018EC3D02CB6BA4E /* GLTFMaterialOcclusionTextureInfo.swift */,
+				C9862C829A9122FD39464A0679952BD1 /* GLTFMaterialPbrMetallicRoughness.swift */,
+				D24D490E9875602635FC21CB04A720C4 /* GLTFMesh.swift */,
+				4FA68BE1E6F6E7E7561B76F0E1C37F32 /* GLTFMeshPrimitive.swift */,
+				8D163ABF21E27504CB91AD02BD88BAE5 /* GLTFNode.swift */,
+				CBC16A8E57D4F7349D3DB8B921562731 /* GLTFSampler.swift */,
+				1B15569661A84245AE4695611FF33B7C /* GLTFScene.swift */,
+				24F93C7FA67E4088602D0A3E8BCFCB95 /* GLTFSceneSource.swift */,
+				09C8B1A0DBA56529CF0BC1F829D72044 /* GLTFSkin.swift */,
+				6DEC3B2FA55CB4993DA94BEB062016ED /* GLTFTexture.swift */,
+				0A03AB4EA887B0A23420642A98D281BA /* GLTFTextureInfo.swift */,
+				BA4983A4405C564029A5D137D5BF8436 /* GLTFTypes.swift */,
+				9036B0DD03C3DE8073D19C12CD96278D /* GLTFUnarchiver.swift */,
+				7B2DAAB3954E8490F675D4EEAAE97E4E /* Resources */,
+				5E913E371759DEFB53990E813AFAB810 /* Support Files */,
+			);
+			name = GLTFSceneKit;
+			path = GLTFSceneKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3EDF5C4C135F8F4B8E0C7484BDB249DA /* Headers */ = {
+		3BC050A63CED415ED6B11F037EE2B904 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				828BC186CB21C5D39088AB9911E54B7E /* Kumi-umbrella.h in Headers */,
+				FFA654A6C64352A41BB87617E0535624 /* Pods-SamMitiAR-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4786C7411D7832FA8983B70327CD1C3 /* Headers */ = {
+		F9FD775C99FC456E8D25E24304D75B30 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCE4B43393B40ED0AE4A032AB0C7A8F4 /* SwiftyJSON-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CA04176FAAE4C531D39CD77616BEEAB5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC9355B8A58D4D1B357EA2A48617ED24 /* Marker-umbrella.h in Headers */,
-				8D0D0ECF98740F20AC8A82C73DFD2950 /* Marker.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F07D1163A818CCA2CCAD6DB4273D5534 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20A02DD0B2B1C3C65B16B2B77C9182B5 /* Pods-SamMitiAR-umbrella.h in Headers */,
+				C4910B2ED6A7D2464AE95553D986A041 /* GLTFSceneKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		035BFD527E4F60CD4CB22AFB357D63F3 /* Kumi */ = {
+		635D117D90401E8CF512E88988B1E8D8 /* GLTFSceneKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 475164599416A28F57E6CEE77EAD3074 /* Build configuration list for PBXNativeTarget "Kumi" */;
+			buildConfigurationList = E2975B956D1FB471E85F24A072F3DE0E /* Build configuration list for PBXNativeTarget "GLTFSceneKit" */;
 			buildPhases = (
-				2D300896276B6EE86B1617A513450DA5 /* Sources */,
-				F44391AAB54EF658CD3D4019F7B73F8F /* Frameworks */,
-				3EDF5C4C135F8F4B8E0C7484BDB249DA /* Headers */,
+				C27BD7F703E2D661B0E0DECFCB790BD4 /* Sources */,
+				7A782AD2DCFFC212E7AC55580372ABA8 /* Frameworks */,
+				FBDB8EB34141E556A7CF3F955CA41A53 /* Resources */,
+				F9FD775C99FC456E8D25E24304D75B30 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94588974905D8C2F139A305E40510024 /* PBXTargetDependency */,
-				3C7692DEF2D2E5A4A74E2A404030F469 /* PBXTargetDependency */,
 			);
-			name = Kumi;
-			productName = Kumi;
-			productReference = AE6C1821A2A98E76E6861B02D89A55A4 /* Kumi.framework */;
+			name = GLTFSceneKit;
+			productName = GLTFSceneKit;
+			productReference = 4C89521063F61C587B678ED42C9AA231 /* GLTFSceneKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		87FDCE64CE28EB0990BE1FE056C8512E /* Marker */ = {
+		ADFCBC4D0017261730ADE2C1AF024313 /* Pods-SamMitiAR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2510E60B194EB99115A86D180FE8CECE /* Build configuration list for PBXNativeTarget "Marker" */;
+			buildConfigurationList = F5499DD75E9095F3430784A1649567C8 /* Build configuration list for PBXNativeTarget "Pods-SamMitiAR" */;
 			buildPhases = (
-				F7ED37C35E8A95700F20CBF6BBBB4F94 /* Sources */,
-				5DAF1F07BABB24C2D95654D4370BB0A6 /* Frameworks */,
-				CA04176FAAE4C531D39CD77616BEEAB5 /* Headers */,
+				209A012E8DBA4B8A756E5EFE556A7B89 /* Sources */,
+				763953BA2BD524B814A0C0E1E8EF29F5 /* Frameworks */,
+				3BC050A63CED415ED6B11F037EE2B904 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = Marker;
-			productName = Marker;
-			productReference = 5E6F5E666F7730D18BD4D1BBC0079194 /* Marker.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B6A77AF0775DF04A819C35ECD72880BB /* SwiftyJSON */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 482797178329A6B5397CC3A7890C6B01 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
-			buildPhases = (
-				152BE38AF459148FB468D09C19F4B27D /* Sources */,
-				A353A3142BDF98A49A9354034D11FF13 /* Frameworks */,
-				A4786C7411D7832FA8983B70327CD1C3 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwiftyJSON;
-			productName = SwiftyJSON;
-			productReference = 8AF4A6E7CD9A7D503A5DE95503891EDC /* SwiftyJSON.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FB87C0220997140983841951FBDA95C2 /* Pods-SamMitiAR */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7C859198F217524B9EE1F973BDFB4C92 /* Build configuration list for PBXNativeTarget "Pods-SamMitiAR" */;
-			buildPhases = (
-				FC1E60E0F61EB13237F5F062549AA4D3 /* Sources */,
-				3EA4C35E3F82BC4E003A35FB6FB86713 /* Frameworks */,
-				F07D1163A818CCA2CCAD6DB4273D5534 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B3A2DD329B3553F602467662584211C /* PBXTargetDependency */,
-				6449879CFCBA4FA298AF8856D0C7074B /* PBXTargetDependency */,
-				E2B6F4A71268A4D57B2F27FCFCFCF205 /* PBXTargetDependency */,
+				FB7F859F1D095AE4C5C25910A444CD72 /* PBXTargetDependency */,
 			);
 			name = "Pods-SamMitiAR";
 			productName = "Pods-SamMitiAR";
-			productReference = C1F7CB2DDCFCD56D9B4D7318497EA3FE /* Pods_SamMitiAR.framework */;
+			productReference = 74D60FDBCEF84E5A9C04CB758284A808 /* Pods_SamMitiAR.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -585,8 +375,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -596,149 +386,104 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7224C1FD16B8831EB798A6558F0D879E /* Products */;
+			productRefGroup = 9EDA4540C78223FFA468F16BE4EC1ABD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				035BFD527E4F60CD4CB22AFB357D63F3 /* Kumi */,
-				87FDCE64CE28EB0990BE1FE056C8512E /* Marker */,
-				FB87C0220997140983841951FBDA95C2 /* Pods-SamMitiAR */,
-				B6A77AF0775DF04A819C35ECD72880BB /* SwiftyJSON */,
+				635D117D90401E8CF512E88988B1E8D8 /* GLTFSceneKit */,
+				ADFCBC4D0017261730ADE2C1AF024313 /* Pods-SamMitiAR */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		FBDB8EB34141E556A7CF3F955CA41A53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40EA4069438257A2E4411CC8C4644E6E /* GLTFShaderModifierFragment_alphaCutoff.shader in Resources */,
+				2AE34732902EC277FEAB91045262A553 /* GLTFShaderModifierSurface.shader in Resources */,
+				010FD9B692B73A9F1F7D80929B7A53FA /* GLTFShaderModifierSurface_alphaModeBlend.shader in Resources */,
+				AC606EF0A0817A77F38F1314E15E0E2E /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader in Resources */,
+				05BFF6332345F46D39505652AC8AEB72 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader in Resources */,
+				FA09937C8BAD374D395FE83DF8D8839D /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader in Resources */,
+				9FC9E4FF9905559EAF35A3BE0532BBE0 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		152BE38AF459148FB468D09C19F4B27D /* Sources */ = {
+		209A012E8DBA4B8A756E5EFE556A7B89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D42B2615DD77B8679604013F10819EC /* SwiftyJSON-dummy.m in Sources */,
-				99A714539D66288F8C60899EA0E66E96 /* SwiftyJSON.swift in Sources */,
+				0D5C0398DEDAD7D18336116A576D50B5 /* Pods-SamMitiAR-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D300896276B6EE86B1617A513450DA5 /* Sources */ = {
+		C27BD7F703E2D661B0E0DECFCB790BD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2050CD7FCC434D8A7CAD47176539BF63 /* AlphaValue.swift in Sources */,
-				1AB4B5D71850CCCCAE7B87EC536D3076 /* AnimationDuration.swift in Sources */,
-				2D7BD02147DA447BA417922CA5C1752D /* AnimationTheme.swift in Sources */,
-				22A7ED271BBA31C27BDAB110DDA29645 /* BorderWidth.swift in Sources */,
-				3A6E9FFE88627A04DA77C0147E340FEB /* CABasicAnimationStyle+JSON.swift in Sources */,
-				403F4A0A02F15331A70240597A40B8E7 /* CABasicAnimationStyle.swift in Sources */,
-				37906885690DCE912907A23CAD06FCA1 /* CALayerExtension.swift in Sources */,
-				FDBF30E69E757E34ACF81CD1ECB02434 /* CAMediaTimingFunction+JSON.swift in Sources */,
-				5C9895C85F5ACFCBD725FA1285013DDD /* CATransform3D+JSON.swift in Sources */,
-				F807F46A39D51F82B666BA932F74BB5A /* CGSize+JSON.swift in Sources */,
-				C100648114C2968DB395A535DD95902A /* ColorSet+JSON.swift in Sources */,
-				0059C50E92DD656710B3770825F6E10D /* ColorSet.swift in Sources */,
-				B415CBC13BF53E8055416F398CA4EA88 /* ColorTheme.swift in Sources */,
-				8E4B9D93C54CCD029C3508AE3B363B14 /* CornerRadius.swift in Sources */,
-				73AF11007A06B6676C041F06ED2DDEF4 /* FontTheme.swift in Sources */,
-				432B9135C8C77D156F18169502626F27 /* JSONHelper.swift in Sources */,
-				398C442B2961FC6BFE46649D9B3C29C7 /* Kumi-dummy.m in Sources */,
-				2AA53688DEFBC7D872BA1B30B2E1E22A /* Kumi.swift in Sources */,
-				C865EE454779A8E0B50BA60D74E8EBE5 /* LayerStyle+JSON.swift in Sources */,
-				FAF0DA19A84372347892314DA3F251C1 /* LayerStyle.swift in Sources */,
-				6022DAC7ED736CC819C4E8EB9D012A32 /* LayerStyleSet+JSON.swift in Sources */,
-				3E2280F6FEB7B3962FA57483D2202CC5 /* LayerStyleSet.swift in Sources */,
-				BA085447F2381D7A920A18EBB12A9A77 /* LayerTheme.swift in Sources */,
-				57975B399C142DB77E4B9B45A88402EE /* ShadowStyle+JSON.swift in Sources */,
-				D48A78DDE2425EC36E6FD40B3DC3FE87 /* ShadowStyle.swift in Sources */,
-				21DF2FA94C7B8FB39E9BCC6084B79816 /* ShadowTheme.swift in Sources */,
-				14A4E2EE2AB57E20EEB91AE710FCCEA6 /* SwiftyJSONHelper.swift in Sources */,
-				00FD8D8BE3C8EE421A7A8BE4B7A5CF7C /* TextStyle+JSON.swift in Sources */,
-				D22858133EAF75CA9F7A293B3B5A428F /* TextStyleSet.swift in Sources */,
-				60D51CEFC19B363D890E207B5AB63FED /* UIColor+Extensions.swift in Sources */,
-				E5576437B4190A58D36710D177F3C3F7 /* UIColor+JSON.swift in Sources */,
-				C17E8C4F16E3DE06B20F3BC06EB2A0DD /* UIViewAnimationStyle+JSON.swift in Sources */,
-				3A25F552943AAF801D7271CE90E3096F /* UIViewAnimationStyle.swift in Sources */,
-				3330388AB56F342695096969753392F5 /* UIViewExtension.swift in Sources */,
-				31A32C1AE73A36ED6490799440C2CABA /* Utility+JSON.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7ED37C35E8A95700F20CBF6BBBB4F94 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3B6D607C9E0B5BAE131461ADA4513F4A /* Color.swift in Sources */,
-				2B2E7B75C5B35718B56EA6B0FBE6E669 /* Element.swift in Sources */,
-				0DDB177503D0A700698BD7F2818B12C8 /* ElementParser.swift in Sources */,
-				DEB956DD249913ED4F7D7C5FB691EA13 /* Font.swift in Sources */,
-				2CB2127EFD21FCE5633A3C11C8A1EDA4 /* LineBreakMode.swift in Sources */,
-				17B6434DA93919B10008A615A82306DA /* MarkdownElement.swift in Sources */,
-				1DEFA0E21D3FC13117DC2AD07403C0F6 /* MarkdownParser.swift in Sources */,
-				45451C7D31A2C8F85AD695FB5EEEEC9B /* Marker-dummy.m in Sources */,
-				D023EE8647B70B4142C48C6712764A05 /* Marker.swift in Sources */,
-				C8162E285E0E719C067CE2108EC2CC56 /* Markup.swift in Sources */,
-				8B7D3D7B2EEF9E98540081474BDD051F /* NSAttributedString+Extensions.swift in Sources */,
-				81DD846B2FB93235A8B96CEC2A190ADB /* Rule.swift in Sources */,
-				816598EA1A62ADC101217A27E6F299C1 /* String+Extensions.swift in Sources */,
-				665A3074584982C9C0C5CC4B80AD84CC /* Symbol.swift in Sources */,
-				0966AB550E630952ABCFDC6B00645E7C /* Tag.swift in Sources */,
-				98752EFD94D688B71A0759F5E88CE38B /* TagParser.swift in Sources */,
-				87988A357BCDCEA399A19B8DF35A2FE3 /* TextAttributes.swift in Sources */,
-				F797B3E7B2AD2322DE780158CD129DF3 /* TextStyle+Extensions.swift in Sources */,
-				03B52AEEB524A25FB4792F612704A837 /* TextStyle.swift in Sources */,
-				233CA5481CB1996103736C9BCDB0B8B5 /* TextTransform+Extensions.swift in Sources */,
-				3F03D0A255F24453C4D7172C205620B6 /* TextTransform.swift in Sources */,
-				225277E2CF7C3A668A451FD7602117ED /* Token.swift in Sources */,
-				34406C6708FD79D9E862803AF90D0058 /* TokenParser.swift in Sources */,
-				5B1AC83425A2CF44482E507DE393EB9B /* UIButtonExtension.swift in Sources */,
-				7C0706E14A53D4475684F9D524183A22 /* UILabelExtension.swift in Sources */,
-				3CC176FA5BBD176DA8D6BCC38CBAE10C /* UITextFieldExtension.swift in Sources */,
-				EB05C3F95137BCCBC55E50D5E0E92FA6 /* UITextViewExtension.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC1E60E0F61EB13237F5F062549AA4D3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B00E50B22950B6A0ADF77452A6E0086 /* Pods-SamMitiAR-dummy.m in Sources */,
+				645F67FC1A103F92427623DEAE93A310 /* ExtensionList.swift in Sources */,
+				52D6CE57C71DEB6216F2C63C73F2FB19 /* GLTFAccessor.swift in Sources */,
+				7D91BB52FC68A9DDFC2557EA77E17BA1 /* GLTFAccessorSparse.swift in Sources */,
+				473E513C1D3E8ABF78441551E654D2AF /* GLTFAccessorSparseIndices.swift in Sources */,
+				77C26806921D48D48CA4FA3DCFF3E41D /* GLTFAccessorSparseValues.swift in Sources */,
+				B16AB34DF3EA4D456C32172362F748B3 /* GLTFAnimation.swift in Sources */,
+				76CE13E05900D83407B9B81765B667A5 /* GLTFAnimationChannel.swift in Sources */,
+				1F1071A1A7F0F918FB266E8FA7D9A245 /* GLTFAnimationChannelTarget.swift in Sources */,
+				720A2C0F9AAAAC18F082E581BE93BB74 /* GLTFAnimationSampler.swift in Sources */,
+				BEBD60918F6DED98E49FF400E9B2FE33 /* GLTFAsset.swift in Sources */,
+				6722D82660757ABD74D391A3462500A2 /* GLTFBuffer.swift in Sources */,
+				918D0346BDDE130C79199CC20248A7CB /* GLTFBufferView.swift in Sources */,
+				4642C9D77C36CC0B64E653177A9B7CBE /* GLTFCamera.swift in Sources */,
+				93721E969950008B625B28DD9CA2504A /* GLTFCameraOrthographic.swift in Sources */,
+				A62FE2E3FC5A258F80E6ECA44222BB2E /* GLTFCameraPerspective.swift in Sources */,
+				A8F5E298B10603FE0203F907CF94012F /* GLTFErrors.swift in Sources */,
+				27A6E38CD42914DCE419C2C97B8E4368 /* GLTFExtension.swift in Sources */,
+				FC2205056E1BDDFEE401B1152978379E /* GLTFExtras.swift in Sources */,
+				4411880F29F4A6E7122F86E1AD7571D4 /* GLTFFunctions.swift in Sources */,
+				599119EDB64575D2189C47A82DB8F449 /* GLTFGlTF.swift in Sources */,
+				4A883D45C94C6B1AB68D05F0CC57126D /* GLTFGlTFChildOfRootProperty.swift in Sources */,
+				4EAD038C8868DFF475B2A4F5D65331C0 /* GLTFGlTFid.swift in Sources */,
+				863456D097D006F4D1BBFF6472AD510B /* GLTFGlTFProperty.swift in Sources */,
+				9C0E60F21CA510B3C8F90D987A35DFCF /* GLTFImage.swift in Sources */,
+				4785994ECC0CB6B404F8851F0FE168F2 /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift in Sources */,
+				2A40184B5C7BAAE7C172D31ED567B07F /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift in Sources */,
+				4A2C2B9EF78774964E67592C62A611AA /* GLTFMaterial.swift in Sources */,
+				5288F34C61917065D8D60776A136C218 /* GLTFMaterialNormalTextureInfo.swift in Sources */,
+				1B175FB12BC4DF407DD4436CA84F8346 /* GLTFMaterialOcclusionTextureInfo.swift in Sources */,
+				87792A45ABCBCC0FE60DC1988C48EBA8 /* GLTFMaterialPbrMetallicRoughness.swift in Sources */,
+				51234C2B4F9E307953683748622234D6 /* GLTFMesh.swift in Sources */,
+				1ECA049998070EF8B831FF8BD77FB16B /* GLTFMeshPrimitive.swift in Sources */,
+				CFB5C122056B27C33B7002F18C4B0B66 /* GLTFNode.swift in Sources */,
+				51AAB50FB93A61780F7D52496628D450 /* GLTFSampler.swift in Sources */,
+				05966862DF6A95888693AE3CD194A68E /* GLTFScene.swift in Sources */,
+				E479C77AD3C8806641F95C98887C9FA0 /* GLTFSceneKit-dummy.m in Sources */,
+				813E5958F3A8DDED76E14B47B33AE4C3 /* GLTFSceneSource.swift in Sources */,
+				319B80A15BB916223BDEDE15B3CE4256 /* GLTFSkin.swift in Sources */,
+				61FA6E4BA667260A61F439CD0EBB13BE /* GLTFTexture.swift in Sources */,
+				DE3CEDAFF1EF58BFFF360C422850FF81 /* GLTFTextureInfo.swift in Sources */,
+				E653F439AAFB8A0E5105D4E9EF5E110C /* GLTFTypes.swift in Sources */,
+				B07F9C313C52302BE6DC1375B9AEE1C0 /* GLTFUnarchiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B3A2DD329B3553F602467662584211C /* PBXTargetDependency */ = {
+		FB7F859F1D095AE4C5C25910A444CD72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kumi;
-			target = 035BFD527E4F60CD4CB22AFB357D63F3 /* Kumi */;
-			targetProxy = 2E254EBB4D456F60386416053B16B19C /* PBXContainerItemProxy */;
-		};
-		3C7692DEF2D2E5A4A74E2A404030F469 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftyJSON;
-			target = B6A77AF0775DF04A819C35ECD72880BB /* SwiftyJSON */;
-			targetProxy = 1169A1BEBD3C8288462FB0E073D90ED8 /* PBXContainerItemProxy */;
-		};
-		6449879CFCBA4FA298AF8856D0C7074B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Marker;
-			target = 87FDCE64CE28EB0990BE1FE056C8512E /* Marker */;
-			targetProxy = 7D4D10BACC88F12782741E415D874A5C /* PBXContainerItemProxy */;
-		};
-		94588974905D8C2F139A305E40510024 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Marker;
-			target = 87FDCE64CE28EB0990BE1FE056C8512E /* Marker */;
-			targetProxy = 4DE1905EED4FDE9A38A8C2BED691EA4A /* PBXContainerItemProxy */;
-		};
-		E2B6F4A71268A4D57B2F27FCFCFCF205 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftyJSON;
-			target = B6A77AF0775DF04A819C35ECD72880BB /* SwiftyJSON */;
-			targetProxy = AB4C719156119DCB705A6A6B4E1A26FA /* PBXContainerItemProxy */;
+			name = GLTFSceneKit;
+			target = 635D117D90401E8CF512E88988B1E8D8 /* GLTFSceneKit */;
+			targetProxy = 90A41F2D1EAFA92E551722CA4D1FB58F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -748,10 +493,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -759,6 +506,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -767,6 +515,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -787,16 +536,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		15BBEC166519AD8BF1B29EABDD62E49C /* Debug */ = {
+		4197D9A853BF0F52C397D04BEA67FB6B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7D0CDE77F28F59CF5C9C9702A06814D /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -806,75 +555,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/GLTFSceneKit/GLTFSceneKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GLTFSceneKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1F9600D70834966F9F2CF76A46DA6A2D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E2A584E3E731975CE162DAEE74CBA27 /* Marker.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Marker/Marker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Marker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Marker/Marker.modulemap";
-				PRODUCT_NAME = Marker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2D9D30C66E049413B8FC6A9868572945 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E2A584E3E731975CE162DAEE74CBA27 /* Marker.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Marker/Marker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Marker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Marker/Marker.modulemap";
-				PRODUCT_NAME = Marker;
+				MODULEMAP_FILE = "Target Support Files/GLTFSceneKit/GLTFSceneKit.modulemap";
+				PRODUCT_MODULE_NAME = GLTFSceneKit;
+				PRODUCT_NAME = GLTFSceneKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -887,10 +575,12 @@
 			};
 			name = Release;
 		};
-		373DCF3075928F1715606D979029827C /* Release */ = {
+		800D66996D0127221B4DF19D8BC7AE58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7D0CDE77F28F59CF5C9C9702A06814D /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 7036E3F0FDB5B4CE7702DD0DA17EB8AC /* Pods-SamMitiAR.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -900,26 +590,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SamMitiAR/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				PRODUCT_NAME = SwiftyJSON;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -929,10 +621,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -940,6 +634,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -948,6 +643,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -972,17 +668,51 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		BD842EF68CBC30DA144792C8281965D8 /* Debug */ = {
+		C18634F3867D9A046A4FF0F038C8AB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9923FDB125CB7F7331202C443BAAECF9 /* Pods-SamMitiAR.debug.xcconfig */;
+			baseConfigurationReference = 671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GLTFSceneKit/GLTFSceneKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GLTFSceneKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GLTFSceneKit/GLTFSceneKit.modulemap";
+				PRODUCT_MODULE_NAME = GLTFSceneKit;
+				PRODUCT_NAME = GLTFSceneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD450D66E690ADA9BDCCC218F8B8C89A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6D4622E1450F4ECF3EECC7CA2F3A120 /* Pods-SamMitiAR.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1002,104 +732,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SamMitiAR;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CF9EA458FBEA5464A0A10FA46C2617BB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7D60D5CFC04024B4E3BD5153761F359 /* Kumi.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Kumi/Kumi-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Kumi/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Kumi/Kumi.modulemap";
-				PRODUCT_NAME = Kumi;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D18B2BA2A9F1452A3C687F8D01C57DFB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7D60D5CFC04024B4E3BD5153761F359 /* Kumi.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Kumi/Kumi-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Kumi/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Kumi/Kumi.modulemap";
-				PRODUCT_NAME = Kumi;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DA7BC648C0D547309F04A11A8BD9A2A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 813596AA361BA45B965A386299655B44 /* Pods-SamMitiAR.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SamMitiAR/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SamMitiAR;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1113,47 +746,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2510E60B194EB99115A86D180FE8CECE /* Build configuration list for PBXNativeTarget "Marker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1F9600D70834966F9F2CF76A46DA6A2D /* Debug */,
-				2D9D30C66E049413B8FC6A9868572945 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
-				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		475164599416A28F57E6CEE77EAD3074 /* Build configuration list for PBXNativeTarget "Kumi" */ = {
+		E2975B956D1FB471E85F24A072F3DE0E /* Build configuration list for PBXNativeTarget "GLTFSceneKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF9EA458FBEA5464A0A10FA46C2617BB /* Debug */,
-				D18B2BA2A9F1452A3C687F8D01C57DFB /* Release */,
+				C18634F3867D9A046A4FF0F038C8AB24 /* Debug */,
+				4197D9A853BF0F52C397D04BEA67FB6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		482797178329A6B5397CC3A7890C6B01 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		F5499DD75E9095F3430784A1649567C8 /* Build configuration list for PBXNativeTarget "Pods-SamMitiAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				15BBEC166519AD8BF1B29EABDD62E49C /* Debug */,
-				373DCF3075928F1715606D979029827C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7C859198F217524B9EE1F973BDFB4C92 /* Build configuration list for PBXNativeTarget "Pods-SamMitiAR" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BD842EF68CBC30DA144792C8281965D8 /* Debug */,
-				DA7BC648C0D547309F04A11A8BD9A2A7 /* Release */,
+				800D66996D0127221B4DF19D8BC7AE58 /* Debug */,
+				CD450D66E690ADA9BDCCC218F8B8C89A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

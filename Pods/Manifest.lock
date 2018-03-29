@@ -1,27 +1,16 @@
 PODS:
-  - Kumi (0.0.5):
-    - Marker
-    - SwiftyJSON
-  - Marker (1.1.0)
-  - SwiftyJSON (4.0.0)
+  - GLTFSceneKit (0.1.3)
 
 DEPENDENCIES:
-  - Kumi (from `https://github.com/prolificinteractive/Kumi-iOS.git`)
+  - GLTFSceneKit
 
-EXTERNAL SOURCES:
-  Kumi:
-    :git: https://github.com/prolificinteractive/Kumi-iOS.git
-
-CHECKOUT OPTIONS:
-  Kumi:
-    :commit: f78f364caefc5cee998a6b183f6512e22d616248
-    :git: https://github.com/prolificinteractive/Kumi-iOS.git
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GLTFSceneKit
 
 SPEC CHECKSUMS:
-  Kumi: 94398e5edfc64a53215022b1e7354ecba5db9954
-  Marker: f35e0b5d9c97d6997d6b89b23f189e0e4cc127c7
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  GLTFSceneKit: fbec7ef104128201bde53ac5bc37c8a05d764cdf
 
-PODFILE CHECKSUM: b17d40ee37f5ac518721672e37543415a3359a0b
+PODFILE CHECKSUM: 0c619ee986cbeff4ac3d8599adb66a65b19ca376
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0.beta.1

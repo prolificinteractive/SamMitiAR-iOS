@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F8DEB209BE8AD390C9F3EEE /* Pods_SamMiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5EEBDB9E85EFFA0E04E626 /* Pods_SamMiti.framework */; };
+		903A44222040AEB700BC0157 /* SamMitiARDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44102040AEB600BC0157 /* SamMitiARDebug.swift */; };
+		903A44232040AEB700BC0157 /* SamMitiPlaneDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44112040AEB600BC0157 /* SamMitiPlaneDetecting.swift */; };
+		903A44242040AEB700BC0157 /* SceneKitAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44122040AEB600BC0157 /* SceneKitAnimator.swift */; };
+		903A44252040AEB700BC0157 /* SamMitiVitualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44132040AEB600BC0157 /* SamMitiVitualObjectLoader.swift */; };
+		903A44262040AEB700BC0157 /* SamMitiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903A44142040AEB600BC0157 /* SamMitiAssets.xcassets */; };
+		903A44272040AEB700BC0157 /* SamMitiArt.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 903A44152040AEB600BC0157 /* SamMitiArt.scnassets */; };
+		903A44282040AEB700BC0157 /* SamMitiFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44162040AEB600BC0157 /* SamMitiFocusNode.swift */; };
+		903A44292040AEB700BC0157 /* SamMitiInteractionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44172040AEB700BC0157 /* SamMitiInteractionStatus.swift */; };
+		903A442A2040AEB700BC0157 /* SamMitiTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44182040AEB700BC0157 /* SamMitiTrackingState.swift */; };
+		903A442B2040AEB700BC0157 /* SamMitiARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44192040AEB700BC0157 /* SamMitiARDelegate.swift */; };
+		903A442C2040AEB700BC0157 /* SamMitiVirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A441A2040AEB700BC0157 /* SamMitiVirtualObject.swift */; };
+		903A442D2040AEB700BC0157 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A441C2040AEB700BC0157 /* Utilities.swift */; };
+		903A442E2040AEB700BC0157 /* SamMiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 903A441D2040AEB700BC0157 /* SamMiti.h */; };
+		903A442F2040AEB700BC0157 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A441E2040AEB700BC0157 /* ThresholdPanGesture.swift */; };
+		903A44302040AEB700BC0157 /* SamMitiDelegateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A441F2040AEB700BC0157 /* SamMitiDelegateObject.swift */; };
+		903A44312040AEB700BC0157 /* GestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44202040AEB700BC0157 /* GestureManager.swift */; };
+		903A44322040AEB700BC0157 /* SamMitiAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44212040AEB700BC0157 /* SamMitiAR.swift */; };
+		EEA452484096743F50228BAD /* Pods_SamMitiAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967204E96B9242BD550A5DF0 /* Pods_SamMitiAR.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C5EEBDB9E85EFFA0E04E626 /* Pods_SamMiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D1FC46F39D78C4C3163C66 /* Pods-SamMiti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti/Pods-SamMiti.release.xcconfig"; sourceTree = "<group>"; };
+		903A44102040AEB600BC0157 /* SamMitiARDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiARDebug.swift; sourceTree = "<group>"; };
+		903A44112040AEB600BC0157 /* SamMitiPlaneDetecting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiPlaneDetecting.swift; sourceTree = "<group>"; };
+		903A44122040AEB600BC0157 /* SceneKitAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitAnimator.swift; sourceTree = "<group>"; };
+		903A44132040AEB600BC0157 /* SamMitiVitualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiVitualObjectLoader.swift; sourceTree = "<group>"; };
+		903A44142040AEB600BC0157 /* SamMitiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SamMitiAssets.xcassets; sourceTree = "<group>"; };
+		903A44152040AEB600BC0157 /* SamMitiArt.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SamMitiArt.scnassets; sourceTree = "<group>"; };
+		903A44162040AEB600BC0157 /* SamMitiFocusNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiFocusNode.swift; sourceTree = "<group>"; };
+		903A44172040AEB700BC0157 /* SamMitiInteractionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiInteractionStatus.swift; sourceTree = "<group>"; };
+		903A44182040AEB700BC0157 /* SamMitiTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiTrackingState.swift; sourceTree = "<group>"; };
+		903A44192040AEB700BC0157 /* SamMitiARDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiARDelegate.swift; sourceTree = "<group>"; };
+		903A441A2040AEB700BC0157 /* SamMitiVirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiVirtualObject.swift; sourceTree = "<group>"; };
+		903A441C2040AEB700BC0157 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		903A441D2040AEB700BC0157 /* SamMiti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamMiti.h; sourceTree = "<group>"; };
+		903A441E2040AEB700BC0157 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		903A441F2040AEB700BC0157 /* SamMitiDelegateObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiDelegateObject.swift; sourceTree = "<group>"; };
+		903A44202040AEB700BC0157 /* GestureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureManager.swift; sourceTree = "<group>"; };
+		903A44212040AEB700BC0157 /* SamMitiAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiAR.swift; sourceTree = "<group>"; };
+		9047F9F72024CFC5004541A8 /* SamMitiAR.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SamMitiAR.podspec; sourceTree = "<group>"; };
+		904B7FAA2020DC5C0038B799 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		90E0185B201F82330057F15B /* SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SamMitiAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		967204E96B9242BD550A5DF0 /* Pods_SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMitiAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C52F7B91A982390EFB93D514 /* Pods-SamMiti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti/Pods-SamMiti.debug.xcconfig"; sourceTree = "<group>"; };
+		CEEF1F47E3D84D37DD499B9A /* Pods-SamMitiAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMitiAR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR.debug.xcconfig"; sourceTree = "<group>"; };
+		DCAE74AE5CF5C0CD5F42431A /* Pods-SamMitiAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMitiAR.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90E01857201F82330057F15B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F8DEB209BE8AD390C9F3EEE /* Pods_SamMiti.framework in Frameworks */,
+				EEA452484096743F50228BAD /* Pods_SamMitiAR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13C245CCC3F0CA92F3DBB827 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C52F7B91A982390EFB93D514 /* Pods-SamMiti.debug.xcconfig */,
+				78D1FC46F39D78C4C3163C66 /* Pods-SamMiti.release.xcconfig */,
+				CEEF1F47E3D84D37DD499B9A /* Pods-SamMitiAR.debug.xcconfig */,
+				DCAE74AE5CF5C0CD5F42431A /* Pods-SamMitiAR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		903A441B2040AEB700BC0157 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				903A441C2040AEB700BC0157 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		90E01823201F71AF0057F15B = {
+			isa = PBXGroup;
+			children = (
+				9047F9F72024CFC5004541A8 /* SamMitiAR.podspec */,
+				904B7FAA2020DC5C0038B799 /* README.md */,
+				90E0185C201F82330057F15B /* SamMiti */,
+				90E0182E201F71AF0057F15B /* Products */,
+				90E01847201F81330057F15B /* Frameworks */,
+				13C245CCC3F0CA92F3DBB827 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		90E0182E201F71AF0057F15B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90E0185B201F82330057F15B /* SamMitiAR.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90E01847201F81330057F15B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C5EEBDB9E85EFFA0E04E626 /* Pods_SamMiti.framework */,
+				967204E96B9242BD550A5DF0 /* Pods_SamMitiAR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90E0185C201F82330057F15B /* SamMiti */ = {
+			isa = PBXGroup;
+			children = (
+				903A44202040AEB700BC0157 /* GestureManager.swift */,
+				903A441D2040AEB700BC0157 /* SamMiti.h */,
+				903A44212040AEB700BC0157 /* SamMitiAR.swift */,
+				903A44102040AEB600BC0157 /* SamMitiARDebug.swift */,
+				903A44192040AEB700BC0157 /* SamMitiARDelegate.swift */,
+				903A44152040AEB600BC0157 /* SamMitiArt.scnassets */,
+				903A44142040AEB600BC0157 /* SamMitiAssets.xcassets */,
+				903A441F2040AEB700BC0157 /* SamMitiDelegateObject.swift */,
+				903A44162040AEB600BC0157 /* SamMitiFocusNode.swift */,
+				903A44172040AEB700BC0157 /* SamMitiInteractionStatus.swift */,
+				903A44112040AEB600BC0157 /* SamMitiPlaneDetecting.swift */,
+				903A44182040AEB700BC0157 /* SamMitiTrackingState.swift */,
+				903A441A2040AEB700BC0157 /* SamMitiVirtualObject.swift */,
+				903A44132040AEB600BC0157 /* SamMitiVitualObjectLoader.swift */,
+				903A44122040AEB600BC0157 /* SceneKitAnimator.swift */,
+				903A441E2040AEB700BC0157 /* ThresholdPanGesture.swift */,
+				903A441B2040AEB700BC0157 /* Utilities */,
+			);
+			path = SamMiti;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		90E01858201F82330057F15B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903A442E2040AEB700BC0157 /* SamMiti.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		90E0185A201F82330057F15B /* SamMitiAR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90E01860201F82340057F15B /* Build configuration list for PBXNativeTarget "SamMitiAR" */;
+			buildPhases = (
+				2169329BD34BA52DCF9CD146 /* [CP] Check Pods Manifest.lock */,
+				90E01856201F82330057F15B /* Sources */,
+				90E01857201F82330057F15B /* Frameworks */,
+				90E01858201F82330057F15B /* Headers */,
+				90E01859201F82330057F15B /* Resources */,
+				FC9D49A08CE3421BF1D1ACBB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SamMitiAR;
+			productName = SamMiti;
+			productReference = 90E0185B201F82330057F15B /* SamMitiAR.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90E01824201F71AF0057F15B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Prolific Interactive";
+				TargetAttributes = {
+					90E0185A201F82330057F15B = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 90E01827201F71AF0057F15B /* Build configuration list for PBXProject "SamMiti-iOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 90E01823201F71AF0057F15B;
+			productRefGroup = 90E0182E201F71AF0057F15B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90E0185A201F82330057F15B /* SamMitiAR */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90E01859201F82330057F15B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903A44272040AEB700BC0157 /* SamMitiArt.scnassets in Resources */,
+				903A44262040AEB700BC0157 /* SamMitiAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2169329BD34BA52DCF9CD146 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SamMitiAR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC9D49A08CE3421BF1D1ACBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90E01856201F82330057F15B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903A442A2040AEB700BC0157 /* SamMitiTrackingState.swift in Sources */,
+				903A44312040AEB700BC0157 /* GestureManager.swift in Sources */,
+				903A44222040AEB700BC0157 /* SamMitiARDebug.swift in Sources */,
+				903A44282040AEB700BC0157 /* SamMitiFocusNode.swift in Sources */,
+				903A442C2040AEB700BC0157 /* SamMitiVirtualObject.swift in Sources */,
+				903A44322040AEB700BC0157 /* SamMitiAR.swift in Sources */,
+				903A44302040AEB700BC0157 /* SamMitiDelegateObject.swift in Sources */,
+				903A44252040AEB700BC0157 /* SamMitiVitualObjectLoader.swift in Sources */,
+				903A442B2040AEB700BC0157 /* SamMitiARDelegate.swift in Sources */,
+				903A44292040AEB700BC0157 /* SamMitiInteractionStatus.swift in Sources */,
+				903A44242040AEB700BC0157 /* SceneKitAnimator.swift in Sources */,
+				903A442D2040AEB700BC0157 /* Utilities.swift in Sources */,
+				903A44232040AEB700BC0157 /* SamMitiPlaneDetecting.swift in Sources */,
+				903A442F2040AEB700BC0157 /* ThresholdPanGesture.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		90E01833201F71B00057F15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		90E01834201F71B00057F15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		90E01861201F82340057F15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEEF1F47E3D84D37DD499B9A /* Pods-SamMitiAR.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7J5JZ3G2QB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SamMiti/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prolificinteractive.SamMitiAR;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90E01862201F82340057F15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCAE74AE5CF5C0CD5F42431A /* Pods-SamMitiAR.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7J5JZ3G2QB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SamMiti/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prolificinteractive.SamMitiAR;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90E01827201F71AF0057F15B /* Build configuration list for PBXProject "SamMiti-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90E01833201F71B00057F15B /* Debug */,
+				90E01834201F71B00057F15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90E01860201F82340057F15B /* Build configuration list for PBXNativeTarget "SamMitiAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90E01861201F82340057F15B /* Debug */,
+				90E01862201F82340057F15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90E01824201F71AF0057F15B /* Project object */;
+}

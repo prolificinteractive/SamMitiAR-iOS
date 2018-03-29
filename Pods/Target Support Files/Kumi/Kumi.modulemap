@@ -1,0 +1,6 @@
+framework module Kumi {
+  umbrella header "Kumi-umbrella.h"
+
+  export *
+  module * { export * }
+}

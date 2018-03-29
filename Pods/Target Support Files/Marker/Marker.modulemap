@@ -1,0 +1,6 @@
+framework module Marker {
+  umbrella header "Marker-umbrella.h"
+
+  export *
+  module * { export * }
+}

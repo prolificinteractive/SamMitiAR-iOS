@@ -11,7 +11,7 @@ import GLTFSceneKit
 
 //TODO: Add interaction ability (Movable, Scalable, Rotatable)
 
-public class SamMitiVirtualObject: SCNNode {
+open class SamMitiVirtualObject: SCNNode {
     
     public typealias VoidBlock = () -> Void
     
@@ -448,7 +448,7 @@ public class SamMitiVirtualObject: SCNNode {
 
     var animationForVirtualObjectRemoving: ((SamMitiVirtualObject, @escaping VoidBlock) -> Void)?
 
-    public override func removeFromParentNode() {
+    open override func removeFromParentNode() {
         if let removeAnimation = animationForVirtualObjectRemoving,
             let _ = parent {
             removeAnimation(self, super.removeFromParentNode)

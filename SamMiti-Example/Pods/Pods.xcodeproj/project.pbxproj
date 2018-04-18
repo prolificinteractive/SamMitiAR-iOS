@@ -10,10 +10,10 @@
 		010FD9B692B73A9F1F7D80929B7A53FA /* GLTFShaderModifierSurface_alphaModeBlend.shader in Resources */ = {isa = PBXBuildFile; fileRef = 275C8D962F61F2E2A84313E56E1842B2 /* GLTFShaderModifierSurface_alphaModeBlend.shader */; };
 		05966862DF6A95888693AE3CD194A68E /* GLTFScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15569661A84245AE4695611FF33B7C /* GLTFScene.swift */; };
 		05BFF6332345F46D39505652AC8AEB72 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader in Resources */ = {isa = PBXBuildFile; fileRef = BDC7756123F61F5DBA922041C3CF5F14 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader */; };
-		0C8C9673F529315A768C1C7AE8D06DBA /* SceneKitAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA2795FC723B5349A56839346629A4 /* SceneKitAnimator.swift */; };
-		0F47409D7C6391849710983C9ECE83E5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FE29BC50D53DD32A15490939CD730 /* Utilities.swift */; };
-		10FB0C6D8AC9075ACBF077DCF286FAE9 /* SamMitiARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A674B428B5253212A5060E30BD662 /* SamMitiARDelegate.swift */; };
-		1A8EBD3D330B905FC350CFBBEC738C8F /* SamMiti.h in Headers */ = {isa = PBXBuildFile; fileRef = E77CA4CBA83723D0C4FD50AF67E84710 /* SamMiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C8C9673F529315A768C1C7AE8D06DBA /* SceneKitAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DE6D31129005D1CEA1CD4E6243029 /* SceneKitAnimator.swift */; };
+		0F47409D7C6391849710983C9ECE83E5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71418E2AD6BEDD2F9C3A9FBA1A906224 /* Utilities.swift */; };
+		10FB0C6D8AC9075ACBF077DCF286FAE9 /* SamMitiARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873E95653B00A4AE2264B218BA3D592E /* SamMitiARDelegate.swift */; };
+		1A8EBD3D330B905FC350CFBBEC738C8F /* SamMiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E775B671C88AE262B51BF977E2DD15 /* SamMiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B175FB12BC4DF407DD4436CA84F8346 /* GLTFMaterialOcclusionTextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E88ED3AB8893F018EC3D02CB6BA4E /* GLTFMaterialOcclusionTextureInfo.swift */; };
 		1ECA049998070EF8B831FF8BD77FB16B /* GLTFMeshPrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA68BE1E6F6E7E7561B76F0E1C37F32 /* GLTFMeshPrimitive.swift */; };
 		1F1071A1A7F0F918FB266E8FA7D9A245 /* GLTFAnimationChannelTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596C67F3C0F8BE9D2C5E52C5DB4E0D7 /* GLTFAnimationChannelTarget.swift */; };
@@ -21,10 +21,10 @@
 		28B9661F4016EF2EBBC12BFF7EF53D2F /* GLTFSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F6DFEF84CC5F74D15D84EE97D83BE4 /* GLTFSceneKit.framework */; };
 		2A40184B5C7BAAE7C172D31ED567B07F /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB116C9E1CBBC177E1F573B05C5889E1 /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */; };
 		2AE34732902EC277FEAB91045262A553 /* GLTFShaderModifierSurface.shader in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B65F2FD8DBFE58E05F90563B19B2D /* GLTFShaderModifierSurface.shader */; };
-		2FCB31BF11E2FA5490B241E03C1D934F /* SamMitiVitualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90FE85D40412EA9148716A34514F383 /* SamMitiVitualObjectLoader.swift */; };
+		2FCB31BF11E2FA5490B241E03C1D934F /* SamMitiVitualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9898EFE4787A6A3BE44B39A9BA6D135A /* SamMitiVitualObjectLoader.swift */; };
 		309D45384CA8FBB94B3F6EE46ABAF0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B185272D64A98E5F89147F8189E958 /* Foundation.framework */; };
 		319B80A15BB916223BDEDE15B3CE4256 /* GLTFSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C8B1A0DBA56529CF0BC1F829D72044 /* GLTFSkin.swift */; };
-		3BF6D972E9194E3C321BD3815BFB4E6F /* SamMitiTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D28E4489EF1004A86EA18819F8A0C2B /* SamMitiTrackingState.swift */; };
+		3BF6D972E9194E3C321BD3815BFB4E6F /* SamMitiTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587D66070D19EADF137923BAE309B1D3 /* SamMitiTrackingState.swift */; };
 		40EA4069438257A2E4411CC8C4644E6E /* GLTFShaderModifierFragment_alphaCutoff.shader in Resources */ = {isa = PBXBuildFile; fileRef = A7322179BD497146228FB5F2D34F607A /* GLTFShaderModifierFragment_alphaCutoff.shader */; };
 		4411880F29F4A6E7122F86E1AD7571D4 /* GLTFFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16673ACF6DE87F6BBB3E81A328C781D4 /* GLTFFunctions.swift */; };
 		4642C9D77C36CC0B64E653177A9B7CBE /* GLTFCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78872E9812FE4909EB4057E9BF87B87 /* GLTFCamera.swift */; };
@@ -32,17 +32,17 @@
 		4785994ECC0CB6B404F8851F0FE168F2 /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFCB58ACA6F10872FC924A5732AE9C /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift */; };
 		4A2C2B9EF78774964E67592C62A611AA /* GLTFMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D08FCB26A8A9EAA77146FAE9EB3F69 /* GLTFMaterial.swift */; };
 		4A883D45C94C6B1AB68D05F0CC57126D /* GLTFGlTFChildOfRootProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23140607FF1931189D59964BA30D210B /* GLTFGlTFChildOfRootProperty.swift */; };
-		4D5CEA8119B79FD4F0D10648C08836E2 /* SamMitiDelegateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10E8FAA46C719FEAE8CAF53BCCB434 /* SamMitiDelegateObject.swift */; };
+		4D5CEA8119B79FD4F0D10648C08836E2 /* SamMitiDelegateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A74B74656A644F7B8F9768CF45AB66 /* SamMitiDelegateObject.swift */; };
 		4EAD038C8868DFF475B2A4F5D65331C0 /* GLTFGlTFid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A3E25437D92964173C77B24F65DE6 /* GLTFGlTFid.swift */; };
 		51234C2B4F9E307953683748622234D6 /* GLTFMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24D490E9875602635FC21CB04A720C4 /* GLTFMesh.swift */; };
 		51AAB50FB93A61780F7D52496628D450 /* GLTFSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC16A8E57D4F7349D3DB8B921562731 /* GLTFSampler.swift */; };
 		5288F34C61917065D8D60776A136C218 /* GLTFMaterialNormalTextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEFF3CA4B7FCBCC7BF8C0E064AD9001 /* GLTFMaterialNormalTextureInfo.swift */; };
 		52D6CE57C71DEB6216F2C63C73F2FB19 /* GLTFAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC502C547BF261F2F39AB0845E008BA /* GLTFAccessor.swift */; };
-		55CCAB89A9B2BE584F27E12C304C74D6 /* SamMitiAR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9665516BC5917EAF803FA25FAD1B14E8 /* SamMitiAR-dummy.m */; };
+		55CCAB89A9B2BE584F27E12C304C74D6 /* SamMitiAR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5B2C10CE6F54E7AD2EE8FF516F7B0 /* SamMitiAR-dummy.m */; };
 		599119EDB64575D2189C47A82DB8F449 /* GLTFGlTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437477FF969A80EC97D6BF9F42ECCF1B /* GLTFGlTF.swift */; };
 		61FA6E4BA667260A61F439CD0EBB13BE /* GLTFTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC3B2FA55CB4993DA94BEB062016ED /* GLTFTexture.swift */; };
 		645F67FC1A103F92427623DEAE93A310 /* ExtensionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B189974DE791C0A05DCB9A44CE73E8F /* ExtensionList.swift */; };
-		661F708397B5E6D57589AD5EDDDF41C2 /* SamMitiARDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C09BF17F81FA7E54C8B5C5BE76C2F /* SamMitiARDebug.swift */; };
+		661F708397B5E6D57589AD5EDDDF41C2 /* SamMitiARDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62FA4DDFF0C3270A27A5CBB9D228AB8 /* SamMitiARDebug.swift */; };
 		6722D82660757ABD74D391A3462500A2 /* GLTFBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01364737A5DB53C96A4E44093ABA9104 /* GLTFBuffer.swift */; };
 		6E71401C282DA1D3ED727B6F1AD38164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B185272D64A98E5F89147F8189E958 /* Foundation.framework */; };
 		720A2C0F9AAAAC18F082E581BE93BB74 /* GLTFAnimationSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5673969AF5553FFB8A46019F25B23 /* GLTFAnimationSampler.swift */; };
@@ -53,33 +53,33 @@
 		863456D097D006F4D1BBFF6472AD510B /* GLTFGlTFProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C93BF26FC374624AA1A5C9137AB4F6 /* GLTFGlTFProperty.swift */; };
 		871B68E5941553E7A266CF912E47C1D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B185272D64A98E5F89147F8189E958 /* Foundation.framework */; };
 		87792A45ABCBCC0FE60DC1988C48EBA8 /* GLTFMaterialPbrMetallicRoughness.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9862C829A9122FD39464A0679952BD1 /* GLTFMaterialPbrMetallicRoughness.swift */; };
-		8853F2D3CAF36B78F2D7526F52AC5A5D /* Pods-SamMiti-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 706689AD9994C0EEE52C8689EE1A60D1 /* Pods-SamMiti-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88A367FE8A9CF670B599BABDFBC1B657 /* SamMitiArt.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CFA4CF04F420F6BA6C16E33564625E41 /* SamMitiArt.scnassets */; };
+		8853F2D3CAF36B78F2D7526F52AC5A5D /* Pods-SamMiti-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 153EEDCEF615FAE161903A578EE4F143 /* Pods-SamMiti-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88A367FE8A9CF670B599BABDFBC1B657 /* SamMitiArt.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 68342155BA53F252186453C6665FB71C /* SamMitiArt.scnassets */; };
 		918D0346BDDE130C79199CC20248A7CB /* GLTFBufferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73635726685BA4840756D3F96083AA05 /* GLTFBufferView.swift */; };
 		93721E969950008B625B28DD9CA2504A /* GLTFCameraOrthographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0101FA2F9FF2C216C68ECEF1ABF4FCEF /* GLTFCameraOrthographic.swift */; };
 		9C0E60F21CA510B3C8F90D987A35DFCF /* GLTFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BC7E5962C050C38D1417973A81A2D /* GLTFImage.swift */; };
-		9F7C33392F959D7ED9AF6D1F492AC353 /* SamMitiInteractionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7011D5CCF9583C11F376F36534C06 /* SamMitiInteractionStatus.swift */; };
+		9F7C33392F959D7ED9AF6D1F492AC353 /* SamMitiInteractionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBDF75131017AE16CF7B56CA6FBC6A /* SamMitiInteractionStatus.swift */; };
 		9FC9E4FF9905559EAF35A3BE0532BBE0 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader in Resources */ = {isa = PBXBuildFile; fileRef = 172C7C886E4C852569F60E73202CD3C1 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader */; };
 		A62FE2E3FC5A258F80E6ECA44222BB2E /* GLTFCameraPerspective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACB4190C930DF61C6E6105C10D81DB /* GLTFCameraPerspective.swift */; };
 		A8F5E298B10603FE0203F907CF94012F /* GLTFErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189BAB57926D8CC0C28A6E471306AA7 /* GLTFErrors.swift */; };
-		AB2CA1D67E884EB8FC6C2832D99F439C /* SamMitiVirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6957D6145EDD587C9B2B99BDB2C6FE /* SamMitiVirtualObject.swift */; };
+		AB2CA1D67E884EB8FC6C2832D99F439C /* SamMitiVirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD50403790C21B2EED15D60402E72E1 /* SamMitiVirtualObject.swift */; };
 		AC606EF0A0817A77F38F1314E15E0E2E /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader in Resources */ = {isa = PBXBuildFile; fileRef = C6B6B8BF3FFC0A29C549C9342CD2ED72 /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader */; };
-		AD726B8268C6BF97418EA60E40F30F1D /* Pods-SamMiti-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC214FAC6A431B377C58A5488EF60A5 /* Pods-SamMiti-Example-dummy.m */; };
+		AD726B8268C6BF97418EA60E40F30F1D /* Pods-SamMiti-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AF32003941283410A7C33F3A501E4 /* Pods-SamMiti-Example-dummy.m */; };
 		B07F9C313C52302BE6DC1375B9AEE1C0 /* GLTFUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9036B0DD03C3DE8073D19C12CD96278D /* GLTFUnarchiver.swift */; };
 		B16AB34DF3EA4D456C32172362F748B3 /* GLTFAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291CFE89B472FC9CA20A3E4AC1DA9880 /* GLTFAnimation.swift */; };
 		BEBD60918F6DED98E49FF400E9B2FE33 /* GLTFAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8AEE7626B08A608BCC07C1051542D9 /* GLTFAsset.swift */; };
-		C4910B2ED6A7D2464AE95553D986A041 /* GLTFSceneKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B710F2CC5C5AF01DC9645DEE924C6AC6 /* GLTFSceneKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF8D9BCEFD23D7524564FA0C391B0676 /* SamMitiAR-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 105ACE570C5231681AFB1B6E08589B94 /* SamMitiAR-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4910B2ED6A7D2464AE95553D986A041 /* GLTFSceneKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E6E54DBD57DBDE824F3928F90CD925 /* GLTFSceneKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF8D9BCEFD23D7524564FA0C391B0676 /* SamMitiAR-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0A684DC55106D728BF3700BAAF7FA0 /* SamMitiAR-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFB5C122056B27C33B7002F18C4B0B66 /* GLTFNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D163ABF21E27504CB91AD02BD88BAE5 /* GLTFNode.swift */; };
-		D34D92F553180BCDD5111756DD674495 /* SamMitiPlaneDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE92FB8882B4498CA67DE4D266FA5A0 /* SamMitiPlaneDetecting.swift */; };
+		D34D92F553180BCDD5111756DD674495 /* SamMitiPlaneDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1246DAE9296B5D22D091BD17044E80 /* SamMitiPlaneDetecting.swift */; };
 		DE3CEDAFF1EF58BFFF360C422850FF81 /* GLTFTextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03AB4EA887B0A23420642A98D281BA /* GLTFTextureInfo.swift */; };
-		DF59962121A73BA591CCC4419C4321F3 /* SamMitiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16B9FA0ED016096B89DB338FF873E4C4 /* SamMitiAssets.xcassets */; };
-		E409F3C9D243AD18A48DBFDC22EDB660 /* GestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB33B984004DF5238DE0332BD84A7EA /* GestureManager.swift */; };
-		E479C77AD3C8806641F95C98887C9FA0 /* GLTFSceneKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E09691BE23285BD13229180BD481EC /* GLTFSceneKit-dummy.m */; };
+		DF59962121A73BA591CCC4419C4321F3 /* SamMitiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12D689CFDC1F4E559A2BD3A03FB3780 /* SamMitiAssets.xcassets */; };
+		E409F3C9D243AD18A48DBFDC22EDB660 /* GestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31629FC3A20B2AA1CBF4C6A92B32962 /* GestureManager.swift */; };
+		E479C77AD3C8806641F95C98887C9FA0 /* GLTFSceneKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 468291169A82E20AC727DCBA25AE7044 /* GLTFSceneKit-dummy.m */; };
 		E653F439AAFB8A0E5105D4E9EF5E110C /* GLTFTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4983A4405C564029A5D137D5BF8436 /* GLTFTypes.swift */; };
-		EED947EFCB1FE8BB67D7F135E719A3AF /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A135F9EB51C49CB79536D2200DF169 /* ThresholdPanGesture.swift */; };
-		EFB71ECA310C00C35F9BA257404A0F5A /* SamMitiAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C368F636F1068718BB2A1E537B23BEE /* SamMitiAR.swift */; };
-		F70DDCD588B796BB4D90DF027B0C1D7F /* SamMitiFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F361160315B3CFB4EE9EFA592C15FB2 /* SamMitiFocusNode.swift */; };
+		EED947EFCB1FE8BB67D7F135E719A3AF /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67462CF8BAB2BF75848D3FE896299824 /* ThresholdPanGesture.swift */; };
+		EFB71ECA310C00C35F9BA257404A0F5A /* SamMitiAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D796DC5DD3DC1F13B955D7D446ED6 /* SamMitiAR.swift */; };
+		F70DDCD588B796BB4D90DF027B0C1D7F /* SamMitiFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDD7A9CD6ABB8A62E4E1CFE8B78018 /* SamMitiFocusNode.swift */; };
 		FA09937C8BAD374D395FE83DF8D8839D /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader in Resources */ = {isa = PBXBuildFile; fileRef = 5F170CA95ABC20A46E7058EE02EBE17E /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader */; };
 		FC2205056E1BDDFEE401B1152978379E /* GLTFExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19BC06AE6603D412B1371B6C545FC2 /* GLTFExtras.swift */; };
 /* End PBXBuildFile section */
@@ -113,95 +113,98 @@
 		0101FA2F9FF2C216C68ECEF1ABF4FCEF /* GLTFCameraOrthographic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFCameraOrthographic.swift; path = Source/Common/schema/GLTFCameraOrthographic.swift; sourceTree = "<group>"; };
 		01364737A5DB53C96A4E44093ABA9104 /* GLTFBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFBuffer.swift; path = Source/Common/schema/GLTFBuffer.swift; sourceTree = "<group>"; };
 		05FC3E0AC517981D2400353CDB857B27 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GLTFSceneKit.framework; path = GLTFSceneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06E685BA82183A60AD2699C3F981336D /* GLTFSceneKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLTFSceneKit-prefix.pch"; sourceTree = "<group>"; };
-		089D156E48850FCA35BC8171D9FCE486 /* Pods-SamMiti-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMiti-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		09C8B1A0DBA56529CF0BC1F829D72044 /* GLTFSkin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFSkin.swift; path = Source/Common/schema/GLTFSkin.swift; sourceTree = "<group>"; };
 		0A03AB4EA887B0A23420642A98D281BA /* GLTFTextureInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFTextureInfo.swift; path = Source/Common/schema/GLTFTextureInfo.swift; sourceTree = "<group>"; };
-		0FB33B984004DF5238DE0332BD84A7EA /* GestureManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GestureManager.swift; path = SamMiti/GestureManager.swift; sourceTree = "<group>"; };
-		105ACE570C5231681AFB1B6E08589B94 /* SamMitiAR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SamMitiAR-umbrella.h"; sourceTree = "<group>"; };
-		10E7011D5CCF9583C11F376F36534C06 /* SamMitiInteractionStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiInteractionStatus.swift; path = SamMiti/SamMitiInteractionStatus.swift; sourceTree = "<group>"; };
+		153EEDCEF615FAE161903A578EE4F143 /* Pods-SamMiti-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SamMiti-Example-umbrella.h"; sourceTree = "<group>"; };
+		157189C16D49B06620489453FA603B78 /* Pods-SamMiti-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SamMiti-Example.modulemap"; sourceTree = "<group>"; };
 		16673ACF6DE87F6BBB3E81A328C781D4 /* GLTFFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFFunctions.swift; path = Source/Common/GLTFFunctions.swift; sourceTree = "<group>"; };
-		16B9FA0ED016096B89DB338FF873E4C4 /* SamMitiAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = SamMitiAssets.xcassets; path = SamMiti/SamMitiAssets.xcassets; sourceTree = "<group>"; };
+		16A74B74656A644F7B8F9768CF45AB66 /* SamMitiDelegateObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiDelegateObject.swift; path = SamMiti/SamMitiDelegateObject.swift; sourceTree = "<group>"; };
 		172C7C886E4C852569F60E73202CD3C1 /* GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFShaderModifierSurface_pbrSpecularGlossiness_texture_doubleSidedWorkaround.shader; sourceTree = "<group>"; };
 		17F6DFEF84CC5F74D15D84EE97D83BE4 /* GLTFSceneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLTFSceneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B15569661A84245AE4695611FF33B7C /* GLTFScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFScene.swift; path = Source/Common/schema/GLTFScene.swift; sourceTree = "<group>"; };
-		1B5FE29BC50D53DD32A15490939CD730 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		23140607FF1931189D59964BA30D210B /* GLTFGlTFChildOfRootProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTFChildOfRootProperty.swift; path = Source/Common/schema/GLTFGlTFChildOfRootProperty.swift; sourceTree = "<group>"; };
 		23ACB4190C930DF61C6E6105C10D81DB /* GLTFCameraPerspective.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFCameraPerspective.swift; path = Source/Common/schema/GLTFCameraPerspective.swift; sourceTree = "<group>"; };
-		24F8F2D76D194793DCAEC8A795A691E9 /* Pods-SamMiti-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SamMiti-Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		24F93C7FA67E4088602D0A3E8BCFCB95 /* GLTFSceneSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFSceneSource.swift; path = Source/Common/GLTFSceneSource.swift; sourceTree = "<group>"; };
 		275C8D962F61F2E2A84313E56E1842B2 /* GLTFShaderModifierSurface_alphaModeBlend.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_alphaModeBlend.shader; path = Source/Common/GLTFShaderModifierSurface_alphaModeBlend.shader; sourceTree = "<group>"; };
+		2862EB4536EF6F94B0631102073360F0 /* SamMitiAR.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SamMitiAR.xcconfig; sourceTree = "<group>"; };
 		291CFE89B472FC9CA20A3E4AC1DA9880 /* GLTFAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimation.swift; path = Source/Common/schema/GLTFAnimation.swift; sourceTree = "<group>"; };
 		2DEFF3CA4B7FCBCC7BF8C0E064AD9001 /* GLTFMaterialNormalTextureInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterialNormalTextureInfo.swift; path = Source/Common/schema/GLTFMaterialNormalTextureInfo.swift; sourceTree = "<group>"; };
+		32DDD7A9CD6ABB8A62E4E1CFE8B78018 /* SamMitiFocusNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiFocusNode.swift; path = SamMiti/SamMitiFocusNode.swift; sourceTree = "<group>"; };
 		34458D43B276FE98BD85A9574FDEA75F /* GLTFAccessorSparseIndices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessorSparseIndices.swift; path = Source/Common/schema/GLTFAccessorSparseIndices.swift; sourceTree = "<group>"; };
-		3757AFB2612379A221CB811CBF0F697F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		384A3E25437D92964173C77B24F65DE6 /* GLTFGlTFid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTFid.swift; path = Source/Common/schema/GLTFGlTFid.swift; sourceTree = "<group>"; };
 		3B8AEE7626B08A608BCC07C1051542D9 /* GLTFAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAsset.swift; path = Source/Common/schema/GLTFAsset.swift; sourceTree = "<group>"; };
-		3C368F636F1068718BB2A1E537B23BEE /* SamMitiAR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiAR.swift; path = SamMiti/SamMitiAR.swift; sourceTree = "<group>"; };
-		3E10E8FAA46C719FEAE8CAF53BCCB434 /* SamMitiDelegateObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiDelegateObject.swift; path = SamMiti/SamMitiDelegateObject.swift; sourceTree = "<group>"; };
+		3B9BE196CDE27EE997C6A566805EB4E8 /* GLTFSceneKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GLTFSceneKit.modulemap; sourceTree = "<group>"; };
 		3F4B65F2FD8DBFE58E05F90563B19B2D /* GLTFShaderModifierSurface.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface.shader; path = Source/Common/GLTFShaderModifierSurface.shader; sourceTree = "<group>"; };
-		408C09BF17F81FA7E54C8B5C5BE76C2F /* SamMitiARDebug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiARDebug.swift; path = SamMiti/SamMitiARDebug.swift; sourceTree = "<group>"; };
-		424C4E9511E243344A3DEB6933865A02 /* Pods-SamMiti-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SamMiti-Example-frameworks.sh"; sourceTree = "<group>"; };
+		422D796DC5DD3DC1F13B955D7D446ED6 /* SamMitiAR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiAR.swift; path = SamMiti/SamMitiAR.swift; sourceTree = "<group>"; };
 		437477FF969A80EC97D6BF9F42ECCF1B /* GLTFGlTF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTF.swift; path = Source/Common/schema/GLTFGlTF.swift; sourceTree = "<group>"; };
-		44DA2795FC723B5349A56839346629A4 /* SceneKitAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneKitAnimator.swift; path = SamMiti/SceneKitAnimator.swift; sourceTree = "<group>"; };
+		468291169A82E20AC727DCBA25AE7044 /* GLTFSceneKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GLTFSceneKit-dummy.m"; sourceTree = "<group>"; };
+		4A0244604C0E7008413A8623621519E9 /* Pods-SamMiti-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMiti-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4A19BC06AE6603D412B1371B6C545FC2 /* GLTFExtras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFExtras.swift; path = Source/Common/schema/GLTFExtras.swift; sourceTree = "<group>"; };
 		4FA68BE1E6F6E7E7561B76F0E1C37F32 /* GLTFMeshPrimitive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMeshPrimitive.swift; path = Source/Common/schema/GLTFMeshPrimitive.swift; sourceTree = "<group>"; };
+		50E6E54DBD57DBDE824F3928F90CD925 /* GLTFSceneKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLTFSceneKit-umbrella.h"; sourceTree = "<group>"; };
+		587D66070D19EADF137923BAE309B1D3 /* SamMitiTrackingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiTrackingState.swift; path = SamMiti/SamMitiTrackingState.swift; sourceTree = "<group>"; };
 		5B189974DE791C0A05DCB9A44CE73E8F /* ExtensionList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionList.swift; path = Source/Common/schema/extensions/ExtensionList.swift; sourceTree = "<group>"; };
+		5BD50403790C21B2EED15D60402E72E1 /* SamMitiVirtualObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiVirtualObject.swift; path = SamMiti/SamMitiVirtualObject.swift; sourceTree = "<group>"; };
+		5EB5B2C10CE6F54E7AD2EE8FF516F7B0 /* SamMitiAR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SamMitiAR-dummy.m"; sourceTree = "<group>"; };
 		5F170CA95ABC20A46E7058EE02EBE17E /* GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFShaderModifierSurface_pbrSpecularGlossiness_doubleSidedWorkaround.shader; sourceTree = "<group>"; };
-		61C9926F102CC54DAA7E4884BD8A156B /* GLTFSceneKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GLTFSceneKit.xcconfig; sourceTree = "<group>"; };
 		63B185272D64A98E5F89147F8189E958 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66EAB1955B6552D7E4761C8BF9936F89 /* Pods-SamMiti-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SamMiti-Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GLTFSceneKit.xcconfig; sourceTree = "<group>"; };
+		674322EDD70EF913A4F95B1BEED766B8 /* Pods-SamMiti-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SamMiti-Example-frameworks.sh"; sourceTree = "<group>"; };
+		67462CF8BAB2BF75848D3FE896299824 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThresholdPanGesture.swift; path = SamMiti/ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		68342155BA53F252186453C6665FB71C /* SamMitiArt.scnassets */ = {isa = PBXFileReference; includeInIndex = 1; name = SamMitiArt.scnassets; path = SamMiti/SamMitiArt.scnassets; sourceTree = "<group>"; };
 		6C5E10BC89423529909C03066B532488 /* GLTFAccessorSparse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessorSparse.swift; path = Source/Common/schema/GLTFAccessorSparse.swift; sourceTree = "<group>"; };
-		6CC214FAC6A431B377C58A5488EF60A5 /* Pods-SamMiti-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SamMiti-Example-dummy.m"; sourceTree = "<group>"; };
 		6DEC3B2FA55CB4993DA94BEB062016ED /* GLTFTexture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFTexture.swift; path = Source/Common/schema/GLTFTexture.swift; sourceTree = "<group>"; };
-		6F361160315B3CFB4EE9EFA592C15FB2 /* SamMitiFocusNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiFocusNode.swift; path = SamMiti/SamMitiFocusNode.swift; sourceTree = "<group>"; };
-		706689AD9994C0EEE52C8689EE1A60D1 /* Pods-SamMiti-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SamMiti-Example-umbrella.h"; sourceTree = "<group>"; };
+		71418E2AD6BEDD2F9C3A9FBA1A906224 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		73635726685BA4840756D3F96083AA05 /* GLTFBufferView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFBufferView.swift; path = Source/Common/schema/GLTFBufferView.swift; sourceTree = "<group>"; };
+		73E775B671C88AE262B51BF977E2DD15 /* SamMiti.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SamMiti.h; path = SamMiti/SamMiti.h; sourceTree = "<group>"; };
+		76B63C52A7511617AF64AA1A6F60FFA5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		791CE37F6D7C2D8B0F4633AD6F6DC28A /* Pods_SamMiti_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SamMiti_Example.framework; path = "Pods-SamMiti-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D28E4489EF1004A86EA18819F8A0C2B /* SamMitiTrackingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiTrackingState.swift; path = SamMiti/SamMitiTrackingState.swift; sourceTree = "<group>"; };
+		873E95653B00A4AE2264B218BA3D592E /* SamMitiARDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiARDelegate.swift; path = SamMiti/SamMitiARDelegate.swift; sourceTree = "<group>"; };
+		89AD7582E187FC350AFBAB15167F0D5B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8ACF50DE06057D938C60F5AB76966B09 /* GLTFSceneKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLTFSceneKit-prefix.pch"; sourceTree = "<group>"; };
 		8D163ABF21E27504CB91AD02BD88BAE5 /* GLTFNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFNode.swift; path = Source/Common/schema/GLTFNode.swift; sourceTree = "<group>"; };
+		8F0A684DC55106D728BF3700BAAF7FA0 /* SamMitiAR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SamMitiAR-umbrella.h"; sourceTree = "<group>"; };
 		9036B0DD03C3DE8073D19C12CD96278D /* GLTFUnarchiver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFUnarchiver.swift; path = Source/Common/GLTFUnarchiver.swift; sourceTree = "<group>"; };
-		908A674B428B5253212A5060E30BD662 /* SamMitiARDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiARDelegate.swift; path = SamMiti/SamMitiARDelegate.swift; sourceTree = "<group>"; };
-		90E09691BE23285BD13229180BD481EC /* GLTFSceneKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GLTFSceneKit-dummy.m"; sourceTree = "<group>"; };
+		9106A0855B2DAA715FC5CA0FA3C5EE47 /* Pods-SamMiti-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SamMiti-Example-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9665516BC5917EAF803FA25FAD1B14E8 /* SamMitiAR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SamMitiAR-dummy.m"; sourceTree = "<group>"; };
-		9CE14E05816A64D86D9D4B7CC55927C2 /* Pods-SamMiti-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMiti-Example.release.xcconfig"; sourceTree = "<group>"; };
-		A172C7C440971067B9FC528E5FA4EA15 /* GLTFSceneKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GLTFSceneKit.modulemap; sourceTree = "<group>"; };
+		96FBDF75131017AE16CF7B56CA6FBC6A /* SamMitiInteractionStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiInteractionStatus.swift; path = SamMiti/SamMitiInteractionStatus.swift; sourceTree = "<group>"; };
+		9844A8F64BF73446FF4297C6F3DAB76A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9898EFE4787A6A3BE44B39A9BA6D135A /* SamMitiVitualObjectLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiVitualObjectLoader.swift; path = SamMiti/SamMitiVitualObjectLoader.swift; sourceTree = "<group>"; };
+		9B4AF32003941283410A7C33F3A501E4 /* Pods-SamMiti-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SamMiti-Example-dummy.m"; sourceTree = "<group>"; };
 		A189BAB57926D8CC0C28A6E471306AA7 /* GLTFErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFErrors.swift; path = Source/Common/GLTFErrors.swift; sourceTree = "<group>"; };
 		A40465E448E6311391369F80E1529805 /* GLTFExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFExtension.swift; path = Source/Common/schema/GLTFExtension.swift; sourceTree = "<group>"; };
+		A62FA4DDFF0C3270A27A5CBB9D228AB8 /* SamMitiARDebug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiARDebug.swift; path = SamMiti/SamMitiARDebug.swift; sourceTree = "<group>"; };
 		A695A3A38B2E01FB908A405EF6722300 /* SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SamMitiAR.framework; path = SamMitiAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7322179BD497146228FB5F2D34F607A /* GLTFShaderModifierFragment_alphaCutoff.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierFragment_alphaCutoff.shader; path = Source/Common/GLTFShaderModifierFragment_alphaCutoff.shader; sourceTree = "<group>"; };
-		A839A0AA125772A104E6F5D2A0D5CD0D /* SamMitiAR-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SamMitiAR-prefix.pch"; sourceTree = "<group>"; };
+		AAF5696BA4354F1FE95476C9F745DF79 /* SamMitiAR.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SamMitiAR.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB116C9E1CBBC177E1F573B05C5889E1 /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift; sourceTree = "<group>"; };
 		AB4BC7E5962C050C38D1417973A81A2D /* GLTFImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFImage.swift; path = Source/Common/schema/GLTFImage.swift; sourceTree = "<group>"; };
+		AE202E22091BA51F36427F13AC1C7357 /* Pods-SamMiti-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SamMiti-Example.release.xcconfig"; sourceTree = "<group>"; };
+		AF1246DAE9296B5D22D091BD17044E80 /* SamMitiPlaneDetecting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiPlaneDetecting.swift; path = SamMiti/SamMitiPlaneDetecting.swift; sourceTree = "<group>"; };
+		B0F9A71711B42A3B5A1A2A309DEC288F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B31629FC3A20B2AA1CBF4C6A92B32962 /* GestureManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GestureManager.swift; path = SamMiti/GestureManager.swift; sourceTree = "<group>"; };
 		B6AFCB58ACA6F10872FC924A5732AE9C /* GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift; path = Source/Common/schema/extensions/KHR_materials_common/GLTFKHRMaterialsCommon_GLTFKHRMaterialsCommon.swift; sourceTree = "<group>"; };
-		B710F2CC5C5AF01DC9645DEE924C6AC6 /* GLTFSceneKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLTFSceneKit-umbrella.h"; sourceTree = "<group>"; };
-		B92415EF1F80ED23DB23503433FE750B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4983A4405C564029A5D137D5BF8436 /* GLTFTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFTypes.swift; path = Source/Common/GLTFTypes.swift; sourceTree = "<group>"; };
-		BB734BC1547125C5B808F0BE552AA655 /* Pods-SamMiti-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SamMiti-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BC12590B1392686FEB19B95559CBF910 /* SamMitiAR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SamMitiAR.modulemap; sourceTree = "<group>"; };
 		BDC7756123F61F5DBA922041C3CF5F14 /* GLTFShaderModifierSurface_pbrSpecularGlossiness.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_pbrSpecularGlossiness.shader; path = Source/Common/schema/extensions/KHR_materials_pbrSpecularGlossiness/GLTFShaderModifierSurface_pbrSpecularGlossiness.shader; sourceTree = "<group>"; };
-		C4A135F9EB51C49CB79536D2200DF169 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThresholdPanGesture.swift; path = SamMiti/ThresholdPanGesture.swift; sourceTree = "<group>"; };
 		C6B6B8BF3FFC0A29C549C9342CD2ED72 /* GLTFShaderModifierSurface_doubleSidedWorkaround.shader */ = {isa = PBXFileReference; includeInIndex = 1; name = GLTFShaderModifierSurface_doubleSidedWorkaround.shader; path = Source/Common/GLTFShaderModifierSurface_doubleSidedWorkaround.shader; sourceTree = "<group>"; };
-		C90FE85D40412EA9148716A34514F383 /* SamMitiVitualObjectLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiVitualObjectLoader.swift; path = SamMiti/SamMitiVitualObjectLoader.swift; sourceTree = "<group>"; };
 		C9862C829A9122FD39464A0679952BD1 /* GLTFMaterialPbrMetallicRoughness.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterialPbrMetallicRoughness.swift; path = Source/Common/schema/GLTFMaterialPbrMetallicRoughness.swift; sourceTree = "<group>"; };
-		C9F58545FFB45DE48A9DF0869C829404 /* Pods-SamMiti-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SamMiti-Example-resources.sh"; sourceTree = "<group>"; };
+		CA30734460D0DBA75DC4CB812DB459F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBC16A8E57D4F7349D3DB8B921562731 /* GLTFSampler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFSampler.swift; path = Source/Common/schema/GLTFSampler.swift; sourceTree = "<group>"; };
-		CBE92FB8882B4498CA67DE4D266FA5A0 /* SamMitiPlaneDetecting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiPlaneDetecting.swift; path = SamMiti/SamMitiPlaneDetecting.swift; sourceTree = "<group>"; };
-		CFA4CF04F420F6BA6C16E33564625E41 /* SamMitiArt.scnassets */ = {isa = PBXFileReference; includeInIndex = 1; name = SamMitiArt.scnassets; path = SamMiti/SamMitiArt.scnassets; sourceTree = "<group>"; };
 		D02E88ED3AB8893F018EC3D02CB6BA4E /* GLTFMaterialOcclusionTextureInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterialOcclusionTextureInfo.swift; path = Source/Common/schema/GLTFMaterialOcclusionTextureInfo.swift; sourceTree = "<group>"; };
 		D24D490E9875602635FC21CB04A720C4 /* GLTFMesh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMesh.swift; path = Source/Common/schema/GLTFMesh.swift; sourceTree = "<group>"; };
 		E314192C5805F3ED4FF5558494288D63 /* GLTFAnimationChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimationChannel.swift; path = Source/Common/schema/GLTFAnimationChannel.swift; sourceTree = "<group>"; };
 		E4548B79795B00A6E111375A7E5C5D38 /* GLTFAccessorSparseValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessorSparseValues.swift; path = Source/Common/schema/GLTFAccessorSparseValues.swift; sourceTree = "<group>"; };
-		E77CA4CBA83723D0C4FD50AF67E84710 /* SamMiti.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SamMiti.h; path = SamMiti/SamMiti.h; sourceTree = "<group>"; };
+		F12D689CFDC1F4E559A2BD3A03FB3780 /* SamMitiAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = SamMitiAssets.xcassets; path = SamMiti/SamMitiAssets.xcassets; sourceTree = "<group>"; };
 		F596C67F3C0F8BE9D2C5E52C5DB4E0D7 /* GLTFAnimationChannelTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAnimationChannelTarget.swift; path = Source/Common/schema/GLTFAnimationChannelTarget.swift; sourceTree = "<group>"; };
-		F5DB72BC972791CA019917BB878C5A27 /* SamMitiAR.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SamMitiAR.xcconfig; sourceTree = "<group>"; };
 		F6D08FCB26A8A9EAA77146FAE9EB3F69 /* GLTFMaterial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFMaterial.swift; path = Source/Common/schema/GLTFMaterial.swift; sourceTree = "<group>"; };
 		F78872E9812FE4909EB4057E9BF87B87 /* GLTFCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFCamera.swift; path = Source/Common/schema/GLTFCamera.swift; sourceTree = "<group>"; };
+		F7FB35100E15FDBACAC166250B42743B /* SamMitiAR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SamMitiAR.modulemap; sourceTree = "<group>"; };
+		F84DB2A71D7E565C964C34097048F80E /* Pods-SamMiti-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SamMiti-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F8C93BF26FC374624AA1A5C9137AB4F6 /* GLTFGlTFProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFGlTFProperty.swift; path = Source/Common/schema/GLTFGlTFProperty.swift; sourceTree = "<group>"; };
-		FA6957D6145EDD587C9B2B99BDB2C6FE /* SamMitiVirtualObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SamMitiVirtualObject.swift; path = SamMiti/SamMitiVirtualObject.swift; sourceTree = "<group>"; };
+		F96995072534EC7CBA6B7D5C2D2FB031 /* SamMitiAR-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SamMitiAR-prefix.pch"; sourceTree = "<group>"; };
 		FBC502C547BF261F2F39AB0845E008BA /* GLTFAccessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GLTFAccessor.swift; path = Source/Common/schema/GLTFAccessor.swift; sourceTree = "<group>"; };
-		FD589D5F78934A8304BF3A2CBA5B2D62 /* Pods-SamMiti-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SamMiti-Example.modulemap"; sourceTree = "<group>"; };
-		FF45ED0B29D011B7CB057C82E03F1428 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD3DE6D31129005D1CEA1CD4E6243029 /* SceneKitAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneKitAnimator.swift; path = SamMiti/SceneKitAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071E11CC65305CCD98C86E920945FB30 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				71418E2AD6BEDD2F9C3A9FBA1A906224 /* Utilities.swift */,
+			);
+			name = Utilities;
+			path = SamMiti/Utilities;
+			sourceTree = "<group>";
+		};
 		110B1FD757CA131380F8562E31AFFA83 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,22 +253,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		14946ADF1BBAC7907152DDA19D0DE9B2 /* Pods-SamMiti-Example */ = {
+		19BD519D3AE34AD7B4C7AD775D0949CF /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF45ED0B29D011B7CB057C82E03F1428 /* Info.plist */,
-				FD589D5F78934A8304BF3A2CBA5B2D62 /* Pods-SamMiti-Example.modulemap */,
-				BB734BC1547125C5B808F0BE552AA655 /* Pods-SamMiti-Example-acknowledgements.markdown */,
-				24F8F2D76D194793DCAEC8A795A691E9 /* Pods-SamMiti-Example-acknowledgements.plist */,
-				6CC214FAC6A431B377C58A5488EF60A5 /* Pods-SamMiti-Example-dummy.m */,
-				424C4E9511E243344A3DEB6933865A02 /* Pods-SamMiti-Example-frameworks.sh */,
-				C9F58545FFB45DE48A9DF0869C829404 /* Pods-SamMiti-Example-resources.sh */,
-				706689AD9994C0EEE52C8689EE1A60D1 /* Pods-SamMiti-Example-umbrella.h */,
-				089D156E48850FCA35BC8171D9FCE486 /* Pods-SamMiti-Example.debug.xcconfig */,
-				9CE14E05816A64D86D9D4B7CC55927C2 /* Pods-SamMiti-Example.release.xcconfig */,
+				B180CFA266003E02B499545174FE04EC /* SamMitiAR */,
 			);
-			name = "Pods-SamMiti-Example";
-			path = "Target Support Files/Pods-SamMiti-Example";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		218C675250CF99F519619E249D6DE3BD /* Products */ = {
@@ -269,40 +271,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B429104894757ED6C9C6EC8811721DE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A172C7C440971067B9FC528E5FA4EA15 /* GLTFSceneKit.modulemap */,
-				61C9926F102CC54DAA7E4884BD8A156B /* GLTFSceneKit.xcconfig */,
-				90E09691BE23285BD13229180BD481EC /* GLTFSceneKit-dummy.m */,
-				06E685BA82183A60AD2699C3F981336D /* GLTFSceneKit-prefix.pch */,
-				B710F2CC5C5AF01DC9645DEE924C6AC6 /* GLTFSceneKit-umbrella.h */,
-				B92415EF1F80ED23DB23503433FE750B /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GLTFSceneKit";
-			sourceTree = "<group>";
-		};
 		5502A0CD986C91312A93642D31F45B0D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				14946ADF1BBAC7907152DDA19D0DE9B2 /* Pods-SamMiti-Example */,
+				579D86E57F1827380C83BDC71EE320B7 /* Pods-SamMiti-Example */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		56AEF38DA8B5A9DC875C999E301B068A /* Support Files */ = {
+		579D86E57F1827380C83BDC71EE320B7 /* Pods-SamMiti-Example */ = {
 			isa = PBXGroup;
 			children = (
-				3757AFB2612379A221CB811CBF0F697F /* Info.plist */,
-				BC12590B1392686FEB19B95559CBF910 /* SamMitiAR.modulemap */,
-				F5DB72BC972791CA019917BB878C5A27 /* SamMitiAR.xcconfig */,
-				9665516BC5917EAF803FA25FAD1B14E8 /* SamMitiAR-dummy.m */,
-				A839A0AA125772A104E6F5D2A0D5CD0D /* SamMitiAR-prefix.pch */,
-				105ACE570C5231681AFB1B6E08589B94 /* SamMitiAR-umbrella.h */,
+				B0F9A71711B42A3B5A1A2A309DEC288F /* Info.plist */,
+				157189C16D49B06620489453FA603B78 /* Pods-SamMiti-Example.modulemap */,
+				F84DB2A71D7E565C964C34097048F80E /* Pods-SamMiti-Example-acknowledgements.markdown */,
+				66EAB1955B6552D7E4761C8BF9936F89 /* Pods-SamMiti-Example-acknowledgements.plist */,
+				9B4AF32003941283410A7C33F3A501E4 /* Pods-SamMiti-Example-dummy.m */,
+				674322EDD70EF913A4F95B1BEED766B8 /* Pods-SamMiti-Example-frameworks.sh */,
+				9106A0855B2DAA715FC5CA0FA3C5EE47 /* Pods-SamMiti-Example-resources.sh */,
+				153EEDCEF615FAE161903A578EE4F143 /* Pods-SamMiti-Example-umbrella.h */,
+				4A0244604C0E7008413A8623621519E9 /* Pods-SamMiti-Example.debug.xcconfig */,
+				AE202E22091BA51F36427F13AC1C7357 /* Pods-SamMiti-Example.release.xcconfig */,
+			);
+			name = "Pods-SamMiti-Example";
+			path = "Target Support Files/Pods-SamMiti-Example";
+			sourceTree = "<group>";
+		};
+		5E913E371759DEFB53990E813AFAB810 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B9BE196CDE27EE997C6A566805EB4E8 /* GLTFSceneKit.modulemap */,
+				671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */,
+				468291169A82E20AC727DCBA25AE7044 /* GLTFSceneKit-dummy.m */,
+				8ACF50DE06057D938C60F5AB76966B09 /* GLTFSceneKit-prefix.pch */,
+				50E6E54DBD57DBDE824F3928F90CD925 /* GLTFSceneKit-umbrella.h */,
+				76B63C52A7511617AF64AA1A6F60FFA5 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "SamMiti-Example/Pods/Target Support Files/SamMitiAR";
+			path = "../Target Support Files/GLTFSceneKit";
 			sourceTree = "<group>";
 		};
 		6F795C41721E3BE48162F70E0228660D /* Frameworks */ = {
@@ -312,14 +318,6 @@
 				110B1FD757CA131380F8562E31AFFA83 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		73C151E5BF9EB68855FD9CD4AC61518E /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CE0FDA5EE18B3FA7EFFA26CA7B59C413 /* SamMitiAR */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7B2DAAB3954E8490F675D4EEAAE97E4E /* Resources */ = {
@@ -340,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				73C151E5BF9EB68855FD9CD4AC61518E /* Development Pods */,
+				19BD519D3AE34AD7B4C7AD775D0949CF /* Development Pods */,
 				6F795C41721E3BE48162F70E0228660D /* Frameworks */,
 				C51ADE00FF7DCAEEC38DF8A6123D0F1A /* Pods */,
 				218C675250CF99F519619E249D6DE3BD /* Products */,
@@ -348,22 +346,49 @@
 			);
 			sourceTree = "<group>";
 		};
-		8896646EEEA7F9B17E228110C9872E2F /* Utilities */ = {
+		955B9BB3BC02F90D5429D3B2D61AF142 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				1B5FE29BC50D53DD32A15490939CD730 /* Utilities.swift */,
+				89AD7582E187FC350AFBAB15167F0D5B /* LICENSE */,
+				9844A8F64BF73446FF4297C6F3DAB76A /* README.md */,
+				AAF5696BA4354F1FE95476C9F745DF79 /* SamMitiAR.podspec */,
 			);
-			name = Utilities;
-			path = SamMiti/Utilities;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		B3821BA142E0C2B36D3D661D2BE61332 /* Resources */ = {
+		B0E0A8BB9CD31C0100CE33AF3A4853DB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CFA4CF04F420F6BA6C16E33564625E41 /* SamMitiArt.scnassets */,
-				16B9FA0ED016096B89DB338FF873E4C4 /* SamMitiAssets.xcassets */,
+				68342155BA53F252186453C6665FB71C /* SamMitiArt.scnassets */,
+				F12D689CFDC1F4E559A2BD3A03FB3780 /* SamMitiAssets.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		B180CFA266003E02B499545174FE04EC /* SamMitiAR */ = {
+			isa = PBXGroup;
+			children = (
+				B31629FC3A20B2AA1CBF4C6A92B32962 /* GestureManager.swift */,
+				73E775B671C88AE262B51BF977E2DD15 /* SamMiti.h */,
+				422D796DC5DD3DC1F13B955D7D446ED6 /* SamMitiAR.swift */,
+				A62FA4DDFF0C3270A27A5CBB9D228AB8 /* SamMitiARDebug.swift */,
+				873E95653B00A4AE2264B218BA3D592E /* SamMitiARDelegate.swift */,
+				16A74B74656A644F7B8F9768CF45AB66 /* SamMitiDelegateObject.swift */,
+				32DDD7A9CD6ABB8A62E4E1CFE8B78018 /* SamMitiFocusNode.swift */,
+				96FBDF75131017AE16CF7B56CA6FBC6A /* SamMitiInteractionStatus.swift */,
+				AF1246DAE9296B5D22D091BD17044E80 /* SamMitiPlaneDetecting.swift */,
+				587D66070D19EADF137923BAE309B1D3 /* SamMitiTrackingState.swift */,
+				5BD50403790C21B2EED15D60402E72E1 /* SamMitiVirtualObject.swift */,
+				9898EFE4787A6A3BE44B39A9BA6D135A /* SamMitiVitualObjectLoader.swift */,
+				FD3DE6D31129005D1CEA1CD4E6243029 /* SceneKitAnimator.swift */,
+				67462CF8BAB2BF75848D3FE896299824 /* ThresholdPanGesture.swift */,
+				955B9BB3BC02F90D5429D3B2D61AF142 /* Pod */,
+				B0E0A8BB9CD31C0100CE33AF3A4853DB /* Resources */,
+				E0D62AE5FDCBA61C18D8683FD681DBCF /* Support Files */,
+				071E11CC65305CCD98C86E920945FB30 /* Utilities */,
+			);
+			name = SamMitiAR;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		C51ADE00FF7DCAEEC38DF8A6123D0F1A /* Pods */ = {
@@ -374,29 +399,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CE0FDA5EE18B3FA7EFFA26CA7B59C413 /* SamMitiAR */ = {
+		E0D62AE5FDCBA61C18D8683FD681DBCF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0FB33B984004DF5238DE0332BD84A7EA /* GestureManager.swift */,
-				E77CA4CBA83723D0C4FD50AF67E84710 /* SamMiti.h */,
-				3C368F636F1068718BB2A1E537B23BEE /* SamMitiAR.swift */,
-				408C09BF17F81FA7E54C8B5C5BE76C2F /* SamMitiARDebug.swift */,
-				908A674B428B5253212A5060E30BD662 /* SamMitiARDelegate.swift */,
-				3E10E8FAA46C719FEAE8CAF53BCCB434 /* SamMitiDelegateObject.swift */,
-				6F361160315B3CFB4EE9EFA592C15FB2 /* SamMitiFocusNode.swift */,
-				10E7011D5CCF9583C11F376F36534C06 /* SamMitiInteractionStatus.swift */,
-				CBE92FB8882B4498CA67DE4D266FA5A0 /* SamMitiPlaneDetecting.swift */,
-				7D28E4489EF1004A86EA18819F8A0C2B /* SamMitiTrackingState.swift */,
-				FA6957D6145EDD587C9B2B99BDB2C6FE /* SamMitiVirtualObject.swift */,
-				C90FE85D40412EA9148716A34514F383 /* SamMitiVitualObjectLoader.swift */,
-				44DA2795FC723B5349A56839346629A4 /* SceneKitAnimator.swift */,
-				C4A135F9EB51C49CB79536D2200DF169 /* ThresholdPanGesture.swift */,
-				B3821BA142E0C2B36D3D661D2BE61332 /* Resources */,
-				56AEF38DA8B5A9DC875C999E301B068A /* Support Files */,
-				8896646EEEA7F9B17E228110C9872E2F /* Utilities */,
+				CA30734460D0DBA75DC4CB812DB459F2 /* Info.plist */,
+				F7FB35100E15FDBACAC166250B42743B /* SamMitiAR.modulemap */,
+				2862EB4536EF6F94B0631102073360F0 /* SamMitiAR.xcconfig */,
+				5EB5B2C10CE6F54E7AD2EE8FF516F7B0 /* SamMitiAR-dummy.m */,
+				F96995072534EC7CBA6B7D5C2D2FB031 /* SamMitiAR-prefix.pch */,
+				8F0A684DC55106D728BF3700BAAF7FA0 /* SamMitiAR-umbrella.h */,
 			);
-			name = SamMitiAR;
-			path = ../..;
+			name = "Support Files";
+			path = "SamMiti-Example/Pods/Target Support Files/SamMitiAR";
 			sourceTree = "<group>";
 		};
 		E424025E2822F94419DB11952B99DA88 /* GLTFSceneKit */ = {
@@ -444,7 +458,7 @@
 				BA4983A4405C564029A5D137D5BF8436 /* GLTFTypes.swift */,
 				9036B0DD03C3DE8073D19C12CD96278D /* GLTFUnarchiver.swift */,
 				7B2DAAB3954E8490F675D4EEAAE97E4E /* Resources */,
-				4B429104894757ED6C9C6EC8811721DE /* Support Files */,
+				5E913E371759DEFB53990E813AFAB810 /* Support Files */,
 			);
 			name = GLTFSceneKit;
 			path = GLTFSceneKit;
@@ -543,8 +557,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -695,7 +709,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -705,10 +719,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -716,6 +732,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -724,6 +741,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -744,48 +762,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		3D0F578CA14D6D633A26492A819E35ED /* Release */ = {
+		09C4FED5E60A604ECA202859753835DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61C9926F102CC54DAA7E4884BD8A156B /* GLTFSceneKit.xcconfig */;
+			baseConfigurationReference = 4A0244604C0E7008413A8623621519E9 /* Pods-SamMiti-Example.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GLTFSceneKit/GLTFSceneKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GLTFSceneKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GLTFSceneKit/GLTFSceneKit.modulemap";
-				PRODUCT_NAME = GLTFSceneKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		568A1C66CAF5520D7231A5FAC38CFCF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 089D156E48850FCA35BC8171D9FCE486 /* Pods-SamMiti-Example.debug.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -805,7 +792,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SamMiti_Example;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -816,7 +803,110 @@
 			};
 			name = Debug;
 		};
-		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
+		0C63176798055A9BE05F3FE2B00825DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE202E22091BA51F36427F13AC1C7357 /* Pods-SamMiti-Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SamMiti-Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4197D9A853BF0F52C397D04BEA67FB6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GLTFSceneKit/GLTFSceneKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GLTFSceneKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GLTFSceneKit/GLTFSceneKit.modulemap";
+				PRODUCT_MODULE_NAME = GLTFSceneKit;
+				PRODUCT_NAME = GLTFSceneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8712780AA263517E56C6AD5278F02823 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2862EB4536EF6F94B0631102073360F0 /* SamMitiAR.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SamMitiAR/SamMitiAR-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SamMitiAR/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SamMitiAR/SamMitiAR.modulemap";
+				PRODUCT_MODULE_NAME = SamMitiAR;
+				PRODUCT_NAME = SamMitiAR;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -826,10 +916,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -837,6 +929,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -845,6 +938,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -869,17 +963,17 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		70F2C6DD9DDC50CEBE13851F2751AE30 /* Release */ = {
+		A10EABE631D3770D16DD7B7555D1B288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5DB72BC972791CA019917BB878C5A27 /* SamMitiAR.xcconfig */;
+			baseConfigurationReference = 2862EB4536EF6F94B0631102073360F0 /* SamMitiAR.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -895,6 +989,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SamMitiAR/SamMitiAR.modulemap";
+				PRODUCT_MODULE_NAME = SamMitiAR;
 				PRODUCT_NAME = SamMitiAR;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -908,10 +1003,11 @@
 			};
 			name = Release;
 		};
-		97113273324A81ACB22E35A67DEFE303 /* Debug */ = {
+		C18634F3867D9A046A4FF0F038C8AB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61C9926F102CC54DAA7E4884BD8A156B /* GLTFSceneKit.xcconfig */;
+			baseConfigurationReference = 671AB6B68329268E01085C3618D963DE /* GLTFSceneKit.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -927,6 +1023,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GLTFSceneKit/GLTFSceneKit.modulemap";
+				PRODUCT_MODULE_NAME = GLTFSceneKit;
 				PRODUCT_NAME = GLTFSceneKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -939,79 +1036,14 @@
 			};
 			name = Debug;
 		};
-		9EC04E3B76A17C1E47AEAEFE5782E4D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5DB72BC972791CA019917BB878C5A27 /* SamMitiAR.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SamMitiAR/SamMitiAR-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SamMitiAR/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SamMitiAR/SamMitiAR.modulemap";
-				PRODUCT_NAME = SamMitiAR;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D4354569D7FFB0027E62D95A8F648C13 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CE14E05816A64D86D9D4B7CC55927C2 /* Pods-SamMiti-Example.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SamMiti-Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SamMiti_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
-				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1019,8 +1051,8 @@
 		709F9FD429B95D1C8DFEF19D1B071A84 /* Build configuration list for PBXNativeTarget "SamMitiAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9EC04E3B76A17C1E47AEAEFE5782E4D1 /* Debug */,
-				70F2C6DD9DDC50CEBE13851F2751AE30 /* Release */,
+				8712780AA263517E56C6AD5278F02823 /* Debug */,
+				A10EABE631D3770D16DD7B7555D1B288 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1028,8 +1060,8 @@
 		E2975B956D1FB471E85F24A072F3DE0E /* Build configuration list for PBXNativeTarget "GLTFSceneKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97113273324A81ACB22E35A67DEFE303 /* Debug */,
-				3D0F578CA14D6D633A26492A819E35ED /* Release */,
+				C18634F3867D9A046A4FF0F038C8AB24 /* Debug */,
+				4197D9A853BF0F52C397D04BEA67FB6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1037,8 +1069,8 @@
 		EE7852634FAA4F4C9DB6C11213C682CF /* Build configuration list for PBXNativeTarget "Pods-SamMiti-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				568A1C66CAF5520D7231A5FAC38CFCF0 /* Debug */,
-				D4354569D7FFB0027E62D95A8F648C13 /* Release */,
+				09C4FED5E60A604ECA202859753835DB /* Debug */,
+				0C63176798055A9BE05F3FE2B00825DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

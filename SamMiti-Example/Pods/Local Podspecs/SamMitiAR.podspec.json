@@ -3,18 +3,18 @@
   "platforms": {
     "ios": "11.0"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": {
     "type": "MIT"
   },
-  "homepage": "https://bitbucket.org/prolificinteractive/sammiti-ios",
+  "homepage": "https://github.com/prolificinteractive/SamMitiAR-iOS",
   "authors": {
     "Nattawut Singhchai": "wut@prolificinteractive.com"
   },
   "summary": "An iOS framework for easy 3D thing integration to your application.",
   "source": {
-    "git": "git@bitbucket.org:prolificinteractive/sammiti-ios.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/prolificinteractive/SamMitiAR-iOS.git",
+    "tag": "0.1.1"
   },
   "dependencies": {
     "GLTFSceneKit": [

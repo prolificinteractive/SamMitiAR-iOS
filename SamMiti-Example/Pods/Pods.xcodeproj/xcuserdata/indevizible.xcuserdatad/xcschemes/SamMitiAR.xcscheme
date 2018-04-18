@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4CD27BAE7FEC81054734785464C57A27'
-               BlueprintName = 'SamMitiAR'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SamMitiAR.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4CD27BAE7FEC81054734785464C57A27"
+               BlueprintName = "SamMitiAR"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SamMitiAR.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

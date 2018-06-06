@@ -19,9 +19,6 @@ public struct SamMitiDebugOptions: OptionSet {
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
-
-    /// ค่าสถิติทั่วไป เช่น framerate หรือ จำนวน node
-//    public static let statistics            = SamMitiDebugOptions(rawValue: 1 << 0)
     
     /// ค่าความ confident ของพื้นผิวที่ focus node ชี้อยู่
     public static let showStateStatus        = SamMitiDebugOptions(rawValue: 1 << 0)
@@ -181,7 +178,6 @@ extension SamMitiARView {
                 label?.text = "Hit Test Distance: Undefined"
             }
         }
-
     }
 }
 

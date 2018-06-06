@@ -135,9 +135,9 @@ public class SamMitiARView: ARSCNView {
     }
 
     // MARK: - Setup
-    /// ใช้สำหรับ start ARSession
+    /// Use to start ARSession
     ///
-    /// arDebigOptions: แสดง debug views
+    /// arDebigOptions: To show debug views
     public func startAR(withDebugOptions debugOptions: SamMitiDebugOptions = []) {
 
         samMitiDelegateObject.updateSession = {
@@ -162,7 +162,7 @@ public class SamMitiARView: ARSCNView {
         setupDebugOptions(debugOptions)
     }
 
-    /// ใช้สำหรับ reset session, tracking และ virtualObjects
+    /// Use for reset session, tracking, and virtualObjects
     public func resetAR(withDebugOptions replacedDebugOptions: SamMitiDebugOptions? = nil) {
         
         if let debugOptions = replacedDebugOptions {
@@ -190,6 +190,9 @@ public class SamMitiARView: ARSCNView {
         planeDetecting.reset()
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .all
+        if #available(iOS 12.0, *) {
+            configuration.environmentTexturing = .automatic
+        }
         
         if #available(iOS 11.3, *) {
             configuration.isAutoFocusEnabled = isAutoFocusEnabled
@@ -219,13 +222,16 @@ public class SamMitiARView: ARSCNView {
         }
 
         // If light estimation is enabled, update the intensity of the model's lights and the environment map
-        let lightingEnvironment = self.scene.lightingEnvironment
-        if isLightingIntensityAutomaticallyUpdated {
-            if let lightEstimate = session.currentFrame?.lightEstimate {
-                lightingEnvironment.intensity = lightEstimate.ambientIntensity *
-                    baseLightingEnvironmentIntensity / 1000
-            } else {
-                lightingEnvironment.intensity = baseLightingEnvironmentIntensity
+        if #available(iOS 12.0, *) {
+        } else {
+            let lightingEnvironment = self.scene.lightingEnvironment
+            if isLightingIntensityAutomaticallyUpdated {
+                if let lightEstimate = session.currentFrame?.lightEstimate {
+                    lightingEnvironment.intensity = lightEstimate.ambientIntensity *
+                        baseLightingEnvironmentIntensity / 1000
+                } else {
+                    lightingEnvironment.intensity = baseLightingEnvironmentIntensity
+                }
             }
         }
 

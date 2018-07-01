@@ -42,6 +42,16 @@ open class SamMitiVirtualObject: SCNNode {
     /// Example: scaleRange = (0.01)...2
     public var scaleRange: ClosedRange<Float>?
     
+    // Snap Zoom
+    /// points (1 is default scale), [] = disable
+    public var snapScalingPoints: [Float] = [1.0]
+    
+    /// snap threshold:
+    /// where [ 0 > threshold > 1 ]
+    /// -------- p -------
+    ///    |<-t->|<-t->|
+    public var snapScalingThreshold: Float = 0.1
+    
     /// Temporaly begin rotation factor
     private var temporalyBeginRotationFactor: Float = 0
     
@@ -65,17 +75,32 @@ open class SamMitiVirtualObject: SCNNode {
     /// ใช้สำหรับเก็บค่า scaleMultiplier
     private var _virtualScale: Float = 1
     
-    /// ใช้สำหรับคูณขนาดของวัตถุ
+    /// Object scaling
     public var virtualScale: Float {
         get {
             return _virtualScale
         } set {
+            let scale: Float
             if let scaleRange = scaleRange {
-                _virtualScale = max(scaleRange.lowerBound, min(scaleRange.upperBound, newValue))
+                scale = max(scaleRange.lowerBound, min(scaleRange.upperBound, newValue))
             } else {
-                _virtualScale = newValue
+                scale = newValue
             }
-
+            
+            // find possible snap point
+            let snapPoint = snapScalingPoints.first {
+                (($0 - self.snapScalingThreshold)...($0 + self.snapScalingThreshold))
+                    .contains(scale)
+            }
+            if let snapPoint = snapPoint, scale != snapPoint {
+                if _virtualScale != snapPoint {
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    _virtualScale = snapPoint
+                }
+            }else{
+                _virtualScale = scale
+            }
+            
             //TODO: Update Node Scale here
             // update transform
             nodeScale = virtualScale

@@ -66,7 +66,7 @@ public class SamMitiARView: ARSCNView {
     let samMitiDelegateObject = SamMitiDelegateObject()
     
     // Options for allowing different gestures to be recognized.
-    public var allowedGestureTypes: GestureTypes = [.tap, .doubleTap, .pan, .rotation] {
+    public var allowedGestureTypes: GestureTypes = .all {
         didSet {
             if gestureManager != nil {
                 gestureManager = GestureManager(view: self, types: allowedGestureTypes, delegate: self)

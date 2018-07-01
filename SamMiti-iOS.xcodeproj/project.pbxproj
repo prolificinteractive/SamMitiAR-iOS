@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F8DEB209BE8AD390C9F3EEE /* Pods_SamMiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5EEBDB9E85EFFA0E04E626 /* Pods_SamMiti.framework */; };
 		903A44222040AEB700BC0157 /* SamMitiARDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44102040AEB600BC0157 /* SamMitiARDebug.swift */; };
 		903A44232040AEB700BC0157 /* SamMitiPlaneDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44112040AEB600BC0157 /* SamMitiPlaneDetecting.swift */; };
 		903A44242040AEB700BC0157 /* SceneKitAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44122040AEB600BC0157 /* SceneKitAnimator.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		1C5EEBDB9E85EFFA0E04E626 /* Pods_SamMiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78D1FC46F39D78C4C3163C66 /* Pods-SamMiti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti/Pods-SamMiti.release.xcconfig"; sourceTree = "<group>"; };
 		903A44102040AEB600BC0157 /* SamMitiARDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiARDebug.swift; sourceTree = "<group>"; };
 		903A44112040AEB600BC0157 /* SamMitiPlaneDetecting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiPlaneDetecting.swift; sourceTree = "<group>"; };
 		903A44122040AEB600BC0157 /* SceneKitAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitAnimator.swift; sourceTree = "<group>"; };
@@ -52,7 +50,6 @@
 		904B7FAA2020DC5C0038B799 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90E0185B201F82330057F15B /* SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SamMitiAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		967204E96B9242BD550A5DF0 /* Pods_SamMitiAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMitiAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C52F7B91A982390EFB93D514 /* Pods-SamMiti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti/Pods-SamMiti.debug.xcconfig"; sourceTree = "<group>"; };
 		CEEF1F47E3D84D37DD499B9A /* Pods-SamMitiAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMitiAR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR.debug.xcconfig"; sourceTree = "<group>"; };
 		DCAE74AE5CF5C0CD5F42431A /* Pods-SamMitiAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMitiAR.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMitiAR/Pods-SamMitiAR.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8DEB209BE8AD390C9F3EEE /* Pods_SamMiti.framework in Frameworks */,
 				EEA452484096743F50228BAD /* Pods_SamMitiAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +69,6 @@
 		13C245CCC3F0CA92F3DBB827 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C52F7B91A982390EFB93D514 /* Pods-SamMiti.debug.xcconfig */,
-				78D1FC46F39D78C4C3163C66 /* Pods-SamMiti.release.xcconfig */,
 				CEEF1F47E3D84D37DD499B9A /* Pods-SamMitiAR.debug.xcconfig */,
 				DCAE74AE5CF5C0CD5F42431A /* Pods-SamMitiAR.release.xcconfig */,
 			);

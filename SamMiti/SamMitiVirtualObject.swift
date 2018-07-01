@@ -89,8 +89,9 @@ open class SamMitiVirtualObject: SCNNode {
             
             // find possible snap point
             let snapPoint = snapScalingPoints.first {
-                (($0 - self.snapScalingThreshold)...($0 + self.snapScalingThreshold))
-                    .contains(scale)
+                let begin = $0 * (1 - self.snapScalingThreshold)
+                let end = $0 * (1 + self.snapScalingThreshold)
+                return (begin...end).contains(scale)
             }
             if let snapPoint = snapPoint, scale != snapPoint {
                 if _virtualScale != snapPoint {

@@ -549,7 +549,7 @@ extension SamMitiARView {
         let hitTestOptions: [SCNHitTestOption: Any] = [.boundingBoxOnly: true]
         let hitTestResults = hitTest(hitPoint, options: hitTestOptions)
 
-        return hitTestResults.lazy.flatMap { $0.node.partOfVirtualObject() }.first
+        return hitTestResults.lazy.compactMap { $0.node.partOfVirtualObject() }.first
     }
 }
 
@@ -570,8 +570,6 @@ extension SamMitiARView: GestureManagerDelegate {
             didPinch(gesture: gestureRecognizer)
         case .pan(let gestureRecognizer):
             didPan(gesture: gestureRecognizer)
-        default:
-            break
         }
     }
 

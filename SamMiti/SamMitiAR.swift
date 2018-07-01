@@ -615,18 +615,19 @@ extension SamMitiARView: GestureManagerDelegate {
         self.scene.rootNode <- object
         object.virtualTransform = transform
         addOrUpdateAnchor(for: object)
+        let finalScale = object.virtualScale
         
-        object.virtualScale = 0.01 // Scale to 0.01 to prepare for up coming animation
+        object.virtualScale = finalScale * 0.01 // Scale to 0.01 to prepare for up coming animation
         
         SceneKitAnimator.animateWithDuration(duration: 0.11,
                                              timingFunction: .explodingEaseOut,
                                              animations: {
-                                                object.virtualScale = 1.2 // Scale to 1.2 to make a bouncing effect
+                                                object.virtualScale = finalScale * 1.2 // Scale to 1.2 to make a bouncing effect
         },
                                              completion: nil).thenAnimateWithDuration(duration: 0.2,
                                                                                       timingFunction: .easeInOut,
                                                                                       animations: {
-                                                                                        object.virtualScale = 1
+                                                                                        object.virtualScale = finalScale
                                              }, completion: {
                                                 
                                                 // Callback delegate

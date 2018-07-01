@@ -96,6 +96,7 @@ public class SamMitiARView: ARSCNView {
         didSet {
             if let currentVirtualObject = currentVirtualObject,
                 !placedVirtualObjects.contains(currentVirtualObject) {
+                currentVirtualObject.samMitiARDelegate = self.samMitiARDelegate
                 interactionStatus = .placing
             } else {
                 interactionStatus = .idle

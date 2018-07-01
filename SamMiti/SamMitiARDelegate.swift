@@ -92,6 +92,10 @@ public protocol SamMitiARDelegate: class {
     /// Take an event when the Virtual Object get pinched
     func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?)
     
+    // scaling events
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float)
+    
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float)
 }
 
 //// Optional Protocol
@@ -136,6 +140,10 @@ public extension SamMitiARDelegate {
     func samMitiViewIsPinching(virtualObject: SamMitiVirtualObject) {}
     
     func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?) {}
+    
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float) {}
+    
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float) {}
     
 }
 

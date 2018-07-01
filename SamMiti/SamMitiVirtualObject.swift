@@ -63,6 +63,9 @@ open class SamMitiVirtualObject: SCNNode {
     
     /// Loading type
     var loadingType: LoadingType = .none
+    
+    /// SamMitiARDelegate
+    var samMitiARDelegate: SamMitiARDelegate?
 
     /// ใช้สำหรับปรับขนาดของวัตถุ
     public private(set) var nodeScale: Float = 1 {
@@ -83,6 +86,11 @@ open class SamMitiVirtualObject: SCNNode {
             let scale: Float
             if let scaleRange = scaleRange {
                 scale = max(scaleRange.lowerBound, min(scaleRange.upperBound, newValue))
+                if _virtualScale != scaleRange.lowerBound && scale == scaleRange.lowerBound {
+                    samMitiARDelegate?.samMitiVirtualObject(self, didScaleToBound: scaleRange.lowerBound)
+                } else if(_virtualScale != scaleRange.upperBound && scale == scaleRange.upperBound) {
+                    samMitiARDelegate?.samMitiVirtualObject(self, didScaleToBound: scaleRange.upperBound)
+                }
             } else {
                 scale = newValue
             }
@@ -95,7 +103,7 @@ open class SamMitiVirtualObject: SCNNode {
             }
             if let snapPoint = snapPoint, scale != snapPoint {
                 if _virtualScale != snapPoint {
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    samMitiARDelegate?.samMitiVirtualObject(self, didSnappedToPoint: snapPoint)
                     _virtualScale = snapPoint
                 }
             }else{

@@ -74,6 +74,8 @@ open class SamMitiVirtualObject: SCNNode {
             scaleControllerNode.scale = SCNVector3Make(scaleFactor, scaleFactor, scaleFactor)
         }
     }
+    
+    public var defaultScale: Float = 1
 
     /// ใช้สำหรับเก็บค่า scaleMultiplier
     private var _virtualScale: Float = 1

@@ -614,7 +614,7 @@ extension SamMitiARView: GestureManagerDelegate {
         self.scene.rootNode <- object
         object.virtualTransform = transform
         addOrUpdateAnchor(for: object)
-        let finalScale = object.virtualScale
+        let finalScale = object.defaultScale
         
         object.virtualScale = finalScale * 0.01 // Scale to 0.01 to prepare for up coming animation
         

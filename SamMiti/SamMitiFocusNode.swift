@@ -663,7 +663,7 @@ public class SamMitiFocusNode: SCNNode {
             self.isChangingAlignment = false
         }
         SCNTransaction.animationDuration = 0.5
-        SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        SCNTransaction.animationTimingFunction = .easeInEaseOut
         simdOrientation = newOrientation
         SCNTransaction.commit()
     }

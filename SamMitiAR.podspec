@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.platform     = :ios, "11.0"
+  spec.platform     = :ios, "11.3"
   spec.name         = 'SamMitiAR'
   spec.version      = '0.1.2'
   spec.license      = { :type => 'MIT' }

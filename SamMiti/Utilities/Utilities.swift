@@ -57,7 +57,46 @@ public extension CGPoint {
 	}
 }
 
-// หลีกเลี่ยงการใช้ #available(iOS 11.3, *)
+// Fallback for non iOS 12
+open class SamMitiARConfiguration: ARConfiguration {
+    
+    /**
+     Enum constants for indicating the mode of environment texturing to run.
+     */
+    public enum EnvironmentTexturing : Int {
+        
+        
+        /** No texture information is gathered. */
+        case none
+        
+        
+        /** Texture information is gathered for the environment.
+         Environment textures will be generated for AREnvironmentProbes added to the session. */
+        case manual
+        
+        
+        /** Texture information is gathered for the environment and probes automatically placed in the scene. */
+        case automatic
+    }
+}
+
+@available(iOS 12.0, *)
+extension ARWorldTrackingConfiguration.EnvironmentTexturing {
+    
+    // TODO: ถึง Wut ดูให้หน่อย
+    public func definedBy(_ environmentTexturing: SamMitiARConfiguration.EnvironmentTexturing) -> ARWorldTrackingConfiguration.EnvironmentTexturing {
+        switch environmentTexturing {
+        case .none:
+            return .none
+        case .manual:
+            return .manual
+        case .automatic:
+            return .automatic
+        }
+    }
+}
+
+// Fallback for non iOS 11.3 
 
 extension ARWorldTrackingConfiguration.PlaneDetection {
     public static var all: ARWorldTrackingConfiguration.PlaneDetection {

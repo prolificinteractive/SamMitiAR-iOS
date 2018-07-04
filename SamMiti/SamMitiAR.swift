@@ -25,24 +25,35 @@ public class SamMitiARView: ARSCNView {
         }
     }
     
-    /// A Boolean value that determines whether the device camera uses fixed focus or autofocus behavior.
-    public var isAutoFocusEnabled: Bool = true
+    
+    let mainKeyLight = SCNLight()
+    
+    let mainFillLight = SCNLight()
+    
+    /// A Boolean value that determines whether the device camera uses fixed focus or autofocus behavior. The default value for this property is false.
+    public var isAutoFocusEnabled: Bool = false
 
     let translateAssumingInfinitePlane = true
 
     var samMitiDebugOptions: SamMitiDebugOptions = []
     
-    // A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.)
+    // A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5).
     public var hitTestPlacingPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
     
     // The view for showing debuging values
     var arDebugView: UIStackView?
-
-    // A Boolean value that specifies whether SamMiti updates SceneKit Environment Intensity according to light estimate intensity divide 1000.
+    
+    // A Boolean value that specifies whether SamMiti updates SceneKit Environment Intensity according to light estimate intensity divide 1000. The default value for this property is true.
     public var isLightingIntensityAutomaticallyUpdated: Bool = true
+    
+    // The visual contents of the material property—A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects. The default value for this property is the HDR image of photo studio.
+    public var lightingEnvironmentContent: Any? = "SamMitiArt.scnassets/studioHdr.hdr"
 
-    // A float value for Environment Intensity Multiplier
-    public var baseLightingEnvironmentIntensity: CGFloat = 1
+    // A float value for Environment Intensity Multiplier. The default value for this property is 1.0.
+    public var baseLightingEnvironmentIntensity: CGFloat = 1.0
+    
+    // The behavior ARKit uses for generating environment textures. The default value for this property is  ARWorldTrackingConfiguration.EnvironmentTexturing.automatic.
+    public var environmentTexturing: SamMitiARConfiguration.EnvironmentTexturing = .automatic
     
     // Values for position tracking quality, with possible causes when tracking quality is limited.
     private var currentTrackingStateReason: ARCamera.TrackingState.Reason? {
@@ -135,7 +146,8 @@ public class SamMitiARView: ARSCNView {
         samMitiDelegateObject.sceneView = self
     }
 
-    // MARK: - Setup
+    // MARK: - Setup AR
+    
     /// Use to start ARSession
     ///
     /// arDebigOptions: To show debug views
@@ -150,8 +162,15 @@ public class SamMitiARView: ARSCNView {
         self.session.delegate = samMitiDelegateObject
 
         gestureManager = GestureManager(view: self, types: allowedGestureTypes, delegate: self)
-
+        
+        // Initialize Tracking Session
         resetTracking()
+        
+        // Set up scene's camera.
+        setupCamera()
+        
+        // Set up light nodes.
+        setupLight()
 
         /*
          Prevent the screen from being dimmed after a while as users will likely
@@ -171,7 +190,15 @@ public class SamMitiARView: ARSCNView {
         }
         currentVirtualObject = nil
         scene.rootNode.childNodes.forEach { $0.removeFromParentNode() }
+        
+        // Initialize Tracking Session
         resetTracking()
+        
+        // Set up scene's camera.
+        setupCamera()
+        
+        // Set up light nodes.
+        setupLight()
     }
     
     private func setupDebugOptions(_ debugOptions: SamMitiDebugOptions) {
@@ -192,7 +219,10 @@ public class SamMitiARView: ARSCNView {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .all
         if #available(iOS 12.0, *) {
-            configuration.environmentTexturing = .automatic
+            
+            // TODO: ถึง Wut ดูให้หน่อย
+            configuration.environmentTexturing = configuration.environmentTexturing.definedBy(environmentTexturing)
+            
         }
         
         if #available(iOS 11.3, *) {
@@ -221,24 +251,45 @@ public class SamMitiARView: ARSCNView {
         if samMitiDebugOptions.contains(.showStateStatus) {
             updateDebugViewTransform(by: frame)
         }
-
-        // If light estimation is enabled, update the intensity of the model's lights and the environment map
-        if #available(iOS 12.0, *) {
+        
+        
+        let lightingEnvironment = self.scene.lightingEnvironment
+        
+        
+        
+        if environmentTexturing != .none {
+            
+            if let lightEstimate = session.currentFrame?.lightEstimate {
+                mainKeyLight.intensity = lightEstimate.ambientIntensity *
+                    baseLightingEnvironmentIntensity / 18
+                mainFillLight.intensity = lightEstimate.ambientIntensity *
+                    baseLightingEnvironmentIntensity / 18
+                mainKeyLight.temperature = lightEstimate.ambientColorTemperature
+                mainFillLight.temperature = lightEstimate.ambientColorTemperature
+                
+            }
         } else {
-            let lightingEnvironment = self.scene.lightingEnvironment
+            
+            // Setup the content for Lighting Environment
+            lightingEnvironment.contents = lightingEnvironmentContent
+            
+            //         If light estimation is enabled, update the intensity of the model's lights and the environment map
             if isLightingIntensityAutomaticallyUpdated {
                 if let lightEstimate = session.currentFrame?.lightEstimate {
                     lightingEnvironment.intensity = lightEstimate.ambientIntensity *
-                        baseLightingEnvironmentIntensity / 1000
+                        baseLightingEnvironmentIntensity / 666
                 } else {
                     lightingEnvironment.intensity = baseLightingEnvironmentIntensity
                 }
             }
+            
         }
+        
+
 
         let point: CGPoint = {
-            let width = UIScreen.main.bounds.width * hitTestPlacingPoint.x
-            let height = UIScreen.main.bounds.height * hitTestPlacingPoint.y
+            let width = bounds.width * hitTestPlacingPoint.x
+            let height = bounds.height * hitTestPlacingPoint.y
             return CGPoint(x: width, y: height)
         }()
 
@@ -274,6 +325,46 @@ public class SamMitiARView: ARSCNView {
                 
                 focusNode.willHide = true
             }
+        }
+    }
+    
+    // MARK: - Scene content setup
+    
+    func setupCamera() {
+        guard let camera = self.pointOfView?.camera else {
+            fatalError("Expected a valid `pointOfView` from the scene.")
+        }
+        
+        /*
+         Enable HDR camera settings for the most realistic appearance
+         with environmental lighting and physically based materials.
+         */
+        camera.wantsHDR = true
+        camera.exposureOffset = 0
+        camera.minimumExposure = -1
+        camera.maximumExposure = 3
+    }
+    
+    func setupLight() {
+        if environmentTexturing != .none {
+            mainFillLight.type = .directional
+            mainFillLight.color = UIColor(white: 0.31, alpha: 1)
+            mainFillLight.intensity = 0
+            mainKeyLight.type = .directional
+            mainKeyLight.color = UIColor(white: 0.73, alpha: 1)
+            mainKeyLight.intensity = 0
+            
+            let lightKeyNode = SCNNode()
+            lightKeyNode.light = mainKeyLight
+            lightKeyNode.position.y = 48
+            lightKeyNode.eulerAngles = SCNVector3(-57.996 / 180 * .pi, -7.37 / 180 * .pi, 17.772 / 180 * .pi)
+            scene.rootNode.addChildNode(lightKeyNode)
+            
+            let lightFillNode = SCNNode()
+            lightFillNode.light = mainFillLight
+            lightFillNode.position.y = 48
+            lightFillNode.eulerAngles = SCNVector3(-117.883 / 180 * .pi, 6.597 / 180 * .pi, -11.664 / 180 * .pi)
+            scene.rootNode.addChildNode(lightFillNode)
         }
     }
 
@@ -754,7 +845,6 @@ extension SamMitiARView: GestureManagerDelegate {
     }
 
     func didRotate(gesture: UIRotationGestureRecognizer) {
-        
         if case .began = gesture.state {
             currentVirtualObject = virtualObject(at: gesture.location(in: self))
             
@@ -879,10 +969,10 @@ extension SamMitiARView: GestureManagerDelegate {
          smooth the movement to prevent large jumps.
          */
         let transform = result.worldTransform
-        let isOnPlane = result.anchor is ARPlaneAnchor
+//        let isOnPlane = result.anchor is ARPlaneAnchor
         object.setTransform(transform,
                             relativeTo: cameraTransform,
-                            smoothMovement: !isOnPlane,
+                            smoothMovement: true,
                             alignment: planeAlignment,
                             allowAnimation: allowAnimation)
     }

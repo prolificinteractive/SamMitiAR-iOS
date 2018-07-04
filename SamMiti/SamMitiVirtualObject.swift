@@ -11,7 +11,7 @@ import GLTFSceneKit
 
 //TODO: Add interaction ability (Movable, Scalable, Rotatable)
 
-open class SamMitiVirtualObject: SCNNode {
+public class SamMitiVirtualObject: SCNNode {
     
     public typealias VoidBlock = () -> Void
     
@@ -132,6 +132,9 @@ open class SamMitiVirtualObject: SCNNode {
             if let containNode = contentNode {
                 containNode.removeFromParentNode()
                 headNode <- containNode
+                
+                // Add variance to y position to avoid shadow overlapping
+                containNode.position.y = Float.random(in: -0.0002 ..< 0.0002)
                 isLoaded = true
             }
         }
@@ -397,9 +400,6 @@ open class SamMitiVirtualObject: SCNNode {
             return
         }
 
-        // Only animate if the alignment has changed.
-        let animationDuration = (newAlignment != currentAlignment && allowAnimation) ? 0.5 : 0
-
         var newObjectRotation: Float?
         if newAlignment == .horizontal && currentAlignment != .horizontal {
             // When changing to horizontal placement, restore the previous horizontal rotation.
@@ -410,24 +410,26 @@ open class SamMitiVirtualObject: SCNNode {
         }
 
         currentAlignment = newAlignment
-
-        SCNTransaction.begin()
-        SCNTransaction.animationDuration = animationDuration
-        SCNTransaction.completionBlock = {
-            self.isChangingAlignment = false
-        }
-
-        isChangingAlignment = true
-
-        // Use the filtered position rather than the exact one from the transform.
-        simdTransform = transform
-        simdTransform.translation = simdWorldPosition
-
-        if newObjectRotation != nil {
-            virtualRotation = newObjectRotation!
-        }
-
-        SCNTransaction.commit()
+        
+        SceneKitAnimator.animateWithDuration(duration: 0.35,
+                                             timingFunction: .explodingEaseOut,
+                                             animated: newAlignment != currentAlignment,
+                                             animations: {
+                                                isChangingAlignment = true
+                                                
+                                                simdTransform = transform
+                                                
+                                                // Use the filtered position rather than the exact one from the transform.
+                                                simdTransform.translation = simdWorldPosition
+                                                
+                                                if newObjectRotation != nil {
+                                                    virtualRotation = newObjectRotation!
+                                                }
+        },
+                                             completion: {
+                                                self.isChangingAlignment = false
+        })
+        
     }
 
     /**
@@ -460,9 +462,9 @@ open class SamMitiVirtualObject: SCNNode {
         if smoothMovement {
             let hitTestResultDistance = simd_length(positionOffsetFromCamera)
 
-            // Add the latest position and keep up to 10 recent distances to smooth with.
+            // Add the latest position and keep up to 6 recent distances to smooth with.
             recentVirtualObjectDistances.append(hitTestResultDistance)
-            recentVirtualObjectDistances = Array(recentVirtualObjectDistances.suffix(10))
+            recentVirtualObjectDistances = Array(recentVirtualObjectDistances.suffix(6))
 
             let averageDistance = recentVirtualObjectDistances.average!
             let averagedDistancePosition = simd_normalize(positionOffsetFromCamera) * averageDistance
@@ -484,7 +486,7 @@ open class SamMitiVirtualObject: SCNNode {
 
     var animationForVirtualObjectRemoving: ((SamMitiVirtualObject, @escaping VoidBlock) -> Void)?
 
-    open override func removeFromParentNode() {
+    public override func removeFromParentNode() {
         if let removeAnimation = animationForVirtualObjectRemoving,
             let _ = parent {
             removeAnimation(self, super.removeFromParentNode)

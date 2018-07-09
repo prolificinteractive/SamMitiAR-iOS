@@ -114,6 +114,8 @@ public class SamMitiARView: ARSCNView {
             }
         }
     }
+    
+    var currentGesture: GestureTypes?
 
     /// Virtual Object ที่ถูกวางไว้บน  root node เรียบร้อยแล้ว
     public var placedVirtualObjects: [SamMitiVirtualObject] {
@@ -788,8 +790,10 @@ extension SamMitiARView: GestureManagerDelegate {
         switch gesture.state {
         case .began:
             // Check for interaction with a new object.
-            if let interactedVirtualObject = objectInteracting(with: gesture, in: self) {
+            if let interactedVirtualObject = objectInteracting(with: gesture, in: self),
+                currentVirtualObject == nil {
                 currentVirtualObject = interactedVirtualObject
+                currentGesture = .pan
             }
             
             //Set interacting status
@@ -833,10 +837,16 @@ extension SamMitiARView: GestureManagerDelegate {
         default:
             // Clear the current position tracking.
             currentTrackingPosition = nil
-            currentVirtualObject = nil
             
-            // Set interacting status
-            interactionStatus = .idle
+            if currentGesture == .pan {
+                
+                currentVirtualObject = nil
+                
+                // Set interacting status
+                interactionStatus = .idle
+                
+                currentGesture = nil
+            }
         }
     }
     
@@ -847,7 +857,12 @@ extension SamMitiARView: GestureManagerDelegate {
 
     func didRotate(gesture: UIRotationGestureRecognizer) {
         if case .began = gesture.state {
-            currentVirtualObject = virtualObject(at: gesture.location(in: self))
+            
+            if currentVirtualObject == nil {
+                currentVirtualObject = virtualObject(at: gesture.location(in: self))
+                currentGesture = .rotation
+            }
+            
             
             // Set interacting status
             interactionStatus = .interacting
@@ -867,25 +882,19 @@ extension SamMitiARView: GestureManagerDelegate {
             
         }
         
-        // TODO: refactor this
-        if case .ended = gesture.state {
-            // Set interacting status
-            interactionStatus = .idle
-            
+        if .ended == gesture.state || .cancelled == gesture.state {
             // Callback Delegate
             samMitiARDelegate?.samMitiViewDidRotate(virtualObject: currentVirtualObject)
             
-            // Clear the current virtual object.
-            currentVirtualObject = nil
-        } else if case .cancelled = gesture.state {
-            // Set interacting status
-            interactionStatus = .idle
-            
-            // Callback Delegate
-            samMitiARDelegate?.samMitiViewDidRotate(virtualObject: currentVirtualObject)
-            
-            // Clear the current virtual object.
-            currentVirtualObject = nil
+            if currentGesture == .rotation {
+                // Set interacting status
+                interactionStatus = .idle
+                
+                // Clear the current virtual object.
+                currentVirtualObject = nil
+                
+                currentGesture = nil
+            }
             
         }
     }
@@ -893,7 +902,11 @@ extension SamMitiARView: GestureManagerDelegate {
     func didPinch(gesture: UIPinchGestureRecognizer) {
         
         if case .began = gesture.state {
-            currentVirtualObject = virtualObject(at: gesture.location(in: self))
+            
+            if currentGesture == nil {
+                currentVirtualObject = virtualObject(at: gesture.location(in: self))
+                currentGesture = .pinch
+            }
             
             // Set interacting status
             interactionStatus = .interacting
@@ -913,26 +926,20 @@ extension SamMitiARView: GestureManagerDelegate {
             
         }
         
-        // TODO: refactor this
-        if case .ended = gesture.state {
-            // Set interacting status
-            interactionStatus = .idle
+        if .ended == gesture.state || .cancelled == gesture.state {
             
             // Callback Delegate
             samMitiARDelegate?.samMitiViewDidPinch(virtualObject: currentVirtualObject)
             
-            // Clear the current virtual object.
-            currentVirtualObject = nil
-        } else if case .cancelled = gesture.state {
-            // Set interacting status
-            interactionStatus = .idle
-            
-            // Callback Delegate
-            samMitiARDelegate?.samMitiViewDidPinch(virtualObject: currentVirtualObject)
-            
-            // Clear the current virtual object.
-            currentVirtualObject = nil
-            
+            if currentGesture == .pinch {
+                // Set interacting status
+                interactionStatus = .idle
+                
+                // Clear the current virtual object.
+                currentVirtualObject = nil
+                
+                currentGesture = nil
+            }
         }
     }
 

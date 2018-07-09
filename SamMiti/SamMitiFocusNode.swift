@@ -344,9 +344,6 @@ public class SamMitiFocusNode: SCNNode {
                                focusExistingTemplateGeometry]
             focusChildNode.morpher = morpher
         }
-        
-        displayNodeHierarchyOnTop(true)
-        
     }
 
     func setState(confidentLevel: PlaneDetectingConfidentLevel?) {

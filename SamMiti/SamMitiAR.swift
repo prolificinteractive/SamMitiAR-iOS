@@ -257,33 +257,34 @@ public class SamMitiARView: ARSCNView {
         
         let lightingEnvironment = self.scene.lightingEnvironment
         
-        
-        
-        if environmentTexturing != .none {
+        if let lightEstimate = session.currentFrame?.lightEstimate {
+            mainKeyLight.intensity = lightEstimate.ambientIntensity *
+                baseLightingEnvironmentIntensity / 18
+            mainFillLight.intensity = lightEstimate.ambientIntensity *
+                baseLightingEnvironmentIntensity / 18
+            mainKeyLight.temperature = lightEstimate.ambientColorTemperature
+            mainFillLight.temperature = lightEstimate.ambientColorTemperature
             
-            if let lightEstimate = session.currentFrame?.lightEstimate {
-                mainKeyLight.intensity = lightEstimate.ambientIntensity *
-                    baseLightingEnvironmentIntensity / 18
-                mainFillLight.intensity = lightEstimate.ambientIntensity *
-                    baseLightingEnvironmentIntensity / 18
-                mainKeyLight.temperature = lightEstimate.ambientColorTemperature
-                mainFillLight.temperature = lightEstimate.ambientColorTemperature
-                
-            }
-        } else {
+        }
+        
+        if environmentTexturing == .none {
             
             // Setup the content for Lighting Environment
             lightingEnvironment.contents = lightingEnvironmentContent
             
-            //         If light estimation is enabled, update the intensity of the model's lights and the environment map
+            // If light estimation is enabled, update the intensity of the model's lights and the environment map
             if isLightingIntensityAutomaticallyUpdated {
                 if let lightEstimate = session.currentFrame?.lightEstimate {
                     lightingEnvironment.intensity = lightEstimate.ambientIntensity *
-                        baseLightingEnvironmentIntensity / 666
+                        baseLightingEnvironmentIntensity / 1000
                 } else {
                     lightingEnvironment.intensity = baseLightingEnvironmentIntensity
                 }
             }
+        } else {
+            
+            // Set nil to content for Lighting Environment
+            lightingEnvironment.contents = nil
             
         }
         
@@ -348,26 +349,30 @@ public class SamMitiARView: ARSCNView {
     }
     
     func setupLight() {
-        if environmentTexturing != .none {
-            mainFillLight.type = .directional
-            mainFillLight.color = UIColor(white: 0.31, alpha: 1)
-            mainFillLight.intensity = 0
-            mainKeyLight.type = .directional
-            mainKeyLight.color = UIColor(white: 0.73, alpha: 1)
-            mainKeyLight.intensity = 0
-            
-            let lightKeyNode = SCNNode()
-            lightKeyNode.light = mainKeyLight
-            lightKeyNode.position.y = 48
-            lightKeyNode.eulerAngles = SCNVector3(-57.996 / 180 * .pi, -7.37 / 180 * .pi, 17.772 / 180 * .pi)
-            scene.rootNode.addChildNode(lightKeyNode)
-            
-            let lightFillNode = SCNNode()
-            lightFillNode.light = mainFillLight
-            lightFillNode.position.y = 48
-            lightFillNode.eulerAngles = SCNVector3(-117.883 / 180 * .pi, 6.597 / 180 * .pi, -11.664 / 180 * .pi)
-            scene.rootNode.addChildNode(lightFillNode)
-        }
+        mainFillLight.type = .directional
+        mainFillLight.castsShadow = false
+        mainFillLight.color = UIColor(white: 0.31, alpha: 1)
+        mainFillLight.intensity = 0
+        mainKeyLight.type = .directional
+        mainKeyLight.castsShadow = false
+        mainKeyLight.color = UIColor(white: 0.73, alpha: 1)
+        mainKeyLight.intensity = 0
+        
+        let lightKeyNode = SCNNode()
+        lightKeyNode.light = mainKeyLight
+        lightKeyNode.position.y = 48
+        let lightKeyContainNode = SCNNode()
+        lightKeyContainNode.addChildNode(lightKeyNode)
+        lightKeyContainNode.eulerAngles = SCNVector3(-57.996 / 180 * .pi, -7.37 / 180 * .pi, 17.772 / 180 * .pi)
+        scene.rootNode.addChildNode(lightKeyContainNode)
+        
+        let lightFillNode = SCNNode()
+        lightFillNode.light = mainFillLight
+        lightFillNode.position.y = 48
+        let lightFillNodeContainNode = SCNNode()
+        lightFillNodeContainNode.addChildNode(lightFillNode)
+        lightFillNodeContainNode.eulerAngles = SCNVector3(-117.883 / 180 * .pi, 6.597 / 180 * .pi, -11.664 / 180 * .pi)
+        scene.rootNode.addChildNode(lightFillNodeContainNode)
     }
 
     func checkConfidentLevelFor(result: ARHitTestResult?) -> PlaneDetectingConfidentLevel {

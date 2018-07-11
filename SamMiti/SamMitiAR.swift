@@ -672,7 +672,7 @@ extension SamMitiARView: GestureManagerDelegate {
         }
     }
 
-    func didTapped(gesture: UITapGestureRecognizer) {
+    public func didTapped(gesture: UITapGestureRecognizer) {
 
         guard case .ended = gesture.state else {
             return

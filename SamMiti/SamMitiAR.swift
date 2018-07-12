@@ -672,15 +672,13 @@ extension SamMitiARView: GestureManagerDelegate {
         }
     }
 
-    public func didTapped(gesture: UITapGestureRecognizer) {
+    private func didTapped(gesture: UITapGestureRecognizer) {
 
         guard case .ended = gesture.state else {
             return
         }
         
-        let selectedVirtualObjectFromHitTest =  virtualObject(at: gesture.location(in: self))
-        
-        if let selectedVirtualObject = selectedVirtualObjectFromHitTest {
+        if let selectedVirtualObject = virtualObject(at: gesture.location(in: self)) {
             
             // Check if the selected object has been changed
             if (currentVirtualObject != nil) ? placedVirtualObjects.contains(currentVirtualObject!) : true {
@@ -690,13 +688,17 @@ extension SamMitiARView: GestureManagerDelegate {
             samMitiARDelegate?.samMitiViewDidTap(on: nil)
         }
 
+        place()
+    }
+    
+    public func place() {
         guard let placedVirtualObject = currentVirtualObject,
             planeDetecting.currentPlaneDetectingConfidentLevel != .notFound,
             !placedVirtualObjects.contains(placedVirtualObject) else {
                 return
         }
         
-        // Clear virtual object 
+        // Clear virtual object
         currentVirtualObject = nil
         
         // Place Virtual Object

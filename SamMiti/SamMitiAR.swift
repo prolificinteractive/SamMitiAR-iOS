@@ -161,44 +161,37 @@ public class SamMitiARView: ARSCNView {
     ///
     /// arDebigOptions: To show debug views
     public func startAR(withDebugOptions debugOptions: SamMitiDebugOptions = []) {
-
+        
         samMitiDelegateObject.updateSession = {
             self.updateSession(for: $0, trackingState: $1)
         }
-
+        
         self.delegate = samMitiDelegateObject
-
+        
         self.session.delegate = samMitiDelegateObject
-
+        
         gestureManager = GestureManager(view: self, types: allowedGestureTypes, delegate: self)
         
-        // Initialize Tracking Session
-        resetTracking()
+        resetAR(withDebugOptions: debugOptions)
         
-        // Set up scene's camera.
-        setupCamera()
-        
-        // Set up light nodes.
-        setupLight()
-
         /*
          Prevent the screen from being dimmed after a while as users will likely
          have long periods of interaction without touching the screen or buttons.
          */
         UIApplication.shared.isIdleTimerDisabled = true
         
-        // Setup Debug functions
-        setupDebugOptions(debugOptions)
     }
-
+    
     /// Use for reset session, tracking, and virtualObjects
     public func resetAR(withDebugOptions replacedDebugOptions: SamMitiDebugOptions? = nil) {
         
         if let debugOptions = replacedDebugOptions {
             setupDebugOptions(debugOptions)
         }
+        
         currentVirtualObject = nil
-        scene.rootNode.childNodes.forEach { $0.removeFromParentNode() }
+        
+        placedVirtualObjects.forEach { $0.removeFromParentNode() }
         
         // Initialize Tracking Session
         resetTracking()

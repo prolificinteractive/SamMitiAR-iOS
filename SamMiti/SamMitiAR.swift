@@ -115,6 +115,13 @@ public class SamMitiARView: ARSCNView {
         }
     }
     
+    var isPlacingVirtualObject: Bool {
+        guard let currentVirtualObject = currentVirtualObject else {
+            return false
+        }
+        return !placedVirtualObjects.contains(currentVirtualObject)
+    }
+    
     var currentGesture: GestureTypes?
 
     /// Virtual Object ที่ถูกวางไว้บน  root node เรียบร้อยแล้ว
@@ -659,16 +666,18 @@ extension SamMitiARView: GestureManagerDelegate {
         switch gesture {
         case .tapped(let gestureRecognizer):
             didTapped(gesture: gestureRecognizer)
-        case .doubleTap(let gestureRecognizer):
+        case .doubleTap(let gestureRecognizer) where !isPlacingVirtualObject:
             didDoubleTap(gesture: gestureRecognizer)
-        case .longPress(let gestureRecognizer):
+        case .longPress(let gestureRecognizer) where !isPlacingVirtualObject:
             didLongPress(gesture: gestureRecognizer)
-        case .rotation(let gestureRecognizer):
+        case .rotation(let gestureRecognizer) where !isPlacingVirtualObject:
             didRotate(gesture: gestureRecognizer)
-        case .pinch(let gestureRecognizer):
+        case .pinch(let gestureRecognizer) where !isPlacingVirtualObject:
             didPinch(gesture: gestureRecognizer)
-        case .pan(let gestureRecognizer):
+        case .pan(let gestureRecognizer) where !isPlacingVirtualObject:
             didPan(gesture: gestureRecognizer)
+        default:
+            break
         }
     }
 

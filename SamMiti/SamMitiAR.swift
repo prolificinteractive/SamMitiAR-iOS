@@ -115,7 +115,7 @@ public class SamMitiARView: ARSCNView {
         }
     }
     
-    var isPlacingVirtualObject: Bool {
+    public var isPlacingVirtualObject: Bool {
         guard let currentVirtualObject = currentVirtualObject else {
             return false
         }

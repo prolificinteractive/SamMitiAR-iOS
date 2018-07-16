@@ -103,6 +103,8 @@ public extension SamMitiARDelegate {
     
     func updateSessionInfo(for frame: ARFrame, trackingState: ARCamera.TrackingState) {}
     
+    func trackingStateChanged(to trackingState: SamMitiTrackingState) {}
+    
     func trackingStateReasonChanged(to trackingStateReason: ARCamera.TrackingState.Reason?) {}
     
     func interactionStatusChanged(to interactionStatus: SamMitiInteractionStatus) {}

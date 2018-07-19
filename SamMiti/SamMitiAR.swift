@@ -135,7 +135,9 @@ final public class SamMitiARView: ARSCNView {
                     pointOfView?.addChildNode(currentVirtualObject)
                     
                     if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
-                        place()
+                        OperationQueue.main.addOperation {
+                            place()
+                        }
                     }
                 }
             } else {
@@ -590,7 +592,9 @@ final public class SamMitiARView: ARSCNView {
                 !placedVirtualObjects.contains(currentVirtualObject),
                 case .existing? = confidentLevel,
                 case .automatic = placingMode {
-                place()
+                OperationQueue.main.addOperation {
+                    self.place()
+                }
             }
             if samMitiDebugOptions.contains(.showStateStatus) {
                 updateDetectingLevelDebugsView(to: confidentLevel)

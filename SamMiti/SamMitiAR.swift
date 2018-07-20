@@ -136,7 +136,7 @@ final public class SamMitiARView: ARSCNView {
                     
                     if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
                         OperationQueue.main.addOperation {
-                            place()
+                            self.place()
                         }
                     }
                 }

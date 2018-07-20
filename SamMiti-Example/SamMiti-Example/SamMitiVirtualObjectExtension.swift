@@ -26,10 +26,11 @@ extension SamMitiVirtualObject {
         return virtualNode
     }
     
-    // Example of getting GLTF model
-    static var helmet: SamMitiVirtualObject {
-        let virtualNode = SamMitiVirtualObject(gltfNamed: "art.scnassets/damaged-helmet/DamagedHelmet.gltf", allowedAlignments: .all)
-        virtualNode.name = "Helmet GLTF"
+    // Example of getting Helmet Scn model
+    static var helmetScn: SamMitiVirtualObject {
+        let refNode = SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")!
+        let virtualNode = SamMitiVirtualObject(refferenceNode: refNode, allowedAlignments: .all)
+        virtualNode.name = "Helmet"
         
         virtualNode.setAnimationForVirtualObjectRemoving { (node, completed) in
             SceneKitAnimator.animateWithDuration(duration: 0.35, timingFunction: .easeOut, animations: {
@@ -41,6 +42,7 @@ extension SamMitiVirtualObject {
         return virtualNode
     }
     
+    // Example of getting Photogrammetry Scn model
     static var yorkStreetStation: SamMitiVirtualObject {
         
         let refNode = SCNReferenceNode(named: "art.scnassets/york-st-sta/station_york.scn")!
@@ -67,6 +69,23 @@ extension SamMitiVirtualObject {
             SceneKitAnimator.animateWithDuration(duration: 0.35, timingFunction: .easeOut, animations: {
                 var transform = SCNMatrix4MakeRotation(.pi, 0, 1, 0)
                 transform = SCNMatrix4Scale(transform, 0.01, 0.01, 0.01)
+                node.contentNode?.transform = transform
+            }, completion: completed)
+        }
+        return virtualNode
+    }
+    
+    // Example of getting USDZ model
+    static var teapot: SamMitiVirtualObject {
+        
+        let refNode = SCNReferenceNode(named: "art.scnassets/teapot.usdz")!
+        let virtualNode = SamMitiVirtualObject(refferenceNode: refNode, allowedAlignments: .all)
+        virtualNode.name = "teapot"
+        
+        virtualNode.setAnimationForVirtualObjectRemoving { (node, completed) in
+            SceneKitAnimator.animateWithDuration(duration: 0.35, timingFunction: .easeOut, animations: {
+                var transform = SCNMatrix4MakeRotation(.pi, 0, 1, 0)
+                transform = SCNMatrix4Scale(transform, 0.0001, 0.0001, 0.0001)
                 node.contentNode?.transform = transform
             }, completion: completed)
         }

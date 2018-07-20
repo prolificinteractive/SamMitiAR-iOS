@@ -16,6 +16,7 @@
 		90A19A30201FAB67007ED597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A19A2F201FAB67007ED597 /* Assets.xcassets */; };
 		90A19A33201FAB67007ED597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A19A31201FAB67007ED597 /* LaunchScreen.storyboard */; };
 		90C4E945202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */; };
+		D05DA03320D53CDB0009BF7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05DA03220D53CDB0009BF7B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		90A19A34201FAB67007ED597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamMitiVirtualObjectExtension.swift; sourceTree = "<group>"; };
 		A645A372D5FFD4707A75F533 /* Pods-SamMiti-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D05DA03220D53CDB0009BF7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9A14DF5488C0B8CBD64DA9D /* Pods-SamMiti-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.release.xcconfig"; sourceTree = "<group>"; };
 		FC67DE831F7D00A6D6B6BEB4 /* Pods_SamMiti_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				907AED61202CE980002E487D /* art.scnassets */,
 				90A19A2F201FAB67007ED597 /* Assets.xcassets */,
 				90A19A31201FAB67007ED597 /* LaunchScreen.storyboard */,
+				D05DA03220D53CDB0009BF7B /* GoogleService-Info.plist */,
 				90A19A34201FAB67007ED597 /* Info.plist */,
 				904B7FA62020AF1F0038B799 /* ARViewController.swift */,
 				90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */,
@@ -131,6 +134,7 @@
 				TargetAttributes = {
 					90A19A24201FAB67007ED597 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -160,6 +164,7 @@
 			files = (
 				90A19A33201FAB67007ED597 /* LaunchScreen.storyboard in Resources */,
 				907AED62202CE980002E487D /* art.scnassets in Resources */,
+				D05DA03320D53CDB0009BF7B /* GoogleService-Info.plist in Resources */,
 				90A19A30201FAB67007ED597 /* Assets.xcassets in Resources */,
 				90A19A2E201FAB67007ED597 /* Main.storyboard in Resources */,
 			);
@@ -176,12 +181,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SamMitiAR/SamMitiAR.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GLTFSceneKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SamMitiAR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,13 +369,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8CYY6HX773;
+				DEVELOPMENT_TEAM = EJ5UD9292F;
 				INFOPLIST_FILE = "SamMiti-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.SamMiti-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.SamMitiAR-Framework-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -378,13 +387,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8CYY6HX773;
+				DEVELOPMENT_TEAM = EJ5UD9292F;
 				INFOPLIST_FILE = "SamMiti-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.SamMiti-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.SamMitiAR-Framework-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

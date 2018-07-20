@@ -27,10 +27,13 @@ class ARViewController: UIViewController {
     @IBOutlet weak var samMitiARView: SamMitiARView!
     
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var optionButton: UIButton!
+    @IBOutlet weak var optionButton: UIView!
     
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addButton: UIView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var messageContainerView: UIView!
+    
     
     @IBOutlet weak var messageLabel: UILabel!
     
@@ -38,13 +41,19 @@ class ARViewController: UIViewController {
     
     var debugOptions: SamMitiDebugOptions = []
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            isMenuShowing = !isMenuShowing
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // User Interface Setup
-        addButton.layer.cornerRadius = 32
-        optionButton.layer.cornerRadius = 16
-        resetButton.layer.cornerRadius = 16
+        addButton.layer.cornerRadius = 22
+        optionButton.layer.cornerRadius = 22
+        resetButton.layer.cornerRadius = 22
         optionView.layer.cornerRadius = 40
         closeOptionButton.layer.cornerRadius = 16
         resetOptionButton.layer.cornerRadius = 16
@@ -62,7 +71,8 @@ class ARViewController: UIViewController {
         samMitiARView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         samMitiARView.isLightingIntensityAutomaticallyUpdated = true
         samMitiARView.baseLightingEnvironmentIntensity = 6
-        samMitiARView.scene.lightingEnvironment.contents = #imageLiteral(resourceName: "environment.jpg")
+        samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
+        samMitiARView.environmentTexturing = .automatic
         
         samMitiARView.focusNode = SamMitiFocusNode(withNotFoundNamed: "art.scnassets/focus-node/defaultFocusNotFound.scn",
                                                    estimatedNamed: "art.scnassets/focus-node/defaultFocusEstimated.scn",
@@ -93,8 +103,13 @@ class ARViewController: UIViewController {
 
     // Prevent implicit transition animation of SamMitiView.
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
+        self.samMitiARView.alpha = 0
         self.samMitiARView.performTransitionWithOutAnimation(to: size, parentViewCenterPoint: view.center)
+        
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { [unowned self] _ in
+            self.samMitiARView.alpha = 1
+            }, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -177,6 +192,50 @@ class ARViewController: UIViewController {
             }
         }
     }
+
+    
+    var isMenuShowing = true {
+        didSet {
+            UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+                self.setMenuShow(self.isMenuShowing)
+            }, completion: nil)
+        }
+    }
+    
+    var isHomeindicatorHidden = false
+    
+    var isStatusBarHidden = false
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return isHomeindicatorHidden
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return isStatusBarHidden
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    
+    private func setMenuShow(_ isShowing: Bool = true) {
+        optionButton.alpha = isShowing ? 1 : 0
+        resetButton.alpha = isShowing ? 1 : 0
+        addButton.alpha = isShowing ? 1 : 0
+        messageContainerView.alpha = isShowing ? 1 : 0
+        
+        optionButton.transform.ty = isShowing ? 0 : 44
+        resetButton.transform.ty = isShowing ? 0 : 44
+        addButton.transform.ty = isShowing ? 0 : 44
+        
+        messageContainerView.transform.ty = isShowing ? 0 : -messageContainerView.bounds.height
+        
+        isStatusBarHidden = !isShowing
+        isHomeindicatorHidden = !isShowing
+        
+        setNeedsStatusBarAppearanceUpdate()
+        setNeedsUpdateOfHomeIndicatorAutoHidden()
+    }
     
     func handleLoad(virtualNode: SamMitiVirtualObject?) {
         guard let virtualNode = virtualNode else {
@@ -232,9 +291,9 @@ class ARViewController: UIViewController {
             self.virtualObjectLoader.loadVirtualObject(.plane, loadedHandler: self.handleLoad)
         }))
         
-        sheetController.addAction(UIAlertAction(title: "Helmet — GLTF Model", style: .default, handler: { (action) in
+        sheetController.addAction(UIAlertAction(title: "Helmet — SCN", style: .default, handler: { (action) in
             self.isLoading = true
-            self.virtualObjectLoader.loadVirtualObject(.helmet, loadedHandler: { virtualObjectNode in
+            self.virtualObjectLoader.loadVirtualObject(.helmetScn, loadedHandler: { virtualObjectNode in
                 let scaleTransfrom = SCNMatrix4MakeScale(0.2, 0.2, 0.2)
                 virtualObjectNode.contentNode?.transform = scaleTransfrom
                 virtualObjectNode.contentNode?.pivot = SCNMatrix4MakeTranslation(0, virtualObjectNode.contentNode?.boundingBox.min.y ?? 0, 0)
@@ -256,16 +315,19 @@ class ARViewController: UIViewController {
             })
         }))
         
-        sheetController.addAction(UIAlertAction(title: "Duck", style: .default, handler: { (action) in
+        sheetController.addAction(UIAlertAction(title: "Teapot", style: .default, handler: { (action) in
             self.isLoading = true
-            self.virtualObjectLoader.loadVirtualObject(.duck, loadedHandler: { virtualObjectNode in
-                virtualObjectNode.contentNode?.transform = SCNMatrix4MakeScale(0.06, 0.06, 0.06)
+            self.virtualObjectLoader.loadVirtualObject(.teapot, loadedHandler: { virtualObjectNode in
+                virtualObjectNode.contentNode?.scale = SCNVector3(0.01, 0.01, 0.01)
                 self.handleLoad(virtualNode: virtualObjectNode)
             })
         }))
         
+        
+        
         sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheetController.popoverPresentationController?.sourceView = sender
+        sheetController.popoverPresentationController?.sourceRect = CGRect(x: sender.center.x, y: -8, width: 0, height: 0)
         present(sheetController, animated: true, completion: nil)
     }
     
@@ -447,6 +509,7 @@ extension ARViewController: SamMitiARDelegate {
         guard let virtualObjectName = virtualObject?.name else { return }
         messageLabelDisplay("SamMiti will begin pinching \(virtualObjectName)")
     }
+ */
     
     func samMitiViewIsPinching(virtualObject: SamMitiVirtualObject) {
         guard let virtualObjectName = virtualObject.name else {
@@ -462,5 +525,5 @@ extension ARViewController: SamMitiARDelegate {
             return }
         messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
     }
- */
+ 
 }

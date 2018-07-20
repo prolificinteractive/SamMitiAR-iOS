@@ -1,9 +1,9 @@
 {
   "name": "SamMitiAR",
   "platforms": {
-    "ios": "11.0"
+    "ios": "11.3"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": {
     "type": "MIT"
   },
@@ -11,10 +11,10 @@
   "authors": {
     "Nattawut Singhchai": "wut@prolificinteractive.com"
   },
-  "summary": "An iOS framework for easy 3D thing integration to your application.",
+  "summary": "Ready-and-easy-to-use ARKit framework for the best user experience.",
   "source": {
     "git": "https://github.com/prolificinteractive/SamMitiAR-iOS.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "dependencies": {
     "GLTFSceneKit": [

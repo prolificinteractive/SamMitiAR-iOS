@@ -129,14 +129,17 @@ final public class SamMitiARView: ARSCNView {
                 interactionStatus = .placing
                 
                 if placingMode == .automatic {
-                    currentVirtualObject.position = SCNVector3Make(0, 0, -1)
-                    currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 4, 0, 0)
-                    currentVirtualObject.opacity = 0.5
+                    // TODO: Make the value coresponding to the bounding box of the object.
+                    guard let objectBoundingSphere = currentVirtualObject.contentNode?.boundingSphere else { return }
+                    
+                    currentVirtualObject.position = SCNVector3Make(-objectBoundingSphere.center.x, -objectBoundingSphere.center.y, objectBoundingSphere.radius * -3)
+                    currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 32, 0, 0)
+                    currentVirtualObject.opacity = 0.96
                     pointOfView?.addChildNode(currentVirtualObject)
                     
                     if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
                         OperationQueue.main.addOperation {
-                            self.place()
+                            self.place(byTransitioningFromCurrentTransform: true)
                         }
                     }
                 }
@@ -593,7 +596,7 @@ final public class SamMitiARView: ARSCNView {
                 case .existing? = confidentLevel,
                 case .automatic = placingMode {
                 OperationQueue.main.addOperation {
-                    self.place()
+                    self.place(byTransitioningFromCurrentTransform: true)
                 }
             }
             if samMitiDebugOptions.contains(.showStateStatus) {
@@ -729,10 +732,12 @@ extension SamMitiARView: GestureManagerDelegate {
             samMitiARDelegate?.samMitiViewDidTap(on: nil)
         }
         
-        place()
+        if placingMode == .focusNode {
+            place()
+        }
     }
     
-    public func place() {
+    public func place(byTransitioningFromCurrentTransform isTransitioningFromCurrectTransform: Bool = false) {
         guard let placedVirtualObject = currentVirtualObject,
             planeDetecting.currentPlaneDetectingConfidentLevel != .notFound,
             !placedVirtualObjects.contains(placedVirtualObject) else {
@@ -743,7 +748,11 @@ extension SamMitiARView: GestureManagerDelegate {
         currentVirtualObject = nil
         
         // Place Virtual Object
-        place(placedVirtualObject, at: focusNode.transform)
+        if isTransitioningFromCurrectTransform {
+            place(placedVirtualObject, at: focusNode.transform, from: placedVirtualObject.worldTransform)
+        } else {
+            place(placedVirtualObject, at: focusNode.transform)
+        }
     }
     
     private func place(_ object: SamMitiVirtualObject, at transform: SCNMatrix4) {
@@ -773,6 +782,34 @@ extension SamMitiARView: GestureManagerDelegate {
                                         object.virtualScale = finalScale
                                         
             }, completion: {
+                
+                // Callback delegate
+                self.samMitiARDelegate?.samMitiViewDidPlace(object)
+            })
+    }
+    
+    private func place(_ object: SamMitiVirtualObject, at transform: SCNMatrix4, from currentTranform: SCNMatrix4) {
+        
+        // Callback delegate
+        self.samMitiARDelegate?.samMitiViewWillPlace(object, at: transform)
+        
+        // Adding virtualObject to rootNode
+        self.scene.rootNode <- object
+        object.virtualTransform = currentTranform
+        
+        
+        SceneKitAnimator
+            .animateWithDuration(duration: 0.5,
+                                     timingFunction: .easeInOut,
+                                     animations: {
+                                        object.opacity = 1
+                                        object.transform = transform
+                                        object.scale = SCNVector3(1, 1, 1)
+                                        
+            }, completion: {
+                
+                // Add current position Anchor
+                self.addOrUpdateAnchor(for: object)
                 
                 // Callback delegate
                 self.samMitiARDelegate?.samMitiViewDidPlace(object)

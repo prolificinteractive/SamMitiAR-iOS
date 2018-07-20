@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ARViewController" customModule="SamMiti_AR_Auto_placing_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovs-4i-i8c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3du-ZQ-ZVj" customClass="SamMitiARView" customModule="SamMitiAR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </arscnView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3du-ZQ-ZVj" firstAttribute="leading" secondItem="ovs-4i-i8c" secondAttribute="leading" id="LSm-TM-rvo"/>
+                                    <constraint firstItem="3du-ZQ-ZVj" firstAttribute="top" secondItem="ovs-4i-i8c" secondAttribute="top" id="qae-ez-aAj"/>
+                                    <constraint firstAttribute="trailing" secondItem="3du-ZQ-ZVj" secondAttribute="trailing" id="xvu-PQ-nND"/>
+                                    <constraint firstAttribute="bottom" secondItem="3du-ZQ-ZVj" secondAttribute="bottom" id="zmh-Lh-lCo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ovs-4i-i8c" secondAttribute="trailing" id="6on-GA-GZ2"/>
+                            <constraint firstItem="ovs-4i-i8c" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="FuM-Xo-KbQ"/>
+                            <constraint firstItem="ovs-4i-i8c" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="cG2-7m-t44"/>
+                            <constraint firstAttribute="bottom" secondItem="ovs-4i-i8c" secondAttribute="bottom" id="uyI-9e-92h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="3du-ZQ-ZVj" id="YFn-Qd-UlH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b3m-zg-1kI">
+            <objects>
+                <viewController id="3gX-hj-jYf" customClass="ViewController" customModule="SamMiti_AR_Auto_placing_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dFm-z3-SZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRg-ft-V5n">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IRg-ft-V5n" firstAttribute="top" secondItem="dFm-z3-SZb" secondAttribute="top" id="0X9-su-K8b"/>
+                            <constraint firstAttribute="bottom" secondItem="IRg-ft-V5n" secondAttribute="bottom" id="3Jj-pp-5jL"/>
+                            <constraint firstAttribute="trailing" secondItem="IRg-ft-V5n" secondAttribute="trailing" id="8sl-bA-E3K"/>
+                            <constraint firstItem="IRg-ft-V5n" firstAttribute="leading" secondItem="dFm-z3-SZb" secondAttribute="leading" id="LXo-NK-I1s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bCB-CA-evZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="IRg-ft-V5n" id="irf-W5-AvD"/>
+                        <segue destination="BV1-FR-VrT" kind="presentation" modalTransitionStyle="flipHorizontal" id="aPs-Nq-w2k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2G-Na-Ced" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714.39999999999998" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.3'
+
+use_frameworks!
+
+target 'SamMiti-Example' do
+    pod "SamMitiAR", :path => "../../"
+    pod 'Firebase/Core'
+end
+
+

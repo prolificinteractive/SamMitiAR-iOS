@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.3'
+
+use_frameworks!
+
+target 'SamMiti AR Auto-placing Example' do
+  pod "SamMitiAR", :path => "../../"
+
+end

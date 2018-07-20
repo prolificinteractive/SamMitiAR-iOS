@@ -55,7 +55,7 @@ final public class SamMitiARView: ARSCNView {
     
     var samMitiDebugOptions: SamMitiDebugOptions = []
     
-    // A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5).
+    // A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5). This value is only used when placing mode is set to focus node otherwise the value will be overridden by the position of the preview vistual object.
     public var hitTestPlacingPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
     
     // The view for showing debuging values
@@ -120,6 +120,12 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
+    /// The initial size multiplier of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
+    public var initialPreviewVirtualObjectMultiplier: Float = 0.5
+    
+    /// The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
+    public var initialPreviewVirtualObjectOpacity: CGFloat = 0.8
+    
     /// Virtual Object ที่จะทำ interacting ด้วย
     public weak var currentVirtualObject: SamMitiVirtualObject? {
         didSet {
@@ -129,13 +135,23 @@ final public class SamMitiARView: ARSCNView {
                 interactionStatus = .placing
                 
                 if placingMode == .automatic {
-                    // TODO: Make the value coresponding to the bounding box of the object.
-                    guard let objectBoundingSphere = currentVirtualObject.contentNode?.boundingSphere else { return }
                     
-                    currentVirtualObject.position = SCNVector3Make(-objectBoundingSphere.center.x, -objectBoundingSphere.center.y, objectBoundingSphere.radius * -3)
+                    // Turn isAdjustOntoPlaneAnchorEnabled off to wait until the object get placed
+                    isAdjustOntoPlaneAnchorEnabled = false
+                    
+                    guard let objectBoundingBox = currentVirtualObject.contentNode?.boundingBox else { return }
+                    
+                    currentVirtualObject.position = SCNVector3Make(-(objectBoundingBox.min.x + objectBoundingBox.max.x) / 2,
+                                                                   -(objectBoundingBox.min.y + objectBoundingBox.max.y) / 2,
+                                                                   (-objectBoundingBox.min.z + objectBoundingBox.max.z) *
+                                                                    -1 / initialPreviewVirtualObjectMultiplier)
                     currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 32, 0, 0)
-                    currentVirtualObject.opacity = 0.96
+                    currentVirtualObject.opacity = initialPreviewVirtualObjectOpacity
                     pointOfView?.addChildNode(currentVirtualObject)
+                    
+                    // Override hitTestPlacingPoint by the position of the preview virtual object
+                    hitTestPlacingPoint = CGPoint(x: CGFloat(projectPoint(currentVirtualObject.worldPosition).x) / bounds.width,
+                                                  y: CGFloat(projectPoint(currentVirtualObject.worldPosition).y) / bounds.height)
                     
                     if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
                         OperationQueue.main.addOperation {
@@ -183,6 +199,8 @@ final public class SamMitiARView: ARSCNView {
         super.init(coder: aDecoder)
         initSetup()
     }
+    
+    var isAdjustOntoPlaneAnchorEnabled: Bool = true
     
     func initSetup() {
         scene.rootNode.addChildNode(focusNode)
@@ -797,16 +815,18 @@ extension SamMitiARView: GestureManagerDelegate {
         self.scene.rootNode <- object
         object.virtualTransform = currentTranform
         
-        
         SceneKitAnimator
             .animateWithDuration(duration: 0.5,
                                      timingFunction: .easeInOut,
                                      animations: {
-                                        object.opacity = 1
-                                        object.transform = transform
+                                        object.virtualTransform = transform
                                         object.scale = SCNVector3(1, 1, 1)
+                                        object.opacity = 1
                                         
             }, completion: {
+                
+                // Start AdjustOntoPlaneAnchor
+                self.isAdjustOntoPlaneAnchorEnabled = true
                 
                 // Add current position Anchor
                 self.addOrUpdateAnchor(for: object)

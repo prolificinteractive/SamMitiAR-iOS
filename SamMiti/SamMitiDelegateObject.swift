@@ -42,8 +42,12 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
 
         updateQueue.async {
             if let planeAnchor = anchor as? ARPlaneAnchor {
-
-                self.sceneView?.placedVirtualObjects.forEach { $0.adjustOntoPlaneAnchor(planeAnchor, using: node) }
+                
+                if let isAdjustOntoPlaneAnchorEnabled =  self.sceneView?.isAdjustOntoPlaneAnchorEnabled {
+                    if isAdjustOntoPlaneAnchorEnabled {
+                        self.sceneView?.placedVirtualObjects.forEach { $0.adjustOntoPlaneAnchor(planeAnchor, using: node) }
+                    }
+                }
 
                 // Place content only for anchors found by plane detection.
                 if self.showAnchorPlane {
@@ -92,9 +96,14 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
 
         let weakSelf = self
-        updateQueue.async {
-            weakSelf.sceneView?.placedVirtualObjects.forEach { $0.adjustOntoPlaneAnchor(planeAnchor, using: node) }
+        if let isAdjustOntoPlaneAnchorEnabled =  weakSelf.sceneView?.isAdjustOntoPlaneAnchorEnabled {
+            if isAdjustOntoPlaneAnchorEnabled {
+                updateQueue.async {
+                    weakSelf.sceneView?.placedVirtualObjects.forEach { $0.adjustOntoPlaneAnchor(planeAnchor, using: node) }
+                }
+            }
         }
+        
 
         if showAnchorPlane {
             if #available(iOS 11.3, *) {

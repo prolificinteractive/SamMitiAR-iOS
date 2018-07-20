@@ -21,7 +21,7 @@ class ARViewController: UIViewController {
     
     
     private func initializeModel() {
-        let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/budda/budda_head.scn")! , allowedAlignments: [.horizontal])
+        let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")! , allowedAlignments: .all)
         print("Loadin virtualObject naming \(virtualObject)")
         
         virtualObjectLoader.loadVirtualObject(virtualObject) { loadedObject in
@@ -39,7 +39,7 @@ class ARViewController: UIViewController {
         
         sceneView.samMitiARDelegate = self
         sceneView.isAutoFocusEnabled = false
-        sceneView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
+//        sceneView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         sceneView.isLightingIntensityAutomaticallyUpdated = true
         
         if #available(iOS 12.0, *) {
@@ -52,11 +52,8 @@ class ARViewController: UIViewController {
             sceneView.baseLightingEnvironmentIntensity = 1.5
         }
         
-        sceneView.allowedGestureTypes  = [.tap, .doubleTap, .longPress, .pan, .rotation, .pinch]
+        sceneView.allowedGestureTypes  = [.tap, .pan, .rotation, .pinch]
         
-        sceneView.focusNode = SamMitiFocusNode(withNotFoundNamed: "art.scnassets/focus-node/defaultFocusNotFound.scn",
-                                               estimatedNamed: "art.scnassets/focus-node/defaultFocusEstimated.scn",
-                                               existingNamed: "art.scnassets/focus-node/defaultFocusExisting.scn")
         
     }
     

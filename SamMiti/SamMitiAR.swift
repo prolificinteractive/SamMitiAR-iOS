@@ -121,7 +121,7 @@ final public class SamMitiARView: ARSCNView {
     }
     
     /// The initial size multiplier of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
-    public var initialPreviewVirtualObjectMultiplier: Float = 0.5
+    public var initialPreviewVirtualObjectMultiplier: Float = 0.25
     
     /// The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
     public var initialPreviewVirtualObjectOpacity: CGFloat = 0.8

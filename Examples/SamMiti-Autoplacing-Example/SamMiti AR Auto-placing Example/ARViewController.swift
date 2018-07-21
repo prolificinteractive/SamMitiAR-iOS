@@ -94,4 +94,22 @@ class ARViewController: UIViewController {
 
 extension ARViewController: SamMitiARDelegate {
     
+    /// Example of using delegate for haptic feedback when object was placed
+    func samMitiViewDidPlace(_ virtualObject: SamMitiVirtualObject) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+    
+    /// Example of using delegate for haptic feedback when object scaling is snapped
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+    
+    /// Example of using delegate for haptic feedback when scaling to bound
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+    
 }

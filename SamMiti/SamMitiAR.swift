@@ -89,7 +89,7 @@ final public class SamMitiARView: ARSCNView {
     public var initialPreviewVirtualObjectMultiplier: Float = 0.333
     
     /// The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
-    public var initialPreviewVirtualObjectOpacity: CGFloat = 0.8
+    public var initialPreviewVirtualObjectOpacity: CGFloat = 0.667
     
     /// Virtual Object ที่จะทำ interacting ด้วย
     public weak var currentVirtualObject: SamMitiVirtualObject? {
@@ -719,6 +719,9 @@ final public class SamMitiARView: ARSCNView {
                 
                 // Turn isAdjustOntoPlaneAnchorEnabled off to wait until the object get placed
                 isAdjustOntoPlaneAnchorEnabled = false
+                
+                // Set Transparency Mode to Single Layer to display one layer see through opacity.
+                currentVirtualObject.setMaterialTransparencyMode(to: .singleLayer)
                 
                 guard let objectBoundingBox = currentVirtualObject.contentNode?.boundingBox else { return }
                 

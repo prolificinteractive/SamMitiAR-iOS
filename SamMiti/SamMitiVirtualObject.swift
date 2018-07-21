@@ -344,6 +344,25 @@ public class SamMitiVirtualObject: SCNNode {
             break
         }
     }
+    
+    /// - Tag: Sets the transparency mode of the `content node`.
+    public func setMaterialTransparencyMode(to transparencyMode: SCNTransparencyMode) {
+        // Recursivley traverses the node's children to update transparency mode.
+        func updateMaterialTransparencyMode(for node: SCNNode) {
+            
+            for material in node.geometry?.materials ?? [] {
+                material.transparencyMode = transparencyMode
+            }
+            
+            for child in node.childNodes {
+                updateMaterialTransparencyMode(for: child)
+            }
+        }
+        
+        guard let contentNode = self.contentNode else { return }
+        
+        updateMaterialTransparencyMode(for: contentNode)
+    }
 
     /// - Tag: AdjustOntoPlaneAnchor
     func adjustOntoPlaneAnchor(_ anchor: ARPlaneAnchor,

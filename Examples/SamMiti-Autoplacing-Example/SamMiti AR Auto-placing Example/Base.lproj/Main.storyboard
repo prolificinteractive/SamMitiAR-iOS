@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,19 +22,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-qx-NWj">
-                                <rect key="frame" x="279" y="36" width="80" height="64"/>
+                                <rect key="frame" x="139.5" y="587" width="96" height="64"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NjN-UH-pew">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npf-pd-OKO">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Alo-RE-wd7">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-Hg-x5S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                                         <state key="normal" image="xButton"/>
                                                         <connections>
                                                             <action selector="closeButtonDidTouch:" destination="BV1-FR-VrT" eventType="touchUpInside" id="raj-Ib-Hms"/>
@@ -61,7 +62,7 @@
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Igd-Q3-dTX"/>
-                                    <constraint firstAttribute="width" constant="80" id="aB6-Bs-uFq"/>
+                                    <constraint firstAttribute="width" constant="96" id="aB6-Bs-uFq"/>
                                 </constraints>
                                 <blurEffect style="extraLight"/>
                                 <userDefinedRuntimeAttributes>
@@ -73,13 +74,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6zH-qx-NWj" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="16" id="38d-cz-D0a"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6zH-qx-NWj" secondAttribute="trailing" constant="16" id="3Fw-55-gQT"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="6zH-qx-NWj" secondAttribute="bottom" priority="750" id="63B-8f-e6n"/>
                             <constraint firstItem="3du-ZQ-ZVj" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="8f8-g2-BPg"/>
                             <constraint firstItem="3du-ZQ-ZVj" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="Coq-Nf-se0"/>
+                            <constraint firstItem="6zH-qx-NWj" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="IYb-Vg-yzz"/>
                             <constraint firstAttribute="trailing" secondItem="3du-ZQ-ZVj" secondAttribute="trailing" id="bZO-5o-ez1"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6zH-qx-NWj" secondAttribute="bottom" constant="16" id="trr-cZ-Op8"/>
                             <constraint firstAttribute="bottom" secondItem="3du-ZQ-ZVj" secondAttribute="bottom" id="xVD-JO-YRt"/>
-                            <constraint firstAttribute="trailing" secondItem="6zH-qx-NWj" secondAttribute="trailing" priority="750" id="z6a-IL-zFH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
@@ -104,19 +105,19 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </sceneKitView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwf-og-x8I">
-                                <rect key="frame" x="279" y="36" width="80" height="64"/>
+                                <rect key="frame" x="139.5" y="587" width="96" height="64"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ojo-Mc-OzA">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mm-tm-I3K">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zKe-je-m55">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-rT-pFj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                                         <state key="normal" image="arKitButton"/>
                                                         <connections>
                                                             <segue destination="BV1-FR-VrT" kind="presentation" modalTransitionStyle="crossDissolve" id="RDN-WS-jba"/>
@@ -143,7 +144,7 @@
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="b3h-AI-mf5"/>
+                                    <constraint firstAttribute="width" constant="96" id="b3h-AI-mf5"/>
                                     <constraint firstAttribute="height" constant="64" id="iwW-Id-TkU"/>
                                 </constraints>
                                 <blurEffect style="extraLight"/>
@@ -159,10 +160,10 @@
                             <constraint firstItem="IRg-ft-V5n" firstAttribute="top" secondItem="dFm-z3-SZb" secondAttribute="top" id="0X9-su-K8b"/>
                             <constraint firstAttribute="bottom" secondItem="IRg-ft-V5n" secondAttribute="bottom" id="3Jj-pp-5jL"/>
                             <constraint firstAttribute="trailing" secondItem="IRg-ft-V5n" secondAttribute="trailing" id="8sl-bA-E3K"/>
-                            <constraint firstItem="Vwf-og-x8I" firstAttribute="top" secondItem="bCB-CA-evZ" secondAttribute="top" constant="16" id="GJf-Su-09l"/>
                             <constraint firstItem="IRg-ft-V5n" firstAttribute="leading" secondItem="dFm-z3-SZb" secondAttribute="leading" id="LXo-NK-I1s"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vwf-og-x8I" secondAttribute="trailing" constant="16" id="nZ8-YT-M1D"/>
-                            <constraint firstItem="bCB-CA-evZ" firstAttribute="trailing" secondItem="Vwf-og-x8I" secondAttribute="trailing" priority="750" id="pZC-bw-y9C"/>
+                            <constraint firstItem="Vwf-og-x8I" firstAttribute="centerX" secondItem="dFm-z3-SZb" secondAttribute="centerX" id="UCk-fo-OOC"/>
+                            <constraint firstItem="bCB-CA-evZ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vwf-og-x8I" secondAttribute="bottom" constant="16" id="mAV-hQ-TFK"/>
+                            <constraint firstItem="bCB-CA-evZ" firstAttribute="bottom" secondItem="Vwf-og-x8I" secondAttribute="bottom" priority="750" id="zqi-fx-LgZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCB-CA-evZ"/>
                     </view>

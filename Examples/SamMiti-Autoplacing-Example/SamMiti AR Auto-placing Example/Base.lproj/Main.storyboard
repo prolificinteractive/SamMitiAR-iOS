@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3gX-hj-jYf">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="ARViewController" customModule="SamMiti_AR_Auto_placing_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3du-ZQ-ZVj" customClass="SamMitiARView" customModule="SamMitiAR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                             </arscnView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-qx-NWj">
-                                <rect key="frame" x="139.5" y="587" width="96" height="64"/>
+                                <rect key="frame" x="672" y="155.66666666666666" width="96" height="64"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NjN-UH-pew">
                                     <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,8 +61,12 @@
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Igd-Q3-dTX"/>
-                                    <constraint firstAttribute="width" constant="96" id="aB6-Bs-uFq"/>
+                                    <constraint firstAttribute="height" constant="64" id="Igd-Q3-dTX">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="96" id="aB6-Bs-uFq">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
                                 </constraints>
                                 <blurEffect style="extraLight"/>
                                 <userDefinedRuntimeAttributes>
@@ -76,13 +80,45 @@
                         <constraints>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="6zH-qx-NWj" secondAttribute="bottom" priority="750" id="63B-8f-e6n"/>
                             <constraint firstItem="3du-ZQ-ZVj" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="8f8-g2-BPg"/>
+                            <constraint firstItem="6zH-qx-NWj" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" id="ACz-s6-Lqq"/>
                             <constraint firstItem="3du-ZQ-ZVj" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="Coq-Nf-se0"/>
                             <constraint firstItem="6zH-qx-NWj" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="IYb-Vg-yzz"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="6zH-qx-NWj" secondAttribute="trailing" priority="750" id="Lbf-tu-PHI"/>
                             <constraint firstAttribute="trailing" secondItem="3du-ZQ-ZVj" secondAttribute="trailing" id="bZO-5o-ez1"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6zH-qx-NWj" secondAttribute="trailing" constant="20" id="fKk-fo-RSy">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6zH-qx-NWj" secondAttribute="bottom" constant="16" id="trr-cZ-Op8"/>
                             <constraint firstAttribute="bottom" secondItem="3du-ZQ-ZVj" secondAttribute="bottom" id="xVD-JO-YRt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lbf-tu-PHI"/>
+                                <exclude reference="ACz-s6-Lqq"/>
+                                <exclude reference="fKk-fo-RSy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="63B-8f-e6n"/>
+                                <include reference="Lbf-tu-PHI"/>
+                                <exclude reference="trr-cZ-Op8"/>
+                                <include reference="ACz-s6-Lqq"/>
+                                <exclude reference="IYb-Vg-yzz"/>
+                                <include reference="fKk-fo-RSy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="63B-8f-e6n"/>
+                                <include reference="Lbf-tu-PHI"/>
+                                <exclude reference="trr-cZ-Op8"/>
+                                <include reference="ACz-s6-Lqq"/>
+                                <exclude reference="IYb-Vg-yzz"/>
+                                <include reference="fKk-fo-RSy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="3du-ZQ-ZVj" id="YFn-Qd-UlH"/>
@@ -97,15 +133,15 @@
             <objects>
                 <viewController id="3gX-hj-jYf" customClass="ViewController" customModule="SamMiti_AR_Auto_placing_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dFm-z3-SZb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRg-ft-V5n">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </sceneKitView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwf-og-x8I">
-                                <rect key="frame" x="139.5" y="587" width="96" height="64"/>
+                                <rect key="frame" x="672" y="155.66666666666666" width="96" height="64"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ojo-Mc-OzA">
                                     <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,8 +180,12 @@
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="b3h-AI-mf5"/>
-                                    <constraint firstAttribute="height" constant="64" id="iwW-Id-TkU"/>
+                                    <constraint firstAttribute="width" constant="96" id="b3h-AI-mf5">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="64" id="iwW-Id-TkU">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
                                 </constraints>
                                 <blurEffect style="extraLight"/>
                                 <userDefinedRuntimeAttributes>
@@ -159,13 +199,45 @@
                         <constraints>
                             <constraint firstItem="IRg-ft-V5n" firstAttribute="top" secondItem="dFm-z3-SZb" secondAttribute="top" id="0X9-su-K8b"/>
                             <constraint firstAttribute="bottom" secondItem="IRg-ft-V5n" secondAttribute="bottom" id="3Jj-pp-5jL"/>
+                            <constraint firstItem="bCB-CA-evZ" firstAttribute="trailing" secondItem="Vwf-og-x8I" secondAttribute="trailing" priority="750" id="6Yg-AA-5wp"/>
                             <constraint firstAttribute="trailing" secondItem="IRg-ft-V5n" secondAttribute="trailing" id="8sl-bA-E3K"/>
                             <constraint firstItem="IRg-ft-V5n" firstAttribute="leading" secondItem="dFm-z3-SZb" secondAttribute="leading" id="LXo-NK-I1s"/>
                             <constraint firstItem="Vwf-og-x8I" firstAttribute="centerX" secondItem="dFm-z3-SZb" secondAttribute="centerX" id="UCk-fo-OOC"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vwf-og-x8I" secondAttribute="trailing" constant="20" id="jL1-o3-VTi">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="bCB-CA-evZ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vwf-og-x8I" secondAttribute="bottom" constant="16" id="mAV-hQ-TFK"/>
+                            <constraint firstItem="Vwf-og-x8I" firstAttribute="centerY" secondItem="dFm-z3-SZb" secondAttribute="centerY" id="zjc-oG-xP6"/>
                             <constraint firstItem="bCB-CA-evZ" firstAttribute="bottom" secondItem="Vwf-og-x8I" secondAttribute="bottom" priority="750" id="zqi-fx-LgZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCB-CA-evZ"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Yg-AA-5wp"/>
+                                <exclude reference="jL1-o3-VTi"/>
+                                <exclude reference="zjc-oG-xP6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="6Yg-AA-5wp"/>
+                                <exclude reference="mAV-hQ-TFK"/>
+                                <exclude reference="zqi-fx-LgZ"/>
+                                <exclude reference="UCk-fo-OOC"/>
+                                <include reference="jL1-o3-VTi"/>
+                                <include reference="zjc-oG-xP6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="6Yg-AA-5wp"/>
+                                <exclude reference="mAV-hQ-TFK"/>
+                                <exclude reference="zqi-fx-LgZ"/>
+                                <exclude reference="UCk-fo-OOC"/>
+                                <include reference="jL1-o3-VTi"/>
+                                <include reference="zjc-oG-xP6"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="IRg-ft-V5n" id="irf-W5-AvD"/>

@@ -8,16 +8,22 @@
 
 import ARKit
 
+/**
+ Placing Mode
+ เป็น mode สำหรับวางวัตถุ
+ - `.focusNode` เป็นการวางแบบปกติโดยจะมี indicator (focus node) ช่วย
+ - `.automatic` เป็นโหมดการวางอัตโนมัติเมื่อเจอพื้นผิวที่สามารถวางได้
+ */
 public enum PlacingMode {
+    
     case focusNode
+    
     case automatic
 }
 
 final public class SamMitiARView: ARSCNView {
     
-    let billBoardConstraint = SCNBillboardConstraint()
-    
-    private var planeDetecting = SamMitiPlaneDetecting()
+    // public access
     
     /// delegate สำหรับ event ต่างๆ ภายใน ARView
     public weak var samMitiARDelegate: SamMitiARDelegate?
@@ -30,92 +36,51 @@ final public class SamMitiARView: ARSCNView {
                 focusNode.isHidden = true
             }
             scene.rootNode.addChildNode(focusNode)
+            
         }
     }
     
+    /// current plaing mode
     public var placingMode: PlacingMode = .focusNode {
         didSet {
-            if placingMode == .focusNode {
-                focusNode.isHidden = false
-            }else{
-                focusNode.isHidden = true
-            }
+            focusNode.isHidden = placingMode != .focusNode
         }
     }
     
-    
-    let mainKeyLight = SCNLight()
-    
-    let mainFillLight = SCNLight()
-    
-    /// A Boolean value that determines whether the device camera uses fixed focus or autofocus behavior. The default value for this property is false.
+    /**
+    A Boolean value that determines whether the device camera uses fixed focus or autofocus behavior. The default value for this property is false.
+     */
     public var isAutoFocusEnabled: Bool = false
     
-    let translateAssumingInfinitePlane = true
-    
-    var samMitiDebugOptions: SamMitiDebugOptions = []
-    
-    // A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5). This value is only used when placing mode is set to focus node otherwise the value will be overridden by the position of the preview vistual object.
+    /**
+    A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5). This value is only used when placing mode is set to focus node otherwise the value will be overridden by the position of the preview vistual object.
+     */
     public var hitTestPlacingPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
     
-    // The view for showing debuging values
-    var arDebugView: UIStackView?
-    
-    // A Boolean value that specifies whether SamMiti updates SceneKit Environment Intensity according to light estimate intensity divide 1000. The default value for this property is true.
+    /**
+    A Boolean value that specifies whether SamMiti updates SceneKit Environment Intensity according to light estimate intensity divide 1000. The default value for this property is true.
+    */
     public var isLightingIntensityAutomaticallyUpdated: Bool = true
     
-    // The visual contents of the material property—A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects. The default value for this property is the HDR image of photo studio.
+    /**
+    The visual contents of the material property—A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects. The default value for this property is the HDR image of photo studio.
+    */
     public var lightingEnvironmentContent: Any? = "SamMitiArt.scnassets/studioHdr.hdr"
     
-    // A float value for Environment Intensity Multiplier. The default value for this property is 1.0.
+    /** A float value for Environment Intensity Multiplier. The default value for this property is 1.0.
+    */
     public var baseLightingEnvironmentIntensity: CGFloat = 1.0
     
-    // The behavior ARKit uses for generating environment textures. The default value for this property is  ARWorldTrackingConfiguration.EnvironmentTexturing.automatic.
+    /**
+    The behavior ARKit uses for generating environment textures. The default value for this property is  `ARWorldTrackingConfiguration.EnvironmentTexturing.automatic`.
+    */
     public var environmentTexturing: SamMitiARConfiguration.EnvironmentTexturing = .automatic
     
-    // Values for position tracking quality, with possible causes when tracking quality is limited.
-    private var currentTrackingStateReason: ARCamera.TrackingState.Reason? {
-        didSet {
-            if oldValue != currentTrackingStateReason {
-                samMitiARDelegate?.trackingStateReasonChanged(to: currentTrackingStateReason)
-            }
-        }
-    }
-    
-    // TODO: ช่วยดูให้ที
-    // Values for position tracking quality, with possible causes when tracking quality is limited.
-    private var currentTrackingState: SamMitiTrackingState = .notAvailable {
-        didSet {
-            if oldValue != currentTrackingState {
-                samMitiARDelegate?.trackingStateChanged(to: currentTrackingState)
-            }
-        }
-    }
-    
-    let samMitiDelegateObject = SamMitiDelegateObject()
-    
-    // Options for allowing different gestures to be recognized.
+    /// Options for allowing different gestures to be recognized.
     public var allowedGestureTypes: GestureTypes = .all {
         didSet {
             if gestureManager != nil {
                 gestureManager = GestureManager(view: self, types: allowedGestureTypes, delegate: self)
-            }
-        }
-    }
-    
-    var gestureManager: GestureManager?
-    
-    var currentTrackingPosition: CGPoint?
-    
-    var interactionStatus: SamMitiInteractionStatus = .idle {
-        didSet {
-            if oldValue != interactionStatus {
-                interactionStatusChangedTo(interactionStatus)
-                if interactionStatus == .idle {
-                    
-                    // Reset Confident Level, Alignment, and Hit Test Distance
-                    resetPlaneDetectingValues()
-                }
             }
         }
     }
@@ -129,58 +94,76 @@ final public class SamMitiARView: ARSCNView {
     /// Virtual Object ที่จะทำ interacting ด้วย
     public weak var currentVirtualObject: SamMitiVirtualObject? {
         didSet {
-            if let currentVirtualObject = currentVirtualObject,
-                !placedVirtualObjects.contains(currentVirtualObject) {
-                currentVirtualObject.samMitiARDelegate = self.samMitiARDelegate
-                interactionStatus = .placing
-                
-                if placingMode == .automatic {
-                    
-                    // Turn isAdjustOntoPlaneAnchorEnabled off to wait until the object get placed
-                    isAdjustOntoPlaneAnchorEnabled = false
-                    
-                    guard let objectBoundingBox = currentVirtualObject.contentNode?.boundingBox else { return }
-                    
-                    currentVirtualObject.position = SCNVector3Make(-(objectBoundingBox.min.x + objectBoundingBox.max.x) / 2,
-                                                                   -(objectBoundingBox.min.y + objectBoundingBox.max.y) / 2,
-                                                                   (-objectBoundingBox.min.z + objectBoundingBox.max.z) *
-                                                                    -1 / initialPreviewVirtualObjectMultiplier)
-                    currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 32, 0, 0)
-                    currentVirtualObject.opacity = initialPreviewVirtualObjectOpacity
-                    pointOfView?.addChildNode(currentVirtualObject)
-                    
-                    // Override hitTestPlacingPoint by the position of the preview virtual object
-                    hitTestPlacingPoint = CGPoint(x: CGFloat(projectPoint(currentVirtualObject.worldPosition).x) / bounds.width,
-                                                  y: CGFloat(projectPoint(currentVirtualObject.worldPosition).y) / bounds.height)
-                    
-                    if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
-                        OperationQueue.main.addOperation {
-                            self.place(byTransitioningFromCurrentTransform: true)
-                        }
-                    }
-                }
-            } else {
-                interactionStatus = .idle
-            }
+            setCurrentVirtualObject(to: currentVirtualObject)
         }
     }
-    
-    public var isPlacingVirtualObject: Bool {
-        guard let currentVirtualObject = currentVirtualObject else {
-            return false
-        }
-        return !placedVirtualObjects.contains(currentVirtualObject)
-    }
-    
-    var currentGesture: GestureTypes?
     
     /// Virtual Object ที่ถูกวางไว้บน  root node เรียบร้อยแล้ว
     public var placedVirtualObjects: [SamMitiVirtualObject] {
         return scene.rootNode.childNodes.compactMap { $0 as? SamMitiVirtualObject }
     }
     
+    public var currentPlanConfidentLevel: PlaneDetectingConfidentLevel? {
+        return planeDetecting.currentPlaneDetectingConfidentLevel
+    }
+    
+    // private & internal
+    private var planeDetecting = SamMitiPlaneDetecting()
+    
+    private let billBoardConstraint = SCNBillboardConstraint()
+    
+    private let mainKeyLight = SCNLight()
+    
+    private let mainFillLight = SCNLight()
+    
+    private let translateAssumingInfinitePlane = true
+    
+    private var samMitiDebugOptions: SamMitiDebugOptions = []
+    
+    // The view for showing debuging values
+    var arDebugView: UIStackView?
+    
+    // Values for position tracking quality, with possible causes when tracking quality is limited.
+    private var currentTrackingStateReason: ARCamera.TrackingState.Reason? {
+        didSet {
+            if oldValue != currentTrackingStateReason {
+                samMitiARDelegate?.trackingStateReasonChanged(to: currentTrackingStateReason)
+            }
+        }
+    }
+    
+    // Values for position tracking quality, with possible causes when tracking quality is limited.
+    private var currentTrackingState: SamMitiTrackingState = .notAvailable {
+        didSet {
+            if oldValue != currentTrackingState {
+                samMitiARDelegate?.trackingStateChanged(to: currentTrackingState)
+            }
+        }
+    }
+    
+    private let samMitiDelegateObject = SamMitiDelegateObject()
+    
+    private var gestureManager: GestureManager?
+    
+    private var currentTrackingPosition: CGPoint?
+    
+    private var interactionStatus: SamMitiInteractionStatus = .idle {
+        didSet {
+            if oldValue != interactionStatus {
+                interactionStatusChangedTo(interactionStatus)
+                if interactionStatus == .idle {
+                    
+                    // Reset Confident Level, Alignment, and Hit Test Distance
+                    resetPlaneDetectingValues()
+                }
+            }
+        }
+    }
+    
+    private var currentGesture: GestureTypes?
+    
     /// A serial queue used to coordinate adding or removing nodes from the scene.
-    let updateQueue = DispatchQueue(label: "com.prolific.SamMitiAR.serialSceneKitQueue")
+    private let updateQueue = DispatchQueue(label: "com.prolific.SamMitiAR.serialSceneKitQueue")
     
     // MARK: - Init/Deinit
     /// Initializes and returns an SamMitiAR with given parameters.
@@ -202,7 +185,7 @@ final public class SamMitiARView: ARSCNView {
     
     var isAdjustOntoPlaneAnchorEnabled: Bool = true
     
-    func initSetup() {
+    private func initSetup() {
         scene.rootNode.addChildNode(focusNode)
         samMitiDelegateObject.sceneView = self
     }
@@ -268,7 +251,7 @@ final public class SamMitiARView: ARSCNView {
         
     }
     
-    func resetTracking() {
+    private func resetTracking() {
         planeDetecting.reset()
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .all
@@ -279,9 +262,8 @@ final public class SamMitiARView: ARSCNView {
             
         }
         
-        if #available(iOS 11.3, *) {
-            configuration.isAutoFocusEnabled = isAutoFocusEnabled
-        }
+        configuration.isAutoFocusEnabled = isAutoFocusEnabled
+        
         
         session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
         
@@ -289,7 +271,7 @@ final public class SamMitiARView: ARSCNView {
         interactionStatus = .idle
     }
     
-    func updateSession(for frame: ARFrame,
+    private func updateSession(for frame: ARFrame,
                        trackingState: ARCamera.TrackingState) {
         samMitiARDelegate?.updateSessionInfo(for: frame, trackingState: trackingState)
         switch trackingState {
@@ -385,7 +367,7 @@ final public class SamMitiARView: ARSCNView {
     
     // MARK: - Scene content setup
     
-    func setupCamera() {
+    private func setupCamera() {
         guard let camera = self.pointOfView?.camera else {
             fatalError("Expected a valid `pointOfView` from the scene.")
         }
@@ -400,7 +382,7 @@ final public class SamMitiARView: ARSCNView {
         camera.maximumExposure = 3
     }
     
-    func setupLight() {
+    private func setupLight() {
         mainFillLight.type = .directional
         mainFillLight.castsShadow = false
         mainFillLight.color = UIColor(white: 0.31, alpha: 1)
@@ -427,47 +409,27 @@ final public class SamMitiARView: ARSCNView {
         scene.rootNode.addChildNode(lightFillNodeContainNode)
     }
     
-    func checkConfidentLevelFor(result: ARHitTestResult?) -> PlaneDetectingConfidentLevel {
+    private func checkConfidentLevelFor(result: ARHitTestResult?) -> PlaneDetectingConfidentLevel {
         guard let resultType = result?.type else { return .notFound }
-        if #available(iOS 11.3, *) {
-            switch resultType {
-            case .existingPlaneUsingGeometry:
-                return .existing
-            case .estimatedVerticalPlane, .estimatedHorizontalPlane, .existingPlane:
-                return .estimated
-            default:
-                return .notFound
-            }
-        } else {
-            switch resultType {
-            case .existingPlaneUsingExtent:
-                return .existing
-            case .estimatedHorizontalPlane, .existingPlane:
-                return .estimated
-            default:
-                return .notFound
-            }
+        switch resultType {
+        case .existingPlaneUsingGeometry:
+            return .existing
+        case .estimatedVerticalPlane, .estimatedHorizontalPlane, .existingPlane:
+            return .estimated
+        default:
+            return .notFound
         }
     }
     
-    func checkAlignmentFor(result: ARHitTestResult?) -> ARPlaneAnchor.Alignment? {
+    private func checkAlignmentFor(result: ARHitTestResult?) -> ARPlaneAnchor.Alignment? {
         guard let result = result else { return nil }
-        if #available(iOS 11.3, *) {
-            if let planeAnchor = result.anchor as? ARPlaneAnchor {
-                return planeAnchor.alignment
-            } else {
-                switch result.type {
-                case .estimatedVerticalPlane:
-                    return .vertical
-                case .estimatedHorizontalPlane:
-                    return .horizontal
-                default:
-                    return nil
-                }
-            }
+        if let planeAnchor = result.anchor as? ARPlaneAnchor {
+            return planeAnchor.alignment
         } else {
             switch result.type {
-            case .estimatedHorizontalPlane, .existingPlane, .existingPlaneUsingExtent:
+            case .estimatedVerticalPlane:
+                return .vertical
+            case .estimatedHorizontalPlane:
                 return .horizontal
             default:
                 return nil
@@ -477,41 +439,30 @@ final public class SamMitiARView: ARSCNView {
     
     // MARK: Position Testing
     
+    /**
+     Searches for real-world objects or AR anchors in the captured camera image by prioritizing different hitTestTypes according to different situations.
     
-    /// Searches for real-world objects or AR anchors in the captured camera image by prioritizing different hitTestTypes according to different situations.
-    ///
-    /// - Parameters:
-    ///   - _ point: A point in the screen-space coordinate system of the scene renderer.
-    ///   - infinitePlane: A Boolean value to determine weather or not the function calculates for the estimated infinite plane.
-    ///   - objectPosition: The translation of the object which uses to help determining infinite plane.
-    ///   - allowedAlignments: An array of orientation allowed to be found.
-    func smartHitTest(_ point: CGPoint,
+     - Parameters:
+       - _ point: A point in the screen-space coordinate system of the scene renderer.
+       - infinitePlane: A Boolean value to determine weather or not the function calculates for the estimated infinite plane.
+       - objectPosition: The translation of the object which uses to help determining infinite plane.
+       - allowedAlignments: An array of orientation allowed to be found.
+    */
+    private func smartHitTest(_ point: CGPoint,
                       infinitePlane: Bool = false,
                       objectPosition: float3? = nil,
                       allowedAlignments: [ARPlaneAnchor.Alignment] = .all) -> ARHitTestResult? {
         
         // Perform the hit test.
-        var results: [ARHitTestResult]
-        if #available(iOS 11.3, *) {
-            results = hitTest(point, types: [.existingPlaneUsingGeometry, .estimatedVerticalPlane, .estimatedHorizontalPlane])
-        } else {
-            // Fallback on earlier versions
-            results = hitTest(point, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane])
-        }
+        let results = hitTest(point, types: [.existingPlaneUsingGeometry, .estimatedVerticalPlane, .estimatedHorizontalPlane])
         
-        if #available(iOS 11.3, *) {
-            // 1. Check for a result on an existing plane using geometry.
-            if let existingPlaneUsingGeometryResult = results.first(where: { $0.type == .existingPlaneUsingGeometry }),
-                let planeAnchor = existingPlaneUsingGeometryResult.anchor as? ARPlaneAnchor, allowedAlignments.contains(planeAnchor.alignment) {
-                return existingPlaneUsingGeometryResult
-            }
-        } else {
-            // Fallback on earlier versions
-            if let existingPlaneUsingGeometryResult = results.first(where: { $0.type == .existingPlaneUsingExtent }),
-                let planeAnchor = existingPlaneUsingGeometryResult.anchor as? ARPlaneAnchor, allowedAlignments.contains(planeAnchor.alignment) {
-                return existingPlaneUsingGeometryResult
-            }
+        
+        // 1. Check for a result on an existing plane using geometry.
+        if let existingPlaneUsingGeometryResult = results.first(where: { $0.type == .existingPlaneUsingGeometry }),
+            let planeAnchor = existingPlaneUsingGeometryResult.anchor as? ARPlaneAnchor, allowedAlignments.contains(planeAnchor.alignment) {
+            return existingPlaneUsingGeometryResult
         }
+
         
         if infinitePlane {
             
@@ -542,41 +493,36 @@ final public class SamMitiARView: ARSCNView {
             }
         }
         
-        if #available(iOS 11.3, *) {
-            // 3. As a final fallback, check for a result on estimated planes.
-            let vResult = results.first(where: { $0.type == .estimatedVerticalPlane })
-            let hResult = results.first(where: { $0.type == .estimatedHorizontalPlane })
-            switch (allowedAlignments.contains(.horizontal), allowedAlignments.contains(.vertical)) {
-            case (true, false):
-                return hResult
-            case (false, true):
-                // Allow fallback to horizontal because we assume that objects meant for vertical placement
-                // (like a picture) can always be placed on a horizontal surface, too. << This is stupid!!!
-                return vResult
-            case (true, true):
-                if hResult != nil && vResult != nil {
-                    return hResult!.distance < vResult!.distance ? hResult! : vResult!
-                } else {
-                    return hResult ?? vResult
-                }
-            default:
-                return nil
+        // 3. As a final fallback, check for a result on estimated planes.
+        let vResult = results.first(where: { $0.type == .estimatedVerticalPlane })
+        let hResult = results.first(where: { $0.type == .estimatedHorizontalPlane })
+        switch (allowedAlignments.contains(.horizontal), allowedAlignments.contains(.vertical)) {
+        case (true, false):
+            return hResult
+        case (false, true):
+            // Allow fallback to horizontal because we assume that objects meant for vertical placement
+            // (like a picture) can always be placed on a horizontal surface, too. << This is stupid!!!
+            return vResult
+        case (true, true):
+            if hResult != nil && vResult != nil {
+                return hResult!.distance < vResult!.distance ? hResult! : vResult!
+            } else {
+                return hResult ?? vResult
             }
-        } else {
-            // Fallback on earlier versions
-            // 3. As a final fallback, check for a result on estimated planes.
-            return results.first(where: { $0.type == .estimatedHorizontalPlane })
+        default:
+            return nil
         }
+       
     }
     
-    func interactionStatusChangedTo(_ interactionStatus: SamMitiInteractionStatus) {
+    private func interactionStatusChangedTo(_ interactionStatus: SamMitiInteractionStatus) {
         samMitiARDelegate?.interactionStatusChanged(to: interactionStatus)
         if samMitiDebugOptions.contains(.showStateStatus) {
             updateInteractionStatusDebugsView(to: interactionStatus)
         }
     }
     
-    func updatePlaneDetectingValues(by result: ARHitTestResult?,
+    private func updatePlaneDetectingValues(by result: ARHitTestResult?,
                                     shouldUpdateFocusNodeConfidentLevel: Bool = true) {
         
         // Update Plane Detection Confident Level
@@ -590,7 +536,7 @@ final public class SamMitiARView: ARSCNView {
         
     }
     
-    func resetPlaneDetectingValues(){
+    private func resetPlaneDetectingValues(){
         // Update Plane Detection Confident Level
         confidentLevelChangedTo(nil)
         
@@ -601,7 +547,7 @@ final public class SamMitiARView: ARSCNView {
         hitTestDistanceChangedTo(nil)
     }
     
-    func confidentLevelChangedTo(_ confidentLevel: PlaneDetectingConfidentLevel?,
+    private func confidentLevelChangedTo(_ confidentLevel: PlaneDetectingConfidentLevel?,
                                  shouldUpdateFocusNodeConfidentLevel: Bool = true) {
         if confidentLevel != self.planeDetecting.currentPlaneDetectingConfidentLevel {
             self.planeDetecting.currentPlaneDetectingConfidentLevel = confidentLevel
@@ -623,7 +569,7 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    func alignmentChangedTo(_ alignment: ARPlaneAnchor.Alignment?) {
+    private func alignmentChangedTo(_ alignment: ARPlaneAnchor.Alignment?) {
         if alignment != self.planeDetecting.currentAlignment {
             self.planeDetecting.currentAlignment = alignment
             samMitiARDelegate?.alignmentChanged(to: alignment)
@@ -635,7 +581,7 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    func hitTestDistanceChangedTo(_ distance: CGFloat?) {
+    private func hitTestDistanceChangedTo(_ distance: CGFloat?) {
         samMitiARDelegate?.hitTestDistanceChanged(to: distance)
         if samMitiDebugOptions.contains(.showStateStatus) {
             updateHitTestDistanceDebugsView(to: distance)
@@ -644,7 +590,7 @@ final public class SamMitiARView: ARSCNView {
     
     // - MARK: Object anchors
     /// - Tag: AddOrUpdateAnchor
-    func addOrUpdateAnchor(for object: SamMitiVirtualObject) {
+    private func addOrUpdateAnchor(for object: SamMitiVirtualObject) {
         // If the anchor is not nil, remove it from the session.
         if let anchor = object.anchor {
             session.remove(anchor: anchor)
@@ -656,7 +602,7 @@ final public class SamMitiARView: ARSCNView {
         session.add(anchor: newAnchor)
     }
     
-    func updateDebugViewTransform(by frame: ARFrame) {
+    private func updateDebugViewTransform(by frame: ARFrame) {
         if frame.camera.eulerAngles != float3(x: 0, y: 0, z: 0) {
             let angleCorrections:[UIInterfaceOrientation] = [
                 .landscapeRight,
@@ -679,79 +625,6 @@ final public class SamMitiARView: ARSCNView {
             bounds = CGRect(origin: CGPoint.zero, size: size)
             center = point
             CATransaction.commit()
-        }
-    }
-}
-
-// Helpers
-
-extension SamMitiARView {
-    
-    /// A helper method to return the first object that is found under the provided `gesture`s touch locations.
-    /// - Tag: TouchTesting
-    private func objectInteracting(with gesture: UIGestureRecognizer, in view: ARSCNView) -> SamMitiVirtualObject? {
-        for index in 0..<gesture.numberOfTouches {
-            let touchLocation = gesture.location(ofTouch: index, in: view)
-            
-            // Look for an object directly under the `touchLocation`.
-            if let object = virtualObject(at: touchLocation) {
-                return object
-            }
-        }
-        
-        // As a last resort look for an object under the center of the touches.
-        return virtualObject(at: gesture.center(in: view))
-    }
-    
-    /// Hit tests against the `sceneView` to find an object at the provided point.
-    func virtualObject(at hitPoint: CGPoint) -> SamMitiVirtualObject? {
-        let hitTestOptions: [SCNHitTestOption: Any] = [.boundingBoxOnly: true]
-        let hitTestResults = hitTest(hitPoint, options: hitTestOptions)
-        
-        return hitTestResults.lazy.compactMap { $0.node.partOfVirtualObject() }.first
-    }
-}
-
-// Gestures
-extension SamMitiARView: GestureManagerDelegate {
-    
-    func receivedGesture(gesture: Gesture) {
-        switch gesture {
-        case .tapped(let gestureRecognizer):
-            didTapped(gesture: gestureRecognizer)
-        case .doubleTap(let gestureRecognizer) where !isPlacingVirtualObject:
-            didDoubleTap(gesture: gestureRecognizer)
-        case .longPress(let gestureRecognizer) where !isPlacingVirtualObject:
-            didLongPress(gesture: gestureRecognizer)
-        case .rotation(let gestureRecognizer) where !isPlacingVirtualObject:
-            didRotate(gesture: gestureRecognizer)
-        case .pinch(let gestureRecognizer) where !isPlacingVirtualObject:
-            didPinch(gesture: gestureRecognizer)
-        case .pan(let gestureRecognizer) where !isPlacingVirtualObject:
-            didPan(gesture: gestureRecognizer)
-        default:
-            break
-        }
-    }
-    
-    private func didTapped(gesture: UITapGestureRecognizer) {
-        
-        guard case .ended = gesture.state else {
-            return
-        }
-        
-        if let selectedVirtualObject = virtualObject(at: gesture.location(in: self)) {
-            
-            // Check if the selected object has been changed
-            if (currentVirtualObject != nil) ? placedVirtualObjects.contains(currentVirtualObject!) : true {
-                samMitiARDelegate?.samMitiViewDidTap(on: selectedVirtualObject)
-            }
-        } else {
-            samMitiARDelegate?.samMitiViewDidTap(on: nil)
-        }
-        
-        if placingMode == .focusNode {
-            place()
         }
     }
     
@@ -817,12 +690,12 @@ extension SamMitiARView: GestureManagerDelegate {
         
         SceneKitAnimator
             .animateWithDuration(duration: 0.5,
-                                     timingFunction: .easeInOut,
-                                     animations: {
-                                        object.virtualTransform = transform
-                                        object.scale = SCNVector3(1, 1, 1)
-                                        object.opacity = 1
-                                        
+                                 timingFunction: .easeInOut,
+                                 animations: {
+                                    object.virtualTransform = transform
+                                    object.scale = SCNVector3(1, 1, 1)
+                                    object.opacity = 1
+                                    
             }, completion: {
                 
                 // Start AdjustOntoPlaneAnchor
@@ -834,6 +707,128 @@ extension SamMitiARView: GestureManagerDelegate {
                 // Callback delegate
                 self.samMitiARDelegate?.samMitiViewDidPlace(object)
             })
+    }
+    
+    private func setCurrentVirtualObject(to currentVirtualObject: SamMitiVirtualObject?) {
+        if let currentVirtualObject = currentVirtualObject,
+            !placedVirtualObjects.contains(currentVirtualObject) {
+            currentVirtualObject.samMitiARDelegate = self.samMitiARDelegate
+            interactionStatus = .placing
+            
+            if placingMode == .automatic {
+                
+                // Turn isAdjustOntoPlaneAnchorEnabled off to wait until the object get placed
+                isAdjustOntoPlaneAnchorEnabled = false
+                
+                guard let objectBoundingBox = currentVirtualObject.contentNode?.boundingBox else { return }
+                
+                currentVirtualObject.position = SCNVector3Make(-(objectBoundingBox.min.x + objectBoundingBox.max.x) / 2,
+                                                               -(objectBoundingBox.min.y + objectBoundingBox.max.y) / 2,
+                                                               (-objectBoundingBox.min.z + objectBoundingBox.max.z) *
+                                                                -1 / initialPreviewVirtualObjectMultiplier)
+                currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 32, 0, 0)
+                currentVirtualObject.opacity = initialPreviewVirtualObjectOpacity
+                pointOfView?.addChildNode(currentVirtualObject)
+                
+                // Override hitTestPlacingPoint by the position of the preview virtual object
+                hitTestPlacingPoint = CGPoint(x: CGFloat(projectPoint(currentVirtualObject.worldPosition).x) / bounds.width,
+                                              y: CGFloat(projectPoint(currentVirtualObject.worldPosition).y) / bounds.height)
+                
+                if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
+                    OperationQueue.main.addOperation {
+                        self.place(byTransitioningFromCurrentTransform: true)
+                    }
+                }
+            }
+        } else {
+            interactionStatus = .idle
+        }
+    }
+    
+    func updateObjectToCurrentTrackingPosition() {
+        guard let object = currentVirtualObject, let position = currentTrackingPosition else { return }
+        translate(object, basedOn: position, infinitePlane: translateAssumingInfinitePlane, allowAnimation: true)
+    }
+}
+
+// Helpers
+
+extension SamMitiARView {
+    
+    /// A helper method to return the first object that is found under the provided `gesture`s touch locations.
+    /// - Tag: TouchTesting
+    private func objectInteracting(with gesture: UIGestureRecognizer, in view: ARSCNView) -> SamMitiVirtualObject? {
+        for index in 0..<gesture.numberOfTouches {
+            let touchLocation = gesture.location(ofTouch: index, in: view)
+            
+            // Look for an object directly under the `touchLocation`.
+            if let object = virtualObject(at: touchLocation) {
+                return object
+            }
+        }
+        
+        // As a last resort look for an object under the center of the touches.
+        return virtualObject(at: gesture.center(in: view))
+    }
+    
+    /// Hit tests against the `sceneView` to find an object at the provided point.
+    func virtualObject(at hitPoint: CGPoint) -> SamMitiVirtualObject? {
+        let hitTestOptions: [SCNHitTestOption: Any] = [.boundingBoxOnly: true]
+        let hitTestResults = hitTest(hitPoint, options: hitTestOptions)
+        
+        return hitTestResults.lazy.compactMap { $0.node.partOfVirtualObject() }.first
+    }
+    
+    /// get current placing state
+    public var isPlacingVirtualObject: Bool {
+        guard let currentVirtualObject = currentVirtualObject else {
+            return false
+        }
+        return !placedVirtualObjects.contains(currentVirtualObject)
+    }
+}
+
+// Gestures
+extension SamMitiARView: GestureManagerDelegate {
+    
+    func receivedGesture(gesture: Gesture) {
+        switch gesture {
+        case .tapped(let gestureRecognizer):
+            didTapped(gesture: gestureRecognizer)
+        case .doubleTap(let gestureRecognizer) where !isPlacingVirtualObject:
+            didDoubleTap(gesture: gestureRecognizer)
+        case .longPress(let gestureRecognizer) where !isPlacingVirtualObject:
+            didLongPress(gesture: gestureRecognizer)
+        case .rotation(let gestureRecognizer) where !isPlacingVirtualObject:
+            didRotate(gesture: gestureRecognizer)
+        case .pinch(let gestureRecognizer) where !isPlacingVirtualObject:
+            didPinch(gesture: gestureRecognizer)
+        case .pan(let gestureRecognizer) where !isPlacingVirtualObject:
+            didPan(gesture: gestureRecognizer)
+        default:
+            break
+        }
+    }
+    
+    private func didTapped(gesture: UITapGestureRecognizer) {
+        
+        guard case .ended = gesture.state else {
+            return
+        }
+        
+        if let selectedVirtualObject = virtualObject(at: gesture.location(in: self)) {
+            
+            // Check if the selected object has been changed
+            if (currentVirtualObject != nil) ? placedVirtualObjects.contains(currentVirtualObject!) : true {
+                samMitiARDelegate?.samMitiViewDidTap(on: selectedVirtualObject)
+            }
+        } else {
+            samMitiARDelegate?.samMitiViewDidTap(on: nil)
+        }
+        
+        if placingMode == .focusNode {
+            place()
+        }
     }
     
     func didDoubleTap(gesture: UITapGestureRecognizer) {
@@ -958,11 +953,6 @@ extension SamMitiARView: GestureManagerDelegate {
         }
     }
     
-    func updateObjectToCurrentTrackingPosition() {
-        guard let object = currentVirtualObject, let position = currentTrackingPosition else { return }
-        translate(object, basedOn: position, infinitePlane: translateAssumingInfinitePlane, allowAnimation: true)
-    }
-    
     func didRotate(gesture: UIRotationGestureRecognizer) {
         if case .began = gesture.state {
             
@@ -1071,11 +1061,7 @@ extension SamMitiARView: GestureManagerDelegate {
         } else if result.type == .estimatedHorizontalPlane {
             planeAlignment = .horizontal
         } else if result.type != .estimatedHorizontalPlane {
-            if #available(iOS 11.3, *) {
-                planeAlignment = .vertical
-            } else {
-                // Fallback on earlier versions
-            }
+            planeAlignment = .vertical
         } else {
             return
         }

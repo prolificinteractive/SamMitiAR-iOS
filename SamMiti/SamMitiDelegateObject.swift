@@ -51,34 +51,11 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
 
                 // Place content only for anchors found by plane detection.
                 if self.showAnchorPlane {
-                    if #available(iOS 11.3, *) {
-                        guard let device = MTLCreateSystemDefaultDevice(),
-                            let anchorGeometry = ARSCNPlaneGeometry(device: device) else { return }
-                        anchorGeometry.update(from: planeAnchor.geometry)
-                        node.opacity = 0.25
-                        node.geometry = anchorGeometry
-                    } else {
-                        // Create a SceneKit plane to visualize the plane anchor using its position and extent.
-                        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x),
-                                             height: CGFloat(planeAnchor.extent.z))
-                        let planeNode = SCNNode(geometry: plane)
-                        planeNode.simdPosition = float3(planeAnchor.center.x, 0, planeAnchor.center.z)
-
-                        /*
-                         `SCNPlane` is vertically oriented in its local coordinate space, so
-                         rotate the plane to match the horizontal orientation of `ARPlaneAnchor`.
-                         */
-                        planeNode.eulerAngles.x = -.pi / 2
-
-                        // Make the plane visualization semitransparent to clearly show real-world placement.
-                        planeNode.opacity = 0.25
-
-                        /*
-                         Add the plane visualization to the ARKit-managed node so that it tracks
-                         changes in the plane anchor as plane estimation continues.
-                         */
-                        node.addChildNode(planeNode)
-                    }
+                    guard let device = MTLCreateSystemDefaultDevice(),
+                        let anchorGeometry = ARSCNPlaneGeometry(device: device) else { return }
+                    anchorGeometry.update(from: planeAnchor.geometry)
+                    node.opacity = 0.25
+                    node.geometry = anchorGeometry
                 }
             } else {
                 if let objectAtAnchor = self.sceneView?.placedVirtualObjects.first(where: { $0.anchor == anchor }) {
@@ -106,27 +83,8 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
         
 
         if showAnchorPlane {
-            if #available(iOS 11.3, *) {
-                guard let anchorGeometry = node.geometry as? ARSCNPlaneGeometry else { return }
-                anchorGeometry.update(from: planeAnchor.geometry)
-            } else {
-                // Update content only for plane anchors and nodes matching the setup created in `renderer(_:didAdd:for:)`.
-                guard let planeNode = node.childNodes.first,
-                    let plane = planeNode.geometry as? SCNPlane
-                    else { return }
-
-                // Plane estimation may shift the center of a plane relative to its anchor's transform.
-                planeNode.simdPosition = float3(planeAnchor.center.x, 0, planeAnchor.center.z)
-
-                /*
-                 Plane estimation may extend the size of the plane, or combine previously detected
-                 planes into a larger one. In the latter case, `ARSCNView` automatically deletes the
-                 corresponding node for one plane, then calls this method to update the size of
-                 the remaining plane.
-                 */
-                plane.width = CGFloat(planeAnchor.extent.x)
-                plane.height = CGFloat(planeAnchor.extent.z)
-            }
+            guard let anchorGeometry = node.geometry as? ARSCNPlaneGeometry else { return }
+            anchorGeometry.update(from: planeAnchor.geometry)
         }
     }
 

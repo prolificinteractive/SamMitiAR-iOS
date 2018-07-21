@@ -23,7 +23,11 @@ For you information, the framework was made on top of ARSCNView (ARKit SceneView
 SamMitiAR is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SamMitiAR'
+#for iOS 11.0 +
+pod 'SamMitiAR' ~> '1.0'
+
+#for iOS 11.3 +
+pod 'SamMitiAR' ~> '2.0'
 ```
 
 ## Usage

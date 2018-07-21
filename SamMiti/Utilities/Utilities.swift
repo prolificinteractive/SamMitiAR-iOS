@@ -96,27 +96,15 @@ extension ARWorldTrackingConfiguration.EnvironmentTexturing {
     }
 }
 
-// Fallback for non iOS 11.3 
 
 extension ARWorldTrackingConfiguration.PlaneDetection {
     public static var all: ARWorldTrackingConfiguration.PlaneDetection {
-        if #available(iOS 11.3, *) {
-            return [.horizontal, .vertical]
-        }else{
-            return .horizontal
-        }
+        return [.horizontal, .vertical]
     }
 }
 
 extension Array where Element == ARPlaneAnchor.Alignment {
-
-    public static let all: [ARPlaneAnchor.Alignment] = {
-        if #available(iOS 11.3, *) {
-            return [.horizontal, .vertical]
-        }else{
-            return [.horizontal]
-        }
-    }()
+    public static let all: [ARPlaneAnchor.Alignment] = [.horizontal, .vertical]
 }
 
 // SCNNode(addChildNode:)

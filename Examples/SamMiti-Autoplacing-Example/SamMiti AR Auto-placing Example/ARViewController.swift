@@ -19,9 +19,12 @@ class ARViewController: UIViewController {
     
     let virtualObjectLoader = SamMitiVitualObjectLoader()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     private func initializeModel() {
-        let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")! , allowedAlignments: .all)
+        let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")! , allowedAlignments: [.horizontal])
         print("Loadin virtualObject naming \(virtualObject)")
         
         virtualObjectLoader.loadVirtualObject(virtualObject) { loadedObject in

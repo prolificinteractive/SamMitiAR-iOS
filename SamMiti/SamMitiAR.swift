@@ -85,11 +85,11 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    /// The initial size multiplier of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
-    public var initialPreviewVirtualObjectMultiplier: Float = 0.333
+    /// The initial size ratio ot the screen of the virtual object ( value 1 means the bounding box of the virtual object in that particular axis will be full screen) for automatic placing mode (if using focus node mode this value will be ignored.) Default value for this property is CGSize(width: 0.667, height: 0.667).
+    public var initialPreviewObjectMaxSizeRatio: CGSize = CGSize(width: 0.667, height: 0.667)
     
-    /// The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored)
-    public var initialPreviewVirtualObjectOpacity: CGFloat = 0.667
+    /// The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored.) Default value for this property is  0.667.
+    public var initialPreviewObjectOpacity: CGFloat = 0.667
     
     /// Virtual Object ที่จะทำ interacting ด้วย
     public weak var currentVirtualObject: SamMitiVirtualObject? {
@@ -709,6 +709,37 @@ final public class SamMitiARView: ARSCNView {
             })
     }
     
+    private func getCameraFov() -> vector_float2 {
+        
+        let currentOrientation = UIApplication.shared.statusBarOrientation
+        
+        /// 3:4 iPhone FOV = 1.132, 0.849
+        let xFov: Float = 1.132
+        let yFov: Float = 0.849
+        
+        var cameraFov = vector_float2()
+        
+        switch currentOrientation {
+        case .portrait, .portraitUpsideDown:
+            cameraFov = vector_float2(yFov, xFov)
+        case .landscapeLeft, .landscapeRight:
+            cameraFov = vector_float2(xFov, yFov)
+        default:
+            break
+        }
+        
+        let viewSize = bounds.size
+        
+        if Float(viewSize.width / viewSize.height) < cameraFov.x / cameraFov.y {
+            return vector_float2(Float(viewSize.width / viewSize.height) * cameraFov.y,
+                                 cameraFov.y)
+        } else {
+            return vector_float2(cameraFov.x,
+                                 Float(viewSize.height / viewSize.width) * cameraFov.x )
+        }
+        
+    }
+    
     private func setCurrentVirtualObject(to currentVirtualObject: SamMitiVirtualObject?) {
         if let currentVirtualObject = currentVirtualObject,
             !placedVirtualObjects.contains(currentVirtualObject) {
@@ -725,17 +756,32 @@ final public class SamMitiARView: ARSCNView {
                 
                 guard let objectBoundingBox = currentVirtualObject.contentNode?.boundingBox else { return }
                 
+                let cameraFov = getCameraFov()
+                
+                let objectBoundingBoxSize = SCNVector3((-objectBoundingBox.min.x + objectBoundingBox.max.x),
+                                                       (-objectBoundingBox.min.y + objectBoundingBox.max.y),
+                                                       (-objectBoundingBox.min.z + objectBoundingBox.max.z))
+                
+                let minimumSafeAreaBox = SCNVector3(objectBoundingBoxSize.x * Float( 1 / initialPreviewObjectMaxSizeRatio.width ),
+                                                    objectBoundingBoxSize.y * Float( 1 / initialPreviewObjectMaxSizeRatio.height ),
+                                                    objectBoundingBoxSize.z)
+                
+                let minDistanceFromX = minimumSafeAreaBox.x / tan(cameraFov.x) - objectBoundingBox.min.z
+                let minDistanceFromY = minimumSafeAreaBox.y / tan(cameraFov.y) - objectBoundingBox.min.z
+                
                 currentVirtualObject.position = SCNVector3Make(-(objectBoundingBox.min.x + objectBoundingBox.max.x) / 2,
                                                                -(objectBoundingBox.min.y + objectBoundingBox.max.y) / 2,
-                                                               (-objectBoundingBox.min.z + objectBoundingBox.max.z) *
-                                                                -1 / initialPreviewVirtualObjectMultiplier)
+                                                               -max(minDistanceFromX, minDistanceFromY))
+                
                 currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 32, 0, 0)
-                currentVirtualObject.opacity = initialPreviewVirtualObjectOpacity
+                currentVirtualObject.opacity = initialPreviewObjectOpacity
                 pointOfView?.addChildNode(currentVirtualObject)
                 
                 // Override hitTestPlacingPoint by the position of the preview virtual object
                 hitTestPlacingPoint = CGPoint(x: CGFloat(projectPoint(currentVirtualObject.worldPosition).x) / bounds.width,
                                               y: CGFloat(projectPoint(currentVirtualObject.worldPosition).y) / bounds.height)
+                
+                print(hitTestPlacingPoint)
                 
                 if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
                     OperationQueue.main.addOperation {

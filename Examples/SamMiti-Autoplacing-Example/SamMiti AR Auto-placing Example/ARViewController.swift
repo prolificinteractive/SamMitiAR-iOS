@@ -23,6 +23,16 @@ class ARViewController: UIViewController {
         return .lightContent
     }
     
+    private func initializeSamMiti() {
+        
+        // Keep screen on all the time
+        UIApplication.shared.isIdleTimerDisabled = true
+        sceneView.startAR()
+        
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .all
+    }
+    
     private func initializeModel() {
         let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")! , allowedAlignments: [.horizontal])
         print("Loadin virtualObject naming \(virtualObject)")
@@ -31,13 +41,18 @@ class ARViewController: UIViewController {
             loadedObject.scaleRange = (0.1)...10
             
             self.sceneView.currentVirtualObject = loadedObject
+            
+            self.sceneView.currentVirtualObject?.contentNode?.opacity = 0
+            
+            SceneKitAnimator.animateWithDuration(duration: 0.35, animations: {
+                self.sceneView.currentVirtualObject?.contentNode?.opacity = 1
+            })
         }
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         sceneView.placingMode = .automatic
         
         sceneView.samMitiARDelegate = self
@@ -55,6 +70,8 @@ class ARViewController: UIViewController {
             sceneView.baseLightingEnvironmentIntensity = 1.5
         }
         
+        sceneView.initialPreviewObjectOpacity = 0.667
+        sceneView.initialPreviewObjectMaxSizeRatio = CGSize(width: 0.667, height: 0.667)
         sceneView.allowedGestureTypes  = [.tap, .pan, .rotation, .pinch]
         
         
@@ -63,11 +80,11 @@ class ARViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initializeSamMiti()
-        initializeModel()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        initializeModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,16 +93,7 @@ class ARViewController: UIViewController {
         // Pause the view's AR session.
         sceneView.session.pause()
     }
-    
-    private func initializeSamMiti() {
-        
-        // Keep screen on all the time
-        UIApplication.shared.isIdleTimerDisabled = true
-        sceneView.startAR()
-        
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .all
-    }
+
     @IBAction func closeButtonDidTouch(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

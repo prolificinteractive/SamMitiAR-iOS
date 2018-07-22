@@ -65,7 +65,7 @@ public class SamMitiVirtualObject: SCNNode {
     var loadingType: LoadingType = .none
     
     /// SamMitiARDelegate
-    var samMitiARDelegate: SamMitiARDelegate?
+    weak var samMitiARDelegate: SamMitiARDelegate?
 
     /// ใช้สำหรับปรับขนาดของวัตถุ
     public private(set) var nodeScale: Float = 1 {

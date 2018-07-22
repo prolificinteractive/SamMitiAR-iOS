@@ -34,7 +34,7 @@ class ARViewController: UIViewController {
     }
     
     private func initializeModel() {
-        let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")! , allowedAlignments: [.horizontal])
+        let virtualObject = SamMitiVirtualObject(refferenceNode: SCNReferenceNode(named: "art.scnassets/metal-teapot/metal-teapot.scn")! , allowedAlignments: [.horizontal])
         print("Loadin virtualObject naming \(virtualObject)")
         
         virtualObjectLoader.loadVirtualObject(virtualObject) { loadedObject in

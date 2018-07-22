@@ -19,7 +19,7 @@ public extension CAMediaTimingFunction {
 
     static let easeInOut = CAMediaTimingFunction(controlPoints: 0.45, 0, 0.55, 1)
     
-    static let easeInEaseOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    static let easeInEaseOut = CAMediaTimingFunction(controlPoints: 0.42, 0, 0.58, 1)
 
     static let explodingEaseOut = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
 

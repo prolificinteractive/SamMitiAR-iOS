@@ -714,53 +714,72 @@ final public class SamMitiARView: ARSCNView {
         
         let currentOrientation = UIApplication.shared.statusBarOrientation
         
-        /// 3:4 iPhone FOV = 1.132, 0.849
-        let xFov: Float = 1.132
-        let yFov: Float = 0.849
-        
         let viewSize = bounds.size
         
-        var cameraFov = vector_float2()
-        
-        switch currentOrientation {
-        case .portrait, .portraitUpsideDown:
-            cameraFov = vector_float2(yFov, xFov)
-        case .landscapeLeft, .landscapeRight:
-            cameraFov = vector_float2(xFov, yFov)
-        default:
-            break
-        }
-        
-        if Float(viewSize.width / viewSize.height) < cameraFov.x / cameraFov.y {
-            return vector_float2(Float(viewSize.width / viewSize.height) * cameraFov.y,
-                                 cameraFov.y)
-        } else {
-            return vector_float2(cameraFov.x,
-                                 Float(viewSize.height / viewSize.width) * cameraFov.x )
-        }
-        
-        guard let currentFrameCamera = session.currentFrame?.camera else {
+        if (session.currentFrame?.camera) != nil  {
+            // In case ARSession has been initialized, real FOV will be calculated from the camera projection matrix.
             
-            if Float(viewSize.width / viewSize.height) < cameraFov.x / cameraFov.y {
-                return vector_float2(Float(viewSize.width / viewSize.height) * cameraFov.y,
-                                     cameraFov.y)
+            let currentFrameCamera = session.currentFrame!.camera
+            
+            let projection = currentFrameCamera.projectionMatrix(for: currentOrientation,
+                                                                 viewportSize: viewSize,
+                                                                 zNear: 0.1,
+                                                                 zFar: 0.9)
+            let yScale = projection[ 1, 1 ] // = 1/tan(fovy/2)
+            let yFov = 2 * atan( 1 / yScale )
+            let xFov = yFov * Float( viewSize.width / viewSize.height )
+            
+            return vector_float2(xFov,
+                                 yFov)
+            
+        } else {
+            // Hardcoded Values in case ARSession hasn't been initialized.
+            
+            /// 3:4 iPhone & iPad Camera FOV = (x: 1.132, y: 0.849)
+            var cameraFov = vector_float2(1.132, 0.849)
+            
+            /// Initialize Camera Image Resolution
+            var cameraImageResolution = CGSize()
+            
+            if #available(iOS 12.0, *) {
+                switch UIDevice.current.userInterfaceIdiom {
+                case .phone:
+                    cameraImageResolution = CGSize(width: 1920, height: 1440)
+                case .pad:
+                    cameraImageResolution = CGSize(width: 1920, height: 1080)
+                default:
+                    cameraImageResolution = CGSize(width: 1920, height: 1440)
+                }
             } else {
-                return vector_float2(cameraFov.x,
-                                     Float(viewSize.height / viewSize.width) * cameraFov.x )
+                cameraImageResolution = CGSize(width: 1920, height: 1080)
+            }
+            
+            if currentOrientation == .portrait || currentOrientation == .portraitUpsideDown {
+                cameraFov = vector_float2(cameraFov.y, cameraFov.x)
+                cameraImageResolution = CGSize(width: cameraImageResolution.height,
+                                               height: cameraImageResolution.width)
+            }
+            
+            /// Initialize AR Crop FOV
+            var croppedCameraFov = vector_float2()
+            
+            if Float(cameraImageResolution.width / cameraImageResolution.height) < cameraFov.x / cameraFov.y {
+                croppedCameraFov = vector_float2(Float(cameraImageResolution.width / cameraImageResolution.height) * cameraFov.y,
+                                                 cameraFov.y)
+            } else {
+                croppedCameraFov = vector_float2(cameraFov.x,
+                                                 Float(cameraImageResolution.height / cameraImageResolution.width) * cameraFov.x )
+            }
+            
+            /// Return Cropped FOV by View size
+            if Float(viewSize.width / viewSize.height) < croppedCameraFov.x / croppedCameraFov.y {
+                return vector_float2(Float(viewSize.width / viewSize.height) * croppedCameraFov.y,
+                                     croppedCameraFov.y)
+            } else {
+                return vector_float2(croppedCameraFov.x,
+                                     Float(viewSize.height / viewSize.width) * croppedCameraFov.x )
             }
         }
-        
-        let projection = currentFrameCamera.projectionMatrix(for: currentOrientation,
-                                                             viewportSize: viewSize,
-                                                             zNear: 0.1,
-                                                             zFar: 0.9)
-        let yScale = projection[1,1] // = 1/tan(fovy/2)
-        let calYFov = 2 * atan(1/yScale)
-        let calXFov = yFov * Float(viewSize.width / viewSize.height )
-        
-        return vector_float2(calXFov,
-                             calYFov)
-        
     }
     
     private func setCurrentVirtualObject(to currentVirtualObject: SamMitiVirtualObject?) {

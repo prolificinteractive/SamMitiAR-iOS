@@ -345,7 +345,9 @@ public class SamMitiVirtualObject: SCNNode {
         }
     }
     
-    /// - Tag: Sets the transparency mode of the `content node`.
+    /// To sets the transparency mode of the `content node`.
+    ///
+    /// - Parameter transparencyMode: The modes SceneKit uses to calculate the opacity of pixels rendered with a material, used by the transparencyMode property.
     public func setMaterialTransparencyMode(to transparencyMode: SCNTransparencyMode) {
         // Recursivley traverses the node's children to update transparency mode.
         func updateMaterialTransparencyMode(for node: SCNNode) {
@@ -498,7 +500,9 @@ public class SamMitiVirtualObject: SCNNode {
         }
     }
 
-    /// Custom Remove animation
+    /// The function that allows to set custom animation to SamMitiVirtualObject when it is being removed.
+    ///
+    /// - Parameter animation: A block object containing the changes to commit to the views. This is where you programmatically change any animatable properties of the views in your view hierarchy. This block takes no parameters and has no return value.
     public func setAnimationForVirtualObjectRemoving(_ animation: @escaping ((SamMitiVirtualObject, @escaping VoidBlock) -> Void)) {
         self.animationForVirtualObjectRemoving = animation
     }

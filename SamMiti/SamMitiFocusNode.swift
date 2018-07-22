@@ -140,11 +140,13 @@ public class SamMitiFocusNode: SCNNode {
         setup()
     }
 
+
     /// Initializes and returns an Focus Node with given parameters.
     ///
-    /// notFound: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = notFound
-    /// estimated: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = estimated
-    /// existing: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = existing
+    /// - Parameters:
+    ///   - notFoundNamed: The name of the `notFound` focus node scene file in the app bundle’s resources directory.
+    ///   - estimatedNamed: The name of the `estimated` focus node scene file in the app bundle’s resources directory.
+    ///   - existingNamed: The name of the `existing` focus node scene file in the app bundle’s resources directory.
     public init(withNotFoundNamed notFoundNamed: String,
                 estimatedNamed: String,
                 existingNamed: String) {

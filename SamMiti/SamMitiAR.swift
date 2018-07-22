@@ -8,12 +8,10 @@
 
 import ARKit
 
-/**
- Placing Mode
- เป็น mode สำหรับวางวัตถุ
- - `.focusNode` เป็นการวางแบบปกติโดยจะมี indicator (focus node) ช่วย
- - `.quickDrop` เป็นโหมดการวางอัตโนมัติเมื่อเจอพื้นผิวที่สามารถวางได้
- */
+/// Modes of placing Virtual Object in the scene
+///
+/// - focusNode: The mode that uses FocusNode (indicator) to guide users where the object will be placed, and it requires users to tap on the view in order to place the virtual object.
+/// - quickDrop: The mode that place virtual object immediately when users point the phone on any confident plane anchor. This mode does not require any touch gesture to place virtual objects, and it automatically generates the object preview on the screen in front of the camera when the object has not been placed yet.
 public enum PlacingMode {
     
     case focusNode
@@ -26,7 +24,7 @@ final public class SamMitiARView: ARSCNView {
     // MARK: - Public Access
     
     /**
-     Delegate สำหรับ event ต่างๆ ภายใน ARView
+     An object you provide to receive ..............< List รายการที่ Delegate ตัวนี้ provide ได้> from SamMitiARView.
      */
     public weak var samMitiARDelegate: SamMitiARDelegate?
     
@@ -104,23 +102,25 @@ final public class SamMitiARView: ARSCNView {
      */
     public var initialPreviewObjectOpacity: CGFloat = 0.667
     
-    /// Virtual Object ที่จะทำ interacting ด้วย
+    /// SamMiti Virtual Object that is expected to be interacted. This value can be nil.
     public weak var currentVirtualObject: SamMitiVirtualObject? {
         didSet {
             setCurrentVirtualObject(to: currentVirtualObject)
         }
     }
     
-    /// Virtual Object ที่ถูกวางไว้บน  root node เรียบร้อยแล้ว
+    /// A set of SamMiti Virtual Objects that have already been placed in the scene.
     public var placedVirtualObjects: [SamMitiVirtualObject] {
         return scene.rootNode.childNodes.compactMap { $0 as? SamMitiVirtualObject }
     }
     
+    /// The confident level of current hit-test. When hit-test function does not provide value, this will be nil.
     public var currentPlanConfidentLevel: PlaneDetectingConfidentLevel? {
         return planeDetecting.currentPlaneDetectingConfidentLevel
     }
     
     // MARK: - Private/Internal Uses
+    
     private var planeDetecting = SamMitiPlaneDetecting()
     
     private let billBoardConstraint = SCNBillboardConstraint()
@@ -205,9 +205,10 @@ final public class SamMitiARView: ARSCNView {
     
     // MARK: - Setup AR
     
-    /// Use to start ARSession
+
+    /// Use for initializing SamMiti AR which includes initializing AR session, AR Delegate, AR Session Delegate, Gestures, Debuging Options, Camera, and Lighting.
     ///
-    /// arDebigOptions: To show debug views
+    /// - Parameter debugOptions: Option sets showing concurrent values or visualization genereated by AR session.
     public func startAR(withDebugOptions debugOptions: SamMitiDebugOptions = []) {
         
         samMitiDelegateObject.updateSession = {
@@ -231,6 +232,8 @@ final public class SamMitiARView: ARSCNView {
     }
     
     /// Use for reset session, tracking, and virtualObjects
+    ///
+    /// - Parameter replacedDebugOptions: Option sets showing concurrent values or visualization genereated by AR session. Default values of this properties is nil.
     public func resetAR(withDebugOptions replacedDebugOptions: SamMitiDebugOptions? = nil) {
         
         if let debugOptions = replacedDebugOptions {
@@ -631,7 +634,15 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    public func performTransitionWithOutAnimation(to size: CGSize, parentViewCenterPoint point: CGPoint, isAnimationDisabled: Bool = true) {
+    /// The function that prevent this view to animate when the super view performs implicit animation, such as when the application changes orientation.
+    ///
+    /// - Parameters:
+    ///   - size: The final view size.
+    ///   - point: The center coordinate position of the super view.
+    ///   - isAnimationDisabled: The boolean value that determines if this view will not perform animation. The default value of this property is true.
+    public func performViewTransitionWithOutAnimation(to size: CGSize,
+                                                      parentViewCenterPoint point: CGPoint,
+                                                      isAnimationDisabled: Bool = true) {
         // TODO: Rename this function name to have it make more sense (and refer to UIView more)
         if isAnimationDisabled {
             CATransaction.begin()
@@ -642,9 +653,13 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    // MARK: - Placing Virtual Objects
+
+    /// The function that performs placing initialized SamMitiVirtualObject from currentVirtualObject value. If value of currentVirtualObject is nil, this function will do nothing.
+    public func placeCurrentVirtualObject() {
+        place()
+    }
     
-    public func place(byTransitioningFromCurrentTransform isTransitioningFromCurrectTransform: Bool = false) {
+    private func place(byTransitioningFromCurrentTransform isTransitioningFromCurrectTransform: Bool = false) {
         guard let placedVirtualObject = currentVirtualObject,
             planeDetecting.currentPlaneDetectingConfidentLevel != .notFound,
             !placedVirtualObjects.contains(placedVirtualObject) else {

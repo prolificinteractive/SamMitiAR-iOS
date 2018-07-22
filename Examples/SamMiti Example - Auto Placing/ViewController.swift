@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sceneView: SCNView!
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

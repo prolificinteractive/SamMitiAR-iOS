@@ -1,65 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OwS-iJ-hDb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OwS-iJ-hDb">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SamMiti_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpD-QC-rsj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
-                                <color key="backgroundColor" red="1" green="0.76773476538182894" blue="0.42487847199531859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
-                                <state key="normal" title="SamMitiAR">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="OwS-iJ-hDb" kind="presentation" modalTransitionStyle="crossDissolve" id="Cuc-2o-9Ep"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-gU-HhH">
-                                <rect key="frame" x="0.0" y="406" width="375" height="406"/>
-                                <color key="backgroundColor" red="0.50725803502352051" green="0.77197538531904786" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
-                                <state key="normal" title="SamMitiScene">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JLf-gU-HhH" secondAttribute="bottom" id="B9s-QJ-LjJ"/>
-                            <constraint firstItem="JLf-gU-HhH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CTg-Rc-OVL"/>
-                            <constraint firstItem="TpD-QC-rsj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ip8-GR-FIg"/>
-                            <constraint firstItem="TpD-QC-rsj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="KpO-tS-hyU"/>
-                            <constraint firstItem="TpD-QC-rsj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="OxV-32-MNM"/>
-                            <constraint firstItem="TpD-QC-rsj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PNS-A3-03u"/>
-                            <constraint firstItem="JLf-gU-HhH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="ha7-CA-Ypm"/>
-                            <constraint firstItem="JLf-gU-HhH" firstAttribute="top" secondItem="TpD-QC-rsj" secondAttribute="bottom" id="xM9-xZ-CCq"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="tVc-fd-JZ4">
             <objects>
-                <viewController id="OwS-iJ-hDb" customClass="ARViewController" customModule="SamMiti_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OwS-iJ-hDb" customClass="ARViewController" customModule="Multiple_Placing_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ATf-Lk-UHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

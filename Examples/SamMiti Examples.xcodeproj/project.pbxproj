@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		445BF320D43E562B383C3D70 /* Pods_SamMiti_Auto_Placing_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4E9EEA90E1AADFB8BD28A2 /* Pods_SamMiti_Auto_Placing_Example.framework */; };
-		634F93BD463A825B5547CCA4 /* Pods_SamMiti_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC67DE831F7D00A6D6B6BEB4 /* Pods_SamMiti_Example.framework */; };
 		904B7FA72020AF1F0038B799 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904B7FA62020AF1F0038B799 /* ARViewController.swift */; };
 		907AED62202CE980002E487D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 907AED61202CE980002E487D /* art.scnassets */; };
 		90A19A29201FAB67007ED597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A19A28201FAB67007ED597 /* AppDelegate.swift */; };
-		90A19A2B201FAB67007ED597 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A19A2A201FAB67007ED597 /* ViewController.swift */; };
 		90A19A2E201FAB67007ED597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A19A2C201FAB67007ED597 /* Main.storyboard */; };
 		90A19A30201FAB67007ED597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A19A2F201FAB67007ED597 /* Assets.xcassets */; };
 		90A19A33201FAB67007ED597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A19A31201FAB67007ED597 /* LaunchScreen.storyboard */; };
@@ -24,7 +21,6 @@
 		90AEF1AB21042CDE00F69692 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AEF1AA21042CDE00F69692 /* art.scnassets */; };
 		90AEF1AD21042CEA00F69692 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AEF1AC21042CEA00F69692 /* ARViewController.swift */; };
 		90C4E945202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */; };
-		D05DA03320D53CDB0009BF7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05DA03220D53CDB0009BF7B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,14 +28,13 @@
 		6A4E9EEA90E1AADFB8BD28A2 /* Pods_SamMiti_Auto_Placing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti_Auto_Placing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		904B7FA62020AF1F0038B799 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		907AED61202CE980002E487D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		90A19A25201FAB67007ED597 /* SamMiti-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SamMiti-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90A19A25201FAB67007ED597 /* Multiple Placing Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiple Placing Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A19A28201FAB67007ED597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90A19A2A201FAB67007ED597 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90A19A2D201FAB67007ED597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90A19A2F201FAB67007ED597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A19A32201FAB67007ED597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90A19A34201FAB67007ED597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90AEF19621042C0100F69692 /* SamMiti Auto Placing Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SamMiti Auto Placing Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AEF19621042C0100F69692 /* Auto Placing Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Placing Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AEF19821042C0100F69692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90AEF19A21042C0100F69692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90AEF19D21042C0100F69692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +46,6 @@
 		90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamMitiVirtualObjectExtension.swift; sourceTree = "<group>"; };
 		961F87579380FD3A2555ADE4 /* Pods-SamMiti Auto Placing Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti Auto Placing Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti Auto Placing Example/Pods-SamMiti Auto Placing Example.release.xcconfig"; sourceTree = "<group>"; };
 		A645A372D5FFD4707A75F533 /* Pods-SamMiti-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D05DA03220D53CDB0009BF7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9A14DF5488C0B8CBD64DA9D /* Pods-SamMiti-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.release.xcconfig"; sourceTree = "<group>"; };
 		FC67DE831F7D00A6D6B6BEB4 /* Pods_SamMiti_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634F93BD463A825B5547CCA4 /* Pods_SamMiti_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445BF320D43E562B383C3D70 /* Pods_SamMiti_Auto_Placing_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +80,8 @@
 		90A19A1C201FAB67007ED597 = {
 			isa = PBXGroup;
 			children = (
-				90A19A27201FAB67007ED597 /* SamMiti-Example */,
-				90AEF19721042C0100F69692 /* SamMiti Auto Placing Example */,
+				90A19A27201FAB67007ED597 /* SamMiti Example - Multiple Placing */,
+				90AEF19721042C0100F69692 /* SamMiti Example - Auto Placing */,
 				90A19A26201FAB67007ED597 /* Products */,
 				FA628D89C77897B8CC50B9E4 /* Pods */,
 				76020E4E40FAC54A42ACBCB7 /* Frameworks */,
@@ -99,42 +91,40 @@
 		90A19A26201FAB67007ED597 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90A19A25201FAB67007ED597 /* SamMiti-Example.app */,
-				90AEF19621042C0100F69692 /* SamMiti Auto Placing Example.app */,
+				90A19A25201FAB67007ED597 /* Multiple Placing Example.app */,
+				90AEF19621042C0100F69692 /* Auto Placing Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90A19A27201FAB67007ED597 /* SamMiti-Example */ = {
+		90A19A27201FAB67007ED597 /* SamMiti Example - Multiple Placing */ = {
 			isa = PBXGroup;
 			children = (
 				90A19A28201FAB67007ED597 /* AppDelegate.swift */,
-				90A19A2A201FAB67007ED597 /* ViewController.swift */,
+				904B7FA62020AF1F0038B799 /* ARViewController.swift */,
+				90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */,
 				90A19A2C201FAB67007ED597 /* Main.storyboard */,
 				907AED61202CE980002E487D /* art.scnassets */,
 				90A19A2F201FAB67007ED597 /* Assets.xcassets */,
 				90A19A31201FAB67007ED597 /* LaunchScreen.storyboard */,
-				D05DA03220D53CDB0009BF7B /* GoogleService-Info.plist */,
 				90A19A34201FAB67007ED597 /* Info.plist */,
-				904B7FA62020AF1F0038B799 /* ARViewController.swift */,
-				90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */,
 			);
-			path = "SamMiti-Example";
+			path = "SamMiti Example - Multiple Placing";
 			sourceTree = "<group>";
 		};
-		90AEF19721042C0100F69692 /* SamMiti Auto Placing Example */ = {
+		90AEF19721042C0100F69692 /* SamMiti Example - Auto Placing */ = {
 			isa = PBXGroup;
 			children = (
 				90AEF19821042C0100F69692 /* AppDelegate.swift */,
+				90AEF1AC21042CEA00F69692 /* ARViewController.swift */,
 				90AEF19A21042C0100F69692 /* ViewController.swift */,
 				90AEF19C21042C0100F69692 /* Main.storyboard */,
-				90AEF1AC21042CEA00F69692 /* ARViewController.swift */,
-				90AEF19F21042C0200F69692 /* Assets.xcassets */,
 				90AEF1AA21042CDE00F69692 /* art.scnassets */,
+				90AEF19F21042C0200F69692 /* Assets.xcassets */,
 				90AEF1A121042C0200F69692 /* LaunchScreen.storyboard */,
 				90AEF1A421042C0200F69692 /* Info.plist */,
 			);
-			path = "SamMiti Auto Placing Example";
+			path = "SamMiti Example - Auto Placing";
 			sourceTree = "<group>";
 		};
 		FA628D89C77897B8CC50B9E4 /* Pods */ = {
@@ -151,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90A19A24201FAB67007ED597 /* SamMiti-Example */ = {
+		90A19A24201FAB67007ED597 /* Multiple Placing Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90A19A37201FAB67007ED597 /* Build configuration list for PBXNativeTarget "SamMiti-Example" */;
+			buildConfigurationList = 90A19A37201FAB67007ED597 /* Build configuration list for PBXNativeTarget "Multiple Placing Example" */;
 			buildPhases = (
 				D9CF2CA6031D29CD44096D1C /* [CP] Check Pods Manifest.lock */,
 				90A19A21201FAB67007ED597 /* Sources */,
@@ -165,14 +155,14 @@
 			);
 			dependencies = (
 			);
-			name = "SamMiti-Example";
+			name = "Multiple Placing Example";
 			productName = "SamMiti-Example";
-			productReference = 90A19A25201FAB67007ED597 /* SamMiti-Example.app */;
+			productReference = 90A19A25201FAB67007ED597 /* Multiple Placing Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		90AEF19521042C0100F69692 /* SamMiti Auto Placing Example */ = {
+		90AEF19521042C0100F69692 /* Auto Placing Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90AEF1A721042C0200F69692 /* Build configuration list for PBXNativeTarget "SamMiti Auto Placing Example" */;
+			buildConfigurationList = 90AEF1A721042C0200F69692 /* Build configuration list for PBXNativeTarget "Auto Placing Example" */;
 			buildPhases = (
 				5B5C04A99A12FF03F72D1F05 /* [CP] Check Pods Manifest.lock */,
 				90AEF19221042C0100F69692 /* Sources */,
@@ -184,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = "SamMiti Auto Placing Example";
+			name = "Auto Placing Example";
 			productName = "SamMiti Auto Placing Example";
-			productReference = 90AEF19621042C0100F69692 /* SamMiti Auto Placing Example.app */;
+			productReference = 90AEF19621042C0100F69692 /* Auto Placing Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 90A19A20201FAB67007ED597 /* Build configuration list for PBXProject "SamMiti-Example" */;
+			buildConfigurationList = 90A19A20201FAB67007ED597 /* Build configuration list for PBXProject "SamMiti Examples" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,8 +213,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				90A19A24201FAB67007ED597 /* SamMiti-Example */,
-				90AEF19521042C0100F69692 /* SamMiti Auto Placing Example */,
+				90A19A24201FAB67007ED597 /* Multiple Placing Example */,
+				90AEF19521042C0100F69692 /* Auto Placing Example */,
 			);
 		};
 /* End PBXProject section */
@@ -236,7 +226,6 @@
 			files = (
 				90A19A33201FAB67007ED597 /* LaunchScreen.storyboard in Resources */,
 				907AED62202CE980002E487D /* art.scnassets in Resources */,
-				D05DA03320D53CDB0009BF7B /* GoogleService-Info.plist in Resources */,
 				90A19A30201FAB67007ED597 /* Assets.xcassets in Resources */,
 				90A19A2E201FAB67007ED597 /* Main.storyboard in Resources */,
 			);
@@ -349,7 +338,6 @@
 			files = (
 				90C4E945202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift in Sources */,
 				904B7FA72020AF1F0038B799 /* ARViewController.swift in Sources */,
-				90A19A2B201FAB67007ED597 /* ViewController.swift in Sources */,
 				90A19A29201FAB67007ED597 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,10 +509,10 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJ5UD9292F;
-				INFOPLIST_FILE = "SamMiti-Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SamMiti Example - Multiple Placing/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.SamMitiAR-Framework-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-multiple-placing-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,10 +527,10 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJ5UD9292F;
-				INFOPLIST_FILE = "SamMiti-Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SamMiti Example - Multiple Placing/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.virakri.SamMitiAR-Framework-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-multiple-placing-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -556,13 +544,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7J5JZ3G2QB;
-				INFOPLIST_FILE = "SamMiti Auto Placing Example/Info.plist";
+				DEVELOPMENT_TEAM = EJ5UD9292F;
+				INFOPLIST_FILE = "$(SRCROOT)/SamMiti Example - Auto Placing/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-autoplacing-example.SamMiti-AR-Auto-placing-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-auto-placing-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -576,12 +564,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7J5JZ3G2QB;
-				INFOPLIST_FILE = "SamMiti Auto Placing Example/Info.plist";
+				DEVELOPMENT_TEAM = EJ5UD9292F;
+				INFOPLIST_FILE = "$(SRCROOT)/SamMiti Example - Auto Placing/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-autoplacing-example.SamMiti-AR-Auto-placing-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-auto-placing-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -591,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90A19A20201FAB67007ED597 /* Build configuration list for PBXProject "SamMiti-Example" */ = {
+		90A19A20201FAB67007ED597 /* Build configuration list for PBXProject "SamMiti Examples" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90A19A35201FAB67007ED597 /* Debug */,
@@ -600,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90A19A37201FAB67007ED597 /* Build configuration list for PBXNativeTarget "SamMiti-Example" */ = {
+		90A19A37201FAB67007ED597 /* Build configuration list for PBXNativeTarget "Multiple Placing Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90A19A38201FAB67007ED597 /* Debug */,
@@ -609,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90AEF1A721042C0200F69692 /* Build configuration list for PBXNativeTarget "SamMiti Auto Placing Example" */ = {
+		90AEF1A721042C0200F69692 /* Build configuration list for PBXNativeTarget "Auto Placing Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90AEF1A521042C0200F69692 /* Debug */,

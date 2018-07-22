@@ -7,12 +7,12 @@
 		<key>Auto Placing Example.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Multiple Placing Example.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
 		</dict>
 		<key>SamMiti Auto Placing Example.xcscheme</key>
 		<dict>

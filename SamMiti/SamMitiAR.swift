@@ -709,6 +709,7 @@ final public class SamMitiARView: ARSCNView {
             })
     }
     
+    // TODO: Create/find logic of finding FOV of ARKit
     private func getCameraFov() -> vector_float2 {
         
         let currentOrientation = UIApplication.shared.statusBarOrientation
@@ -716,6 +717,8 @@ final public class SamMitiARView: ARSCNView {
         /// 3:4 iPhone FOV = 1.132, 0.849
         let xFov: Float = 1.132
         let yFov: Float = 0.849
+        
+        let viewSize = bounds.size
         
         var cameraFov = vector_float2()
         
@@ -728,8 +731,6 @@ final public class SamMitiARView: ARSCNView {
             break
         }
         
-        let viewSize = bounds.size
-        
         if Float(viewSize.width / viewSize.height) < cameraFov.x / cameraFov.y {
             return vector_float2(Float(viewSize.width / viewSize.height) * cameraFov.y,
                                  cameraFov.y)
@@ -737,6 +738,28 @@ final public class SamMitiARView: ARSCNView {
             return vector_float2(cameraFov.x,
                                  Float(viewSize.height / viewSize.width) * cameraFov.x )
         }
+        
+        guard let currentFrameCamera = session.currentFrame?.camera else {
+            
+            if Float(viewSize.width / viewSize.height) < cameraFov.x / cameraFov.y {
+                return vector_float2(Float(viewSize.width / viewSize.height) * cameraFov.y,
+                                     cameraFov.y)
+            } else {
+                return vector_float2(cameraFov.x,
+                                     Float(viewSize.height / viewSize.width) * cameraFov.x )
+            }
+        }
+        
+        let projection = currentFrameCamera.projectionMatrix(for: currentOrientation,
+                                                             viewportSize: viewSize,
+                                                             zNear: 0.1,
+                                                             zFar: 0.9)
+        let yScale = projection[1,1] // = 1/tan(fovy/2)
+        let calYFov = 2 * atan(1/yScale)
+        let calXFov = yFov * Float(viewSize.width / viewSize.height )
+        
+        return vector_float2(calXFov,
+                             calYFov)
         
     }
     
@@ -780,8 +803,6 @@ final public class SamMitiARView: ARSCNView {
                 // Override hitTestPlacingPoint by the position of the preview virtual object
                 hitTestPlacingPoint = CGPoint(x: CGFloat(projectPoint(currentVirtualObject.worldPosition).x) / bounds.width,
                                               y: CGFloat(projectPoint(currentVirtualObject.worldPosition).y) / bounds.height)
-                
-                print(hitTestPlacingPoint)
                 
                 if case .existing? = planeDetecting.currentPlaneDetectingConfidentLevel {
                     OperationQueue.main.addOperation {

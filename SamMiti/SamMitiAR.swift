@@ -719,15 +719,13 @@ final public class SamMitiARView: ARSCNView {
         if (session.currentFrame?.camera) != nil  {
             // In case ARSession has been initialized, real FOV will be calculated from the camera projection matrix.
             
-            let cameraImageResolution = session.currentFrame!.camera.imageResolution
-            
             let currentFrameCamera = session.currentFrame!.camera
             
             let projection = currentFrameCamera.projectionMatrix(for: currentOrientation,
                                                                  viewportSize: viewSize,
                                                                  zNear: 0.1,
                                                                  zFar: 0.9)
-            let yScale = projection[1, 1] // = 1/tan(fovy/2)
+            let yScale = projection[ 1, 1 ] // = 1/tan(fovy/2)
             let yFov = 2 * atan( 1 / yScale )
             let xFov = yFov * Float( viewSize.width / viewSize.height )
             

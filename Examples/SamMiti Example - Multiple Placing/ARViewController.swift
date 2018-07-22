@@ -15,18 +15,9 @@ class ARViewController: UIViewController {
     
     let virtualObjectLoader = SamMitiVitualObjectLoader()
 
-    @IBOutlet weak var optionView: UIView!
-    
-    @IBOutlet weak var closeOptionButton: UIButton!
-    @IBOutlet weak var resetOptionButton: UIButton!
-    
-    @IBOutlet weak var optionLightInsentityValueLabel: UILabel!
-    @IBOutlet weak var optionHitTestPointXLabel: UILabel!
-    @IBOutlet weak var optionHitTestPointYLabel: UILabel!
     
     @IBOutlet weak var samMitiARView: SamMitiARView!
     
-    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var optionButton: UIView!
     
     @IBOutlet weak var addButton: UIView!
@@ -34,6 +25,7 @@ class ARViewController: UIViewController {
     
     @IBOutlet weak var messageContainerView: UIView!
     
+    @IBOutlet weak var messageContainerVisualEffectView: UIVisualEffectView!
     
     @IBOutlet weak var messageLabel: UILabel!
     
@@ -50,18 +42,10 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // User Interface Setup
-        addButton.layer.cornerRadius = 22
-        optionButton.layer.cornerRadius = 22
-        resetButton.layer.cornerRadius = 22
-        optionView.layer.cornerRadius = 40
-        closeOptionButton.layer.cornerRadius = 16
-        resetOptionButton.layer.cornerRadius = 16
-        
+        // Initialize Message Container View
         messageLabel.text = ""
+        hideMessageContainerView(withAnimation: false)
         
-        optionView.transform.ty = UIScreen.main.bounds.height
-        optionView.isHidden = true
         
         // SamMiti View mandatory delegate
         samMitiARView.samMitiARDelegate = self
@@ -70,7 +54,6 @@ class ARViewController: UIViewController {
         samMitiARView.isAutoFocusEnabled = false
         samMitiARView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         samMitiARView.isLightingIntensityAutomaticallyUpdated = true
-        samMitiARView.baseLightingEnvironmentIntensity = 6
         samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
         samMitiARView.environmentTexturing = .automatic
         
@@ -117,68 +100,69 @@ class ARViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func resetButtonDidTouch(_ sender: UIButton) {
+    private func resetAR() {
         
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.warning)
         
-        let alert = UIAlertController(title: "Reset AR", message: "Do you want to reset this AR scene?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Reset AR", message: "This AR scene is about to be reset. Do you want to proceed this action?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { _ in
             self.virtualObjectLoader.removeAllVirtualObjects()
             self.samMitiARView.resetAR(withDebugOptions: self.debugOptions)
             self.handleLoad(virtualNode: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
         
         
     }
     
-    @IBAction func optionButtonDidTouch(_ sender: UIButton) {
-        isDebugOptionShown = true
-    }
+    /*
+     @IBAction func optionShowDebugStatusButtonDidTouch(_ sender: UISwitch) {
+     if sender.isOn {
+     debugOptions.insert(.showStateStatus)
+     } else {
+     if debugOptions.contains(.showStateStatus) {
+     debugOptions.remove(.showStateStatus)
+     }
+     }
+     }
+     
+     @IBAction func optionShowAnchorPlanesButtonDidTouch(_ sender: UISwitch) {
+     if sender.isOn {
+     debugOptions.insert(.showAnchorPlane)
+     } else {
+     if debugOptions.contains(.showAnchorPlane) {
+     debugOptions.remove(.showAnchorPlane)
+     }
+     }
+     }
+     */
     
-    var isDebugOptionShown: Bool = false {
-        didSet {
-            let offsetValue: CGFloat = 360
-            if isDebugOptionShown {
-                self.optionView.isHidden = false
-                self.optionView.transform.ty = UIScreen.main.bounds.height
-                
-                UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-                    
-                    self.optionView.alpha = 1
-                    
-                    self.addButton.alpha = 0
-                    self.optionButton.alpha = 0
-                    self.resetButton.alpha = 0
-                    
-                    self.optionView.transform = CGAffineTransform.identity
-                    
-                    self.addButton.transform.ty = -offsetValue
-                    self.optionButton.transform.ty = -offsetValue
-                    self.resetButton.transform.ty = -offsetValue
-                }, completion: nil)
-            } else {
-                
-                UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
-                    
-                    self.optionView.alpha = 0
-                    
-                    self.addButton.alpha = 1
-                    self.optionButton.alpha = 1
-                    self.resetButton.alpha = 1
-                    
-                    self.optionView.transform.ty = offsetValue
-                    
-                    self.addButton.transform = CGAffineTransform.identity
-                    self.optionButton.transform = CGAffineTransform.identity
-                    self.resetButton.transform = CGAffineTransform.identity
-                }, completion: { _ in
-                    self.optionView.isHidden = true
-                })
+    @IBAction func optionButtonDidTouch(_ sender: UIButton) {
+
+        let sheetController = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
+        
+        sheetController.addAction(UIAlertAction(title: "Reset AR", style: .default, handler: { (action) in
+            if self.debugOptions.contains(.showStateStatus) {
+                self.debugOptions.remove(.showStateStatus)
             }
-        }
+            if self.debugOptions.contains(.showAnchorPlane) {
+                self.debugOptions.remove(.showAnchorPlane)
+            }
+            self.resetAR()
+        }))
+        
+        sheetController.addAction(UIAlertAction(title: "Change to Debugging Mode", style: .default, handler: { (action) in
+            self.debugOptions.insert(.showStateStatus)
+            self.debugOptions.insert(.showAnchorPlane)
+            self.resetAR()
+        }))
+        
+        sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sheetController.popoverPresentationController?.sourceView = sender
+        sheetController.popoverPresentationController?.sourceRect = CGRect(x: sender.center.x, y: 8, width: 0, height: 0)
+        present(sheetController, animated: true, completion: nil)
     }
     
     var isLoading: Bool = false {
@@ -186,9 +170,11 @@ class ARViewController: UIViewController {
             if isLoading {
                 loadingIndicator.isHidden = false
                 addButton.isHidden = true
+                optionButton.isHidden = true
             }else{
                 loadingIndicator.isHidden = true
                 addButton.isHidden = false
+                optionButton.isHidden = false
             }
         }
     }
@@ -214,18 +200,20 @@ class ARViewController: UIViewController {
         return isStatusBarHidden
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
     
     private func setMenuShow(_ isShowing: Bool = true) {
         optionButton.alpha = isShowing ? 1 : 0
-        resetButton.alpha = isShowing ? 1 : 0
         addButton.alpha = isShowing ? 1 : 0
         messageContainerView.alpha = isShowing ? 1 : 0
         
         optionButton.transform.ty = isShowing ? 0 : 44
-        resetButton.transform.ty = isShowing ? 0 : 44
         addButton.transform.ty = isShowing ? 0 : 44
         
         messageContainerView.transform.ty = isShowing ? 0 : -messageContainerView.bounds.height
@@ -271,57 +259,120 @@ class ARViewController: UIViewController {
         }
     }
     
-    var clearMessageTimer: Timer?
+    var messageTimer: Timer?
     
     func messageLabelDisplay(_ messageText: String) {
-        clearMessageTimer = nil
-        messageLabel.text = messageText
         
-        clearMessageTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
-            self.messageLabel.text = ""
+        if messageTimer != nil {
+            messageTimer?.invalidate()
+            messageTimer = nil
         }
+        messageLabel.text = messageText
+        showMessageContainerView()
+        
+        messageTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
+            self.hideMessageContainerView()
+        }
+    }
+    
+    private func showMessageContainerView(withAnimation Animated: Bool = true){
+        UIView.animate(withDuration: Animated ? 0.35 : 0,
+                       delay: 0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        self.messageContainerVisualEffectView.alpha = 1
+                        self.messageContainerVisualEffectView.transform.ty = 0
+        })
+    }
+    
+    private func hideMessageContainerView(withAnimation Animated: Bool = true){
+        UIView.animate(withDuration: Animated ? 0.35 : 0,
+                       delay: 0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        self.messageContainerVisualEffectView.alpha = 0
+                        self.messageContainerVisualEffectView.transform.ty = -self.messageContainerVisualEffectView.bounds.height
+        },
+                       completion: { _ in
+                        self.messageLabel.text = ""
+        })
     }
     
     @IBAction func addButtonDidTouch(_ sender: UIButton) {
         guard !isLoading else { return }
         
-        let sheetController = UIAlertController(title: "Create", message: nil, preferredStyle: .actionSheet)
+        let sheetController = UIAlertController(title: "Add Virtual Object", message: nil, preferredStyle: .actionSheet)
         
-        sheetController.addAction(UIAlertAction(title: "Profile Pic", style: .default, handler: { (action) in
-            self.virtualObjectLoader.loadVirtualObject(.plane, loadedHandler: self.handleLoad)
-        }))
         
-        sheetController.addAction(UIAlertAction(title: "Helmet — SCN", style: .default, handler: { (action) in
+        sheetController.addAction(UIAlertAction(title: "Metal Teapot—Old Metal", style: .default, handler: { (action) in
             self.isLoading = true
-            self.virtualObjectLoader.loadVirtualObject(.helmetScn, loadedHandler: { virtualObjectNode in
-                let scaleTransfrom = SCNMatrix4MakeScale(0.2, 0.2, 0.2)
-                virtualObjectNode.contentNode?.transform = scaleTransfrom
-                virtualObjectNode.contentNode?.pivot = SCNMatrix4MakeTranslation(0, virtualObjectNode.contentNode?.boundingBox.min.y ?? 0, 0)
+            self.virtualObjectLoader.loadVirtualObject(.metalTeapotOldMetal , loadedHandler: { virtualObjectNode in
                 self.handleLoad(virtualNode: virtualObjectNode)
             })
         }))
         
-        sheetController.addAction(UIAlertAction(title: "York St. Station", style: .default, handler: { (action) in
+        sheetController.addAction(UIAlertAction(title: "Metal Teapot—Rusty", style: .default, handler: { (action) in
             self.isLoading = true
-            self.virtualObjectLoader.loadVirtualObject(.yorkStreetStation, loadedHandler: { virtualObjectNode in
+            self.virtualObjectLoader.loadVirtualObject(.metalTeapotRusty, loadedHandler: { virtualObjectNode in
                 self.handleLoad(virtualNode: virtualObjectNode)
             })
         }))
         
-        sheetController.addAction(UIAlertAction(title: "Hamburger — Eat It!", style: .default, handler: { (action) in
+        sheetController.addAction(UIAlertAction(title: "Metal Teapot—Gold", style: .default, handler: { (action) in
             self.isLoading = true
-            self.virtualObjectLoader.loadVirtualObject(.hamburger, loadedHandler: { virtualObjectNode in
+            self.virtualObjectLoader.loadVirtualObject(.metalTeapotGold, loadedHandler: { virtualObjectNode in
                 self.handleLoad(virtualNode: virtualObjectNode)
             })
         }))
         
-        sheetController.addAction(UIAlertAction(title: "Teapot", style: .default, handler: { (action) in
-            self.isLoading = true
-            self.virtualObjectLoader.loadVirtualObject(.teapot, loadedHandler: { virtualObjectNode in
-                virtualObjectNode.contentNode?.scale = SCNVector3(0.01, 0.01, 0.01)
-                self.handleLoad(virtualNode: virtualObjectNode)
-            })
-        }))
+        
+        
+        
+        
+        
+        
+        
+//        sheetController.addAction(UIAlertAction(title: "Profile Pic", style: .default, handler: { (action) in
+//            self.virtualObjectLoader.loadVirtualObject(.plane, loadedHandler: self.handleLoad)
+//        }))
+//
+//
+//
+//        sheetController.addAction(UIAlertAction(title: "Helmet — SCN", style: .default, handler: { (action) in
+//            self.isLoading = true
+//            self.virtualObjectLoader.loadVirtualObject(.helmetScn, loadedHandler: { virtualObjectNode in
+//                let scaleTransfrom = SCNMatrix4MakeScale(0.2, 0.2, 0.2)
+//                virtualObjectNode.contentNode?.transform = scaleTransfrom
+//                virtualObjectNode.contentNode?.pivot = SCNMatrix4MakeTranslation(0, virtualObjectNode.contentNode?.boundingBox.min.y ?? 0, 0)
+//                self.handleLoad(virtualNode: virtualObjectNode)
+//            })
+//        }))
+//
+//        sheetController.addAction(UIAlertAction(title: "York St. Station", style: .default, handler: { (action) in
+//            self.isLoading = true
+//            self.virtualObjectLoader.loadVirtualObject(.yorkStreetStation, loadedHandler: { virtualObjectNode in
+//                self.handleLoad(virtualNode: virtualObjectNode)
+//            })
+//        }))
+//
+//        sheetController.addAction(UIAlertAction(title: "Hamburger — Eat It!", style: .default, handler: { (action) in
+//            self.isLoading = true
+//            self.virtualObjectLoader.loadVirtualObject(.hamburger, loadedHandler: { virtualObjectNode in
+//                self.handleLoad(virtualNode: virtualObjectNode)
+//            })
+//        }))
+//
+//        sheetController.addAction(UIAlertAction(title: "Teapot", style: .default, handler: { (action) in
+//            self.isLoading = true
+//            self.virtualObjectLoader.loadVirtualObject(.teapot, loadedHandler: { virtualObjectNode in
+//                virtualObjectNode.contentNode?.scale = SCNVector3(0.01, 0.01, 0.01)
+//                self.handleLoad(virtualNode: virtualObjectNode)
+//            })
+//        }))
         
         
         
@@ -351,31 +402,7 @@ class ARViewController: UIViewController {
         }
     }
     
-    @IBAction func optionLightingAutomaticallyButtonDidTouch(_ sender: UISwitch) {
-        samMitiARView.isLightingIntensityAutomaticallyUpdated = sender.isOn
-    }
     
-    @IBAction func optionLightIntensityMultiplierSliderValueDidChange(_ sender: UISlider) {
-        let textValue = String(round(sender.value * 10) / 10)
-        optionLightInsentityValueLabel.text = textValue
-        samMitiARView.baseLightingEnvironmentIntensity = CGFloat(sender.value)
-    }
-    
-    @IBAction func optionHitTestPointXSliderValueDidChange(_ sender: UISlider) {
-        let textValue = String(round(sender.value * 100) / 100)
-        optionHitTestPointXLabel.text = textValue
-        samMitiARView.hitTestPlacingPoint.x = CGFloat(sender.value)
-    }
-    
-    @IBAction func optionHitTestPointYSliderValueDidChange(_ sender: UISlider) {
-        let textValue = String(round(sender.value * 100) / 100)
-        optionHitTestPointYLabel.text = textValue
-        samMitiARView.hitTestPlacingPoint.y = CGFloat(sender.value)
-    }
-    
-    @IBAction func optionCloseButtonDidTouch(_ sender: UIButton) {
-        isDebugOptionShown = false
-    }
 }
 
 extension ARViewController: SamMitiARDelegate {
@@ -428,40 +455,42 @@ extension ARViewController: SamMitiARDelegate {
     // MARK: SamMiti Virtual Object Hit Test Gesture Delegate
     
     func samMitiViewWillPlace(_ virtualObject: SamMitiVirtualObject, at transform: SCNMatrix4) {
-        guard let virtualObjectName = virtualObject.name else { return }
-        messageLabelDisplay("SamMiti will place \(virtualObjectName)")
+//        guard let virtualObjectName = virtualObject.name else { return }
+//        messageLabelDisplay("SamMiti will place \(virtualObjectName)")
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
     }
     
     func samMitiViewDidPlace(_ virtualObject: SamMitiVirtualObject) {
-        guard let virtualObjectName = virtualObject.name else { return }
-        messageLabelDisplay("SamMiti placed \(virtualObjectName)")
+//        guard let virtualObjectName = virtualObject.name else { return }
+//        messageLabelDisplay("SamMiti placed \(virtualObjectName)")
     }
     
     func samMitiViewDidTap(on virtualObject: SamMitiVirtualObject?) {
         handleLoad(virtualNode: virtualObject)
         
-        guard let virtualObjectName = virtualObject?.name else { return }
-        messageLabelDisplay("SamMiti tapped on Virtual Object Name: \(virtualObjectName)")
+//        guard let virtualObjectName = virtualObject?.name else { return }
+//        messageLabelDisplay("SamMiti tapped on Virtual Object Name: \(virtualObjectName)")
     }
     
     func samMitiViewDidDoubleTap(on virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObject = virtualObject else { return }
-        if let virtualObjectName = virtualObject.name {
-            messageLabelDisplay("SamMiti double tapped on Virtual Object Name: \(virtualObjectName)")
-        }
+//        guard let virtualObject = virtualObject else { return }
+//        if let virtualObjectName = virtualObject.name {
+//            messageLabelDisplay("SamMiti double tapped on Virtual Object Name: \(virtualObjectName)")
+//        }
         
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.warning)
-        remove(virtualNode: virtualObject)
+        
     }
     
     func samMitiViewDidLongPress(on virtualObject: SamMitiVirtualObject?) {
         
         
-        guard let virtualObjectName = virtualObject?.name else { return }
-        messageLabelDisplay("SamMiti Long Pressed on Virtual Object Name: \(virtualObjectName)")
+//        guard let virtualObjectName = virtualObject?.name else { return }
+//        messageLabelDisplay("SamMiti Long Pressed on Virtual Object Name: \(virtualObjectName)")
+        
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.warning)
+        remove(virtualNode: virtualObject)
     }
     
     // MARK: SamMiti Virtual Object Manipulating Gesture Delegate
@@ -512,18 +541,18 @@ extension ARViewController: SamMitiARDelegate {
  */
     
     func samMitiViewIsPinching(virtualObject: SamMitiVirtualObject) {
-        guard let virtualObjectName = virtualObject.name else {
-            messageLabelDisplay("SamMiti is pinching to \(virtualObject.virtualScale)")
-            return }
-        messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
+//        guard let virtualObjectName = virtualObject.name else {
+//            messageLabelDisplay("SamMiti is pinching to \(virtualObject.virtualScale)")
+//            return }
+//        messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
     }
     
     func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObject = virtualObject else { return }
-        guard let virtualObjectName = virtualObject.name else {
-            messageLabelDisplay("SamMiti is pinching to \(virtualObject.virtualScale)")
-            return }
-        messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
+//        guard let virtualObject = virtualObject else { return }
+//        guard let virtualObjectName = virtualObject.name else {
+//            messageLabelDisplay("SamMiti is pinching to \(virtualObject.virtualScale)")
+//            return }
+//        messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
     }
  
 }

@@ -24,10 +24,10 @@ SamMitiAR is available through CocoaPods. To install it, simply add the followin
 
 ```ruby
 #for iOS 11.0 +
-pod 'SamMitiAR' ~> '1.0'
+pod 'SamMitiAR', '~> 0.1'
 
 #for iOS 11.3 +
-pod 'SamMitiAR' ~> '2.0'
+pod 'SamMitiAR', '~> 1.0'
 ```
 
 ## Usage

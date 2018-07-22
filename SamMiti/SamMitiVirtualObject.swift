@@ -42,6 +42,16 @@ public class SamMitiVirtualObject: SCNNode {
     /// Example: scaleRange = (0.01)...2
     public var scaleRange: ClosedRange<Float>?
     
+    // Snap Zoom
+    /// points (1 is default scale), [] = disable
+    public var snapScalingPoints: [Float] = [1.0]
+    
+    /// snap threshold:
+    /// where [ 0 > threshold > 1 ]
+    /// -------- p -------
+    ///    |<-t->|<-t->|
+    public var snapScalingThreshold: Float = 0.1
+    
     /// Temporaly begin rotation factor
     private var temporalyBeginRotationFactor: Float = 0
     
@@ -53,6 +63,9 @@ public class SamMitiVirtualObject: SCNNode {
     
     /// Loading type
     var loadingType: LoadingType = .none
+    
+    /// SamMitiARDelegate
+    weak var samMitiARDelegate: SamMitiARDelegate?
 
     /// ใช้สำหรับปรับขนาดของวัตถุ
     public private(set) var nodeScale: Float = 1 {
@@ -61,21 +74,44 @@ public class SamMitiVirtualObject: SCNNode {
             scaleControllerNode.scale = SCNVector3Make(scaleFactor, scaleFactor, scaleFactor)
         }
     }
+    
+    public var defaultScale: Float = 1
 
     /// ใช้สำหรับเก็บค่า scaleMultiplier
     private var _virtualScale: Float = 1
     
-    /// ใช้สำหรับคูณขนาดของวัตถุ
+    /// Object scaling
     public var virtualScale: Float {
         get {
             return _virtualScale
         } set {
+            let scale: Float
             if let scaleRange = scaleRange {
-                _virtualScale = max(scaleRange.lowerBound, min(scaleRange.upperBound, newValue))
+                scale = max(scaleRange.lowerBound, min(scaleRange.upperBound, newValue))
+                if _virtualScale != scaleRange.lowerBound && scale == scaleRange.lowerBound {
+                    samMitiARDelegate?.samMitiVirtualObject(self, didScaleToBound: scaleRange.lowerBound)
+                } else if(_virtualScale != scaleRange.upperBound && scale == scaleRange.upperBound) {
+                    samMitiARDelegate?.samMitiVirtualObject(self, didScaleToBound: scaleRange.upperBound)
+                }
             } else {
-                _virtualScale = newValue
+                scale = newValue
             }
-
+            
+            // find possible snap point
+            let snapPoint = snapScalingPoints.first {
+                let begin = $0 * (1 - self.snapScalingThreshold)
+                let end = $0 * (1 + self.snapScalingThreshold)
+                return (begin...end).contains(scale)
+            }
+            if let snapPoint = snapPoint, scale != snapPoint {
+                if _virtualScale != snapPoint {
+                    samMitiARDelegate?.samMitiVirtualObject(self, didSnappedToPoint: snapPoint)
+                    _virtualScale = snapPoint
+                }
+            }else{
+                _virtualScale = scale
+            }
+            
             //TODO: Update Node Scale here
             // update transform
             nodeScale = virtualScale
@@ -96,6 +132,9 @@ public class SamMitiVirtualObject: SCNNode {
             if let containNode = contentNode {
                 containNode.removeFromParentNode()
                 headNode <- containNode
+                
+                // Add variance to y position to avoid shadow overlapping
+                containNode.position.y = Float.random(in: -0.0002 ..< 0.0002)
                 isLoaded = true
             }
         }
@@ -305,6 +344,25 @@ public class SamMitiVirtualObject: SCNNode {
             break
         }
     }
+    
+    /// - Tag: Sets the transparency mode of the `content node`.
+    public func setMaterialTransparencyMode(to transparencyMode: SCNTransparencyMode) {
+        // Recursivley traverses the node's children to update transparency mode.
+        func updateMaterialTransparencyMode(for node: SCNNode) {
+            
+            for material in node.geometry?.materials ?? [] {
+                material.transparencyMode = transparencyMode
+            }
+            
+            for child in node.childNodes {
+                updateMaterialTransparencyMode(for: child)
+            }
+        }
+        
+        guard let contentNode = self.contentNode else { return }
+        
+        updateMaterialTransparencyMode(for: contentNode)
+    }
 
     /// - Tag: AdjustOntoPlaneAnchor
     func adjustOntoPlaneAnchor(_ anchor: ARPlaneAnchor,
@@ -361,9 +419,6 @@ public class SamMitiVirtualObject: SCNNode {
             return
         }
 
-        // Only animate if the alignment has changed.
-        let animationDuration = (newAlignment != currentAlignment && allowAnimation) ? 0.5 : 0
-
         var newObjectRotation: Float?
         if newAlignment == .horizontal && currentAlignment != .horizontal {
             // When changing to horizontal placement, restore the previous horizontal rotation.
@@ -374,24 +429,26 @@ public class SamMitiVirtualObject: SCNNode {
         }
 
         currentAlignment = newAlignment
-
-        SCNTransaction.begin()
-        SCNTransaction.animationDuration = animationDuration
-        SCNTransaction.completionBlock = {
-            self.isChangingAlignment = false
-        }
-
-        isChangingAlignment = true
-
-        // Use the filtered position rather than the exact one from the transform.
-        simdTransform = transform
-        simdTransform.translation = simdWorldPosition
-
-        if newObjectRotation != nil {
-            virtualRotation = newObjectRotation!
-        }
-
-        SCNTransaction.commit()
+        
+        SceneKitAnimator.animateWithDuration(duration: 0.35,
+                                             timingFunction: .explodingEaseOut,
+                                             animated: newAlignment != currentAlignment,
+                                             animations: {
+                                                isChangingAlignment = true
+                                                
+                                                simdTransform = transform
+                                                
+                                                // Use the filtered position rather than the exact one from the transform.
+                                                simdTransform.translation = simdWorldPosition
+                                                
+                                                if newObjectRotation != nil {
+                                                    virtualRotation = newObjectRotation!
+                                                }
+        },
+                                             completion: {
+                                                self.isChangingAlignment = false
+        })
+        
     }
 
     /**
@@ -424,9 +481,9 @@ public class SamMitiVirtualObject: SCNNode {
         if smoothMovement {
             let hitTestResultDistance = simd_length(positionOffsetFromCamera)
 
-            // Add the latest position and keep up to 10 recent distances to smooth with.
+            // Add the latest position and keep up to 6 recent distances to smooth with.
             recentVirtualObjectDistances.append(hitTestResultDistance)
-            recentVirtualObjectDistances = Array(recentVirtualObjectDistances.suffix(10))
+            recentVirtualObjectDistances = Array(recentVirtualObjectDistances.suffix(6))
 
             let averageDistance = recentVirtualObjectDistances.average!
             let averagedDistancePosition = simd_normalize(positionOffsetFromCamera) * averageDistance

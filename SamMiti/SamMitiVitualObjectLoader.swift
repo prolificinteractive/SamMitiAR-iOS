@@ -26,7 +26,6 @@ public class SamMitiVitualObjectLoader: NSObject {
                                   loadedHandler: ((SamMitiVirtualObject) -> Void)? = nil) {
         isLoading = true
         objects.append(object)
-        SamMitiARView().interactionStatus = .placing
 
         // Load the content asynchronously.
         DispatchQueue.global(qos: .userInitiated).async {

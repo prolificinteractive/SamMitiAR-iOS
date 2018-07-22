@@ -344,9 +344,6 @@ public class SamMitiFocusNode: SCNNode {
                                focusExistingTemplateGeometry]
             focusChildNode.morpher = morpher
         }
-        
-        displayNodeHierarchyOnTop(true)
-        
     }
 
     func setState(confidentLevel: PlaneDetectingConfidentLevel?) {
@@ -550,22 +547,14 @@ public class SamMitiFocusNode: SCNNode {
 
         // Determine current alignment
         var alignment: ARPlaneAnchor.Alignment?
-        if #available(iOS 11.3, *) {
-            if let planeAnchor = hitTestResult.anchor as? ARPlaneAnchor {
-                alignment = planeAnchor.alignment
-            } else if hitTestResult.type == .estimatedHorizontalPlane {
-                alignment = .horizontal
-            } else if hitTestResult.type == .estimatedVerticalPlane {
-                alignment = .vertical
-            }
-        } else {
-            if let planeAnchor = hitTestResult.anchor as? ARPlaneAnchor {
-                alignment = planeAnchor.alignment
-            } else if hitTestResult.type == .estimatedHorizontalPlane {
-                alignment = .horizontal
-            }
+        if let planeAnchor = hitTestResult.anchor as? ARPlaneAnchor {
+            alignment = planeAnchor.alignment
+        } else if hitTestResult.type == .estimatedHorizontalPlane {
+            alignment = .horizontal
+        } else if hitTestResult.type == .estimatedVerticalPlane {
+            alignment = .vertical
         }
-
+       
         // add to list of recent alignments
         if alignment != nil {
             recentFocusSquareAlignments.append(alignment!)
@@ -577,44 +566,27 @@ public class SamMitiFocusNode: SCNNode {
         let horizontalHistory = recentFocusSquareAlignments.filter({ $0 == .horizontal }).count
 
         // Alignment is same as most of the history - change it
-        if #available(iOS 11.3, *) {
-            let verticalHistory = recentFocusSquareAlignments.filter({ $0 == .vertical }).count
+        let verticalHistory = recentFocusSquareAlignments.filter({ $0 == .vertical }).count
 
-            if alignment == .horizontal && horizontalHistory > 15 ||
-                alignment == .vertical && verticalHistory > 10 ||
-                hitTestResult.anchor is ARPlaneAnchor {
-                if alignment != currentAlignment {
-                    shouldAnimateAlignmentChange = true
-                    currentAlignment = alignment
-                    recentFocusSquareAlignments.removeAll()
-                }
-            } else {
-                // Alignment is different than most of the history - ignore it
-                alignment = currentAlignment
-                return
+        if alignment == .horizontal && horizontalHistory > 15 ||
+            alignment == .vertical && verticalHistory > 10 ||
+            hitTestResult.anchor is ARPlaneAnchor {
+            if alignment != currentAlignment {
+                shouldAnimateAlignmentChange = true
+                currentAlignment = alignment
+                recentFocusSquareAlignments.removeAll()
             }
         } else {
-            if alignment == .horizontal && horizontalHistory > 15 ||
-                hitTestResult.anchor is ARPlaneAnchor {
-                if alignment != currentAlignment {
-                    shouldAnimateAlignmentChange = true
-                    currentAlignment = alignment
-                    recentFocusSquareAlignments.removeAll()
-                }
-            } else {
-                // Alignment is different than most of the history - ignore it
-                alignment = currentAlignment
-                return
-            }
+            // Alignment is different than most of the history - ignore it
+            alignment = currentAlignment
+            return
         }
-
-        if #available(iOS 11.3, *) {
-            if alignment == .vertical {
-                tempNode.simdOrientation = hitTestResult.worldTransform.orientation
-                shouldAnimateAlignmentChange = true
-            }
+        
+        if alignment == .vertical {
+            tempNode.simdOrientation = hitTestResult.worldTransform.orientation
+            shouldAnimateAlignmentChange = true
         }
-
+        
         // Change the focus square's alignment
         if shouldAnimateAlignmentChange {
             performAlignmentAnimation(to: tempNode.simdOrientation)
@@ -663,7 +635,7 @@ public class SamMitiFocusNode: SCNNode {
             self.isChangingAlignment = false
         }
         SCNTransaction.animationDuration = 0.5
-        SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        SCNTransaction.animationTimingFunction = .easeInEaseOut
         simdOrientation = newOrientation
         SCNTransaction.commit()
     }

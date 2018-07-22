@@ -57,27 +57,54 @@ public extension CGPoint {
 	}
 }
 
-// หลีกเลี่ยงการใช้ #available(iOS 11.3, *)
+// Fallback for non iOS 12
+open class SamMitiARConfiguration: ARConfiguration {
+    
+    /**
+     Enum constants for indicating the mode of environment texturing to run.
+     */
+    public enum EnvironmentTexturing : Int {
+        
+        
+        /** No texture information is gathered. */
+        case none
+        
+        
+        /** Texture information is gathered for the environment.
+         Environment textures will be generated for AREnvironmentProbes added to the session. */
+        case manual
+        
+        
+        /** Texture information is gathered for the environment and probes automatically placed in the scene. */
+        case automatic
+    }
+}
 
-extension ARWorldTrackingConfiguration.PlaneDetection {
-    public static var all: ARWorldTrackingConfiguration.PlaneDetection {
-        if #available(iOS 11.3, *) {
-            return [.horizontal, .vertical]
-        }else{
-            return .horizontal
+@available(iOS 12.0, *)
+extension ARWorldTrackingConfiguration.EnvironmentTexturing {
+    
+    // TODO: ถึง Wut ดูให้หน่อย
+    public func definedBy(_ environmentTexturing: SamMitiARConfiguration.EnvironmentTexturing) -> ARWorldTrackingConfiguration.EnvironmentTexturing {
+        switch environmentTexturing {
+        case .none:
+            return .none
+        case .manual:
+            return .manual
+        case .automatic:
+            return .automatic
         }
     }
 }
 
-extension Array where Element == ARPlaneAnchor.Alignment {
 
-    public static let all: [ARPlaneAnchor.Alignment] = {
-        if #available(iOS 11.3, *) {
-            return [.horizontal, .vertical]
-        }else{
-            return [.horizontal]
-        }
-    }()
+extension ARWorldTrackingConfiguration.PlaneDetection {
+    public static var all: ARWorldTrackingConfiguration.PlaneDetection {
+        return [.horizontal, .vertical]
+    }
+}
+
+extension Array where Element == ARPlaneAnchor.Alignment {
+    public static let all: [ARPlaneAnchor.Alignment] = [.horizontal, .vertical]
 }
 
 // SCNNode(addChildNode:)

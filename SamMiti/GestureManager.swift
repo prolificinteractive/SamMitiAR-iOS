@@ -21,7 +21,7 @@ public struct GestureTypes: OptionSet {
     public static let pan          = GestureTypes(rawValue: 1 << 5)
     public static let rotation     = GestureTypes(rawValue: 1 << 6)
 
-    static let all:GestureTypes = [.tap, .doubleTap, .longPress, .pinch, .pan, .rotation]
+    static let all: GestureTypes = [.tap, .doubleTap, .longPress, .pinch, .pan, .rotation]
 }
 
 enum Gesture {
@@ -46,7 +46,6 @@ class GestureManager: NSObject, UIGestureRecognizerDelegate {
         super.init()
         self.delegate = delegate
         self.types = types
-        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handletap(_:) ))
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))

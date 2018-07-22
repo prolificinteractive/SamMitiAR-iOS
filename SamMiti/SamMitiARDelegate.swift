@@ -92,12 +92,18 @@ public protocol SamMitiARDelegate: class {
     /// Take an event when the Virtual Object get pinched
     func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?)
     
+    // scaling events
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float)
+    
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float)
 }
 
 //// Optional Protocol
 public extension SamMitiARDelegate {
     
     func updateSessionInfo(for frame: ARFrame, trackingState: ARCamera.TrackingState) {}
+    
+    func trackingStateChanged(to trackingState: SamMitiTrackingState) {}
     
     func trackingStateReasonChanged(to trackingStateReason: ARCamera.TrackingState.Reason?) {}
     
@@ -136,6 +142,10 @@ public extension SamMitiARDelegate {
     func samMitiViewIsPinching(virtualObject: SamMitiVirtualObject) {}
     
     func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?) {}
+    
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float) {}
+    
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float) {}
     
 }
 

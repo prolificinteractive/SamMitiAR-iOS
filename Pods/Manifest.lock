@@ -5,7 +5,7 @@ DEPENDENCIES:
   - GLTFSceneKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - GLTFSceneKit
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0c619ee986cbeff4ac3d8599adb66a65b19ca376
 
-COCOAPODS: 1.5.0.beta.1
+COCOAPODS: 1.5.3

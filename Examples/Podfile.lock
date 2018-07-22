@@ -27,7 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Core
-  - SamMitiAR (from `../../`)
+  - SamMitiAR (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -41,7 +41,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   SamMitiAR:
-    :path: "../../"
+    :path: "../"
 
 SPEC CHECKSUMS:
   Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
@@ -53,6 +53,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SamMitiAR: 3ed0eb3b5540c3244bfb789f60bc92f83aca09a9
 
-PODFILE CHECKSUM: 7801f176296a25440a8bd30ab9414f36ddbd3fb3
+PODFILE CHECKSUM: c9ca3c4478304e86a2f05efd67adfe8481279812
 
 COCOAPODS: 1.5.3

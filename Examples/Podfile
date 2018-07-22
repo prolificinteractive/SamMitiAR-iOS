@@ -1,0 +1,19 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.3'
+
+use_frameworks!
+
+def sammiti_lib
+    pod "SamMitiAR", :path => "../"
+    pod 'Firebase/Core'
+end
+
+target 'SamMiti-Example' do
+    sammiti_lib
+end
+
+
+target 'SamMiti Auto Placing Example' do
+    sammiti_lib
+end
+

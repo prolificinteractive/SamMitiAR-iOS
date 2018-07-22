@@ -12,27 +12,31 @@ import ARKit
  Placing Mode
  เป็น mode สำหรับวางวัตถุ
  - `.focusNode` เป็นการวางแบบปกติโดยจะมี indicator (focus node) ช่วย
- - `.automatic` เป็นโหมดการวางอัตโนมัติเมื่อเจอพื้นผิวที่สามารถวางได้
+ - `.quickDrop` เป็นโหมดการวางอัตโนมัติเมื่อเจอพื้นผิวที่สามารถวางได้
  */
 public enum PlacingMode {
     
     case focusNode
     
-    case automatic
+    case quickDrop
 }
 
 final public class SamMitiARView: ARSCNView {
     
-    // public access
+    // MARK: - Public Access
     
-    /// delegate สำหรับ event ต่างๆ ภายใน ARView
+    /**
+     Delegate สำหรับ event ต่างๆ ภายใน ARView
+     */
     public weak var samMitiARDelegate: SamMitiARDelegate?
     
-    /// focus node ใช้ FocusNode(notFound:estimated:existing) เพื่อที่จะทำ customize focus indicator
+    /**
+     Focus node ใช้ FocusNode(notFound:estimated:existing) เพื่อที่จะทำ customize focus indicator
+     */
     public var focusNode = SamMitiFocusNode() {
         didSet {
             oldValue.removeFromParentNode()
-            if placingMode == .automatic {
+            if placingMode == .quickDrop {
                 focusNode.isHidden = true
             }
             scene.rootNode.addChildNode(focusNode)
@@ -40,7 +44,9 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    /// current plaing mode
+    /**
+     Current Placing Mode
+     */
     public var placingMode: PlacingMode = .focusNode {
         didSet {
             focusNode.isHidden = placingMode != .focusNode
@@ -48,35 +54,38 @@ final public class SamMitiARView: ARSCNView {
     }
     
     /**
-    A Boolean value that determines whether the device camera uses fixed focus or autofocus behavior. The default value for this property is false.
+     A Boolean value that determines whether the device camera uses fixed focus or autofocus behavior. The default value for this property is false.
      */
     public var isAutoFocusEnabled: Bool = false
     
     /**
-    A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5). This value is only used when placing mode is set to focus node otherwise the value will be overridden by the position of the preview vistual object.
+     A point in normalized image coordinate space. (The point (0,0) represents the top left corner of the image, and the point (1,1) represents the bottom right corner.) The default value for this property is (0.5, 0.5). This value is only used when placing mode is set to focus node otherwise the value will be overridden by the position of the preview vistual object.
      */
     public var hitTestPlacingPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
     
     /**
-    A Boolean value that specifies whether SamMiti updates SceneKit Environment Intensity according to light estimate intensity divide 1000. The default value for this property is true.
-    */
+     A Boolean value that specifies whether SamMiti updates SceneKit Environment Intensity according to light estimate intensity divide 1000. The default value for this property is true.
+     */
     public var isLightingIntensityAutomaticallyUpdated: Bool = true
     
     /**
-    The visual contents of the material property—A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects. The default value for this property is the HDR image of photo studio.
-    */
+     The visual contents of the material property—A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects. The default value for this property is the HDR image of photo studio.
+     */
     public var lightingEnvironmentContent: Any? = "SamMitiArt.scnassets/studioHdr.hdr"
     
-    /** A float value for Environment Intensity Multiplier. The default value for this property is 1.0.
-    */
+    /**
+     A float value for Environment Intensity Multiplier. The default value for this property is 1.0.
+     */
     public var baseLightingEnvironmentIntensity: CGFloat = 1.0
     
     /**
-    The behavior ARKit uses for generating environment textures. The default value for this property is  `ARWorldTrackingConfiguration.EnvironmentTexturing.automatic`.
-    */
+     The behavior ARKit uses for generating environment textures. The default value for this property is  `ARWorldTrackingConfiguration.EnvironmentTexturing.automatic`.
+     */
     public var environmentTexturing: SamMitiARConfiguration.EnvironmentTexturing = .automatic
     
-    /// Options for allowing different gestures to be recognized.
+    /**
+     Options for allowing different gestures to be recognized.
+     */
     public var allowedGestureTypes: GestureTypes = .all {
         didSet {
             if gestureManager != nil {
@@ -85,10 +94,14 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    /// The initial size ratio ot the screen of the virtual object ( value 1 means the bounding box of the virtual object in that particular axis will be full screen) for automatic placing mode (if using focus node mode this value will be ignored.) Default value for this property is CGSize(width: 0.667, height: 0.667).
+    /**
+     The initial size ratio ot the screen of the virtual object ( value 1 means the bounding box of the virtual object in that particular axis will be full screen) for automatic placing mode (if using focus node mode this value will be ignored.) Default value for this property is CGSize(width: 0.667, height: 0.667).
+     */
     public var initialPreviewObjectMaxSizeRatio: CGSize = CGSize(width: 0.667, height: 0.667)
     
-    /// The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored.) Default value for this property is  0.667.
+    /**
+     The initial opacity of the virtual object for automatic placing mode (if using focus node mode this value will be ignored.) Default value for this property is  0.667.
+     */
     public var initialPreviewObjectOpacity: CGFloat = 0.667
     
     /// Virtual Object ที่จะทำ interacting ด้วย
@@ -107,7 +120,7 @@ final public class SamMitiARView: ARSCNView {
         return planeDetecting.currentPlaneDetectingConfidentLevel
     }
     
-    // private & internal
+    // MARK: - Private/Internal Uses
     private var planeDetecting = SamMitiPlaneDetecting()
     
     private let billBoardConstraint = SCNBillboardConstraint()
@@ -272,7 +285,7 @@ final public class SamMitiARView: ARSCNView {
     }
     
     private func updateSession(for frame: ARFrame,
-                       trackingState: ARCamera.TrackingState) {
+                               trackingState: ARCamera.TrackingState) {
         samMitiARDelegate?.updateSessionInfo(for: frame, trackingState: trackingState)
         switch trackingState {
         case .normal:
@@ -437,21 +450,21 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    // MARK: Position Testing
+    // MARK: - Positioning
     
     /**
      Searches for real-world objects or AR anchors in the captured camera image by prioritizing different hitTestTypes according to different situations.
-    
+     
      - Parameters:
-       - _ point: A point in the screen-space coordinate system of the scene renderer.
-       - infinitePlane: A Boolean value to determine weather or not the function calculates for the estimated infinite plane.
-       - objectPosition: The translation of the object which uses to help determining infinite plane.
-       - allowedAlignments: An array of orientation allowed to be found.
-    */
+     - _ point: A point in the screen-space coordinate system of the scene renderer.
+     - infinitePlane: A Boolean value to determine weather or not the function calculates for the estimated infinite plane.
+     - objectPosition: The translation of the object which uses to help determining infinite plane.
+     - allowedAlignments: An array of orientation allowed to be found.
+     */
     private func smartHitTest(_ point: CGPoint,
-                      infinitePlane: Bool = false,
-                      objectPosition: float3? = nil,
-                      allowedAlignments: [ARPlaneAnchor.Alignment] = .all) -> ARHitTestResult? {
+                              infinitePlane: Bool = false,
+                              objectPosition: float3? = nil,
+                              allowedAlignments: [ARPlaneAnchor.Alignment] = .all) -> ARHitTestResult? {
         
         // Perform the hit test.
         let results = hitTest(point, types: [.existingPlaneUsingGeometry, .estimatedVerticalPlane, .estimatedHorizontalPlane])
@@ -462,7 +475,7 @@ final public class SamMitiARView: ARSCNView {
             let planeAnchor = existingPlaneUsingGeometryResult.anchor as? ARPlaneAnchor, allowedAlignments.contains(planeAnchor.alignment) {
             return existingPlaneUsingGeometryResult
         }
-
+        
         
         if infinitePlane {
             
@@ -512,7 +525,7 @@ final public class SamMitiARView: ARSCNView {
         default:
             return nil
         }
-       
+        
     }
     
     private func interactionStatusChangedTo(_ interactionStatus: SamMitiInteractionStatus) {
@@ -523,7 +536,7 @@ final public class SamMitiARView: ARSCNView {
     }
     
     private func updatePlaneDetectingValues(by result: ARHitTestResult?,
-                                    shouldUpdateFocusNodeConfidentLevel: Bool = true) {
+                                            shouldUpdateFocusNodeConfidentLevel: Bool = true) {
         
         // Update Plane Detection Confident Level
         confidentLevelChangedTo(checkConfidentLevelFor(result: result), shouldUpdateFocusNodeConfidentLevel: shouldUpdateFocusNodeConfidentLevel)
@@ -548,7 +561,7 @@ final public class SamMitiARView: ARSCNView {
     }
     
     private func confidentLevelChangedTo(_ confidentLevel: PlaneDetectingConfidentLevel?,
-                                 shouldUpdateFocusNodeConfidentLevel: Bool = true) {
+                                         shouldUpdateFocusNodeConfidentLevel: Bool = true) {
         if confidentLevel != self.planeDetecting.currentPlaneDetectingConfidentLevel {
             self.planeDetecting.currentPlaneDetectingConfidentLevel = confidentLevel
             if shouldUpdateFocusNodeConfidentLevel {
@@ -558,7 +571,7 @@ final public class SamMitiARView: ARSCNView {
             if let currentVirtualObject = currentVirtualObject,
                 !placedVirtualObjects.contains(currentVirtualObject),
                 case .existing? = confidentLevel,
-                case .automatic = placingMode {
+                case .quickDrop = placingMode {
                 OperationQueue.main.addOperation {
                     self.place(byTransitioningFromCurrentTransform: true)
                 }
@@ -588,7 +601,7 @@ final public class SamMitiARView: ARSCNView {
         }
     }
     
-    // - MARK: Object anchors
+    // - MARK: - Object Anchors
     /// - Tag: AddOrUpdateAnchor
     private func addOrUpdateAnchor(for object: SamMitiVirtualObject) {
         // If the anchor is not nil, remove it from the session.
@@ -619,6 +632,7 @@ final public class SamMitiARView: ARSCNView {
     }
     
     public func performTransitionWithOutAnimation(to size: CGSize, parentViewCenterPoint point: CGPoint, isAnimationDisabled: Bool = true) {
+        // TODO: Rename this function name to have it make more sense (and refer to UIView more)
         if isAnimationDisabled {
             CATransaction.begin()
             CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
@@ -627,6 +641,8 @@ final public class SamMitiARView: ARSCNView {
             CATransaction.commit()
         }
     }
+    
+    // MARK: - Placing Virtual Objects
     
     public func place(byTransitioningFromCurrentTransform isTransitioningFromCurrectTransform: Bool = false) {
         guard let placedVirtualObject = currentVirtualObject,
@@ -709,9 +725,8 @@ final public class SamMitiARView: ARSCNView {
             })
     }
     
-    // TODO: Create/find logic of finding FOV of ARKit
     private func getCameraFov() -> vector_float2 {
-        
+        // - TODO: Create/find logic of finding FOV of ARKit
         let currentOrientation = UIApplication.shared.statusBarOrientation
         
         let viewSize = bounds.size
@@ -788,7 +803,7 @@ final public class SamMitiARView: ARSCNView {
             currentVirtualObject.samMitiARDelegate = self.samMitiARDelegate
             interactionStatus = .placing
             
-            if placingMode == .automatic {
+            if placingMode == .quickDrop {
                 
                 // Turn isAdjustOntoPlaneAnchorEnabled off to wait until the object get placed
                 isAdjustOntoPlaneAnchorEnabled = false
@@ -840,8 +855,7 @@ final public class SamMitiARView: ARSCNView {
     }
 }
 
-// Helpers
-
+// MARK: - Helpers
 extension SamMitiARView {
     
     /// A helper method to return the first object that is found under the provided `gesture`s touch locations.
@@ -877,7 +891,7 @@ extension SamMitiARView {
     }
 }
 
-// Gestures
+// MARK: - Gestures
 extension SamMitiARView: GestureManagerDelegate {
     
     func receivedGesture(gesture: Gesture) {

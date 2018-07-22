@@ -53,11 +53,10 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        sceneView.placingMode = .automatic
+        sceneView.placingMode = .quickDrop
         
         sceneView.samMitiARDelegate = self
         sceneView.isAutoFocusEnabled = false
-//        sceneView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         sceneView.isLightingIntensityAutomaticallyUpdated = true
         
         if #available(iOS 12.0, *) {

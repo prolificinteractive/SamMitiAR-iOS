@@ -107,11 +107,7 @@ extension ARViewController: SamMitiARDelegate {
     }
     
     /// Example of using delegate for haptic feedback when object scaling is snapped
-<<<<<<< .merge_file_q7ncB9
     func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScalingFactor: Float) {
-=======
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScale: Float) {
->>>>>>> .merge_file_DuJOSf
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }

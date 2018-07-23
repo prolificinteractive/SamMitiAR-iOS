@@ -20,7 +20,7 @@ public protocol SamMitiARDelegate: class {
     func updateSessionInfo(for frame: ARFrame, trackingState: ARCamera.TrackingState)
     
     /// Methods you can implement to receive new current tracking quality state
-    func trackingStateChanged(to trackingState: SamMitiTrackingState)
+    func trackingStateChanged(to trackingState: ARCamera.TrackingState)
     
     /// Methods you can implement to receive new current tracking quality state
     func trackingStateReasonChanged(to trackingStateReason: ARCamera.TrackingState.Reason?)
@@ -103,7 +103,7 @@ public extension SamMitiARDelegate {
     
     func updateSessionInfo(for frame: ARFrame, trackingState: ARCamera.TrackingState) {}
     
-    func trackingStateChanged(to trackingState: SamMitiTrackingState) {}
+    func trackingStateChanged(to trackingState: ARCamera.TrackingState) {}
     
     func trackingStateReasonChanged(to trackingStateReason: ARCamera.TrackingState.Reason?) {}
     

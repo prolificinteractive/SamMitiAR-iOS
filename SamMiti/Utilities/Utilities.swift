@@ -115,3 +115,22 @@ public func <- (left: SCNNode, right: SCNNode) -> SCNNode {
     left.addChildNode(right)
     return left
 }
+
+extension ARCamera.TrackingState {
+    var description: String {
+        switch self {
+        case .normal:
+            return "normal"
+        case .notAvailable:
+            return "notAvailable"
+        case .limited(.excessiveMotion):
+            return "limited.excessiveMotion"
+        case .limited(.initializing):
+            return "limited.initializing"
+        case .limited(.insufficientFeatures):
+            return "limited.insufficientFeatures"
+        case .limited(.relocalizing):
+            return "limited.relocalizing"
+        }
+    }
+}

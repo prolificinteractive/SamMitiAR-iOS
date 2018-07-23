@@ -15,7 +15,6 @@
 		903A44272040AEB700BC0157 /* SamMitiArt.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 903A44152040AEB600BC0157 /* SamMitiArt.scnassets */; };
 		903A44282040AEB700BC0157 /* SamMitiFocusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44162040AEB600BC0157 /* SamMitiFocusNode.swift */; };
 		903A44292040AEB700BC0157 /* SamMitiInteractionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44172040AEB700BC0157 /* SamMitiInteractionStatus.swift */; };
-		903A442A2040AEB700BC0157 /* SamMitiTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44182040AEB700BC0157 /* SamMitiTrackingState.swift */; };
 		903A442B2040AEB700BC0157 /* SamMitiARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A44192040AEB700BC0157 /* SamMitiARDelegate.swift */; };
 		903A442C2040AEB700BC0157 /* SamMitiVirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A441A2040AEB700BC0157 /* SamMitiVirtualObject.swift */; };
 		903A442D2040AEB700BC0157 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903A441C2040AEB700BC0157 /* Utilities.swift */; };
@@ -37,7 +36,6 @@
 		903A44152040AEB600BC0157 /* SamMitiArt.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SamMitiArt.scnassets; sourceTree = "<group>"; };
 		903A44162040AEB600BC0157 /* SamMitiFocusNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiFocusNode.swift; sourceTree = "<group>"; };
 		903A44172040AEB700BC0157 /* SamMitiInteractionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiInteractionStatus.swift; sourceTree = "<group>"; };
-		903A44182040AEB700BC0157 /* SamMitiTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiTrackingState.swift; sourceTree = "<group>"; };
 		903A44192040AEB700BC0157 /* SamMitiARDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiARDelegate.swift; sourceTree = "<group>"; };
 		903A441A2040AEB700BC0157 /* SamMitiVirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiVirtualObject.swift; sourceTree = "<group>"; };
 		903A441C2040AEB700BC0157 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				903A44162040AEB600BC0157 /* SamMitiFocusNode.swift */,
 				903A44172040AEB700BC0157 /* SamMitiInteractionStatus.swift */,
 				903A44112040AEB600BC0157 /* SamMitiPlaneDetecting.swift */,
-				903A44182040AEB700BC0157 /* SamMitiTrackingState.swift */,
 				903A441A2040AEB700BC0157 /* SamMitiVirtualObject.swift */,
 				903A44132040AEB600BC0157 /* SamMitiVitualObjectLoader.swift */,
 				903A44122040AEB600BC0157 /* SceneKitAnimator.swift */,
@@ -242,7 +239,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903A442A2040AEB700BC0157 /* SamMitiTrackingState.swift in Sources */,
 				903A44312040AEB700BC0157 /* GestureManager.swift in Sources */,
 				903A44222040AEB700BC0157 /* SamMitiARDebug.swift in Sources */,
 				903A44282040AEB700BC0157 /* SamMitiFocusNode.swift in Sources */,

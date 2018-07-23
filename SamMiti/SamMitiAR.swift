@@ -146,9 +146,9 @@ final public class SamMitiARView: ARSCNView {
     }
     
     // Values for position tracking quality, with possible causes when tracking quality is limited.
-    private var currentTrackingState: SamMitiTrackingState = .notAvailable {
+    private var currentTrackingState: ARCamera.TrackingState = .notAvailable {
         didSet {
-            if oldValue != currentTrackingState {
+            if oldValue.description != currentTrackingState.description {
                 samMitiARDelegate?.trackingStateChanged(to: currentTrackingState)
             }
         }
@@ -297,7 +297,7 @@ final public class SamMitiARView: ARSCNView {
         case .notAvailable:
             currentTrackingState = .notAvailable
         case .limited(let reason):
-            currentTrackingState = .limited
+            currentTrackingState = .limited(reason)
             currentTrackingStateReason = reason
         }
         

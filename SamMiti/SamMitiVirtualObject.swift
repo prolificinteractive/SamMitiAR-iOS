@@ -9,8 +9,6 @@
 import ARKit
 import GLTFSceneKit
 
-//TODO: Add interaction ability (Movable, Scalable, Rotatable)
-
 public class SamMitiVirtualObject: SCNNode {
     
     public typealias VoidBlock = () -> Void
@@ -112,7 +110,6 @@ public class SamMitiVirtualObject: SCNNode {
                 _virtualScale = scale
             }
             
-            //TODO: Update Node Scale here
             // update transform
             nodeScale = virtualScale
         }

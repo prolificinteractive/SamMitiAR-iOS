@@ -104,7 +104,7 @@ public class SamMitiVirtualObject: SCNNode {
             }
             if let snapPoint = snapPoint, scale != snapPoint {
                 if _virtualScale != snapPoint {
-                    samMitiARDelegate?.samMitiVirtualObject(self, didSnappedToPoint: snapPoint)
+                    samMitiARDelegate?.samMitiVirtualObject(self, didSnappedToScale: snapPoint)
                     _virtualScale = snapPoint
                 }
             }else{

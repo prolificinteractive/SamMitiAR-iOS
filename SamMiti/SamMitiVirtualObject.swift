@@ -133,12 +133,12 @@ public class SamMitiVirtualObject: SCNNode {
                 
                 // Add variance to y position to avoid shadow overlapping
                 // TODO: Xcode9 version
+                /*
                 containNode.position.y = (Float(arc4random()) / 0xFFFFFFFF) * (0.0005) - 0.00025
+                 */
                 
                 // TODO: Xcode10 version
-                /*
                 containNode.position.y = Float.random(in: -0.00025 ..< 0.00025)
-                 */
                 isLoaded = true
             }
         }

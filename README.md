@@ -141,6 +141,26 @@ sceneView.session.pause()
 
 Work in Progress
 
+### Placing Mode
+There are two modes of placing virtual objects. One is called `quickDrop`. This mode allows users to place virtual objects without tapping anything on screen, but it require users to move their devices to get ARKit initialize plane anchor. The other mode is called `focusNode`. This mode allows users to use Focus Node (indicator focus point) to indicate where the virtual object will be placed, and users need to tap on the screen in order to have the virtual object placed at the desired spot.
+
+
+// WIP image example of quickDrop mode
+
+Example of `quickDrop` mode
+
+
+// WIP image example focusNode mode
+
+Example of `focusNode` mode
+
+To set placing mode of SamMitiAR View, the property `placingMode` need to be set to the desired mode. The best place to set this property is before function startAR() get called.
+
+```swift
+/// Example of setting SamMitiAR view to *quickDrop* mode
+sceneView.placingMode = .quickDrop
+```
+
 ### Placing and Removing Virtual Objects
 
 Work in Progress

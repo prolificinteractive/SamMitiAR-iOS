@@ -58,10 +58,6 @@ class ARViewController: UIViewController {
         samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
         samMitiARView.environmentTexturing = .automatic
         
-        samMitiARView.focusNode = SamMitiFocusNode(withNotFoundNamed: "art.scnassets/focus-node/defaultFocusNotFound.scn",
-                                                   estimatedNamed: "art.scnassets/focus-node/defaultFocusEstimated.scn",
-                                                   existingNamed: "art.scnassets/focus-node/defaultFocusExisting.scn")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

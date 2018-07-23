@@ -10,15 +10,22 @@ import SceneKit
 import GLTFSceneKit
 import ARKit
 
+class SamMitiFocusNodeHelper {
+    func focusNodeURLFor(name: String) -> URL? {
+        return Bundle(for: type(of: self))
+            .url(forResource: name, withExtension: "scn", subdirectory: "SamMitiArt.scnassets")
+    }
+}
+
 public class SamMitiFocusNode: SCNNode {
 
     private struct Constant {
 
         struct defaultFocusNodePaths {
-            private static let artScnAssetsName = "SamMitiArt.scnassets"
-            static let notFoundPath = defaultFocusNodePaths.artScnAssetsName + "/defaultFocusNotFound.scn"
-            static let estimatedPath = defaultFocusNodePaths.artScnAssetsName + "/defaultFocusEstimated.scn"
-            static let existingPath = defaultFocusNodePaths.artScnAssetsName + "/defaultFocusExisting.scn"
+            static let artScnAssetsName = "SamMitiArt.scnassets"
+            static let notFoundPath = SamMitiFocusNodeHelper().focusNodeURLFor(name: "defaultFocusNotFound")
+            static let estimatedPath = SamMitiFocusNodeHelper().focusNodeURLFor(name: "defaultFocusEstimated")
+            static var existingPath = SamMitiFocusNodeHelper().focusNodeURLFor(name: "defaultFocusExisting")
         }
 
         struct key {
@@ -213,6 +220,13 @@ public class SamMitiFocusNode: SCNNode {
         node?.load()
         return node
     }
+    
+    private func node(fromURL url: URL?) -> SCNNode? {
+        guard let url = url else { return nil }
+        let node = SCNReferenceNode(url: url)
+        node?.load()
+        return node
+    }
 
     private func node(fromPath path: String) -> SCNNode? {
         guard let url = Bundle(for: type(of: self)).resourceURL?.appendingPathComponent(path) else { return nil }
@@ -321,15 +335,15 @@ public class SamMitiFocusNode: SCNNode {
         
         if validateFocusNodeLoading(withNotFoundNode: notFoundNode, estimatedNode: estimatedNode, existingNode: existingNode) {
             /// Getting all template node from external files
-            focusNotFoundTemplateNode = notFoundNode ?? node(fromPath: Constant.defaultFocusNodePaths.notFoundPath)
-            focusEstimatedTemplateNode = estimatedNode ?? node(fromPath: Constant.defaultFocusNodePaths.estimatedPath)
-            focusExistingTemplateNode = existingNode ?? node(fromPath: Constant.defaultFocusNodePaths.existingPath)
+            focusNotFoundTemplateNode = notFoundNode ?? node(fromURL: Constant.defaultFocusNodePaths.notFoundPath)
+            focusEstimatedTemplateNode = estimatedNode ?? node(fromURL: Constant.defaultFocusNodePaths.estimatedPath)
+            focusExistingTemplateNode = existingNode ?? node(fromURL: Constant.defaultFocusNodePaths.existingPath)
             
         } else {
             /// Getting all template node from external files
-            focusNotFoundTemplateNode = node(fromPath: Constant.defaultFocusNodePaths.notFoundPath)
-            focusEstimatedTemplateNode = node(fromPath: Constant.defaultFocusNodePaths.estimatedPath)
-            focusExistingTemplateNode = node(fromPath: Constant.defaultFocusNodePaths.existingPath)
+            focusNotFoundTemplateNode = node(fromURL: Constant.defaultFocusNodePaths.notFoundPath)
+            focusEstimatedTemplateNode = node(fromURL: Constant.defaultFocusNodePaths.estimatedPath)
+            focusExistingTemplateNode = node(fromURL: Constant.defaultFocusNodePaths.existingPath)
         }
         
         focusNode = focusNotFoundTemplateNode

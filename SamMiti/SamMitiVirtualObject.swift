@@ -57,7 +57,7 @@ public class SamMitiVirtualObject: SCNNode {
     /// Temporaly begin pinch factor
     private var temporalyBeginPinchFactor: Float = 1
 
-    /// Object นี้ถูก load หรือยัง
+    /// Determine if this Virtual Object is loaded
     public private(set) var isLoaded: Bool
     
     /// Loading type
@@ -66,7 +66,7 @@ public class SamMitiVirtualObject: SCNNode {
     /// SamMitiARDelegate
     weak var samMitiARDelegate: SamMitiARDelegate?
 
-    /// ใช้สำหรับปรับขนาดของวัตถุ
+    /// Use to set the scale of the virtual object
     public private(set) var nodeScale: Float = 1 {
         didSet {
             let scaleFactor = nodeScale
@@ -76,10 +76,10 @@ public class SamMitiVirtualObject: SCNNode {
     
     public var defaultScale: Float = 1
 
-    /// ใช้สำหรับเก็บค่า scaleMultiplier
+    /// Use to store the `scaleMultiplier` value
     private var _virtualScale: Float = 1
     
-    /// Object scaling
+    /// Object Scale
     public var virtualScale: Float {
         get {
             return _virtualScale

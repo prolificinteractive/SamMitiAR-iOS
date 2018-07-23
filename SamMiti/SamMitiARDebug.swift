@@ -18,13 +18,13 @@ public struct SamMitiDebugOptions: OptionSet {
         self.rawValue = rawValue
     }
     
-    /// ค่าความ confident ของพื้นผิวที่ focus node ชี้อยู่
+    /// Show the status of the confidence, interaction, and distance of current hittest
     public static let showStateStatus          = SamMitiDebugOptions(rawValue: 1 << 0)
     
-    /// แสดง anchor ของพื้นผิว
+    /// Show virtual anchor planes that has been found by ARKit
     public static let showAnchorPlane          = SamMitiDebugOptions(rawValue: 1 << 1)
 
-    /// <#Description#>
+    /// Show both state status and anchor planes
     public static let all: SamMitiDebugOptions = [.showStateStatus, .showAnchorPlane]
 }
 

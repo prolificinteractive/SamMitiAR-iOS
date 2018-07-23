@@ -11,7 +11,7 @@ import UIKit
 // ใช้สำหรับ load virtualObject ก่อนจะถูกส่งไปที่ Scene
 public class SamMitiVitualObjectLoader: NSObject {
 
-    /// virtual objects ที่ถูกเพิ่มเข้ามา
+    /// a set of virtual objects that have been added
     public private(set) var objects: [SamMitiVirtualObject] = []
 
     public private(set) var isLoading = false

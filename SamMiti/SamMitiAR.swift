@@ -273,9 +273,7 @@ final public class SamMitiARView: ARSCNView {
         if #available(iOS 12.0, *) {
             
             // TODO: Xcode10
-            /*
             configuration.environmentTexturing = configuration.environmentTexturing.definedBy(environmentTexturing)
-            */
             
         }
         

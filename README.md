@@ -16,7 +16,7 @@ Augmented Reality in iOS has been a very big topic since Apple announced ARKit i
 ### Placing Multiple Virtual Objects
 
 <p align="center">
-<img src="/images/screenshot_multiple_place_3_2.gif" alt="Placing Multiple Virtual Objects" width="80%"/>
+<img src="/images/screenshot_multiple_place_3_2.gif" alt="Placing Multiple Virtual Objects" width="67%"/>
 </p>
 
 The framework comes with the multiple-virtual-object handler that is ready to use with the SamMiti AR placing  feature right away.
@@ -24,7 +24,7 @@ The framework comes with the multiple-virtual-object handler that is ready to us
 ### Quick Drop, Preview in AR with No Effort
 
 <p align="center">
-<img src="/images/screenshot_quick_drop_3_2.gif" alt="Quick Drop, Preview in AR with No Effort" width="80%"/>
+<img src="/images/screenshot_quick_drop_3_2.gif" alt="Quick Drop, Preview in AR with No Effort" width="67%"/>
 </p>
 
 Influenced by AR Quick Look feature in iOS 12, with this feature, the virtual object can be placed without tapping anything on screen. When previewing one virtual object in AR, this would be the ideal way that most minimize all steps into one.
@@ -32,7 +32,7 @@ Influenced by AR Quick Look feature in iOS 12, with this feature, the virtual ob
 ### Interaction with Fluidity
 
 <p align="center">
-<img src="/images/screenshot_reposition_4_3.gif" alt="Interaction with Fluidity" width="80%"/>
+<img src="/images/screenshot_reposition_4_3.gif" alt="Interaction with Fluidity" width="67%"/>
 </p>
 
 No more jumpy effect when virtual objects dragged. There is a smooth transition for all interactions even if the object gets dragged from the table to the floor.
@@ -46,7 +46,7 @@ No more jumpy effect when virtual objects dragged. There is a smooth transition 
 ### Debug Mode, Really Know What’s Going on
 
 <p align="center">
-<img src="/images/screenshot_debug_mode.gif" alt="Debug Mode, Really Know What’s Going on" width="80%"/>
+<img src="/images/screenshot_debug_mode.gif" alt="Debug Mode, Really Know What’s Going on" width="67%"/>
 </p>
 
 ### Support All Open 3D Content Formats (glTF-ready)

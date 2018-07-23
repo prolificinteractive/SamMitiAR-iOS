@@ -24,12 +24,12 @@ final public class SamMitiARView: ARSCNView {
     // MARK: - Public Access
     
     /**
-     An object you provide to receive ..............< List รายการที่ Delegate ตัวนี้ provide ได้> from SamMitiARView.
+     An object you provide to receive different values from AR Session in SamMitiARView.
      */
     public weak var samMitiARDelegate: SamMitiARDelegate?
     
     /**
-     Focus node ใช้ FocusNode(notFound:estimated:existing) เพื่อที่จะทำ customize focus indicator
+     An SCNNode that vistualizes the hittest result on the surface. In order to customize this FocusNode, different method of `init(withNotFound_: String, estimated_: String, existing_: String)` can be called.
      */
     public var focusNode = SamMitiFocusNode() {
         didSet {
@@ -38,12 +38,11 @@ final public class SamMitiARView: ARSCNView {
                 focusNode.isHidden = true
             }
             scene.rootNode.addChildNode(focusNode)
-            
         }
     }
     
     /**
-     Current Placing Mode
+     Current placing mode of SamMitiView
      */
     public var placingMode: PlacingMode = .focusNode {
         didSet {
@@ -265,7 +264,6 @@ final public class SamMitiARView: ARSCNView {
         if debugOptions.contains(.showStateStatus) {
             setupDetectingLevelDebugsView()
         }
-        
     }
     
     private func resetTracking() {
@@ -274,7 +272,7 @@ final public class SamMitiARView: ARSCNView {
         configuration.planeDetection = .all
         if #available(iOS 12.0, *) {
             
-            // TODO: ถึง Wut ดูให้หน่อย
+            // TODO: Xcode10
             /*
             configuration.environmentTexturing = configuration.environmentTexturing.definedBy(environmentTexturing)
             */
@@ -282,7 +280,6 @@ final public class SamMitiARView: ARSCNView {
         }
         
         configuration.isAutoFocusEnabled = isAutoFocusEnabled
-        
         
         session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
         
@@ -319,7 +316,6 @@ final public class SamMitiARView: ARSCNView {
             mainFillLight.temperature = lightEstimate.ambientColorTemperature
             
         }
-        
         
         if #available(iOS 12.0, *) { } else {
             
@@ -433,6 +429,8 @@ final public class SamMitiARView: ARSCNView {
         scene.rootNode.addChildNode(lightFillNodeContainNode)
     }
     
+    // MARK: - Positioning and Hittest
+    
     private func checkConfidentLevelFor(result: ARHitTestResult?) -> PlaneDetectingConfidentLevel {
         guard let resultType = result?.type else { return .notFound }
         switch resultType {
@@ -460,8 +458,6 @@ final public class SamMitiARView: ARSCNView {
             }
         }
     }
-    
-    // MARK: - Positioning
     
     /**
      Searches for real-world objects or AR anchors in the captured camera image by prioritizing different hitTestTypes according to different situations.
@@ -651,7 +647,6 @@ final public class SamMitiARView: ARSCNView {
     public func performViewTransitionWithOutAnimation(to size: CGSize,
                                                       parentViewCenterPoint point: CGPoint,
                                                       isAnimationDisabled: Bool = true) {
-        // TODO: Rename this function name to have it make more sense (and refer to UIView more)
         if isAnimationDisabled {
             CATransaction.begin()
             CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
@@ -749,7 +744,7 @@ final public class SamMitiARView: ARSCNView {
     }
     
     private func getCameraFov() -> vector_float2 {
-        // - TODO: Create/find logic of finding FOV of ARKit
+        
         let currentOrientation = UIApplication.shared.statusBarOrientation
         
         let viewSize = bounds.size
@@ -772,6 +767,7 @@ final public class SamMitiARView: ARSCNView {
             
         } else {
             // Hardcoded Values in case ARSession hasn't been initialized.
+            // TODO: There might be a better way to categorize the version of ARKit and ImageResolution.
             
             /// 3:4 iPhone & iPad Camera FOV = (x: 1.132, y: 0.849)
             var cameraFov = vector_float2(1.132, 0.849)

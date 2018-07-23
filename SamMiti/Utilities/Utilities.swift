@@ -85,7 +85,6 @@ open class SamMitiARConfiguration: ARConfiguration {
 @available(iOS 12.0, *)
 extension ARWorldTrackingConfiguration.EnvironmentTexturing {
     
-    // TODO: ถึง Wut ดูให้หน่อย
     public func definedBy(_ environmentTexturing: SamMitiARConfiguration.EnvironmentTexturing) -> ARWorldTrackingConfiguration.EnvironmentTexturing {
         switch environmentTexturing {
         case .none:

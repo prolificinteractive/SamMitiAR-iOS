@@ -17,6 +17,7 @@ class SamMitiFocusNodeHelper {
     }
 }
 
+/// An SCNNode that vistualizes the hittest result on the surface. In order to customize this FocusNode, different method of `init(withNotFound_: String, estimated_: String, existing_: String)` can be called.
 public class SamMitiFocusNode: SCNNode {
 
     private struct Constant {

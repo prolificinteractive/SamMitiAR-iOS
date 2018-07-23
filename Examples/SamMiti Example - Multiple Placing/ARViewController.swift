@@ -176,13 +176,17 @@ class ARViewController: UIViewController {
     
     var isStatusBarHidden = false
     
+    //TODO: Xcode9
     override func prefersHomeIndicatorAutoHidden() -> Bool {
         return isHomeindicatorHidden
     }
     
-//    override var prefersHomeIndicatorAutoHidden: Bool {
-//        return isHomeindicatorHidden
-//    }
+    // TODO: Xcode10
+    /*
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return isHomeindicatorHidden
+    }
+     */
     
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden

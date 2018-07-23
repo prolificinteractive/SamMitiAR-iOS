@@ -275,7 +275,9 @@ final public class SamMitiARView: ARSCNView {
         if #available(iOS 12.0, *) {
             
             // TODO: ถึง Wut ดูให้หน่อย
+            /*
             configuration.environmentTexturing = configuration.environmentTexturing.definedBy(environmentTexturing)
+            */
             
         }
         
@@ -318,6 +320,13 @@ final public class SamMitiARView: ARSCNView {
             
         }
         
+        
+        if #available(iOS 12.0, *) { } else {
+            
+            // if devices run iOS earlier than 12.0 the environmentTexturing needs to be none.
+            environmentTexturing = .none
+        }
+        
         if environmentTexturing == .none {
             
             // Setup the content for Lighting Environment
@@ -338,8 +347,6 @@ final public class SamMitiARView: ARSCNView {
             lightingEnvironment.contents = nil
             
         }
-        
-        
         
         let point: CGPoint = {
             let width = bounds.width * hitTestPlacingPoint.x

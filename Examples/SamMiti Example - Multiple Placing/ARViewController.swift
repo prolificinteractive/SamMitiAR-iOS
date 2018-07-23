@@ -34,11 +34,21 @@ class ARViewController: UIViewController {
     
     var debugOptions: SamMitiDebugOptions = []
     
+    //TODO: Xcode9
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            isMenuShowing = !isMenuShowing
+        }
+    }
+    
+    //TODO: Xcode10
+    /*
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             isMenuShowing = !isMenuShowing
         }
     }
+ */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +65,6 @@ class ARViewController: UIViewController {
         samMitiARView.isAutoFocusEnabled = false
         samMitiARView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         samMitiARView.isLightingIntensityAutomaticallyUpdated = true
-        samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
         samMitiARView.environmentTexturing = .automatic
         
     }
@@ -167,9 +176,13 @@ class ARViewController: UIViewController {
     
     var isStatusBarHidden = false
     
-    override var prefersHomeIndicatorAutoHidden: Bool {
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
         return isHomeindicatorHidden
     }
+    
+//    override var prefersHomeIndicatorAutoHidden: Bool {
+//        return isHomeindicatorHidden
+//    }
     
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden

@@ -115,14 +115,14 @@ public class SamMitiVirtualObject: SCNNode {
         }
     }
 
-    /// ใช้สำหรับหมุนวัตถุในแกน Y
+    /// Determines rotation around Y axis. The default value is 0.
     public var virtualRotation: Float = 0 {
         didSet {
             yRotationControllerNode.eulerAngles.y = virtualRotation
         }
     }
 
-    /// node จริงๆ ที่ถูก class นี้ห่อไว้
+    /// A node object that contains the actual 3D content that has been loaded.
     public var contentNode: SCNNode? {
         didSet {
             oldValue?.removeFromParentNode()
@@ -131,7 +131,13 @@ public class SamMitiVirtualObject: SCNNode {
                 headNode <- containNode
                 
                 // Add variance to y position to avoid shadow overlapping
-                containNode.position.y = Float.random(in: -0.0002 ..< 0.0002)
+                // TODO: Xcode9 version
+                containNode.position.y = (Float(arc4random()) / 0xFFFFFFFF) * (0.0005) - 0.00025
+                
+                // TODO: Xcode10 version
+                /*
+                containNode.position.y = Float.random(in: -0.00025 ..< 0.00025)
+                 */
                 isLoaded = true
             }
         }
@@ -176,11 +182,11 @@ public class SamMitiVirtualObject: SCNNode {
     }
 
     // MARK: - Init/Deinit
-    /// Initializes and returns Virtual Object
+    /// Initializes by SCNScene object and returns Virtual Object
     ///
     /// - Parameters:
-    ///   - scene: SCNScene object
-    ///   - allowAlignment: Aligment ที่สามารถวางได้
+    ///   - scene: SCNScene object.
+    ///   - allowAlignment: Aligment that allows virtual objects to be placed.
     public init(scene: SCNScene, allowedAlignments: [ARPlaneAnchor.Alignment] = .all) {
         isLoaded = true
         super.init()
@@ -191,11 +197,11 @@ public class SamMitiVirtualObject: SCNNode {
         headNode <- node
     }
 
-    /// Initializes and returns Virtual Object
+    /// Initializes by SCNReferenceNode and returns Virtual Object
     ///
     /// - Parameters:
     ///   - refferenceNode: SCNReferenceNode object
-    ///   - allowAlignment: Aligment ที่สามารถวางได้
+    ///   - allowAlignment: Aligment that allows virtual objects to be placed.
     public init(refferenceNode: SCNReferenceNode,
                 allowedAlignments: [ARPlaneAnchor.Alignment] = .all) {
         isLoaded = false
@@ -205,11 +211,11 @@ public class SamMitiVirtualObject: SCNNode {
         loadingType = .refferenceNode(refferenceNode)
     }
 
-    /// Initializes and returns Virtual Object
+    /// Initializes SamMitiVirtual by GLTFSceneSource and returns Virtual Object
     ///
     /// - Parameters:
     ///   - gltf: GLTFSceneSource object
-    ///   - allowAlignment: Aligment ที่สามารถวางได้
+    ///   - allowAlignment: Aligment that allows virtual objects to be placed.
     public init(gltfNamed: String,
                 allowedAlignments: [ARPlaneAnchor.Alignment] = .all) {
         isLoaded = false
@@ -219,6 +225,11 @@ public class SamMitiVirtualObject: SCNNode {
         loadingType = .gltf(.name(gltfNamed))
     }
     
+    /// Initializes SamMitiVirtual Object by glTF file path and returns Virtual Object
+    ///
+    /// - Parameters:
+    ///   - gltfPath: glTF file path
+    ///   - allowedAlignments: Aligment that allows virtual objects to be placed.
     public init(gltfPath: String,
                 allowedAlignments: [ARPlaneAnchor.Alignment] = .all) {
         isLoaded = false
@@ -228,6 +239,11 @@ public class SamMitiVirtualObject: SCNNode {
         loadingType = .gltf(.path(gltfPath))
     }
     
+    /// Initializes SamMitiVirtual Object by glTF url and returns Virtual Object
+    ///
+    /// - Parameters:
+    ///   - gltfUrl: glTF url
+    ///   - allowedAlignments: Aligment that allows virtual objects to be placed.
     public init(gltfUrl: URL,
                 allowedAlignments: [ARPlaneAnchor.Alignment] = .all) {
         isLoaded = false
@@ -240,7 +256,7 @@ public class SamMitiVirtualObject: SCNNode {
     /// Initializes and returns Virtual Object
     ///
     /// - Parameters:
-    ///   - coder: Coder สำหรับ decode object
+    ///   - coder: Coder for decoding object
     required public init?(coder aDecoder: NSCoder) {
         isLoaded = false
         super.init(coder: aDecoder)

@@ -9,6 +9,7 @@
 import ARKit
 import GLTFSceneKit
 
+/// An Object that contains a set of SCNNodes representing different interaction functions and actual 3D content.
 public class SamMitiVirtualObject: SCNNode {
     
     public typealias VoidBlock = () -> Void

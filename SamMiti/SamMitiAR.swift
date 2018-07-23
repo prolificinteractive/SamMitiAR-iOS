@@ -69,7 +69,7 @@ final public class SamMitiARView: ARSCNView {
     /**
      The visual contents of the material property—A cube map texture that depicts the environment surrounding the scene’s contents, used for advanced lighting effects. The default value for this property is the HDR image of photo studio.
      */
-    public var lightingEnvironmentContent: Any? = "SamMitiArt.scnassets/studioHdr.hdr"
+    public var lightingEnvironmentContent: Any?
     
     /**
      A float value for Environment Intensity Multiplier. The default value for this property is 1.0.
@@ -199,6 +199,7 @@ final public class SamMitiARView: ARSCNView {
     var isAdjustOntoPlaneAnchorEnabled: Bool = true
     
     private func initSetup() {
+        lightingEnvironmentContent = Bundle(for: type(of: self)).url(forResource: "studioHdr", withExtension: "hdr", subdirectory: "SamMitiArt.scnassets")
         scene.rootNode.addChildNode(focusNode)
         samMitiDelegateObject.sceneView = self
     }

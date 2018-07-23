@@ -14,7 +14,6 @@ import GLTFSceneKit
 class ARViewController: UIViewController {
     
     let virtualObjectLoader = SamMitiVitualObjectLoader()
-
     
     @IBOutlet weak var samMitiARView: SamMitiARView!
     

@@ -14,7 +14,7 @@ For you information, the framework was made on top of ARSCNView (ARKit SceneView
 
 ## Requirement
 
-* iOS 11.0+
+* iOS 11.3+
 * Xcode 9.0+
 
 ## Installation
@@ -23,11 +23,11 @@ For you information, the framework was made on top of ARSCNView (ARKit SceneView
 SamMitiAR is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```ruby
-#for iOS 11.0 +
-pod 'SamMitiAR', '~> 0.1'
-
-#for iOS 11.3 +
+#for Xcode9 (iOS 11.3+)
 pod 'SamMitiAR', '~> 1.0'
+
+#for Xcode10 Beta
+pod 'SamMitiAR', :git => 'https://github.com/prolificinteractive/SamMitiAR-iOS.git', :branch => 'features/xcode10-compatible'
 ```
 
 ## Usage
@@ -96,21 +96,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lec
 ```swift
 func prepareToPlaceVirtualObject() {
 
-    let virtualObjectScene = SCNReferenceNode(named: "art.scnassets/stubhub_model/stadium_1223.scn")!
-    let virtualObjectNode = SamMitiVirtualObject(refferenceNode: refNode, allowedAlignments: .all)
+let virtualObjectScene = SCNReferenceNode(named: "art.scnassets/stubhub_model/stadium_1223.scn")!
+let virtualObjectNode = SamMitiVirtualObject(refferenceNode: refNode, allowedAlignments: .all)
 
-    /*
-    let virtualObjectGLTFNode = SamMitiVirtualObject(gltfUrl: URL(string: "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Embedded/Duck.gltf")!, allowedAlignments: [.horizontal])
-    */
+/*
+let virtualObjectGLTFNode = SamMitiVirtualObject(gltfUrl: URL(string: "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Embedded/Duck.gltf")!, allowedAlignments: [.horizontal])
+*/
 
-    SamMitiVitualObjectLoader().loadVirtualObject(virtualObjectNode, loadedHandler: self.handleLoad)
+SamMitiVitualObjectLoader().loadVirtualObject(virtualObjectNode, loadedHandler: self.handleLoad)
 
 }
 
 func handleLoad(virtualNode: SamMitiVirtualObject?) {
 
-    guard let virtualNode = virtualNode else { return }
-    samMitiARView.currentVirtualObject = virtualNode
+guard let virtualNode = virtualNode else { return }
+samMitiARView.currentVirtualObject = virtualNode
 
 }
 ```
@@ -120,12 +120,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lec
 ```swift
 func remove(virtualNode: SamMitiVirtualObject?) {
 
-    guard let virtualNode = virtualNode else { return }
-    samMitiARView.currentVirtualObject = virtualNode
-        
-    if samMitiARView.placedVirtualObjects.contains(virtualNode) {
-        self.virtualObjectLoader.remove(virtualNode)
-    }
+guard let virtualNode = virtualNode else { return }
+samMitiARView.currentVirtualObject = virtualNode
+
+if samMitiARView.placedVirtualObjects.contains(virtualNode) {
+self.virtualObjectLoader.remove(virtualNode)
+}
 
 }
 ```
@@ -142,8 +142,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lec
 
 ```swift
 samMitiARView.focusNode = SamMitiFocusNode(withNotFoundNamed: "art.scnassets/focus_node_not_found.scn",
-                                            estimatedNamed: "art.scnassets/focus_node_estimated.scn",
-                                            existingNamed: "art.scnassets/focus_node_existing.scn")
+estimatedNamed: "art.scnassets/focus_node_estimated.scn",
+existingNamed: "art.scnassets/focus_node_existing.scn")
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. Aenean eleifend euismod dolor, id tempus eros iaculis et. Aenean efficitur mi id nulla egestas mollis. Integer id tincidunt tortor. Nulla semper ornare arcu ullamcorper tincidunt. Aliquam vel accumsan nisl, nec vulputate urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer libero metus, cursus quis purus nec, viverra tempor turpis. Quisque malesuada quam quis arcu cursus, pretium viverra sapien facilisis.
@@ -154,17 +154,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lec
 
 ```swift
 func trackingStateReasonChanged(to trackingStateReason: ARCamera.TrackingState.Reason?) {
-    guard let trackingStateReason = trackingStateReason else { return }
-    switch trackingStateReason {
-    case ARCamera.TrackingState.Reason.excessiveMotion:
-        messageLabelDisplay("Please move your phone slower")
-    case ARCamera.TrackingState.Reason.initializing:
-        messageLabelDisplay("Initializing AR Experience")
-    case ARCamera.TrackingState.Reason.insufficientFeatures:
-        messageLabelDisplay("Seems like there isn't enough light")
-    case ARCamera.TrackingState.Reason.relocalizing:
-        messageLabelDisplay("Relocalizing AR Experience")
-    }
+guard let trackingStateReason = trackingStateReason else { return }
+switch trackingStateReason {
+case ARCamera.TrackingState.Reason.excessiveMotion:
+messageLabelDisplay("Please move your phone slower")
+case ARCamera.TrackingState.Reason.initializing:
+messageLabelDisplay("Initializing AR Experience")
+case ARCamera.TrackingState.Reason.insufficientFeatures:
+messageLabelDisplay("Seems like there isn't enough light")
+case ARCamera.TrackingState.Reason.relocalizing:
+messageLabelDisplay("Relocalizing AR Experience")
+}
 }
 ```
 
@@ -172,10 +172,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lec
 
 ```swift
 func samMitiViewWillPlace(_ virtualObject: SamMitiVirtualObject, at transform: SCNMatrix4) {
-    guard let virtualObjectName = virtualObject.name else { return }
-    messageLabelDisplay("SamMiti will place \(virtualObjectName)")
-    let generator = UIImpactFeedbackGenerator(style: .heavy)
-    generator.impactOccurred()
+guard let virtualObjectName = virtualObject.name else { return }
+messageLabelDisplay("SamMiti will place \(virtualObjectName)")
+let generator = UIImpactFeedbackGenerator(style: .heavy)
+generator.impactOccurred()
 }
 ```
 

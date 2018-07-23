@@ -137,14 +137,14 @@ public protocol SamMitiARDelegate: class {
     /// - Parameters:
     ///   - virtualObject: An Object that contains a set of SCNNodes representing different interaction functions and actual 3D content.
     ///   - didSnappedToPoint: A float value that represent the current scale of virtual object.
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScale snappedScale: Float)
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnapToScalingFactor scalingFactor: Float)
     
     /// Take an event when virtual object zoomed to the defined maximum or minimum bound.
     ///
     /// - Parameters:
     ///   - virtualObject: An Object that contains a set of SCNNodes representing different interaction functions and actual 3D content.
     ///   - didScaleToBound: A float value that represent the current scale of virtual object.
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound boundScale: Float)
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound scalingFactor: Float)
 }
 
 //// Optional Protocol
@@ -192,9 +192,9 @@ public extension SamMitiARDelegate {
     
     func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?) {}
     
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScale: Float) {}
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnapToScalingFactor scalingFactor: Float) {}
     
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float) {}
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound scalingFactor: Float) {}
     
 }
 

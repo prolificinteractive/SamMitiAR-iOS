@@ -43,7 +43,7 @@ public class SamMitiVirtualObject: SCNNode {
     
     // Snap Zoom
     /// points (1 is default scale), [] = disable
-    public var snapScalingPoints: [Float] = [1.0]
+    public var snapScalingFactors: [Float] = [1.0]
     
     /// snap threshold:
     /// where [ 0 > threshold > 1 ]
@@ -97,15 +97,15 @@ public class SamMitiVirtualObject: SCNNode {
             }
             
             // find possible snap point
-            let snapPoint = snapScalingPoints.first {
+            let snapScalingFactor = snapScalingFactors.first {
                 let begin = $0 * (1 - self.snapScalingThreshold)
                 let end = $0 * (1 + self.snapScalingThreshold)
                 return (begin...end).contains(scale)
             }
-            if let snapPoint = snapPoint, scale != snapPoint {
-                if _virtualScale != snapPoint {
-                    samMitiARDelegate?.samMitiVirtualObject(self, didSnappedToScale: snapPoint)
-                    _virtualScale = snapPoint
+            if let currentSnapScalingFactor = snapScalingFactor, scale != currentSnapScalingFactor {
+                if _virtualScale != currentSnapScalingFactor {
+                    samMitiARDelegate?.samMitiVirtualObject(self, didSnapToScalingFactor: currentSnapScalingFactor)
+                    _virtualScale = currentSnapScalingFactor
                 }
             }else{
                 _virtualScale = scale

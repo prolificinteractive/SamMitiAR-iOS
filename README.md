@@ -1,3 +1,8 @@
+<img src="/images/hero.png"/>
+
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SamMitiAR.svg?style=flat)](https://img.shields.io/cocoapods/v/SamMitiAR.svg)
+[![Platform](https://img.shields.io/cocoapods/p/SamMitiAR.svg?style=flat-square)](http://cocoadocs.org/docsets/SamMitiAR)
+
 # SamMiti AR on iOS
 
 Ready-and-easy-to-use ARKit framework for the best user experience.
@@ -5,6 +10,43 @@ Ready-and-easy-to-use ARKit framework for the best user experience.
 ## Overview
 
 Augmented Reality in iOS has been a very big topic since Apple announced ARKit in WWDC 2017. The API has widely used to leverage 3D immersive user experience; however, in order to implement a good ARKit experience, there are a lot of small components to consider, and it takes a lot of time and effort. SamMiti-AR on iOS is an ARKit framework that has been made based on most of the basic user experiences aligning to Apple human interface guidelines and common functions ready for engineers to use.
+
+## Notable Features
+
+### Placing Multiple Virtual Objects
+
+<img src="/images/screenshot_multiple_place.gif" alt="Placing Multiple Virtual Objects" width="480px" />
+
+The framework comes with the multiple-virtual-object handler that is ready to use with the SamMiti AR placing  feature right away.
+
+### Quick Drop, Preview in AR with No Effort
+
+<img src="/images/screenshot_quick_drop.gif" alt="Quick Drop, Preview in AR with No Effort" width="480px" />
+
+Influenced by AR Quick Look feature in iOS 12, with this feature, the virtual object can be placed without tapping anything on screen. When previewing one virtual object in AR, this would be the ideal way that most minimize all steps into one.
+
+### Interaction with Fluidity
+
+<img src="/images/screenshot_reposition.gif" alt="Interaction with Fluidity" width="480px" />
+
+No more jumpy effect when virtual objects dragged. There is a smooth transition for all interactions even if the object gets dragged from the table to the floor.
+
+### Interaction with Snapy Zoom
+
+### All-in-one Virtual Objects Manipulating Interaction 
+
+### Customizable AR Focus Point
+
+### Debug Mode, Really Know What’s Going on
+
+<img src="/images/screenshot_debug_mode.gif" alt="Debug Mode, Really Know What’s Going on" width="480px" />
+
+### Support All Open 3D Content Formats (glTF-ready)
+
+### ARKit2-ready
+
+### And A Lot More to Play with
+
 
 ## Description
 
@@ -29,6 +71,8 @@ pod 'SamMitiAR', '~> 1.0'
 #for Xcode10 Beta
 pod 'SamMitiAR', :git => 'https://github.com/prolificinteractive/SamMitiAR-iOS.git', :branch => 'features/xcode10-compatible'
 ```
+
+## Example Projects
 
 ## Usage
 
@@ -87,99 +131,99 @@ Besides the `setup()` function, `session.pause()` still needs to be called when 
 sceneView.session.pause()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus.
+Work in Progress
 
 ### Placing and Removing Virtual Objects
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 ```swift
 func prepareToPlaceVirtualObject() {
 
-    let virtualObjectScene = SCNReferenceNode(named: "art.scnassets/stubhub_model/stadium_1223.scn")!
-    let virtualObjectNode = SamMitiVirtualObject(refferenceNode: refNode, allowedAlignments: .all)
+let virtualObjectScene = SCNReferenceNode(named: "art.scnassets/stubhub_model/stadium_1223.scn")!
+let virtualObjectNode = SamMitiVirtualObject(refferenceNode: refNode, allowedAlignments: .all)
 
-    /*
-    let virtualObjectGLTFNode = SamMitiVirtualObject(gltfUrl: URL(string: "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Embedded/Duck.gltf")!, allowedAlignments: [.horizontal])
-    */
+/*
+let virtualObjectGLTFNode = SamMitiVirtualObject(gltfUrl: URL(string: "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Embedded/Duck.gltf")!, allowedAlignments: [.horizontal])
+*/
 
-    SamMitiVitualObjectLoader().loadVirtualObject(virtualObjectNode, loadedHandler: self.handleLoad)
+SamMitiVitualObjectLoader().loadVirtualObject(virtualObjectNode, loadedHandler: self.handleLoad)
 
 }
 
 func handleLoad(virtualNode: SamMitiVirtualObject?) {
 
-    guard let virtualNode = virtualNode else { return }
-    samMitiARView.currentVirtualObject = virtualNode
+guard let virtualNode = virtualNode else { return }
+samMitiARView.currentVirtualObject = virtualNode
 
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 ```swift
 func remove(virtualNode: SamMitiVirtualObject?) {
 
-    guard let virtualNode = virtualNode else { return }
-    samMitiARView.currentVirtualObject = virtualNode
-        
-    if samMitiARView.placedVirtualObjects.contains(virtualNode) {
-        self.virtualObjectLoader.remove(virtualNode)
-    }
+guard let virtualNode = virtualNode else { return }
+samMitiARView.currentVirtualObject = virtualNode
+
+if samMitiARView.placedVirtualObjects.contains(virtualNode) {
+self.virtualObjectLoader.remove(virtualNode)
+}
 
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. Aenean eleifend euismod dolor, id tempus eros iaculis et. Aenean efficitur mi id nulla egestas mollis. Integer id tincidunt tortor. Nulla semper ornare arcu ullamcorper tincidunt. Aliquam vel accumsan nisl, nec vulputate urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer libero metus, cursus quis purus nec, viverra tempor turpis. Quisque malesuada quam quis arcu cursus, pretium viverra sapien facilisis.
+Work in Progress
 
 ### Customize Focus Node
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 <Image explain how focus node works>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 ```swift
 samMitiARView.focusNode = SamMitiFocusNode(withNotFoundNamed: "art.scnassets/focus_node_not_found.scn",
-                                            estimatedNamed: "art.scnassets/focus_node_estimated.scn",
-                                            existingNamed: "art.scnassets/focus_node_existing.scn")
+estimatedNamed: "art.scnassets/focus_node_estimated.scn",
+existingNamed: "art.scnassets/focus_node_existing.scn")
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. Aenean eleifend euismod dolor, id tempus eros iaculis et. Aenean efficitur mi id nulla egestas mollis. Integer id tincidunt tortor. Nulla semper ornare arcu ullamcorper tincidunt. Aliquam vel accumsan nisl, nec vulputate urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer libero metus, cursus quis purus nec, viverra tempor turpis. Quisque malesuada quam quis arcu cursus, pretium viverra sapien facilisis.
+Work in Progress
 
 ### Leverage SamMiti-AR Callbacks
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 ```swift
 func trackingStateReasonChanged(to trackingStateReason: ARCamera.TrackingState.Reason?) {
-    guard let trackingStateReason = trackingStateReason else { return }
-    switch trackingStateReason {
-    case ARCamera.TrackingState.Reason.excessiveMotion:
-        messageLabelDisplay("Please move your phone slower")
-    case ARCamera.TrackingState.Reason.initializing:
-        messageLabelDisplay("Initializing AR Experience")
-    case ARCamera.TrackingState.Reason.insufficientFeatures:
-        messageLabelDisplay("Seems like there isn't enough light")
-    case ARCamera.TrackingState.Reason.relocalizing:
-        messageLabelDisplay("Relocalizing AR Experience")
-    }
+guard let trackingStateReason = trackingStateReason else { return }
+switch trackingStateReason {
+case ARCamera.TrackingState.Reason.excessiveMotion:
+messageLabelDisplay("Please move your phone slower")
+case ARCamera.TrackingState.Reason.initializing:
+messageLabelDisplay("Initializing AR Experience")
+case ARCamera.TrackingState.Reason.insufficientFeatures:
+messageLabelDisplay("Seems like there isn't enough light")
+case ARCamera.TrackingState.Reason.relocalizing:
+messageLabelDisplay("Relocalizing AR Experience")
+}
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 ```swift
 func samMitiViewWillPlace(_ virtualObject: SamMitiVirtualObject, at transform: SCNMatrix4) {
-    guard let virtualObjectName = virtualObject.name else { return }
-    messageLabelDisplay("SamMiti will place \(virtualObjectName)")
-    let generator = UIImpactFeedbackGenerator(style: .heavy)
-    generator.impactOccurred()
+guard let virtualObjectName = virtualObject.name else { return }
+messageLabelDisplay("SamMiti will place \(virtualObjectName)")
+let generator = UIImpactFeedbackGenerator(style: .heavy)
+generator.impactOccurred()
 }
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis fringilla lectus. Nullam ornare erat eget ultrices rhoncus. 
+Work in Progress
 
 ## Contributing to SamMiti AR
 

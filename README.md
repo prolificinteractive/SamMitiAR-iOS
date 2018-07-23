@@ -14,7 +14,7 @@ For you information, the framework was made on top of ARSCNView (ARKit SceneView
 
 ## Requirement
 
-* iOS 11.0+
+* iOS 11.3+
 * Xcode 9.0+
 
 ## Installation
@@ -23,11 +23,11 @@ For you information, the framework was made on top of ARSCNView (ARKit SceneView
 SamMitiAR is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```ruby
-#for iOS 11.0 +
-pod 'SamMitiAR', '~> 0.1'
-
-#for iOS 11.3 +
+#for Xcode9 (iOS 11.3+)
 pod 'SamMitiAR', '~> 1.0'
+
+#for Xcode10 Beta
+pod 'SamMitiAR', :git => 'https://github.com/prolificinteractive/SamMitiAR-iOS.git', :branch => 'features/xcode10-compatible'
 ```
 
 ## Usage

@@ -86,7 +86,7 @@
 			children = (
 				9047F9F72024CFC5004541A8 /* SamMitiAR.podspec */,
 				904B7FAA2020DC5C0038B799 /* README.md */,
-				90E0185C201F82330057F15B /* SamMiti */,
+				90E0185C201F82330057F15B /* SamMitiAR */,
 				90E0182E201F71AF0057F15B /* Products */,
 				90E01847201F81330057F15B /* Frameworks */,
 				13C245CCC3F0CA92F3DBB827 /* Pods */,
@@ -110,7 +110,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		90E0185C201F82330057F15B /* SamMiti */ = {
+		90E0185C201F82330057F15B /* SamMitiAR */ = {
 			isa = PBXGroup;
 			children = (
 				903A44202040AEB700BC0157 /* GestureManager.swift */,
@@ -130,7 +130,7 @@
 				903A441E2040AEB700BC0157 /* ThresholdPanGesture.swift */,
 				903A441B2040AEB700BC0157 /* Utilities */,
 			);
-			path = SamMiti;
+			path = SamMitiAR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 90E01827201F71AF0057F15B /* Build configuration list for PBXProject "SamMiti-iOS" */;
+			buildConfigurationList = 90E01827201F71AF0057F15B /* Build configuration list for PBXProject "SamMitiAR-iOS" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -429,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90E01827201F71AF0057F15B /* Build configuration list for PBXProject "SamMiti-iOS" */ = {
+		90E01827201F71AF0057F15B /* Build configuration list for PBXProject "SamMitiAR-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90E01833201F71B00057F15B /* Debug */,

@@ -66,6 +66,7 @@ class ARViewController: UIViewController {
         samMitiARView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         samMitiARView.isLightingIntensityAutomaticallyUpdated = true
         samMitiARView.environmentTexturing = .automatic
+        samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
         
     }
     
@@ -299,7 +300,6 @@ class ARViewController: UIViewController {
         
         let sheetController = UIAlertController(title: "Add Virtual Object", message: nil, preferredStyle: .actionSheet)
         
-        
         sheetController.addAction(UIAlertAction(title: "Metal Teapot—Old Metal", style: .default, handler: { (action) in
             self.isLoading = true
             self.virtualObjectLoader.loadVirtualObject(.metalTeapotOldMetal , loadedHandler: { virtualObjectNode in
@@ -382,19 +382,6 @@ extension ARViewController: SamMitiARDelegate {
         generator.selectionChanged()
     }
     
-    func hitTestDistanceChanged(to distance: CGFloat?) {
-        
-    }
-    
-    func alignmentChanged(to alignment: ARPlaneAnchor.Alignment?) {
-        
-    }
-    
-    func planeDetectingConfidentLevelChanged(to confidentLevel: PlaneDetectingConfidentLevel?) {
-        
-        
-    }
-    
     // MARK: SamMiti Virtual Object Hit Test Gesture Delegate
     
     func samMitiViewWillPlace(_ virtualObject: SamMitiVirtualObject, at transform: SCNMatrix4) {
@@ -402,34 +389,26 @@ extension ARViewController: SamMitiARDelegate {
         generator.impactOccurred()
     }
     
-    func samMitiViewDidPlace(_ virtualObject: SamMitiVirtualObject) {
-        
-    }
-    
     func samMitiViewDidTap(on virtualObject: SamMitiVirtualObject?) {
         handleLoad(virtualNode: virtualObject)
-        
-    }
-    
-    func samMitiViewDidDoubleTap(on virtualObject: SamMitiVirtualObject?) {
-        
     }
     
     func samMitiViewDidLongPress(on virtualObject: SamMitiVirtualObject?) {
-        
         
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.warning)
         remove(virtualNode: virtualObject)
     }
     
-    
-    func samMitiViewIsPinching(virtualObject: SamMitiVirtualObject) {
-        
+    /// Example of using delegate for haptic feedback when object scaling is snapped
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
     
-    func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?) {
-        
+    /// Example of using delegate for haptic feedback when scaling to bound
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
- 
 }

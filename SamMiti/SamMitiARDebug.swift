@@ -8,10 +8,8 @@
 
 import ARKit
 
-// DebugOptions
-//
-// เป็น Option เพื่อเลือกแสดงค่าภายในที่เกิดขึ้นขณะอยู่ใน session ของ AR
 
+/// SamMitiDebugOptions are option sets showing concurrent values or visualization genereated by AR session.
 public struct SamMitiDebugOptions: OptionSet {
 
     public let rawValue: Int
@@ -21,11 +19,12 @@ public struct SamMitiDebugOptions: OptionSet {
     }
     
     /// ค่าความ confident ของพื้นผิวที่ focus node ชี้อยู่
-    public static let showStateStatus        = SamMitiDebugOptions(rawValue: 1 << 0)
+    public static let showStateStatus          = SamMitiDebugOptions(rawValue: 1 << 0)
     
     /// แสดง anchor ของพื้นผิว
-    public static let showAnchorPlane           = SamMitiDebugOptions(rawValue: 1 << 1)
+    public static let showAnchorPlane          = SamMitiDebugOptions(rawValue: 1 << 1)
 
+    /// <#Description#>
     public static let all: SamMitiDebugOptions = [.showStateStatus, .showAnchorPlane]
 }
 

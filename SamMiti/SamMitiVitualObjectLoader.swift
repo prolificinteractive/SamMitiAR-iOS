@@ -39,6 +39,7 @@ public class SamMitiVitualObjectLoader: NSObject {
 
     // MARK: - Removing Objects
 
+    /// Remove all members of virtualObjects that have been initilized with this object.
     public func removeAllVirtualObjects() {
         // Reverse the indices so we don't trample over indices as objects are removed.
         for index in objects.indices.reversed() {
@@ -46,7 +47,9 @@ public class SamMitiVitualObjectLoader: NSObject {
         }
     }
 
-    // remove virtualObject at index
+    /// Remove virtualObject at index
+    ///
+    /// - Parameter index: Integer value of the virtualObject index that expected to be removed.
     public func removeVirtualObject(at index: Int) {
         guard objects.indices.contains(index) else { return }
 
@@ -54,7 +57,9 @@ public class SamMitiVitualObjectLoader: NSObject {
         objects.remove(at: index)
     }
 
-    // remove virtualObject (if exist)
+    /// Remove virtualObject (if exist)
+    ///
+    /// - Parameter object: SamMitiVirtualObject Object that expected to be removed.
     public func remove(_ object: SamMitiVirtualObject) {
         guard objects.contains(object) else { return }
         object.removeFromParentNode()

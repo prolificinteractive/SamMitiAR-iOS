@@ -21,6 +21,7 @@ class ARViewController: UIViewController {
     @IBOutlet weak var optionButton: UIView!
     
     @IBOutlet weak var addButton: UIView!
+    
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var messageContainerView: UIView!
@@ -33,11 +34,21 @@ class ARViewController: UIViewController {
     
     var debugOptions: SamMitiDebugOptions = []
     
+    //TODO: Xcode9
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            isMenuShowing = !isMenuShowing
+        }
+    }
+    
+    //TODO: Xcode10
+    /*
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             isMenuShowing = !isMenuShowing
         }
     }
+ */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +65,8 @@ class ARViewController: UIViewController {
         samMitiARView.isAutoFocusEnabled = false
         samMitiARView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         samMitiARView.isLightingIntensityAutomaticallyUpdated = true
-        samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
         samMitiARView.environmentTexturing = .automatic
-        
-        samMitiARView.focusNode = SamMitiFocusNode(withNotFoundNamed: "art.scnassets/focus-node/defaultFocusNotFound.scn",
-                                                   estimatedNamed: "art.scnassets/focus-node/defaultFocusEstimated.scn",
-                                                   existingNamed: "art.scnassets/focus-node/defaultFocusExisting.scn")
+        samMitiARView.lightingEnvironmentContent = "art.scnassets/hdr-room.jpg"
         
     }
     
@@ -87,7 +94,7 @@ class ARViewController: UIViewController {
     // Prevent implicit transition animation of SamMitiView.
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         self.samMitiARView.alpha = 0
-        self.samMitiARView.performTransitionWithOutAnimation(to: size, parentViewCenterPoint: view.center)
+        self.samMitiARView.performViewTransitionWithOutAnimation(to: size, parentViewCenterPoint: view.center)
         
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [unowned self] _ in
@@ -116,28 +123,6 @@ class ARViewController: UIViewController {
         
         
     }
-    
-    /*
-     @IBAction func optionShowDebugStatusButtonDidTouch(_ sender: UISwitch) {
-     if sender.isOn {
-     debugOptions.insert(.showStateStatus)
-     } else {
-     if debugOptions.contains(.showStateStatus) {
-     debugOptions.remove(.showStateStatus)
-     }
-     }
-     }
-     
-     @IBAction func optionShowAnchorPlanesButtonDidTouch(_ sender: UISwitch) {
-     if sender.isOn {
-     debugOptions.insert(.showAnchorPlane)
-     } else {
-     if debugOptions.contains(.showAnchorPlane) {
-     debugOptions.remove(.showAnchorPlane)
-     }
-     }
-     }
-     */
     
     @IBAction func optionButtonDidTouch(_ sender: UIButton) {
 
@@ -192,9 +177,17 @@ class ARViewController: UIViewController {
     
     var isStatusBarHidden = false
     
+    //TODO: Xcode9
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
+        return isHomeindicatorHidden
+    }
+    
+    // TODO: Xcode10
+    /*
     override var prefersHomeIndicatorAutoHidden: Bool {
         return isHomeindicatorHidden
     }
+     */
     
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden
@@ -307,7 +300,6 @@ class ARViewController: UIViewController {
         
         let sheetController = UIAlertController(title: "Add Virtual Object", message: nil, preferredStyle: .actionSheet)
         
-        
         sheetController.addAction(UIAlertAction(title: "Metal Teapot—Old Metal", style: .default, handler: { (action) in
             self.isLoading = true
             self.virtualObjectLoader.loadVirtualObject(.metalTeapotOldMetal , loadedHandler: { virtualObjectNode in
@@ -328,53 +320,6 @@ class ARViewController: UIViewController {
                 self.handleLoad(virtualNode: virtualObjectNode)
             })
         }))
-        
-        
-        
-        
-        
-        
-        
-        
-//        sheetController.addAction(UIAlertAction(title: "Profile Pic", style: .default, handler: { (action) in
-//            self.virtualObjectLoader.loadVirtualObject(.plane, loadedHandler: self.handleLoad)
-//        }))
-//
-//
-//
-//        sheetController.addAction(UIAlertAction(title: "Helmet — SCN", style: .default, handler: { (action) in
-//            self.isLoading = true
-//            self.virtualObjectLoader.loadVirtualObject(.helmetScn, loadedHandler: { virtualObjectNode in
-//                let scaleTransfrom = SCNMatrix4MakeScale(0.2, 0.2, 0.2)
-//                virtualObjectNode.contentNode?.transform = scaleTransfrom
-//                virtualObjectNode.contentNode?.pivot = SCNMatrix4MakeTranslation(0, virtualObjectNode.contentNode?.boundingBox.min.y ?? 0, 0)
-//                self.handleLoad(virtualNode: virtualObjectNode)
-//            })
-//        }))
-//
-//        sheetController.addAction(UIAlertAction(title: "York St. Station", style: .default, handler: { (action) in
-//            self.isLoading = true
-//            self.virtualObjectLoader.loadVirtualObject(.yorkStreetStation, loadedHandler: { virtualObjectNode in
-//                self.handleLoad(virtualNode: virtualObjectNode)
-//            })
-//        }))
-//
-//        sheetController.addAction(UIAlertAction(title: "Hamburger — Eat It!", style: .default, handler: { (action) in
-//            self.isLoading = true
-//            self.virtualObjectLoader.loadVirtualObject(.hamburger, loadedHandler: { virtualObjectNode in
-//                self.handleLoad(virtualNode: virtualObjectNode)
-//            })
-//        }))
-//
-//        sheetController.addAction(UIAlertAction(title: "Teapot", style: .default, handler: { (action) in
-//            self.isLoading = true
-//            self.virtualObjectLoader.loadVirtualObject(.teapot, loadedHandler: { virtualObjectNode in
-//                virtualObjectNode.contentNode?.scale = SCNVector3(0.01, 0.01, 0.01)
-//                self.handleLoad(virtualNode: virtualObjectNode)
-//            })
-//        }))
-        
-        
         
         sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheetController.popoverPresentationController?.sourceView = sender
@@ -401,15 +346,13 @@ class ARViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
 extension ARViewController: SamMitiARDelegate {
     
     // MARK: SamMiti Status Delegate
     
-    func trackingStateChanged(to trackingState: SamMitiTrackingState) {
+    func trackingStateChanged(to trackingState: ARCamera.TrackingState) {
         switch trackingState {
         case .normal:
             messageLabelDisplay("Tracking: Normal")
@@ -439,120 +382,33 @@ extension ARViewController: SamMitiARDelegate {
         generator.selectionChanged()
     }
     
-    func hitTestDistanceChanged(to distance: CGFloat?) {
-        
-    }
-    
-    func alignmentChanged(to alignment: ARPlaneAnchor.Alignment?) {
-        
-    }
-    
-    func planeDetectingConfidentLevelChanged(to confidentLevel: PlaneDetectingConfidentLevel?) {
-        
-        
-    }
-    
     // MARK: SamMiti Virtual Object Hit Test Gesture Delegate
     
     func samMitiViewWillPlace(_ virtualObject: SamMitiVirtualObject, at transform: SCNMatrix4) {
-//        guard let virtualObjectName = virtualObject.name else { return }
-//        messageLabelDisplay("SamMiti will place \(virtualObjectName)")
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
     }
     
-    func samMitiViewDidPlace(_ virtualObject: SamMitiVirtualObject) {
-//        guard let virtualObjectName = virtualObject.name else { return }
-//        messageLabelDisplay("SamMiti placed \(virtualObjectName)")
-    }
-    
     func samMitiViewDidTap(on virtualObject: SamMitiVirtualObject?) {
         handleLoad(virtualNode: virtualObject)
-        
-//        guard let virtualObjectName = virtualObject?.name else { return }
-//        messageLabelDisplay("SamMiti tapped on Virtual Object Name: \(virtualObjectName)")
-    }
-    
-    func samMitiViewDidDoubleTap(on virtualObject: SamMitiVirtualObject?) {
-//        guard let virtualObject = virtualObject else { return }
-//        if let virtualObjectName = virtualObject.name {
-//            messageLabelDisplay("SamMiti double tapped on Virtual Object Name: \(virtualObjectName)")
-//        }
-        
-        
     }
     
     func samMitiViewDidLongPress(on virtualObject: SamMitiVirtualObject?) {
-        
-        
-//        guard let virtualObjectName = virtualObject?.name else { return }
-//        messageLabelDisplay("SamMiti Long Pressed on Virtual Object Name: \(virtualObjectName)")
         
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.warning)
         remove(virtualNode: virtualObject)
     }
     
-    // MARK: SamMiti Virtual Object Manipulating Gesture Delegate
-    /*
-    func samMitiViewWillBeginTranslating(virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObjectName = virtualObject?.name else { return }
-        messageLabelDisplay("SamMiti will begin translating \(virtualObjectName)")
+    /// Example of using delegate for haptic feedback when object scaling is snapped
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScale: Float) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
     
-    func samMitiViewIsTranslating(virtualObject: SamMitiVirtualObject) {
-        guard let virtualObjectName = virtualObject.name else {
-            messageLabelDisplay("SamMiti is translating to (x: \(virtualObject.position.x), y: \(virtualObject.position.y), z: \(virtualObject.position.z))")
-            return }
-        messageLabelDisplay("SamMiti is translating \(virtualObjectName) to (x: \(virtualObject.position.x), y: \(virtualObject.position.y), z: \(virtualObject.position.z))")
+    /// Example of using delegate for haptic feedback when scaling to bound
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound: Float) {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
-    
-    func samMitiViewDidTranslate(virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObject = virtualObject else { return }
-        guard let virtualObjectName = virtualObject.name else {
-            messageLabelDisplay("SamMiti translated to (x: \(virtualObject.position.x), y: \(virtualObject.position.y), z: \(virtualObject.position.z))")
-            return }
-        messageLabelDisplay("SamMiti translated \(virtualObjectName) to (x: \(virtualObject.position.x), y: \(virtualObject.position.y), z: \(virtualObject.position.z))")
-    }
-    
-    func samMitiViewWillBeginRotating(virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObjectName = virtualObject?.name else { return }
-        messageLabelDisplay("SamMiti will begin rotating \(virtualObjectName)")
-    }
-    
-    func samMitiViewIsRotating(virtualObject: SamMitiVirtualObject) {
-        guard let virtualObjectName = virtualObject.name else {
-            messageLabelDisplay("SamMiti is rotating to \(virtualObject.virtualRotation)")
-            return }
-        messageLabelDisplay("SamMiti is rotating \(virtualObjectName) to \(virtualObject.virtualRotation)")
-    }
-    
-    func samMitiViewDidRotate(virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObjectName = virtualObject?.name else {
-            messageLabelDisplay("SamMiti rotated")
-            return }
-        messageLabelDisplay("SamMiti rotated \(virtualObjectName)")
-    }
-    
-    func samMitiViewWillBeginPinching(virtualObject: SamMitiVirtualObject?) {
-        guard let virtualObjectName = virtualObject?.name else { return }
-        messageLabelDisplay("SamMiti will begin pinching \(virtualObjectName)")
-    }
- */
-    
-    func samMitiViewIsPinching(virtualObject: SamMitiVirtualObject) {
-//        guard let virtualObjectName = virtualObject.name else {
-//            messageLabelDisplay("SamMiti is pinching to \(virtualObject.virtualScale)")
-//            return }
-//        messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
-    }
-    
-    func samMitiViewDidPinch(virtualObject: SamMitiVirtualObject?) {
-//        guard let virtualObject = virtualObject else { return }
-//        guard let virtualObjectName = virtualObject.name else {
-//            messageLabelDisplay("SamMiti is pinching to \(virtualObject.virtualScale)")
-//            return }
-//        messageLabelDisplay("SamMiti is pinching \(virtualObjectName) to \(virtualObject.virtualScale)")
-    }
- 
 }

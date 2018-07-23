@@ -8,17 +8,15 @@
 
 import ARKit
 
-// Levels of plane detecting confidence
-//
+
+/// Levels of plane detecting confidence
+///
+/// - notFound: Found no plane or surface.
+/// - estimated: Found a real-world planar surface.
+/// - existing: Found a real-world plane.
 public enum PlaneDetectingConfidentLevel: Int {
-    
-    /// found no plane
     case notFound
-    
-    /// found estimated plane
     case estimated
-    
-    /// Found existing AR Plane Anchor.
     case existing
 }
 

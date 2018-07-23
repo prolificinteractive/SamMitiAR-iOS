@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/virakri/SamMitiAR-iOS-Github/Examples/SamMiti Examples.xcodeproj">
+      location = "group:SamMiti Examples.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:SamMiti Examples.xcodeproj">
    </FileRef>
 </Workspace>

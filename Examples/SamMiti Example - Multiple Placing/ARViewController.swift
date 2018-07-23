@@ -339,7 +339,7 @@ extension ARViewController: SamMitiARDelegate {
     
     // MARK: SamMiti Status Delegate
     
-    func trackingStateChanged(to trackingState: SamMitiTrackingState) {
+    func trackingStateChanged(to trackingState: ARCamera.TrackingState) {
         switch trackingState {
         case .normal:
             messageLabelDisplay("Tracking: Normal")

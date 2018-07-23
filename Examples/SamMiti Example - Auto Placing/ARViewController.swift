@@ -9,7 +9,6 @@
 import UIKit
 import SamMitiAR
 import ARKit
-import SceneKit
 
 class ARViewController: UIViewController {
     
@@ -108,7 +107,7 @@ extension ARViewController: SamMitiARDelegate {
     }
     
     /// Example of using delegate for haptic feedback when object scaling is snapped
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float) {
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScale: Float) {
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }

@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.platform     = :ios, "11.3"
   spec.name         = 'SamMitiAR'
-  spec.version      = '1.0.0'
+  spec.version      = '1.0.1'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/prolificinteractive/SamMitiAR-iOS'
   spec.authors      = { 'Nattawut Singhchai' => 'wut@prolificinteractive.com' }

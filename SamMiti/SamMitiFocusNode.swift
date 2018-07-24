@@ -364,8 +364,7 @@ public class SamMitiFocusNode: SCNNode {
         
         focusNode = focusNotFoundTemplateNode
         
-        addChildNode(scalingNode)
-        scalingNode.addChildNode(focusNode)
+        self <- scalingNode <- focusNode
         
         for focusChildNode in focusNode.childNodes {
             let morpher = SCNMorpher()

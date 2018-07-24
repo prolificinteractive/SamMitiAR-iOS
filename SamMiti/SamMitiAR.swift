@@ -37,7 +37,7 @@ final public class SamMitiARView: ARSCNView {
             if placingMode == .quickDrop {
                 focusNode.isHidden = true
             }
-            scene.rootNode.addChildNode(focusNode)
+            scene.rootNode <- focusNode
         }
     }
     
@@ -199,7 +199,7 @@ final public class SamMitiARView: ARSCNView {
     
     private func initSetup() {
         lightingEnvironmentContent = Bundle(for: type(of: self)).url(forResource: "studioHdr", withExtension: "hdr", subdirectory: "SamMitiArt.scnassets")
-        scene.rootNode.addChildNode(focusNode)
+        scene.rootNode <- focusNode
         samMitiDelegateObject.sceneView = self
     }
     
@@ -355,7 +355,7 @@ final public class SamMitiARView: ARSCNView {
                 focusNode.willHide = false
                 if let result = self.smartHitTest(point, allowedAlignments: allowedAlignments) {
                     updateQueue.async {
-                        self.scene.rootNode.addChildNode(self.focusNode)
+                        self.scene.rootNode <- self.focusNode
                         let camera = self.session.currentFrame?.camera
                         
                         self.focusNode.state = .detecting(hitTestResult: result, camera: camera)
@@ -367,7 +367,7 @@ final public class SamMitiARView: ARSCNView {
                 } else {
                     updateQueue.async {
                         self.focusNode.state = .initializing
-                        self.pointOfView?.addChildNode(self.focusNode)
+                        self.pointOfView? <- self.focusNode
                         
                         // Update Confident Level, Alignment, and Hit Test Distance
                         self.updatePlaneDetectingValues(by: nil)
@@ -414,17 +414,15 @@ final public class SamMitiARView: ARSCNView {
         lightKeyNode.light = mainKeyLight
         lightKeyNode.position.y = 48
         let lightKeyContainNode = SCNNode()
-        lightKeyContainNode.addChildNode(lightKeyNode)
         lightKeyContainNode.eulerAngles = SCNVector3(-57.996 / 180 * .pi, -7.37 / 180 * .pi, 17.772 / 180 * .pi)
-        scene.rootNode.addChildNode(lightKeyContainNode)
+        scene.rootNode <- lightKeyContainNode <- lightKeyNode
         
         let lightFillNode = SCNNode()
         lightFillNode.light = mainFillLight
         lightFillNode.position.y = 48
         let lightFillNodeContainNode = SCNNode()
-        lightFillNodeContainNode.addChildNode(lightFillNode)
         lightFillNodeContainNode.eulerAngles = SCNVector3(-117.883 / 180 * .pi, 6.597 / 180 * .pi, -11.664 / 180 * .pi)
-        scene.rootNode.addChildNode(lightFillNodeContainNode)
+        scene.rootNode <- lightFillNodeContainNode <- lightFillNode
     }
     
     // MARK: - Positioning and Hittest
@@ -849,7 +847,7 @@ final public class SamMitiARView: ARSCNView {
                 
                 currentVirtualObject.eulerAngles = SCNVector3Make(.pi / 32, 0, 0)
                 currentVirtualObject.opacity = initialPreviewObjectOpacity
-                pointOfView?.addChildNode(currentVirtualObject)
+                pointOfView? <- currentVirtualObject
                 
                 // Override hitTestPlacingPoint by the position of the preview virtual object
                 hitTestPlacingPoint = CGPoint(x: CGFloat(projectPoint(currentVirtualObject.worldPosition).x) / bounds.width,

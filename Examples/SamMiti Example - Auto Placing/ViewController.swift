@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sceneView: SCNView!
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,12 +20,11 @@ class ViewController: UIViewController {
         // create a new scene
         let scene = SCNScene()
         
-//        let modelNode = SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")!
+        // let modelNode = SCNReferenceNode(named: "art.scnassets/damaged-helmet-scn/DamagedHelmet.scn")!
         
         // TODO: Use SCNReferenceNode instead.
-        let helmetScene = SCNScene(named: "art.scnassets/metal-teapot/metal-teapot.scn")!
-        
-        let modelNode = helmetScene.rootNode.childNode(withName: "main", recursively: false)!
+        let teapotScene = SCNScene(named: "art.scnassets/metal-teapot/metal-teapot.scn")!
+        let modelNode = teapotScene.rootNode.childNode(withName: "main", recursively: false)!
         
         scene.rootNode.addChildNode(modelNode)
         

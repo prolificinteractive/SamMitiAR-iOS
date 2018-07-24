@@ -53,11 +53,10 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        sceneView.placingMode = .automatic
+        sceneView.placingMode = .quickDrop
         
         sceneView.samMitiARDelegate = self
         sceneView.isAutoFocusEnabled = false
-//        sceneView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
         sceneView.isLightingIntensityAutomaticallyUpdated = true
         
         if #available(iOS 12.0, *) {
@@ -109,7 +108,7 @@ extension ARViewController: SamMitiARDelegate {
     }
     
     /// Example of using delegate for haptic feedback when object scaling is snapped
-    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToPoint: Float) {
+    func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnappedToScalingFactor: Float) {
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }

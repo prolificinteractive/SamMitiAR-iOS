@@ -10,15 +10,23 @@ import SceneKit
 import GLTFSceneKit
 import ARKit
 
+class SamMitiFocusNodeHelper {
+    func focusNodeURLFor(name: String) -> URL? {
+        return Bundle(for: type(of: self))
+            .url(forResource: name, withExtension: "scn", subdirectory: "SamMitiArt.scnassets")
+    }
+}
+
+/// An SCNNode that vistualizes the hittest result on the surface. In order to customize this FocusNode, different method of `init(withNotFound_: String, estimated_: String, existing_: String)` can be called.
 public class SamMitiFocusNode: SCNNode {
 
     private struct Constant {
 
         struct defaultFocusNodePaths {
-            private static let artScnAssetsName = "SamMitiArt.scnassets"
-            static let notFoundPath = defaultFocusNodePaths.artScnAssetsName + "/defaultFocusNotFound.scn"
-            static let estimatedPath = defaultFocusNodePaths.artScnAssetsName + "/defaultFocusEstimated.scn"
-            static let existingPath = defaultFocusNodePaths.artScnAssetsName + "/defaultFocusExisting.scn"
+            static let artScnAssetsName = "SamMitiArt.scnassets"
+            static let notFoundPath = SamMitiFocusNodeHelper().focusNodeURLFor(name: "defaultFocusNotFound")
+            static let estimatedPath = SamMitiFocusNodeHelper().focusNodeURLFor(name: "defaultFocusEstimated")
+            static var existingPath = SamMitiFocusNodeHelper().focusNodeURLFor(name: "defaultFocusExisting")
         }
 
         struct key {
@@ -39,7 +47,11 @@ public class SamMitiFocusNode: SCNNode {
         case detecting(hitTestResult: ARHitTestResult, camera: ARCamera?)
     }
 
-    // ชื่อเฉพาะสำหรับอธิบายลักษณะการแสดงของ Focus Node
+    /// Specific names of appearances of Focus Node
+    ///
+    /// - complete: Using for focus node that represent state *confident*.
+    /// - partial: Using for focus node that represent state *estimated*.
+    /// - none: Using for focus node that represent state *notFound* or state has not been assigned.
     enum StatusAppearance {
         case complete
         case partial
@@ -60,8 +72,10 @@ public class SamMitiFocusNode: SCNNode {
 
             switch state {
             case .initializing:
-                //TODO: สร้างฟังก์ชั่นให้เปิดหรือปิด Billboard ของ FocusNode ได้
-//                displayAsBillboard()
+                
+                if isUsingBillboard {
+                    displayAsBillboard()
+                }
                 break
 
             case let .detecting(hitTestResult, camera):
@@ -122,7 +136,11 @@ public class SamMitiFocusNode: SCNNode {
 
     /// The template node for Existing confident level
     private var focusExistingTemplateNode: SCNNode!
+    
+    /// A boolean value determining whether or not focus node displays as billboard when hittest returns *.notFound*. The default value is `false`.
+    public var isUsingBillboard: Bool = false
 
+    /// A current plane detection confident level. This value can be `nil`.
     public var currentPlaneDetectingConfidentLevel: PlaneDetectingConfidentLevel? = nil {
         didSet {
             if currentPlaneDetectingConfidentLevel != oldValue {
@@ -140,11 +158,13 @@ public class SamMitiFocusNode: SCNNode {
         setup()
     }
 
-    /// Initializes and returns an Focus Node with given parameters.
+
+    /// Initializes using scene file names and returns an Focus Node with given parameters.
     ///
-    /// notFound: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = notFound
-    /// estimated: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = estimated
-    /// existing: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = existing
+    /// - Parameters:
+    ///   - notFoundNamed: The name of a scene file in the app bundle’s resources directory that will be used when state changed to *notFound*.
+    ///   - estimatedNamed: The name of a scene file in the app bundle’s resources directory that will be used when state changed to *estimated*.
+    ///   - existingNamed: The name of a scene file in the app bundle’s resources directory that will be used when state changed to *existing*.
     public init(withNotFoundNamed notFoundNamed: String,
                 estimatedNamed: String,
                 existingNamed: String) {
@@ -152,22 +172,25 @@ public class SamMitiFocusNode: SCNNode {
         setup(withNotFoundNamed: notFoundNamed, estimatedNamed: estimatedNamed, existingNamed: existingNamed)
     }
     
-    /// Initializes and returns an Focus Node with given parameters.
+    /// Initializes using paths and returns an Focus Node with given parameters.
     ///
-    /// notFound: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = notFound
-    /// estimated: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = estimated
-    /// existing: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = existing
+    /// - Parameters:
+    ///   - notFoundPath: The path of the model that will be used when state changed to *notFound*.
+    ///   - estimatedPath: The path of the model that will be used when state changed to *estimated*.
+    ///   - existingPath: The path of the model that will be used when state changed to *existing*.
     public init(fromNotFoundPath notFoundPath: String,
                 estimatedPath: String,
                 existingPath: String) {
         super.init()
         setup(fromNotFoundPath: notFoundPath, estimatedPath: estimatedPath, existingPath: existingPath)
     }
-    /// Initializes and returns an Focus Node with given parameters.
+
+    /// Initializes using glTF file names and returns an Focus Node with given parameters.
     ///
-    /// notFound: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = notFound
-    /// estimated: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = estimated
-    /// existing: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = existing
+    /// - Parameters:
+    ///   - notFoundGLTFNamed: The glTF file name of the model in the app bundle’s resources directory that will be used when state changed to *notFound*.
+    ///   - estimatedGLTFNamed: The glTF file name of the model in the app bundle’s resources directory that will be used when state changed to *estimated*.
+    ///   - existingGLTFNamed: The glTF file name of the model in the app bundle’s resources directory that will be used when state changed to *existing*.
     public init(withNotFoundGLTFNamed notFoundGLTFNamed: String,
                 estimatedGLTFNamed: String,
                 existingGLTFNamed: String) {
@@ -175,11 +198,12 @@ public class SamMitiFocusNode: SCNNode {
         setup(withNotFoundGLTFNamed: notFoundGLTFNamed, estimatedGLTFNamed: estimatedGLTFNamed, existingGLTFNamed: existingGLTFNamed)
     }
     
-    /// Initializes and returns an Focus Node with given parameters.
+    /// Initializes using glTF paths and returns an Focus Node with given parameters.
     ///
-    /// notFound: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = notFound
-    /// estimated: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = estimated
-    /// existing: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = existing
+    /// - Parameters:
+    ///   - notFoundGLTFPath: The glTF path of the model that will be used when state changed to *notFound*.
+    ///   - estimatedGLTFPath: The glTF path of the model that will be used when state changed to *estimated*.
+    ///   - existingGLTFPath: The glTF path of the model that will be used when state changed to *existing*.
     public init(fromNotFoundGLTFPath notFoundGLTFPath: String,
                 estimatedGLTFPath: String,
                 existingGLTFPath: String) {
@@ -187,11 +211,12 @@ public class SamMitiFocusNode: SCNNode {
         setup(fromNotFoundGLTFPath: notFoundGLTFPath, estimatedGLTFPath: estimatedGLTFPath, existingGLTFPath: existingGLTFPath)
     }
     
-    /// Initializes and returns an Focus Node with given parameters.
+    /// Initializes using glTF URLs and returns an Focus Node with given parameters.
     ///
-    /// notFound: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = notFound
-    /// estimated: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = estimated
-    /// existing: ชื่อของ *.scn file ใน main bundle ที่จะนำมาแสดงตอน state = existing
+    /// - Parameters:
+    ///   - notFoundGLTFUrl: The glTF URL of the model that will be used when state changed to *notFound*.
+    ///   - estimatedGLTFUrl: The glTF URL of the model that will be used when state changed to *estimated*.
+    ///   - existingGLTFUrl: The glTF URL of the model that will be used when state changed to *existing*.
     public init(fromNotFoundGLTFUrl notFoundGLTFUrl: URL,
                 estimatedGLTFUrl: URL,
                 existingGLTFUrl: URL) {
@@ -208,6 +233,13 @@ public class SamMitiFocusNode: SCNNode {
         // escaping for default template node
         guard let name = name else { return nil }
         let node = SCNReferenceNode(named: name)
+        node?.load()
+        return node
+    }
+    
+    private func node(fromURL url: URL?) -> SCNNode? {
+        guard let url = url else { return nil }
+        let node = SCNReferenceNode(url: url)
         node?.load()
         return node
     }
@@ -319,21 +351,20 @@ public class SamMitiFocusNode: SCNNode {
         
         if validateFocusNodeLoading(withNotFoundNode: notFoundNode, estimatedNode: estimatedNode, existingNode: existingNode) {
             /// Getting all template node from external files
-            focusNotFoundTemplateNode = notFoundNode ?? node(fromPath: Constant.defaultFocusNodePaths.notFoundPath)
-            focusEstimatedTemplateNode = estimatedNode ?? node(fromPath: Constant.defaultFocusNodePaths.estimatedPath)
-            focusExistingTemplateNode = existingNode ?? node(fromPath: Constant.defaultFocusNodePaths.existingPath)
+            focusNotFoundTemplateNode = notFoundNode ?? node(fromURL: Constant.defaultFocusNodePaths.notFoundPath)
+            focusEstimatedTemplateNode = estimatedNode ?? node(fromURL: Constant.defaultFocusNodePaths.estimatedPath)
+            focusExistingTemplateNode = existingNode ?? node(fromURL: Constant.defaultFocusNodePaths.existingPath)
             
         } else {
             /// Getting all template node from external files
-            focusNotFoundTemplateNode = node(fromPath: Constant.defaultFocusNodePaths.notFoundPath)
-            focusEstimatedTemplateNode = node(fromPath: Constant.defaultFocusNodePaths.estimatedPath)
-            focusExistingTemplateNode = node(fromPath: Constant.defaultFocusNodePaths.existingPath)
+            focusNotFoundTemplateNode = node(fromURL: Constant.defaultFocusNodePaths.notFoundPath)
+            focusEstimatedTemplateNode = node(fromURL: Constant.defaultFocusNodePaths.estimatedPath)
+            focusExistingTemplateNode = node(fromURL: Constant.defaultFocusNodePaths.existingPath)
         }
         
         focusNode = focusNotFoundTemplateNode
         
-        addChildNode(scalingNode)
-        scalingNode.addChildNode(focusNode)
+        self <- scalingNode <- focusNode
         
         for focusChildNode in focusNode.childNodes {
             let morpher = SCNMorpher()

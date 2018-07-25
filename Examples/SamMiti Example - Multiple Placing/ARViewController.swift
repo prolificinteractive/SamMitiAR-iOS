@@ -145,7 +145,7 @@ class ARViewController: UIViewController {
         
         sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheetController.popoverPresentationController?.sourceView = sender
-        sheetController.popoverPresentationController?.sourceRect = CGRect(x: sender.center.x, y: 8, width: 0, height: 0)
+        sheetController.popoverPresentationController?.sourceRect = sender.bounds
         present(sheetController, animated: true, completion: nil)
     }
     
@@ -322,7 +322,8 @@ class ARViewController: UIViewController {
         
         sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheetController.popoverPresentationController?.sourceView = sender
-        sheetController.popoverPresentationController?.sourceRect = CGRect(x: sender.center.x, y: -8, width: 0, height: 0)
+        sheetController.popoverPresentationController?.sourceRect = sender.bounds
+        
         present(sheetController, animated: true, completion: nil)
     }
     

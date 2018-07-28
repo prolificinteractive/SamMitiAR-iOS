@@ -18,6 +18,10 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
     weak var sceneView: SamMitiARView?
 
     var updateSession: ((_ frame: ARFrame, _ trackingState: ARCamera.TrackingState) -> Void)?
+    
+    var imageAnchorDidAdd: ((_ node: SCNNode, _ anchor: ARImageAnchor) -> Void)?
+    
+    var imageAnchorDidUpdate: ((_ node: SCNNode, _ anchor: ARImageAnchor) -> Void)?
 
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         guard let frame = session.currentFrame else { return }
@@ -36,7 +40,7 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         updateSession?(session.currentFrame!, frame.camera.trackingState)
     }
-
+    
     /// - Tag: PlaceARContent
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
 
@@ -63,8 +67,33 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
                     objectAtAnchor.anchor = anchor
                 }
             }
+            
+            if let imageAnchor = anchor as? ARImageAnchor {
+                
+                self.imageAnchorDidAdd?(node, imageAnchor)
+                
+                if self.showAnchorPlane {
+                    let referenceImage = imageAnchor.referenceImage
+                    
+                    // Create a plane to visualize the initial position of the detected image.
+                    let plane = SCNPlane(width: referenceImage.physicalSize.width,
+                                         height: referenceImage.physicalSize.height)
+                    let planeNode = SCNNode(geometry: plane)
+                    
+                    planeNode.opacity = 0.25
+                    
+                    /*
+                     `SCNPlane` is vertically oriented in its local coordinate space, but
+                     `ARImageAnchor` assumes the image is horizontal in its local space, so
+                     rotate the plane to match.
+                     */
+                    planeNode.eulerAngles.x = -.pi / 2
+                    
+                    // Add the plane visualization to the scene.
+                    node.addChildNode(planeNode)
+                }
+            }
         }
-
     }
 
     /// - Tag: UpdateARContent
@@ -81,10 +110,20 @@ class SamMitiDelegateObject: NSObject, ARSCNViewDelegate, ARSessionDelegate {
             }
         }
         
+        if let imageAnchor = anchor as? ARImageAnchor {
+            self.imageAnchorDidUpdate?(node, imageAnchor)
+        }
 
         if showAnchorPlane {
-            guard let anchorGeometry = node.geometry as? ARSCNPlaneGeometry else { return }
-            anchorGeometry.update(from: planeAnchor.geometry)
+            if let anchorGeometry = node.geometry as? ARSCNPlaneGeometry {
+                anchorGeometry.update(from: planeAnchor.geometry)
+            }
+            
+            
+            if let objectAtAnchor = self.sceneView?.placedVirtualObjects.first(where: { $0.anchor == anchor }) {
+                objectAtAnchor.simdPosition = planeAnchor.transform.translation
+                objectAtAnchor.anchor = planeAnchor
+            }
         }
     }
 

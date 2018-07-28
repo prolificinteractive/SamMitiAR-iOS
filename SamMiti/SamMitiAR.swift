@@ -118,6 +118,8 @@ final public class SamMitiARView: ARSCNView {
         return planeDetecting.currentPlaneDetectingConfidentLevel
     }
     
+    public var referenceImages: Set<ARReferenceImage>?
+    
     // MARK: - Private/Internal Uses
     
     private var planeDetecting = SamMitiPlaneDetecting()
@@ -277,12 +279,26 @@ final public class SamMitiARView: ARSCNView {
             
         }
         
+        // Ref Images
+        
+        if let referenceImages = self.referenceImages {
+            configuration.detectionImages = referenceImages
+        }
+        
         configuration.isAutoFocusEnabled = isAutoFocusEnabled
         
         session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
         
         //reset Internal Values
         interactionStatus = .idle
+    }
+    
+    private func imageAnchorDidAdd(node: SCNNode, for anchor: ARImageAnchor) {
+        samMitiARDelegate?.samMitiRenderer(didAdd: node, for: anchor)
+    }
+    
+    private func imageAnchorDidUpdate(node: SCNNode, for anchor: ARImageAnchor) {
+        samMitiARDelegate?.samMitiRenderer(didUpdate: node, for: anchor)
     }
     
     private func updateSession(for frame: ARFrame,

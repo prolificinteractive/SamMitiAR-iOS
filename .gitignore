@@ -1,3 +1,7 @@
 Examples/SamMiti-Example/Pods/
 Examples/SamMiti-Autoplacing-Example/Pods/
 Examples/Pods/
+Examples/Podfile.lock
+**/*.xcuserdatad
+Podfile.lock
+Pods

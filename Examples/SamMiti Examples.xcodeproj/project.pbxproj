@@ -23,11 +23,20 @@
 		90AEF1AD21042CEA00F69692 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AEF1AC21042CEA00F69692 /* ARViewController.swift */; };
 		90C4E945202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E944202DF224005DFED5 /* SamMitiVirtualObjectExtension.swift */; };
 		96C92B0A2563F81BD1E7B210 /* Pods_Multiple_Placing_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9176ED07B3F0A4E3CCC6DED /* Pods_Multiple_Placing_Example.framework */; };
+		D0780A75210BF7B000D020E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0780A74210BF7B000D020E8 /* AppDelegate.swift */; };
+		D0780A7A210BF7B000D020E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0780A78210BF7B000D020E8 /* Main.storyboard */; };
+		D0780A7C210BF7B200D020E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0780A7B210BF7B200D020E8 /* Assets.xcassets */; };
+		D0780A7F210BF7B200D020E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0780A7D210BF7B200D020E8 /* LaunchScreen.storyboard */; };
+		D0780A85210BF82400D020E8 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0780A83210BF82400D020E8 /* ARViewController.swift */; };
+		D0780A86210BF82400D020E8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D0780A84210BF82400D020E8 /* art.scnassets */; };
+		D0B33731210BFA0600FB4AC7 /* SamMitiVirtualObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B33730210BFA0600FB4AC7 /* SamMitiVirtualObjectExtension.swift */; };
+		EA304DA1CD93F72961678F9A /* Pods_Image_Detection_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DF3927FC685D511779BCB5 /* Pods_Image_Detection_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		174DFFE5A7FEEBEB95B02DEC /* Pods-Auto Placing Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Placing Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Auto Placing Example/Pods-Auto Placing Example.release.xcconfig"; sourceTree = "<group>"; };
 		5061CE79337B79943D42A71B /* Pods-SamMiti Auto Placing Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti Auto Placing Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti Auto Placing Example/Pods-SamMiti Auto Placing Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5ED5ED3806B16CDA4DFC756A /* Pods-Image Detection Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Image Detection Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example.release.xcconfig"; sourceTree = "<group>"; };
 		6A4E9EEA90E1AADFB8BD28A2 /* Pods_SamMiti_Auto_Placing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti_Auto_Placing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		904B7FA62020AF1F0038B799 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		907AED61202CE980002E487D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -51,7 +60,17 @@
 		961F87579380FD3A2555ADE4 /* Pods-SamMiti Auto Placing Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti Auto Placing Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti Auto Placing Example/Pods-SamMiti Auto Placing Example.release.xcconfig"; sourceTree = "<group>"; };
 		A645A372D5FFD4707A75F533 /* Pods-SamMiti-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8DAA563DAD6EDB2C79839C /* Pods-Multiple Placing Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multiple Placing Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multiple Placing Example/Pods-Multiple Placing Example.release.xcconfig"; sourceTree = "<group>"; };
+		D0780A72210BF7B000D020E8 /* Image Detection Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Detection Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0780A74210BF7B000D020E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0780A79210BF7B000D020E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0780A7B210BF7B200D020E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0780A7E210BF7B200D020E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0780A80210BF7B200D020E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0780A83210BF82400D020E8 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		D0780A84210BF82400D020E8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		D0B33730210BFA0600FB4AC7 /* SamMitiVirtualObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamMitiVirtualObjectExtension.swift; sourceTree = "<group>"; };
 		E9A14DF5488C0B8CBD64DA9D /* Pods-SamMiti-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamMiti-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SamMiti-Example/Pods-SamMiti-Example.release.xcconfig"; sourceTree = "<group>"; };
+		F1DF3927FC685D511779BCB5 /* Pods_Image_Detection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Image_Detection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176ED07B3F0A4E3CCC6DED /* Pods_Multiple_Placing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multiple_Placing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC67DE831F7D00A6D6B6BEB4 /* Pods_SamMiti_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamMiti_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +92,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0780A6F210BF7B000D020E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA304DA1CD93F72961678F9A /* Pods_Image_Detection_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +110,7 @@
 				6A4E9EEA90E1AADFB8BD28A2 /* Pods_SamMiti_Auto_Placing_Example.framework */,
 				912C83C46B74677C597FAFC2 /* Pods_Auto_Placing_Example.framework */,
 				F9176ED07B3F0A4E3CCC6DED /* Pods_Multiple_Placing_Example.framework */,
+				F1DF3927FC685D511779BCB5 /* Pods_Image_Detection_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,6 +120,7 @@
 			children = (
 				90A19A27201FAB67007ED597 /* SamMiti Example - Multiple Placing */,
 				90AEF19721042C0100F69692 /* SamMiti Example - Auto Placing */,
+				D0780A73210BF7B000D020E8 /* SamMiti Example - Image Detection */,
 				90A19A26201FAB67007ED597 /* Products */,
 				FA628D89C77897B8CC50B9E4 /* Pods */,
 				76020E4E40FAC54A42ACBCB7 /* Frameworks */,
@@ -103,6 +132,7 @@
 			children = (
 				90A19A25201FAB67007ED597 /* Multiple Placing Example.app */,
 				90AEF19621042C0100F69692 /* Auto Placing Example.app */,
+				D0780A72210BF7B000D020E8 /* Image Detection Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +167,21 @@
 			path = "SamMiti Example - Auto Placing";
 			sourceTree = "<group>";
 		};
+		D0780A73210BF7B000D020E8 /* SamMiti Example - Image Detection */ = {
+			isa = PBXGroup;
+			children = (
+				D0B33730210BFA0600FB4AC7 /* SamMitiVirtualObjectExtension.swift */,
+				D0780A74210BF7B000D020E8 /* AppDelegate.swift */,
+				D0780A84210BF82400D020E8 /* art.scnassets */,
+				D0780A83210BF82400D020E8 /* ARViewController.swift */,
+				D0780A78210BF7B000D020E8 /* Main.storyboard */,
+				D0780A7B210BF7B200D020E8 /* Assets.xcassets */,
+				D0780A7D210BF7B200D020E8 /* LaunchScreen.storyboard */,
+				D0780A80210BF7B200D020E8 /* Info.plist */,
+			);
+			path = "SamMiti Example - Image Detection";
+			sourceTree = "<group>";
+		};
 		FA628D89C77897B8CC50B9E4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +191,7 @@
 				961F87579380FD3A2555ADE4 /* Pods-SamMiti Auto Placing Example.release.xcconfig */,
 				174DFFE5A7FEEBEB95B02DEC /* Pods-Auto Placing Example.release.xcconfig */,
 				CF8DAA563DAD6EDB2C79839C /* Pods-Multiple Placing Example.release.xcconfig */,
+				5ED5ED3806B16CDA4DFC756A /* Pods-Image Detection Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -191,6 +237,25 @@
 			productReference = 90AEF19621042C0100F69692 /* Auto Placing Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D0780A71210BF7B000D020E8 /* Image Detection Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0780A82210BF7B200D020E8 /* Build configuration list for PBXNativeTarget "Image Detection Example" */;
+			buildPhases = (
+				D6277A032763C9821BE281C5 /* [CP] Check Pods Manifest.lock */,
+				D0780A6E210BF7B000D020E8 /* Sources */,
+				D0780A6F210BF7B000D020E8 /* Frameworks */,
+				D0780A70210BF7B000D020E8 /* Resources */,
+				763FDDEB8A47B1994C19B8E9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Image Detection Example";
+			productName = "Image Detection Example";
+			productReference = D0780A72210BF7B000D020E8 /* Image Detection Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,6 +272,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					90AEF19521042C0100F69692 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
+					D0780A71210BF7B000D020E8 = {
 						CreatedOnToolsVersion = 10.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -227,6 +296,7 @@
 			targets = (
 				90A19A24201FAB67007ED597 /* Multiple Placing Example */,
 				90AEF19521042C0100F69692 /* Auto Placing Example */,
+				D0780A71210BF7B000D020E8 /* Image Detection Example */,
 			);
 		};
 /* End PBXProject section */
@@ -251,6 +321,17 @@
 				90AEF1AB21042CDE00F69692 /* art.scnassets in Resources */,
 				90AEF1A021042C0200F69692 /* Assets.xcassets in Resources */,
 				90AEF19E21042C0100F69692 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0780A70210BF7B000D020E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0780A7F210BF7B200D020E8 /* LaunchScreen.storyboard in Resources */,
+				D0780A86210BF82400D020E8 /* art.scnassets in Resources */,
+				D0780A7C210BF7B200D020E8 /* Assets.xcassets in Resources */,
+				D0780A7A210BF7B000D020E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +370,44 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Auto Placing Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		763FDDEB8A47B1994C19B8E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SamMitiAR/SamMitiAR.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GLTFSceneKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SamMitiAR.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6277A032763C9821BE281C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Image Detection Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -356,6 +475,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0780A6E210BF7B000D020E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B33731210BFA0600FB4AC7 /* SamMitiVirtualObjectExtension.swift in Sources */,
+				D0780A75210BF7B000D020E8 /* AppDelegate.swift in Sources */,
+				D0780A85210BF82400D020E8 /* ARViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -387,6 +516,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				90AEF1A221042C0200F69692 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D0780A78210BF7B000D020E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0780A79210BF7B000D020E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0780A7D210BF7B200D020E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0780A7E210BF7B200D020E8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -483,6 +628,25 @@
 			};
 			name = Release;
 		};
+		D0780A81210BF7B200D020E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED5ED3806B16CDA4DFC756A /* Pods-Image Detection Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ5UD9292F;
+				INFOPLIST_FILE = "$(SRCROOT)/SamMiti Example - Image Detection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.sammitiar-framework-Image-detection-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -506,6 +670,14 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90AEF1A621042C0200F69692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0780A82210BF7B200D020E8 /* Build configuration list for PBXNativeTarget "Image Detection Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0780A81210BF7B200D020E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,8 +11,11 @@ target 'Multiple Placing Example' do
     sammiti_lib
 end
 
-
 target 'Auto Placing Example' do
+    sammiti_lib
+end
+
+target 'Image Detection Example' do
     sammiti_lib
 end
 

@@ -94,7 +94,7 @@ This framework was made on top of ARSCNView which utilizes both functionalities 
 
 ### Setup and Configure
 
-To Use SamMitiARView, after install SamMiti pod, you can simply create new ARSCNView in the storyboard, change the view to subClass to SamMitiView and create IBOutlet linking to your storyboard, or programatically initialize SamMitiARView in your view controller.
+To use `SamMitiARView`, after installing SamMitiAR pod, you can simply create new `ARSCNView` in the storyboard, change the view's class to `SamMitiARView` (make sure to set Class: `SamMitiARView` and Module: `SamMitiAR` in the Identity Inspector; when not setting the module correctly, the app may crash) and create an `IBOutlet` linking to your storyboard, or programatically initialize SamMitiARView in your view controller.
 
 <Image showing subclass ARSCNView in story board to SamMitiARView>
 
@@ -106,40 +106,40 @@ import ARKit
 import SceneKit
 ```
 
-In order to have SamMitiView be able to call back to your view controller, the delegate method need to be defined, and ViewDidLoad function is a good place for it.
+In order to have `SamMitiARView` be able to call back to your view controller, the delegate needs to be defined, and `viewDidLoad` function is a good place for it.
 
 ```swift
 // SamMiti AR View Delegate
 sceneView.samMitiARDelegate = self
 ```
 
-To config some behaviors, you can do that in ViewDidLoad function of view controller. There are a few functions that need to be called before the view is initialied ARSession which includes enabling the camera auto focus function `isAutoFocusEnabled`, .... and serveral optional functions that you can change when the ARSession is running.
+To configure the behavior, you can use the `viewDidLoad` function of view controller as well. There are a few functions that can be called before the view is initialied ARSession which includes enabling the camera auto focus function `isAutoFocusEnabled`, ... and serveral optional functions that you can change when the ARSession is running.
 
 
 ```        
 // SamMiti AR View Configuration
-sceneView.isAutoFocusEnabled = false
+sceneView.isAutoFocusEnabled = false // If not called, the default is false as well.
 
 // SamMiti AR View Configuration can be changed along the ARSession is running
-sceneView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5)
-sceneView.isLightingIntensityAutomaticallyUpdated = true
-sceneView.baseLightingEnvironmentIntensity = 6
+sceneView.hitTestPlacingPoint = CGPoint(x: 0.5, y: 0.5) // If not called, the default is (0.5, 0.5) as well.
+sceneView.isLightingIntensityAutomaticallyUpdated = true // If not called, the default is true as well.
+sceneView.baseLightingEnvironmentIntensity = 6 // If not called, the default is 1.0.
 ```
 
-To have SamMitiAR run, `setup()` need to be called in View Will Appeare. 
+To have SamMitiAR run, `startAR()` needs to be called in `viewWillAppear(_:)`. 
 
 ```swift
-sceneView.setup(withDebugOptions: [])
+sceneView.startAR(withDebugOptions: [])
 ```
 
-Besides the `setup()` function, `session.pause()` still needs to be called when view will disappere to stop processing the ARSession when users leave the the view controller.
+Besides the `startAR()` function, `session.pause()` still needs to be called in `viewWillDisappear(_:)` to stop processing the ARSession when users leave the view controller.
 
 ```swift
 // Pause the view's AR session.
 sceneView.session.pause()
 ```
 
-Work in Progress
+In order to make sure that the app has access to the camera, iOS requires adding a descriptive message for the user as `NSCameraUsageDescription` in the app's Info.plist.
 
 ### Placing Mode
 There are two modes of placing virtual objects. One is called `quickDrop`. This mode allows users to place virtual objects without tapping anything on screen, but it require users to move their devices to get ARKit initialize plane anchor. The other mode is called `focusNode`. This mode allows users to use Focus Node (indicator focus point) to indicate where the virtual object will be placed, and users need to tap on the screen in order to have the virtual object placed at the desired spot.

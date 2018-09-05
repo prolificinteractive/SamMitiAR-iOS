@@ -206,7 +206,6 @@ final public class SamMitiARView: ARSCNView {
     }
     
     // MARK: - Setup AR
-    
 
     /// Use for initializing SamMiti AR which includes initializing AR session, AR Delegate, AR Session Delegate, Gestures, Debuging Options, Camera, and Lighting.
     ///
@@ -273,14 +272,12 @@ final public class SamMitiARView: ARSCNView {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .all
         if #available(iOS 12.0, *) {
-            
-            // TODO: Xcode10
+            #if swift(>=4.2)
             configuration.environmentTexturing = configuration.environmentTexturing.definedBy(environmentTexturing)
-            
+            #endif
         }
         
         // Ref Images
-        
         if let referenceImages = self.referenceImages {
             configuration.detectionImages = referenceImages
         }

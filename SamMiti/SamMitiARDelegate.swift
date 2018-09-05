@@ -145,6 +145,10 @@ public protocol SamMitiARDelegate: class {
     ///   - virtualObject: An Object that contains a set of SCNNodes representing different interaction functions and actual 3D content.
     ///   - didScaleToBound: A float value that represent the current scale of virtual object.
     func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound scalingFactor: Float)
+    
+    func samMitiRenderer(didAdd node: SCNNode, for imageAnchor: ARImageAnchor)
+    
+    func samMitiRenderer(didUpdate node: SCNNode, for imageAnchor: ARImageAnchor)
 }
 
 //// Optional Protocol
@@ -195,6 +199,10 @@ public extension SamMitiARDelegate {
     func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didSnapToScalingFactor scalingFactor: Float) {}
     
     func samMitiVirtualObject(_ virtualObject: SamMitiVirtualObject, didScaleToBound scalingFactor: Float) {}
+    
+    func samMitiRenderer(didAdd node: SCNNode, for imageAnchor: ARImageAnchor) {}
+    
+    func samMitiRenderer(didUpdate node: SCNNode, for imageAnchor: ARImageAnchor) {}
     
 }
 

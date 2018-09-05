@@ -81,6 +81,7 @@ open class SamMitiARConfiguration: ARConfiguration {
 }
 
 //TODO: Turn this on when Xcode10 is released
+#if swift(>=4.2)
 @available(iOS 12.0, *)
 extension ARWorldTrackingConfiguration.EnvironmentTexturing {
     
@@ -95,6 +96,7 @@ extension ARWorldTrackingConfiguration.EnvironmentTexturing {
         }
     }
 }
+#endif
 
 extension ARWorldTrackingConfiguration.PlaneDetection {
     public static var all: ARWorldTrackingConfiguration.PlaneDetection {

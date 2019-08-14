@@ -19,12 +19,7 @@ public class ThresholdPanGesture: UIPanGestureRecognizer {
     private(set) var isThresholdExceeded = false
 
     /// Observe when the gesture's `state` changes to reset the threshold.
-    
-    // TODO: Use this when Xcode10 is released
-    // override public var state: UIGestureRecognizer.State {
-    
-    // TODO: Delete this when Xcode10 is released
-    override public var state: UIGestureRecognizerState {
+    override public var state: UIGestureRecognizer.State {
         didSet {
             switch state {
             case .began, .changed:

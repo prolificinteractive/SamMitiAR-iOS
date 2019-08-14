@@ -9,7 +9,6 @@
 import UIKit
 import SamMitiAR
 import ARKit
-import SceneKit
 
 class ARViewController: UIViewController {
     

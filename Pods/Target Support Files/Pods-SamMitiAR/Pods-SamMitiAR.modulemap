@@ -1,6 +1,0 @@
-framework module Pods_SamMitiAR {
-  umbrella header "Pods-SamMitiAR-umbrella.h"
-
-  export *
-  module * { export * }
-}

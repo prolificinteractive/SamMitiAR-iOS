@@ -34,20 +34,20 @@ class ARViewController: UIViewController {
     var debugOptions: SamMitiDebugOptions = []
     
     //TODO: Xcode9
+    /*
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             isMenuShowing = !isMenuShowing
         }
     }
+     */
     
     //TODO: Xcode10
-    /*
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             isMenuShowing = !isMenuShowing
         }
     }
- */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,7 +145,7 @@ class ARViewController: UIViewController {
         
         sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheetController.popoverPresentationController?.sourceView = sender
-        sheetController.popoverPresentationController?.sourceRect = CGRect(x: sender.center.x, y: 8, width: 0, height: 0)
+        sheetController.popoverPresentationController?.sourceRect = sender.bounds
         present(sheetController, animated: true, completion: nil)
     }
     
@@ -177,16 +177,16 @@ class ARViewController: UIViewController {
     var isStatusBarHidden = false
     
     //TODO: Xcode9
+    /*
     override func prefersHomeIndicatorAutoHidden() -> Bool {
         return isHomeindicatorHidden
     }
+     */
     
     // TODO: Xcode10
-    /*
     override var prefersHomeIndicatorAutoHidden: Bool {
         return isHomeindicatorHidden
     }
-     */
     
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden
@@ -322,7 +322,8 @@ class ARViewController: UIViewController {
         
         sheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheetController.popoverPresentationController?.sourceView = sender
-        sheetController.popoverPresentationController?.sourceRect = CGRect(x: sender.center.x, y: -8, width: 0, height: 0)
+        sheetController.popoverPresentationController?.sourceRect = sender.bounds
+        
         present(sheetController, animated: true, completion: nil)
     }
     

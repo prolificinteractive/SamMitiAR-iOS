@@ -19,7 +19,6 @@ public class ThresholdPanGesture: UIPanGestureRecognizer {
     private(set) var isThresholdExceeded = false
 
     /// Observe when the gesture's `state` changes to reset the threshold.
-    #if swift(>=4.2)
     override public var state: UIGestureRecognizer.State {
         didSet {
             switch state {
@@ -32,7 +31,6 @@ public class ThresholdPanGesture: UIPanGestureRecognizer {
             }
         }
     }
-    #endif
 
     /// Returns the threshold value that should be used dependent on the number of touches.
     private static func threshold(forTouchCount count: Int) -> CGFloat {

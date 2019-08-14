@@ -344,7 +344,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Multiple Placing Example/Pods-Multiple Placing Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Multiple Placing Example/Pods-Multiple Placing Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SamMitiAR/SamMitiAR.framework",
 			);
@@ -355,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multiple Placing Example/Pods-Multiple Placing Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Multiple Placing Example/Pods-Multiple Placing Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B5C04A99A12FF03F72D1F05 /* [CP] Check Pods Manifest.lock */ = {
@@ -382,7 +382,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SamMitiAR/SamMitiAR.framework",
 			);
@@ -393,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Image Detection Example/Pods-Image Detection Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D6277A032763C9821BE281C5 /* [CP] Check Pods Manifest.lock */ = {
@@ -438,7 +438,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Auto Placing Example/Pods-Auto Placing Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Auto Placing Example/Pods-Auto Placing Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SamMitiAR/SamMitiAR.framework",
 			);
@@ -449,7 +449,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Auto Placing Example/Pods-Auto Placing Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Auto Placing Example/Pods-Auto Placing Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
